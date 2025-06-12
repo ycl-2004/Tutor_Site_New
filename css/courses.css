@@ -1,0 +1,298 @@
+/* SPACING SYSTEM (px)
+  2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+  FONT SIZE SYSTEM (px)
+  10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98  */
+
+/* ------------------------------------------- */
+/* Info */
+
+.courses {
+  background-image: linear-gradient(to right bottom, #f1ece5, #f2f4fb);
+  min-height: calc(100vh - 6.2rem); /* Ensure it takes up full page height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+}
+
+.courses-container {
+  padding: 4.8rem; /* Reduced padding */
+  max-width: 110rem; /* Slightly reduced max-width */
+
+  margin: 0 auto;
+}
+
+.courses-title {
+  font-size: 3.8rem; /* Slightly reduced font size */
+  font-weight: 700;
+
+  text-align: center;
+
+  color: #2a2e33;
+
+  margin-bottom: 0.8rem; /* Reduced margin */
+}
+
+.courses-sub-title {
+  font-size: 2rem; /* Slightly reduced font size */
+  font-weight: 500;
+  color: #a9abb0;
+
+  display: block;
+  text-align: center;
+  line-height: 1.5;
+
+  margin-bottom: 2rem; /* Reduced margin */
+}
+
+.courses-grid-2-horizontal {
+  display: grid;
+  grid-template-columns: 1fr 3fr; /* Increased width for the courses section */
+
+  gap: 3.2rem; /* Reduced gap to allow more horizontal stretch */
+}
+
+.courses-flex-2-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem; /* Reduced gap */
+}
+
+.grid-2-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Force two columns */
+
+  gap: 3.2rem; /* Reduced gap */
+}
+
+.container {
+  text-align: left;
+  padding: 3.6rem; /* Increased padding for more space */
+
+  background-color: #d4f1f4;
+  background-color: #fff;
+  border-radius: 1.6rem; /* Reduced border-radius */
+  box-shadow: 0 2.4rem 3.6rem rgba(0, 0, 0, 0.08); /* Adjusted shadow */
+
+  margin-bottom: 2.4rem; /* Reduced margin */
+}
+
+.container:first-child {
+  justify-self: end;
+}
+
+.container:last-child {
+  justify-self: start;
+}
+
+.courses-location-titie {
+  font-size: 2rem; /* Reduced font size */
+  font-weight: 700;
+  color: #a9abb0;
+
+  line-height: 1.5;
+
+  margin-bottom: 0.8rem; /* Reduced margin */
+  padding-left: 1.2rem;
+}
+
+.courses-location-icon {
+  width: 2.2rem; /* Slightly reduced icon size */
+  height: 2.2rem; /* Slightly reduced icon size */
+
+  color: red;
+}
+
+.courses-location-lists {
+  list-style: none;
+}
+
+.courses-list-title {
+  font-size: 1.8rem; /* Slightly reduced font size */
+  font-weight: 500;
+  margin-bottom: 2.4rem; /* Increased margin for more space below headings */
+  padding-left: 1.2rem; /* Increased vertical padding for more space around headings */
+}
+
+.courses-list-item {
+  padding: 0; /* Removed horizontal padding to allow full stretch */
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem; /* Increased gap for more vertical spacing between words */
+}
+
+/* Added padding to the list items for more space around general and AP lists */
+.courses-lists.grid-2-2 > li {
+  padding: 2.4rem; /* Generous padding for the list items */
+  background-color: var(--color-card-background); /* Match card background */
+  border-radius: 1.6rem; /* Match container border-radius */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for visual separation */
+  transition: all 0.3s ease-in-out;
+}
+
+.courses-lists.grid-2-2 > li > h3 {
+  padding-bottom: 1.6rem; /* Add padding below the headings */
+}
+
+.courses-lists.grid-2-2 > li:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.courses-location-list,
+.courses-list {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.6; /* Increased line-height for more vertical spacing within lines of text */
+
+  color: #7f8285;
+  transition: all 0.3s ease; /* Add smooth transition */
+  white-space: nowrap; /* Keep text on a single line */
+  overflow: hidden; /* Hide overflowing content */
+  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+  flex-shrink: 0; /* Prevent shrinking */
+  width: 100%; /* Ensure full width */
+  margin-bottom: 0.8rem; /* Add small space below each item */
+}
+
+.courses-location-list:hover,
+.courses-list:hover {
+  transform: translateY(-2px); /* Slight lift */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+}
+
+.courses-list-icon {
+  width: 1.8rem; /* Slightly reduced icon size */
+  height: 1.8rem; /* Slightly reduced icon size */
+
+  color: rebeccapurple;
+}
+
+.courses-lists {
+  list-style: none;
+  min-width: 45rem; /* Ensure enough space for two columns */
+  height: auto; /* Allow height to adjust to content */
+  overflow: visible; /* Prevent content clipping */
+}
+
+.courses-list {
+  font-size: 1.6rem; /* Ensure consistent font size */
+  font-weight: 500;
+
+  line-height: 1.5;
+  width: 100%; /* Ensure it stretches horizontally */
+  white-space: nowrap; /* Prevent text from wrapping */
+  padding: 0; /* Remove any default padding that might cause wrapping */
+}
+
+.courses-final-text {
+  font-size: 1.2rem; /* Slightly reduced font size */
+  font-weight: 500;
+
+  display: block;
+  text-align: center;
+}
+
+.recommend {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem; /* Slightly reduced gap */
+}
+
+.courses-list a {
+  display: inline-block;
+  padding: 0.6em 0.6em; /* Slightly reduced horizontal padding */
+  border-radius: 1.8em;
+  background: linear-gradient(
+    90deg,
+    var(--color-card-background) 0%,
+    var(--color-border) 100%
+  ); /* Adjusted to website vibe colors */
+  color: var(--color-text-dark); /* Adjusted text color */
+  font-weight: 600;
+  font-size: 1.4rem; /* Slightly reduced font size to prevent wrapping */
+  text-decoration: none;
+  box-shadow: 0 1.5px 6px rgba(0, 0, 0, 0.08); /* Adjusted shadow */
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+  margin: 0.2em 0;
+  width: 90%; /* Make the button stretch horizontally */
+  white-space: nowrap; /* Prevent text from wrapping */
+  text-align: center; /* Center the text */
+}
+.courses-list a:hover,
+.courses-list a:focus {
+  background: linear-gradient(
+    90deg,
+    var(--color-border) 0%,
+    var(--color-card-background) 100%
+  ); /* Adjusted to website vibe colors for hover */
+  color: var(--color-text-dark); /* Adjusted text color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Lighter and smaller shadow */
+  transform: scale(1.05) translateY(-2px); /* Smaller lift and scale */
+  text-decoration: none;
+  padding: 0.8em 2.2em; /* Increased padding on hover for more space */
+  border-radius: 2.2em; /* More rounded corners for added 'space' effect */
+  z-index: 5; /* Bring hovered element slightly to the front */
+}
+.courses-list a:active {
+  background: linear-gradient(
+    90deg,
+    var(--color-border) 0%,
+    var(--color-card-background) 100%
+  ); /* Adjusted to website vibe colors for active */
+  color: var(--color-text-dark); /* Adjusted text color */
+  transform: scale(0.99);
+}
+
+.head-link-in {
+  display: inline-block;
+  padding: 0.6em 1.4em;
+  border-radius: 1.8em;
+  background: linear-gradient(
+    90deg,
+    var(--color-card-background) 0%,
+    var(--color-border) 100%
+  ); /* Adjusted to website vibe colors */
+  color: var(--color-text-dark); /* Adjusted text color */
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-decoration: none;
+  box-shadow: 0 1.5px 6px rgba(0, 0, 0, 0.08); /* Adjusted shadow */
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+  margin: 0.2em 0;
+}
+.head-link-in:hover,
+.head-link-in:focus {
+  background: linear-gradient(
+    90deg,
+    var(--color-border) 0%,
+    var(--color-card-background) 100%
+  ); /* Adjusted to website vibe colors for hover */
+  color: var(--color-text-dark); /* Adjusted text color */
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12); /* Adjusted shadow for hover */
+  transform: scale(1.05) translateY(-1.5px);
+  text-decoration: none;
+}
+.head-link-in:active {
+  background: linear-gradient(
+    90deg,
+    var(--color-border) 0%,
+    var(--color-card-background) 100%
+  ); /* Adjusted to website vibe colors for active */
+  color: var(--color-text-dark); /* Adjusted text color */
+  transform: scale(0.99);
+}
+
+.courses-lists.grid-2-2 > div {
+  padding: 3.2rem 0; /* Removed horizontal padding for maximum stretch */
+  background-color: var(--color-card-background); /* Consistent background */
+  border-radius: 1.6rem; /* Consistent border-radius */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  transition: all 0.3s ease-in-out;
+}
+
+.courses-lists.grid-2-2 > div:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,610 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xcolor}
+
+% Custom colors
+\definecolor{primary}{RGB}{41, 128, 185}
+\definecolor{secondary}{RGB}{52, 152, 219}
+\definecolor{accent}{RGB}{231, 76, 60}
+\definecolor{lightgray}{RGB}{236, 240, 241}
+
+% Theme customization
+\usetheme{Madrid}
+\usecolortheme{whale}
+\setbeamercolor{structure}{fg=primary}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=black}
+
+% Title page info
+\title{Pre-Calculus 11}
+\subtitle{Solving Quadratic Functions by Factoring}
+\author{Created by Yi-Chen Lin}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% I) WHAT DOES IT MEAN TO SOLVE AN EQUATION?
+\begin{frame}{What Does "Solving" Mean?}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Definition]
+        \footnotesize
+        \begin{itemize}
+            \item Finding a value for "x" (Variable) so that both sides of an equation will be equal
+            \item \textbf{Example:} Solve for "x"
+            \begin{align*}
+                2x + 1 &= 5 \\
+                2x &= 4 \\
+                x &= 2
+            \end{align*}
+            \item \textbf{Check:}
+            \begin{align*}
+                2(2) + 1 &= 5 \\
+                4 + 1 &= 5 \\
+                5 &= 5 \quad \checkmark
+            \end{align*}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+% II) SOLVING TRINOMIALS BY FACTORING
+\begin{frame}{Solving Trinomials by Factoring}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Concept]
+        \footnotesize
+        \begin{itemize}
+            \item When you have the product of two brackets equal to zero, you can solve this equation easily
+            \item \textbf{Example:} Solve $(x + 3)(2x - 5) = 0$
+            \begin{align*}
+                x + 3 &= 0 \quad \text{or} \quad 2x - 5 = 0 \\
+                x &= -3 \quad \text{or} \quad x = 2.5
+            \end{align*}
+            \item \textcolor{accent}{\textbf{Important Rule:}} Zero times anything is always equal to zero
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Solving Trinomials}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solve Each of the Following]
+        \footnotesize
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item $(x + 4)(x - 3) = 0$
+            \item $(2x + 5)(3x - 2) = 0$
+            \item $(x - 6)(x + 2) = 0$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Solutions: Solving Trinomials}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+        \footnotesize
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item $(x + 4)(x - 3) = 0$
+            \begin{align*}
+                x + 4 &= 0 \quad \text{or} \quad x - 3 = 0 \\
+                x &= -4 \quad \text{or} \quad x = 3
+            \end{align*}
+            
+            \item $(2x + 5)(3x - 2) = 0$
+            \begin{align*}
+                2x + 5 &= 0 \quad \text{or} \quad 3x - 2 = 0 \\
+                x &= -\frac{5}{2} \quad \text{or} \quad x = \frac{2}{3}
+            \end{align*}
+            
+            \item $(x - 6)(x + 2) = 0$
+            \begin{align*}
+                x - 6 &= 0 \quad \text{or} \quad x + 2 = 0 \\
+                x &= 6 \quad \text{or} \quad x = -2
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% III) ADVANCED FACTORING AND SOLVING
+\begin{frame}{Steps for Solving Quadratic Equations}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Steps]
+        \footnotesize
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item Move all terms to one side and make it equal to zero
+            \item Factor the equation into two binomials
+            \item Make each binomial equal to zero
+            \item Solve for "x" from each bracket
+        \end{enumerate}
+        
+        \begin{example}
+            Solve: $x^2 + 10x = 9$
+            \begin{align*}
+                x^2 + 10x - 9 &= 0 \\
+                (x + 3)(x - 3) &= 0 \\
+                x + 3 &= 0 \quad \text{or} \quad x - 3 = 0 \\
+                x &= -3 \quad \text{or} \quad x = 3
+            \end{align*}
+        \end{example}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Advanced Factoring}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solve Each of the Following]
+        \footnotesize
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item $x^2 + 7x + 12 = 0$
+            \item $2x^2 - 5x - 3 = 0$
+            \item $3x^2 + 10x + 7 = 0$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Solutions: Advanced Factoring}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+        \footnotesize
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item $x^2 + 7x + 12 = 0$
+            \begin{align*}
+                (x + 4)(x + 3) &= 0 \\
+                x + 4 &= 0 \quad \text{or} \quad x + 3 = 0 \\
+                x &= -4 \quad \text{or} \quad x = -3
+            \end{align*}
+            
+            \item $2x^2 - 5x - 3 = 0$
+            \begin{align*}
+                (2x + 1)(x - 3) &= 0 \\
+                2x + 1 &= 0 \quad \text{or} \quad x - 3 = 0 \\
+                x &= -\frac{1}{2} \quad \text{or} \quad x = 3
+            \end{align*}
+            
+            \item $3x^2 + 10x + 7 = 0$
+            \begin{align*}
+                (3x + 7)(x + 1) &= 0 \\
+                3x + 7 &= 0 \quad \text{or} \quad x + 1 = 0 \\
+                x &= -\frac{7}{3} \quad \text{or} \quad x = -1
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% IV) WORD PROBLEMS
+\begin{frame}{Word Problems}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solve Each of the Following]
+        \footnotesize
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item The product of two consecutive numbers is 132. Find the numbers.
+            
+            \item The length of a rectangle is 5 meters more than twice its width. If the area is 75 square meters, find the dimensions.
+            
+            \item A 32m tall tree is broken during a storm. The distance from the base to the tip is 16m. At what height did the tree break?
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Word Problem 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem]
+        \footnotesize
+        The product of two consecutive numbers is 132. Find the numbers.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Word Problem 1 - Solution}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solution]
+        \footnotesize
+        The product of two consecutive numbers is 132. Find the numbers.
+        
+        \textbf{Solution:}
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item Let $x$ be the first number
+            \item Then $x + 1$ is the second number
+            \item $x(x + 1) = 132$
+            \item $x^2 + x - 132 = 0$
+            \item $(x + 12)(x - 11) = 0$
+            \item $x = -12$ or $x = 11$
+        \end{enumerate}
+        
+        \textbf{Answer:} The numbers are 11 and 12, or -12 and -11
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Word Problem 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem]
+        \footnotesize
+        The length of a rectangle is 5 meters more than twice its width. If the area is 75 square meters, find the dimensions.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Word Problem 2 - Solution}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solution]
+        \footnotesize
+        The length of a rectangle is 5 meters more than twice its width. If the area is 75 square meters, find the dimensions.
+        
+        \textbf{Solution:}
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item Let $x$ be the width
+            \item Then $2x + 5$ is the length
+            \item $x(2x + 5) = 75$
+            \item $2x^2 + 5x - 75 = 0$
+            \item $(2x + 15)(x - 5) = 0$
+            \item $x = 5$ meters (width)
+            \item Length = $2(5) + 5 = 15$ meters
+        \end{enumerate}
+        
+        \textbf{Answer:} The dimensions are 5 meters by 15 meters
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Word Problem 3}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem]
+        \footnotesize
+        A 32m tall tree is broken during a storm. The distance from the base to the tip is 16m. At what height did the tree break?
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Word Problem 3 - Solution}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solution]
+        \footnotesize
+        A 32m tall tree is broken during a storm. The distance from the base to the tip is 16m. At what height did the tree break?
+        
+        \textbf{Solution:}
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item Let $x$ be the height where the tree broke
+            \item Then $32 - x$ is the length of the fallen part
+            \item Using Pythagorean theorem:
+            \begin{align*}
+                x^2 + 16^2 &= (32 - x)^2 \\
+                x^2 + 256 &= 1024 - 64x + x^2 \\
+                64x &= 768 \\
+                x &= 12
+            \end{align*}
+        \end{enumerate}
+        
+        \textbf{Answer:} The tree broke at 12 meters
+    \end{tcolorbox}
+\end{frame}
+
+% V) PRACTICE PROBLEMS
+\begin{frame}{Practice Problems}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solve Each of the Following]
+        \footnotesize
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item $2x^2 + 5x = 3$
+            \item $3x^2 - 8x = -4$
+            \item $4x^2 + 12x = -9$
+            \item $x^2 - 6x = 16$
+            \item $5x^2 + 7x = -2$
+            \item $2x^2 - 9x = 5$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice Problems - Solutions Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+        \footnotesize
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item $2x^2 + 5x = 3$
+            \begin{align*}
+                2x^2 + 5x - 3 &= 0 \\
+                (2x - 1)(x + 3) &= 0 \\
+                x &= \frac{1}{2} \quad \text{or} \quad x = -3
+            \end{align*}
+            
+            \item $3x^2 - 8x = -4$
+            \begin{align*}
+                3x^2 - 8x + 4 &= 0 \\
+                (3x - 2)(x - 2) &= 0 \\
+                x &= \frac{2}{3} \quad \text{or} \quad x = 2
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice Problems - Solutions Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+        \footnotesize
+        \begin{enumerate}
+            \setcounter{enumi}{2}
+            \setlength{\itemsep}{0.5em}
+            \item $4x^2 + 12x = -9$
+            \begin{align*}
+                4x^2 + 12x + 9 &= 0 \\
+                (2x + 3)^2 &= 0 \\
+                x &= -\frac{3}{2}
+            \end{align*}
+            
+            \item $x^2 - 6x = 16$
+            \begin{align*}
+                x^2 - 6x - 16 &= 0 \\
+                (x - 8)(x + 2) &= 0 \\
+                x &= 8 \quad \text{or} \quad x = -2
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice Problems - Solutions Part 3}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+        \footnotesize
+        \begin{enumerate}
+            \setcounter{enumi}{4}
+            \setlength{\itemsep}{0.5em}
+            \item $5x^2 + 7x = -2$
+            \begin{align*}
+                5x^2 + 7x + 2 &= 0 \\
+                (5x + 2)(x + 1) &= 0 \\
+                x &= -\frac{2}{5} \quad \text{or} \quad x = -1
+            \end{align*}
+            
+            \item $2x^2 - 9x = 5$
+            \begin{align*}
+                2x^2 - 9x - 5 &= 0 \\
+                (2x + 1)(x - 5) &= 0 \\
+                x &= -\frac{1}{2} \quad \text{or} \quad x = 5
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Summary}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Concepts]
+        \footnotesize
+        \begin{itemize}
+            \item Understanding what it means to solve an equation
+            \item Solving trinomials by factoring
+            \item Steps for solving quadratic equations
+            \item Word problems and applications
+            \item Practice with various types of problems
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+% VI) CHALLENGE PROBLEMS
+\begin{frame}{Challenge Problems}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solve Each of the Following]
+        \footnotesize
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item The difference of two numbers is 6. The sum of their squares is 90. Find the numbers.
+            \item A rectangular garden is 10 meters long and 7 meters wide. A path of uniform width is to be built around the garden. If the area of the path is 54 square meters, find the width of the path.
+            \item A rectangular field has an area of 120 square meters. Its length is 8 meters more than its width. Find the dimensions of the field.
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Challenge Problem 1 - Solution Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solution (Part 1)]
+        \footnotesize
+        The difference of two numbers is 6. The sum of their squares is 90. Find the numbers.
+        
+        \textbf{Solution:}
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item Let the two numbers be $x$ and $y$.
+            \item From the first condition: $x - y = 6 \Rightarrow y = x - 6$
+            \item From the second condition: $x^2 + y^2 = 90$
+            \item Substitute $y = x - 6$ into the second equation:
+            \begin{align*}
+                x^2 + (x - 6)^2 &= 90 \\
+                x^2 + (x^2 - 12x + 36) &= 90 \\
+                2x^2 - 12x + 36 - 90 &= 0 \\
+                2x^2 - 12x - 54 &= 0
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Challenge Problem 1 - Solution Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solution (Part 2)]
+        \footnotesize
+        The difference of two numbers is 6. The sum of their squares is 90. Find the numbers.
+        
+        \textbf{Solution (Cont.):}
+        \begin{enumerate}
+            \setcounter{enumi}{4} % Continue numbering from previous part
+            \setlength{\itemsep}{0.5em}
+            \item Simplify and factor the quadratic equation:
+            \begin{align*}
+                x^2 - 6x - 27 &= 0 \\
+                (x - 9)(x + 3) &= 0
+            \end{align*}
+            \item Solve for $x$:
+            \begin{align*}
+                x - 9 &= 0 \quad \text{or} \quad x + 3 = 0 \\
+                x &= 9 \quad \text{or} \quad x = -3
+            \end{align*}
+            \item Find the corresponding values for $y$:
+            \begin{itemize}
+                \item If $x = 9$, then $y = 9 - 6 = 3$.
+                \item If $x = -3$, then $y = -3 - 6 = -9$.
+            \end{itemize}
+        \end{enumerate}
+        
+        \textbf{Answer:} The numbers are (9, 3) or (-3, -9).
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Challenge Problem 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem]
+        \footnotesize
+        A rectangular garden is 10 meters long and 7 meters wide. A path of uniform width is to be built around the garden. If the area of the path is 54 square meters, find the width of the path.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Challenge Problem 2 - Solution Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solution (Part 1)]
+        \footnotesize
+        A rectangular garden is 10 meters long and 7 meters wide. A path of uniform width is to be built around the garden. If the area of the path is 54 square meters, find the width of the path.
+        
+        \textbf{Solution:}
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item Let $w$ be the uniform width of the path.
+            \item Original garden dimensions: Length = 10 m, Width = 7 m.
+            \item Original garden area = $10 \times 7 = 70$ square meters.
+            \item When a path of width $w$ is built around the garden, the new dimensions of the garden including the path will be:
+            \begin{itemize}
+                \item New Length = $10 + 2w$ (add $w$ to each side)
+                \item New Width = $7 + 2w$ (add $w$ to each side)
+            \end{itemize}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Challenge Problem 2 - Solution Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solution (Part 2)]
+        \footnotesize
+        A rectangular garden is 10 meters long and 7 meters wide. A path of uniform width is to be built around the garden. If the area of the path is 54 square meters, find the width of the path.
+        
+        \textbf{Solution (Cont.):}
+        \begin{enumerate}
+            \setcounter{enumi}{4} % Continue numbering from previous part
+            \setlength{\itemsep}{0.5em}
+            \item The total area (garden + path) is $(10 + 2w)(7 + 2w)$ square meters.
+            \item The area of the path is the total area minus the original garden area.
+            \item Area of path = $(10 + 2w)(7 + 2w) - 70$
+            \item We are given that the area of the path is 54 square meters.
+            \begin{align*}
+                (10 + 2w)(7 + 2w) - 70 &= 54 \\
+                70 + 20w + 14w + 4w^2 - 70 &= 54 \\
+                4w^2 + 34w &= 54
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Challenge Problem 2 - Solution Part 3}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solution (Part 3)]
+        \footnotesize
+        A rectangular garden is 10 meters long and 7 meters wide. A path of uniform width is to be built around the garden. If the area of the path is 54 square meters, find the width of the path.
+        
+        \textbf{Solution (Cont.):}
+        \begin{enumerate}
+            \setcounter{enumi}{8} % Continue numbering from previous part
+            \setlength{\itemsep}{0.5em}
+            \item Rearrange the equation into standard quadratic form ($Aw^2 + Bw + C = 0$):
+            \begin{align*}
+                4w^2 + 34w - 54 &= 0
+            \end{align*}
+            \item Divide the entire equation by 2 to simplify (optional, but good practice):
+            \begin{align*}
+                2w^2 + 17w - 27 &= 0
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Challenge Problem 2 - Solution Part 4}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solution (Part 4)]
+        \footnotesize
+        A rectangular garden is 10 meters long and 7 meters wide. A path of uniform width is to be built around the garden. If the area of the path is 54 square meters, find the width of the path.
+        
+        \textbf{Solution (Cont.):}
+        \begin{enumerate}
+            \setcounter{enumi}{10} % Continue numbering from previous part
+            \setlength{\itemsep}{0.5em}
+            \item Use the quadratic formula to solve for $w$:
+            \begin{align*}
+                w &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \\
+                w &= \frac{-17 \pm \sqrt{17^2 - 4(2)(-27)}}{2(2)} \\
+                w &= \frac{-17 \pm \sqrt{289 + 216}}{4} \\
+                w &= \frac{-17 \pm \sqrt{505}}{4}
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Challenge Problem 2 - Solution Part 5}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solution (Part 5)]
+        \footnotesize
+        A rectangular garden is 10 meters long and 7 meters wide. A path of uniform width is to be built around the garden. If the area of the path is 54 square meters, find the width of the path.
+        
+        \textbf{Solution (Cont.):}
+        \begin{enumerate}
+            \setcounter{enumi}{11} % Continue numbering from previous part
+            \setlength{\itemsep}{0.5em}
+            \item Calculate the two possible values for $w$:
+            \begin{align*}
+                w_1 &= \frac{-17 + \sqrt{505}}{4} \approx \frac{-17 + 22.47}{4} \approx \frac{5.47}{4} \approx 1.3675 \\
+                w_2 &= \frac{-17 - \sqrt{505}}{4} \approx \frac{-17 - 22.47}{4} \approx \frac{-39.47}{4} \approx -9.8675
+            \end{align*}
+            \item Since the width cannot be negative, we discard $w_2 \approx -9.8675$.
+        \end{enumerate}
+        
+        \textbf{Answer:} The width of the path is approximately 1.37 meters.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Challenge Problem 3}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem]
+        \footnotesize
+        A rectangular field has an area of 120 square meters. Its length is 8 meters more than its width. Find the dimensions of the field.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Challenge Problem 3 - Solution Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solution (Part 1)]
+        \footnotesize
+        A rectangular field has an area of 120 square meters. Its length is 8 meters more than its width. Find the dimensions of the field.
+        
+        \textbf{Solution:}
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item Let the width of the field be $x$ meters.
+            \item The length of the field is $x + 8$ meters.
+            \item The area of the field is given by Length $\times$ Width, so $x(x + 8) = 120$.
+            \item Expand and rearrange the equation into standard quadratic form:
+            \begin{align*}
+                x^2 + 8x &= 120 \\
+                x^2 + 8x - 120 &= 0
+            \end{align*}
+            \item Identify the coefficients for the quadratic formula: $a=1$, $b=8$, $c=-120$.
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Challenge Problem 3 - Solution Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solution (Part 2)]
+        \footnotesize
+        A rectangular field has an area of 120 square meters. Its length is 8 meters more than its width. Find the dimensions of the field.
+        
+        \textbf{Solution (Cont.):}
+        \begin{enumerate}
+            \setcounter{enumi}{5} % Continue numbering from previous part
+            \setlength{\itemsep}{0.5em}
+            \item Use the quadratic formula to solve for $x$:
+            \begin{align*}
+                x &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \\
+                x &= \frac{-8 \pm \sqrt{8^2 - 4(1)(-120)}}{2(1)} \\
+                x &= \frac{-8 \pm \sqrt{64 + 480}}{2} \\
+                x &= \frac{-8 \pm \sqrt{544}}{2}
+            \end{align*}
+            \item Simplify the square root: $\sqrt{544} = \sqrt{16 \times 34} = 4\sqrt{34}$.
+            \begin{align*}
+                x &= \frac{-8 \pm 4\sqrt{34}}{2} \\
+                x &= -4 \pm 2\sqrt{34}
+            \end{align*}
+            \item Calculate the two possible values for $x$ (approximately):
+            \begin{itemize}
+                \item $x_1 = -4 + 2\sqrt{34} \approx -4 + 2(5.83) \approx -4 + 11.66 \approx 7.66$
+                \item $x_2 = -4 - 2\sqrt{34} \approx -4 - 2(5.83) \approx -4 - 11.66 \approx -15.66$
+            \end{itemize}
+            \item Since the width cannot be negative, we discard $x_2$.
+        \end{enumerate}
+        
+        \textbf{Answer:} The width of the field is approximately 7.66 meters, and the length is approximately $7.66 + 8 = 15.66$ meters.
+    \end{tcolorbox}
+\end{frame}
+
+\end{document} 

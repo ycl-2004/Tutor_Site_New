@@ -1,0 +1,555 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xcolor}
+
+% Custom colors
+\definecolor{primary}{RGB}{41, 128, 185}
+\definecolor{secondary}{RGB}{52, 152, 219}
+\definecolor{accent}{RGB}{231, 76, 60}
+\definecolor{lightgray}{RGB}{236, 240, 241}
+
+% Theme customization
+\usetheme{Madrid}
+\usecolortheme{whale}
+\setbeamercolor{structure}{fg=primary}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=black}
+
+% Title page info
+\title{Pre-Calculus 11}
+\subtitle{Factoring Trinomials}
+\author{Created by Yi-Chen Lin}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% I) FACTORING TRINOMIALS Introduction
+\begin{frame}{Factoring Trinomials}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Introduction]
+        \footnotesize
+        \begin{itemize}
+            \item In this section, you will be factoring trinomials where the coefficient of $x^2$ is not equal to one.
+            \item \textbf{Examples:}
+            \begin{itemize}
+                \item $5x^2 + 17x + 6$ \hspace{1em} (Can't factor out common factors like the previous section.)
+                \item $7x^2 - 18x + 8$
+            \end{itemize}
+            \item There are 3 different methods for factoring Trinomials:
+            \begin{itemize}
+                \item \textcolor{accent}{\textbf{B.U.M. Method}}
+                \begin{itemize}
+                    \item Easiest, straight-forward, Long
+                \end{itemize}
+                \item \textcolor{accent}{\textbf{Criss-Cross Method}}
+                \begin{itemize}
+                    \item Fast, Quick with Numbers, Hard
+                \end{itemize}
+                \item \textcolor{accent}{\textbf{Grouping Method}}
+                \begin{itemize}
+                    \item Textbook, standard method
+                \end{itemize}
+            \end{itemize}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+% II) BUM METHOD
+\begin{frame}{BUM Method - Example}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Example: Factor using BUM Method]
+        \footnotesize
+        Factor the following Trinomial using the BUM Method:
+        
+        $7x^2 - 18x + 8$
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{BUM Method - Example Solution}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solution]
+        \footnotesize
+        Factor $7x^2 - 18x + 8$ using the BUM Method:
+        
+        \begin{align*}
+            & \text{Bring the First term to the Last term and Multiply them} \\
+            &= x^2 - 18x + 56 \\
+            & \text{Factor, two numbers that multiply to 56 and adds to -18} \\
+            &= (x - 14)(x - 4) \\
+            & \text{Bring the First term back in front of each x} \\
+            &= (7x - 14)(7x - 4) \\
+            & \text{Factor/Bum out any common factors in each binomial:} \\
+            &= \left(\frac{7x - 14}{7}\right)\left(\frac{7x - 4}{1}\right) \\
+            &= (x - 2)(7x - 4)
+        \end{align*}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{BUM Method - Practice}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Practice: Factor using BUM Method]
+        \footnotesize
+        Factor each of the following Trinomials using the BUM Method:
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item $15x^2 + 22x + 8$
+            \item $14x^2 - 27x + 9$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{BUM Method - Solutions Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+        \footnotesize
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item $15x^2 + 22x + 8$
+            \quad \textbf{Solution:}
+            \begin{align*}
+                & 15x^2 + 22x + 8 \\
+                &= x^2 + 22x + 120 \\
+                &= (x + 12)(x + 10) \\
+                &= (15x + 12)(15x + 10) \\
+                &= \left(\frac{15x + 12}{3}\right)\left(\frac{15x + 10}{5}\right) \\
+                &= (5x + 4)(3x + 2)
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{BUM Method - Solutions Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+        \footnotesize
+        \begin{enumerate}
+            \setcounter{enumi}{1}
+            \setlength{\itemsep}{0.5em}
+            \item $14x^2 - 27x + 9$
+            \quad \textbf{Solution:}
+            \begin{align*}
+                & 14x^2 - 27x + 9 \\
+                &= x^2 - 27x + 126 \\
+                &= (x - 21)(x - 6) \\
+                &= (14x - 21)(14x - 6) \\
+                &= \left(\frac{14x - 21}{7}\right)\left(\frac{14x - 6}{2}\right) \\
+                &= (2x - 3)(7x - 3)
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% III) GROUPING METHOD
+\begin{frame}{Grouping Method - Example}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Example: Factor using Grouping Method]
+        \footnotesize
+        Factor the following Trinomial using the Grouping Method:
+        
+        $9x^2 + 15x + 4$
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Grouping Method - Example Solution (Part 1)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solution]
+        \footnotesize
+        Factor $9x^2 + 15x + 4$ using the Grouping Method:
+        
+        \begin{align*}
+            & \text{Multiply the First \& Last Numbers} \\
+            & \text{Find 2 numbers that MULTIPLY to 36 and ADDS to 15} \\
+            & 3 \times 12 \rightarrow \text{Adds to 15} \\
+            &= 9x^2 + 3x + 12x + 4 \\
+            & \text{Split the 15x into the two factors}
+        \end{align*}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Grouping Method - Example Solution (Part 2)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solution (Cont.)]
+        \footnotesize
+        Factor $9x^2 + 15x + 4$ using the Grouping Method (Cont.):
+        
+        \begin{align*}
+            &= (9x^2 + 3x) + (12x + 4) \\
+            & \text{Group the First 2 and Last 2 terms} \\
+            &= 3x(3x + 1) + 4(3x + 1) \\
+            & \text{Factor out any common factors from each bracket} \\
+            &= (3x + 1)(3x + 4) \\
+            & \text{The Binomial is a GCF. Factor it out}
+        \end{align*}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Grouping Method - Practice}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Practice: Factor using Grouping Method]
+        \footnotesize
+        Factor each of the following using the Grouping Method:
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item $12x^2 + 13x - 14$
+            \item $9x^2 + 21x - 8$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Grouping Method - Solutions Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+        \footnotesize
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item $12x^2 + 13x - 14$
+            \quad \textbf{Solution:}
+            \begin{align*}
+                & 12x^2 + 13x - 14 \\
+                & \text{Multiply } 12 \times -14 = -168 \\
+                & \text{Find two numbers that multiply to -168 and add to 13: } 21, -8 \\
+                &= 12x^2 + 21x - 8x - 14 \\
+                &= (12x^2 + 21x) + (-8x - 14) \\
+                &= 3x(4x + 7) - 2(4x + 7) \\
+                &= (4x + 7)(3x - 2)
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Grouping Method - Solutions Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+        \footnotesize
+        \begin{enumerate}
+            \setcounter{enumi}{1}
+            \setlength{\itemsep}{0.5em}
+            \item $9x^2 + 21x - 8$
+            \quad \textbf{Solution:}
+            \begin{align*}
+                & 9x^2 + 21x - 8 \\
+                & \text{Multiply } 9 \times -8 = -72 \\
+                & \text{Find two numbers that multiply to -72 and add to 21: } 24, -3 \\
+                &= 9x^2 + 24x - 3x - 8 \\
+                &= (9x^2 + 24x) + (-3x - 8) \\
+                &= 3x(3x + 8) - 1(3x + 8) \\
+                &= (3x + 8)(3x - 1)
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% IV) CRISS-CROSS METHOD
+\begin{frame}{Criss-Cross Method - Example}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Example: Factor using Criss-Cross Method]
+        \footnotesize
+        Factor the following using the Criss-Cross Method:
+        
+        $24x^2 + 2x - 15$
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Criss-Cross Method - Example Solution (Part 1)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solution]
+        \footnotesize
+        Factor $24x^2 + 2x - 15$ using the Criss-Cross Method:
+        
+        \begin{columns}
+            \begin{column}{0.5\textwidth}
+                \begin{align*}
+                    & \text{Pick 2 numbers that multiply to the FIRST term ($24x^2$):} \\
+                    & 4x \quad \text{and} \quad 6x \\
+                    & \text{Pick 2 numbers that multiply to the LAST term ($-15$):} \\
+                    & -3 \quad \text{and} \quad 5
+                \end{align*}
+            \end{column}
+            \begin{column}{0.5\textwidth}
+                \begin{align*}
+                    & \text{Multiply sides ways or Criss-Cross:} \\
+                    & 4x \quad \xrightarrow{} \quad -3 \quad = -12x \\
+                    & 6x \quad \xrightarrow{} \quad 5 \quad = 30x \\
+                    & \hspace{2.5em} $18x$ \quad \text{(Sum must equal the middle term)}
+                \end{align*}
+            \end{column}
+        \end{columns}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Criss-Cross Method - Example Solution (Part 2)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solution (Cont.)]
+        \footnotesize
+        The sum $18x$ does not equal the middle term $2x$. Let\'s try different factors:
+        
+        \begin{columns}
+            \begin{column}{0.5\textwidth}
+                \begin{align*}
+                    & \text{Pick 2 numbers that multiply to the FIRST term ($24x^2$):} \\
+                    & 4x \quad \text{and} \quad 6x \\
+                    & \text{Pick 2 numbers that multiply to the LAST term ($-15$):} \\
+                    & 5 \quad \text{and} \quad -3
+                \end{align*}
+            \end{column}
+            \begin{column}{0.5\textwidth}
+                \begin{align*}
+                    & \text{Multiply sides ways or Criss-Cross:} \\
+                    & 4x \quad \xrightarrow{} \quad 5 \quad = 20x \\
+                    & 6x \quad \xrightarrow{} \quad -3 \quad = -18x \\
+                    & \hspace{2.5em} $2x$ \quad \text{(Sum must equal the middle term)}
+                \end{align*}
+            \end{column}
+        \end{columns}
+        
+        \begin{align*}
+            & (4x + 5)(6x - 3) \\
+            & \text{Numbers on the left go in front of each bracket}
+        \end{align*}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Criss-Cross Method - Practice}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Practice: Factor using Criss-Cross Method]
+        \footnotesize
+        Factor the following using the Criss-Cross Method:
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item $8x^2 - 26x + 15$
+            \item $6x^2 - 17x + 5$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Criss-Cross Method - Solutions Part 1 (Cont.)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+        \footnotesize
+        \begin{enumerate}
+            \setcounter{enumi}{0}
+            \setlength{\itemsep}{0.5em}
+            \item $8x^2 - 26x + 15$
+            \quad \textbf{Solution:}
+            \begin{columns}
+                \begin{column}{0.5\textwidth}
+                    \begin{align*}
+                        & 2x \quad \xrightarrow{} \quad -5 \quad = -10x \\
+                        & 4x \quad \xrightarrow{} \quad -3 \quad = -12x \\
+                        & \hspace{2.5em} $-22x$ \quad \text{(Incorrect sum)}
+                    \end{align*}
+                \end{column}
+                \begin{column}{0.5\textwidth}
+                    Therefore, the factors are $(2x - 5)(4x - 3)$.
+                \end{column}
+            \end{columns}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Criss-Cross Method - Solutions Part 2 (Cont.)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+        \footnotesize
+        \begin{enumerate}
+            \setcounter{enumi}{0}
+            \setlength{\itemsep}{0.5em}
+            \item $8x^2 - 26x + 15$
+            \quad \textbf{Solution:}
+            \begin{columns}
+                \begin{column}{0.5\textwidth}
+                    \begin{align*}
+                        & 2x \quad \xrightarrow{} \quad -3 \quad = -6x \\
+                        & 4x \quad \xrightarrow{} \quad -5 \quad = -20x \\
+                        & \hspace{2.5em} $-26x$ \quad \text{(Correct sum)}
+                    \end{align*}
+                \end{column}
+                \begin{column}{0.5\textwidth}
+                    Therefore, the factors are $(2x - 5)(4x - 3)$.
+                \end{column}
+            \end{columns}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% Mixed Practice
+\begin{frame}{Mixed Practice: Factor Trinomials}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Factor Each of the Following Trinomials]
+        \footnotesize
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item $20x^3 - 80x^2 + 35x$
+            \item $6x^4 - 17x^2y - 10y^2$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Mixed Practice: Solutions Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+        \footnotesize
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item $20x^3 - 80x^2 + 35x$
+            \quad \textbf{Solution:}
+            \begin{align*}
+                & 20x^3 - 80x^2 + 35x \\
+                &= 5x(4x^2 - 16x + 7) \\
+                & \text{Factor } 4x^2 - 16x + 7 \text{ (BUM Method: } 4 \times 7 = 28; \text{ add to -16: -14, -2)} \\
+                &= 5x(4x - 14)(4x - 2) \\
+                &= 5x\left(\frac{4x - 14}{2}\right)\left(\frac{4x - 2}{2}\right) \\
+                &= 5x(2x - 7)(2x - 1)
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Mixed Practice: Solutions Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+        \footnotesize
+        \begin{enumerate}
+            \setcounter{enumi}{1}
+            \setlength{\itemsep}{0.5em}
+            \item $6x^4 - 17x^2y - 10y^2$
+            \quad \textbf{Solution:}
+            \begin{align*}
+                & 6x^4 - 17x^2y - 10y^2 \\
+                & \text{Treat } x^2 \text{ as } A \text{ and } y \text{ as } B: 6A^2 - 17AB - 10B^2 \\
+                & \text{BUM Method: } 6 \times -10 = -60; \text{ add to -17: -20, 3} \\
+                &= (6A - 20B)(6A + 3B) \\
+                &= \left(\frac{6A - 20B}{2}\right)\left(\frac{6A + 3B}{3}\right) \\
+                &= (3A - 10B)(2A + B) \\
+                & \text{Substitute back } A = x^2 \text{ and } B = y \\
+                &= (3x^2 - 10y)(2x^2 + y)
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Mixed Practice: Factor Each of the Following}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Factor Each of the Following]
+        \footnotesize
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item $14x^2 - 23x + 3$
+            \item $18x^2 + 27x + 10$
+            \item $30x^2 + x - 1$
+            \item $12x^2 + 29xy + 14y^2$
+            \item $5x^2 + 11xy + 6y^2$
+            \item $4x^4 - 25x^2y^2 + 36y^4$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Mixed Practice: Solutions Part 3}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+        \footnotesize
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item $14x^2 - 23x + 3$
+            \quad \textbf{Solution:} $(7x - 1)(2x - 3)$
+            \item $18x^2 + 27x + 10$
+            \quad \textbf{Solution:} $(3x + 2)(6x + 5)$
+            \item $30x^2 + x - 1$
+            \quad \textbf{Solution:} $(5x + 1)(6x - 1)$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Mixed Practice: Solutions Part 4}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+        \footnotesize
+        \begin{enumerate}
+            \setcounter{enumi}{3}
+            \setlength{\itemsep}{0.5em}
+            \item $12x^2 + 29xy + 14y^2$
+            \quad \textbf{Solution:} $(3x + 2y)(4x + 7y)$
+            \item $5x^2 + 11xy + 6y^2$
+            \quad \textbf{Solution:} $(x + y)(5x + 6y)$
+            \item $4x^4 - 25x^2y^2 + 36y^4$
+            \quad \textbf{Solution:} $(x-2y)(x+2y)(2x-3y)(2x+3y)$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Application Problem: Area and Perimeter}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Area and Perimeter Application]
+        \footnotesize
+        Ex: Given that the area of a rectangle is $12x^2 + 23x + 10$, then which of the following expressions is the perimeter?
+        \begin{enumerate}
+            \item $14x + 12$
+            \item $14x + 14$
+            \item $7x + 7$
+            \item $28x + 28$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Application Problem: Area and Perimeter - Solution}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solution]
+        \footnotesize
+        Ex: Given that the area of a rectangle is $12x^2 + 23x + 10$, then which of the following expressions is the perimeter?
+        
+        \textbf{Solution:}
+        \begin{align*}
+            & \text{Factor the area: } 12x^2 + 23x + 10 \\
+            & \text{Multiply } 12 \times 10 = 120 \\
+            & \text{Find two numbers that multiply to 120 and add to 23: } 8, 15 \\
+            &= (12x + 8)(12x + 15) \\
+            &= \left(\frac{12x + 8}{4}\right)\left(\frac{12x + 15}{3}\right) \\
+            &= (3x + 2)(4x + 5)
+        \end{align*}
+        So, Length = $4x + 5$ and Width = $3x + 2$.
+        
+        \begin{align*}
+            \text{Perimeter} &= 2(\text{Length} + \text{Width}) \\
+            &= 2((4x + 5) + (3x + 2)) \\
+            &= 2(4x + 5 + 3x + 2) \\
+            &= 2(7x + 7) \\
+            &= 14x + 14
+        \end{align*}
+        The correct option is \textbf{b) $14x + 14$}.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Application Problem: Integral Values of k}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Integral Values of k]
+        \footnotesize
+        Ex: For which integral values of $k$ can $6x^2 + kx + 1$ be factored?
+        \begin{enumerate}
+            \item $5, 7 only$
+            \item $\pm5, \pm7 only$
+            \item $-5, -7 only$
+            \item all integers between -7 and 5, inclusive
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Application Problem: Integral Values of k - Solution}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solution]
+        \footnotesize
+        Ex: For which integral values of $k$ can $6x^2 + kx + 1$ be factored?
+        
+        \textbf{Solution:}
+        We need to find combinations of factors for $6x^2$ and $1$ that produce integral values for $k$.
+        \begin{itemize}
+            \item Factors of $6x^2$: $(x, 6x), (2x, 3x)$
+            \item Factors of $1$: $(1, 1), (-1, -1)$
+        \end{itemize}
+        
+        Possible cross products for $k$ (middle term):
+        \begin{itemize}
+            \item $(x + 1)(6x + 1) \rightarrow 1x + 6x = 7x \rightarrow k = 7$
+            \item $(x - 1)(6x - 1) \rightarrow -1x - 6x = -7x \rightarrow k = -7$
+            \item $(2x + 1)(3x + 1) \rightarrow 2x + 3x = 5x \rightarrow k = 5$
+            \item $(2x - 1)(3x - 1) \rightarrow -2x - 3x = -5x \rightarrow k = -5$
+        \end{itemize}
+        The possible integral values for $k$ are $\pm5, \pm7$.
+        The correct option is \textbf{b) $\pm5, \pm7 only$}.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Summary}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Concepts]
+        \footnotesize
+        \begin{itemize}
+            \item Understanding Trinomial Factoring when $a \neq 1$
+            \item B.U.M. Method for factoring trinomials
+            \item Grouping Method for factoring trinomials
+            \item Criss-Cross Method for factoring trinomials
+            \item Mixed practice involving various factoring scenarios
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\end{document} 

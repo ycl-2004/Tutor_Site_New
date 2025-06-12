@@ -1,0 +1,140 @@
+/* SPACING SYSTEM (px)
+  2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+  FONT SIZE SYSTEM (px)
+  10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98  */
+
+/* ------------------------------------------- */
+/* Tutor Info */
+
+.tutor {
+  background-color: white;
+  min-height: calc(100vh - 6.2rem); /* Ensure it takes up full page height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+}
+
+.tutor-container {
+  max-width: 120rem;
+  background-color: white;
+  margin: 0 auto;
+  padding-bottom: 3.2rem; /* Reduced padding */
+  padding-top: 3.2rem; /* Added padding top to balance */
+}
+
+.tutor-title {
+  font-size: 3.8rem; /* Slightly reduced font size */
+  font-weight: 700;
+  display: block;
+  text-align: center;
+
+  color: #2a2e33;
+}
+
+.tutor-title:first-child {
+  padding-top: 2.4rem; /* Reduced padding */
+  margin-bottom: 1rem; /* Reduced margin */
+}
+
+.tutor-main {
+  margin-top: 4rem; /* Reduced margin */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem; /* Reduced gap */
+  padding: 0 2.4em; /* Reduced padding */
+}
+
+.tutor-main-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.6rem; /* Reduced margin */
+  gap: 1.2rem; /* Reduced gap */
+  background: #fff;
+  border-radius: 1.2rem; /* Reduced border-radius */
+  box-shadow: 0 4px 16px rgba(255, 179, 71, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06); /* Adjusted shadow */
+  border: 2px solid transparent;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  background-image: linear-gradient(white, white),
+    linear-gradient(90deg, #ffe29a 0%, #ffb347 100%);
+  transition: box-shadow 0.25s, transform 0.18s, border-color 0.25s;
+  padding: 1.6rem; /* Reduced padding */
+  cursor: pointer;
+  animation: fadeInCard 0.7s cubic-bezier(0.4, 2, 0.6, 1) both;
+}
+.tutor-main-block:hover {
+  box-shadow: 0 6px 24px rgba(255, 179, 71, 0.18),
+    0 1.5px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px) scale(1.02);
+  border-color: #ffb347;
+}
+.tutor-main-block:hover .tutor-main-icon {
+  color: #ff7b54;
+  filter: drop-shadow(0 1px 6px #ffb34780);
+  transition: color 0.2s, filter 0.2s;
+}
+
+.tutor-main-title {
+  font-size: 2rem; /* Reduced font size */
+  font-weight: 800;
+  color: #2a2e33;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+.tutor-main-icon {
+  color: #ff7b54;
+  width: 2.8rem; /* Reduced icon size */
+  height: 2.8rem; /* Reduced icon size */
+  transition: color 0.2s, filter 0.2s;
+}
+
+@keyframes fadeInCard {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.tutor-main-text {
+  font-size: 1.5rem; /* Reduced font size */
+  margin-left: 0;
+  line-height: 1.5;
+  padding: 1.8rem 2rem; /* Reduced padding */
+  margin-bottom: 2.4rem; /* Reduced margin */
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(255, 179, 71, 0.08), 0 1px 4px rgba(0, 0, 0, 0.05); /* Adjusted shadow */
+  border-radius: 1rem; /* Reduced border-radius */
+  border: 1.5px solid #ffe29a;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.tutor-main-text:hover {
+  box-shadow: 0 4px 16px rgba(255, 179, 71, 0.15),
+    0 1.5px 6px rgba(0, 0, 0, 0.08);
+  border-color: #ffb347;
+}
+
+.tutor-img-set {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-top: 1.6rem; /* Reduced padding */
+
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.tutor-img-textbook {
+  width: 45%; /* Slightly reduced image size */
+  height: 35%; /* Slightly reduced image size */
+}
+
+.tutor-img-class {
+  width: 55%; /* Slightly reduced image size */
+  height: 45%; /* Slightly reduced image size */
+}

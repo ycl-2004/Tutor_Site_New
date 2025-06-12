@@ -1,0 +1,730 @@
+\documentclass[aspectratio=169]{beamer}
+
+% Theme and colors
+\usetheme{Madrid}
+\usecolortheme{whale}
+% Custom colors
+\definecolor{primary}{RGB}{41, 128, 185}
+\definecolor{secondary}{RGB}{52, 152, 219}
+\definecolor{accent}{RGB}{231, 76, 60}
+\definecolor{lightgray}{RGB}{236, 240, 241}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathpazo} % Palatino font
+\usepackage{multirow}
+\usepackage{tcolorbox}
+\usepackage{tikz} % For diagrams
+\usepackage{caption} % For figure captions
+\usepackage{adjustbox} % For adjusting box
+\usepackage{float} % For better float control
+
+% Beamer specific configurations
+\setbeamercolor{structure}{fg=primary}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=black}
+
+% Information for the title page
+\title{Lesson 4: The Quadratic Formula}
+\author{Yi-Chen Lin}
+\date{June 10, 2025}
+
+\begin{document}
+
+% Title page
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% Table of Contents
+\begin{frame}{Table of Contents}
+    \tableofcontents
+\end{frame}
+
+% Section I: Quadratic Functions in Standard Form
+\section{Quadratic Functions in Standard Form}
+
+\begin{frame}{I) Quadratic Functions in Standard Form: (A, B, C)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Concepts]
+        \footnotesize
+        \begin{itemize}
+            \item Most quadratic functions are written in \textbf{standard form}:
+                \[ y = ax^2 + bx + c \]
+            \item We know it's quadratic because the largest exponent of "$x$" is 2.
+            \item The letters "$a$", "$b$", and "$c$" are \textbf{coefficients} (real numbers).
+            \item The constant "$c$" is the \textbf{Y-intercept}.
+                \begin{itemize}
+                    \item If "$x$" is equal to zero, then $y = c$.
+                \end{itemize}
+            \item The coefficient "$a$" indicates which way the graph opens:
+                \begin{itemize}
+                    \item If $a > 0$, the parabola opens \textbf{up}.
+                    \item If $a < 0$, the parabola opens \textbf{down}.
+                \end{itemize}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+% Practice Problems for Standard Form
+\subsection{Practice: Standard Form Properties}
+
+\begin{frame}{Practice: Find Coefficients and Properties (Problem 1)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem 1]
+        \footnotesize
+        For the given quadratic function, identify the coefficients "$a$", "$b$", "$c$", the Y-intercept, and state which way the graph opens:\\
+        \[ y = 2x^2 - 5x + 7 \]
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Find Coefficients and Properties (Solution 1)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 1]
+        \footnotesize
+        For $y = 2x^2 - 5x + 7$:
+        \begin{itemize}
+            \item $a = 2$
+            \item $b = -5$
+            \item $c = 7$
+            \item \textbf{Y-intercept:} $(0, 7)$ (Since $x=0 \implies y=7$)
+            \item \textbf{Opens:} Up (Since $a = 2 > 0$)
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Find Coefficients and Properties (Problem 2)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem 2]
+        \footnotesize
+        For the given quadratic function, identify the coefficients "$a$", "$b$", "$c$", the Y-intercept, and state which way the graph opens:\\
+        \[ y = -3x^2 + x - 9 \]
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Find Coefficients and Properties (Solution 2)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 2]
+        \footnotesize
+        For $y = -3x^2 + x - 9$:
+        \begin{itemize}
+            \item $a = -3$
+            \item $b = 1$
+            \item $c = -9$
+            \item \textbf{Y-intercept:} $(0, -9)$ (Since $x=0 \implies y=-9$)
+            \item \textbf{Opens:} Down (Since $a = -3 < 0$)
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Find Coefficients and Properties (Problem 3)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem 3]
+        \footnotesize
+        For the given quadratic function, identify the coefficients "$a$", "$b$", "$c$", the Y-intercept, and state which way the graph opens:\\
+        \[ y = 5(x-2)^2 + 1 \]
+        \textit{(Hint: Expand and simplify to standard form first.)}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Find Coefficients and Properties (Solution 3)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 3]
+        \footnotesize
+        First, expand and simplify $y = 5(x-2)^2 + 1$:
+        \begin{align*}
+            y &= 5(x^2 - 4x + 4) + 1 \\
+            y &= 5x^2 - 20x + 20 + 1 \\
+            y &= 5x^2 - 20x + 21
+        \end{align*}
+        Now, for $y = 5x^2 - 20x + 21$:
+        \begin{itemize}
+            \item $a = 5$
+            \item $b = -20$
+            \item $c = 21$
+            \item \textbf{Y-intercept:} $(0, 21)$
+            \item \textbf{Opens:} Up (Since $a = 5 > 0$)
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+
+% Section II: Quadratic Formula
+\section{The Quadratic Formula}
+
+\begin{frame}{II) The Quadratic Formula}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solving Quadratic Equations]
+        \footnotesize
+        \begin{itemize}
+            \item When solving a quadratic equation in standard form ($ax^2 + bx + c = 0$), we can use the Quadratic Formula to solve for the "$x$" variable:
+                \[ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]
+            \item The letters "$a$", "$b$", and "$c$" are the coefficients from the standard form.
+            \item \textbf{Important Conditions:}
+                \begin{itemize}
+                    \item $a \neq 0$ (Cannot divide by zero!)
+                    \item $b^2 - 4ac \ge 0$ (Cannot square root a negative number in real numbers)
+                \end{itemize}
+            \item The Quadratic Formula can be used to find the "roots" (x-intercepts) without a graphing calculator.
+            \item It is particularly useful for equations that \textbf{cannot be factored}.
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Conditions for Using the Quadratic Formula}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Rules]
+        \footnotesize
+        \begin{itemize}
+            \item \textbf{One side of the equation must be zero!} (Move all terms to one side).
+                \begin{itemize}
+                    \item Example: If $3x^2 + 7 = 2x$, rearrange to $3x^2 - 2x + 7 = 0$.
+                \end{itemize}
+            \item \textbf{Equation must be a Quadratic Function and in "Standard Form":} $ax^2 + bx + c = 0$.
+            \item \textbf{Discriminant Condition:} If $(b^2 - 4ac)$ is negative, then you will have "NO Real Solutions"! (No real answer for $x$).
+                \begin{itemize}
+                    \item Example: $x^2 + x + 1 = 0$ has $b^2 - 4ac = 1^2 - 4(1)(1) = 1 - 4 = -3 < 0$. So, no real solutions.
+                \end{itemize}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\subsection{Solving with the Quadratic Formula}
+
+\begin{frame}{Ex: Solve for "$x$" (Problem 1)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem 1]
+        \footnotesize
+        Solve for "$x$":
+        \[ x^2 + 3x - 10 = 0 \]
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Ex: Solve for "$x$" (Solution 1) - Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 1: Identify Coefficients]
+        \footnotesize
+        For $x^2 + 3x - 10 = 0$:
+        \begin{itemize}
+            \item First, identify coefficients: $a=1$, $b=3$, $c=-10$.
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Ex: Solve for "$x$" (Solution 1) - Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 1: Plug into Formula]
+        \footnotesize
+        Plug coefficients into the formula:
+        \begin{align*}
+            x &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \\
+            x &= \frac{-(3) \pm \sqrt{(3)^2 - 4(1)(-10)}}{2(1)} \\
+            x &= \frac{-3 \pm \sqrt{9 + 40}}{2} \\
+            x &= \frac{-3 \pm \sqrt{49}}{2} \\
+            x &= \frac{-3 \pm 7}{2}
+        \end{align*}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Ex: Solve for "$x$" (Solution 1) - Part 3}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 1: Final Answers]
+        \footnotesize
+        You get two answers:
+        \begin{align*}
+            x_1 &= \frac{-3 + 7}{2} = \frac{4}{2} = 2 \\
+            x_2 &= \frac{-3 - 7}{2} = \frac{-10}{2} = -5
+        \end{align*}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Ex: Solve for "$x$" to 2 decimal places (Problem 2)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem 2]
+        \footnotesize
+        Solve for "$x$" to 2 decimal places:
+        \[ 2x^2 - 6x - 5 = 0 \]
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Ex: Solve for "$x$" to 2 decimal places (Solution 2) - Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 2: Identify Coefficients]
+        \footnotesize
+        For $2x^2 - 6x - 5 = 0$:
+        \begin{itemize}
+            \item First, identify coefficients: $a=2$, $b=-6$, $c=-5$.
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Ex: Solve for "$x$" to 2 decimal places (Solution 2) - Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 2: Plug into Formula]
+        \footnotesize
+        Plug coefficients into the formula:
+        \begin{align*}
+            x &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \\
+            x &= \frac{-(-6) \pm \sqrt{(-6)^2 - 4(2)(-5)}}{2(2)} \\
+            x &= \frac{6 \pm \sqrt{36 + 40}}{4} \\
+            x &= \frac{6 \pm \sqrt{76}}{4}
+        \end{align*}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Ex: Solve for "$x$" to 2 decimal places (Solution 2) - Part 3}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 2: Final Answers]
+        \footnotesize
+        Continue solving for $x$:
+        \begin{align*}
+            x &= \frac{6 \pm \sqrt{76}}{4} \\
+            x &= \frac{6 \pm 8.7178}{4} \quad \text{(approx.)}
+        \end{align*}
+        You get two answers:
+        \begin{align*}
+            x_1 &= \frac{6 + 8.7178}{4} = \frac{14.7178}{4} \approx 3.68 \\
+            x_2 &= \frac{6 - 8.7178}{4} = \frac{-2.7178}{4} \approx -0.68
+        \end{align*}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Ex: Solve for "$x$" (Problem 3 - No Real Solutions)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem 3]
+        \footnotesize
+        Solve for "$x$":
+        \[ x^2 - 4x + 7 = 0 \]
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Ex: Solve for "$x$" (Solution 3 - No Real Solutions)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 3]
+        \footnotesize
+        For $x^2 - 4x + 7 = 0$:
+        \begin{itemize}
+            \item First, identify coefficients: $a=1$, $b=-4$, $c=7$.
+            \item Plug coefficients into the formula:
+                \begin{align*}
+                    x &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \\
+                    x &= \frac{-(-4) \pm \sqrt{(-4)^2 - 4(1)(7)}}{2(1)} \\
+                    x &= \frac{4 \pm \sqrt{16 - 28}}{2} \\
+                    x &= \frac{4 \pm \sqrt{-12}}{2}
+                \end{align*}
+            \item Since we are taking the square root of a negative number ($-12$), there are \textbf{No Real Solutions}.
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\subsection{Using the Quadratic Formula to Find the Vertex}
+
+\begin{frame}{Using the Quadratic Formula to Find the Vertex - Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Ideas]
+        \footnotesize
+        \begin{itemize}
+            \item The quadratic formula gives you the two x-intercepts (if they exist).
+            \item The vertex is exactly in the middle of the two x-intercepts.
+            \item We can find the x-coordinate of the vertex by averaging the two x-intercepts from the quadratic formula. Let's see how this works:
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Using the Quadratic Formula to Find the Vertex - Part 2 (Derivation)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Derivation of Vertex Formula]
+        \footnotesize
+        Given the two x-intercepts $x_1 = \frac{-b + \sqrt{b^2 - 4ac}}{2a}$ and $x_2 = \frac{-b - \sqrt{b^2 - 4ac}}{2a}$:
+        \begin{align*}
+            x_{\text{vertex}} &= \frac{x_1 + x_2}{2} \\
+            x_{\text{vertex}} &= \frac{\left(\frac{-b + \sqrt{b^2 - 4ac}}{2a}\right) + \left(\frac{-b - \sqrt{b^2 - 4ac}}{2a}\right)}{2}
+        \end{align*}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Using the Quadratic Formula to Find the Vertex - Part 3 (Derivation)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Derivation of Vertex Formula (Cont.)]
+        \footnotesize
+        Continuing the derivation:
+        \begin{align*}
+            x_{\text{vertex}} &= \frac{\frac{-b + \sqrt{b^2 - 4ac} - b - \sqrt{b^2 - 4ac}}{2a}}{2} \\
+            x_{\text{vertex}} &= \frac{\frac{-2b}{2a}}{2} \\
+            x_{\text{vertex}} &= \frac{-b}{2a}
+        \end{align*}
+        So, the x-coordinate of the vertex is given by:
+        \[ x_{\text{vertex}} = \frac{-b}{2a} \]
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Using the Quadratic Formula to Find the Vertex - Part 4}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Finding the Y-coordinate]
+        \footnotesize
+        \begin{itemize}
+            \item To find the y-coordinate of the vertex, plug this $x_{\text{vertex}}$ value ($\frac{-b}{2a}$) back into the original quadratic equation $y = ax^2 + bx + c$.
+            \item This formula $x_{\text{vertex}} = \frac{-b}{2a}$ is also known as the equation of the \textbf{Axis of Symmetry}.
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Ex: Find Axis of Symmetry and Vertex (Problem 1)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem 1]
+        \footnotesize
+        Given the equation below, find the equation of the Axis of Symmetry (AOS) and the coordinates of the Vertex:\\
+        \[ y = x^2 - 8x + 15 \]
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Ex: Find Axis of Symmetry and Vertex (Solution 1) - Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 1: Identify Coefficients]
+        \footnotesize
+        For $y = x^2 - 8x + 15$:
+        \begin{itemize}
+            \item Identify coefficients: $a=1$, $b=-8$, $c=15$.
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Ex: Find Axis of Symmetry and Vertex (Solution 1) - Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 1: Axis of Symmetry (AOS)]
+        \footnotesize
+        \textbf{Axis of Symmetry (AOS):}
+        \begin{align*}
+            x &= \frac{-b}{2a} \\
+            x &= \frac{-(-8)}{2(1)} \\
+            x &= \frac{8}{2} \\
+            x &= 4
+        \end{align*}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Ex: Find Axis of Symmetry and Vertex (Solution 1) - Part 3}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 1: Vertex Coordinates]
+        \footnotesize
+        \textbf{Vertex:}
+        \begin{itemize}
+            \item Plug $x=4$ into the original equation to find the y-coordinate:
+                \begin{align*}
+                    y &= (4)^2 - 8(4) + 15 \\
+                    y &= 16 - 32 + 15 \\
+                    y &= -1
+                \end{align*}
+            \item The coordinates of the Vertex are $(4, -1)$.
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Ex: Find Axis of Symmetry and Vertex (Problem 2)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem 2]
+        \footnotesize
+        Given the equation below, find the equation of the Axis of Symmetry (AOS) and the coordinates of the Vertex:\\
+        \[ y = -2x^2 - 12x - 10 \]
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Ex: Find Axis of Symmetry and Vertex (Solution 2)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 2]
+        \footnotesize
+        For $y = -2x^2 - 12x - 10$:
+        \begin{itemize}
+            \item Identify coefficients: $a=-2$, $b=-12$, $c=-10$.
+            \item \textbf{Axis of Symmetry (AOS):}
+                \begin{align*}
+                    x &= \frac{-b}{2a} \\
+                    x &= \frac{-(-12)}{2(-2)} \\
+                    x &= \frac{12}{-4} \\
+                    x &= -3
+                \end{align*}
+            \item \textbf{Vertex:}
+                \begin{itemize}
+                    \item Plug $x=-3$ into the original equation to find the y-coordinate:
+                        \begin{align*}
+                            y &= -2(-3)^2 - 12(-3) - 10 \\
+                            y &= -2(9) + 36 - 10 \\
+                            y &= -18 + 36 - 10 \\
+                            y &= 8
+                        \end{align*}
+                    \item The coordinates of the Vertex are $(-3, 8)$.
+                \end{itemize}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+% Section IV: Applications of the Quadratic Formula (Word Problems)
+\section{Applications of the Quadratic Formula}
+
+\begin{frame}{Word Problem: Ball Toss (Problem)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem]
+        \footnotesize
+        A ball is thrown upward from a 1.5-meter platform with an initial velocity of 14 meters per second. The height $h$ (in meters) of the ball after $t$ seconds is given by the formula:
+        \[ h(t) = -4.9t^2 + 14t + 1.5 \]
+        \begin{enumerate}
+            \item When does the ball reach its maximum height?
+            \item What is the maximum height that the ball reaches?
+            \item When does the ball hit the ground after it is thrown? (Round to 2 decimal places)
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Word Problem: Ball Toss (Solution Part 1A)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution Part 1A: Max Height Time]
+        \footnotesize
+        For $h(t) = -4.9t^2 + 14t + 1.5$, we have $a=-4.9$, $b=14$, $c=1.5$.
+        \begin{enumerate}
+            \item \textbf{When does the ball reach its maximum height?}
+            \item To find the time to max height, use $t = \frac{-b}{2a}$:
+                \begin{align*}
+                    t &= \frac{-(14)}{2(-4.9)} \\
+                    t &= \frac{-14}{-9.8} \\
+                    t &\approx 1.43 \text{ seconds}
+                \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Word Problem: Ball Toss (Solution Part 1B)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution Part 1B: Max Height Value]
+        \footnotesize
+        For $h(t) = -4.9t^2 + 14t + 1.5$, we have $a=-4.9$, $b=14$, $c=1.5$.
+        \begin{enumerate}
+            \setcounter{enumi}{1} % Continue numbering from previous part
+            \item \textbf{What is the maximum height that the ball reaches?}
+            \item Plug $t \approx 1.43$ seconds into the height formula:
+                \begin{align*}
+                    h(1.43) &= -4.9(1.43)^2 + 14(1.43) + 1.5 \\
+                    h(1.43) &= -4.9(2.0449) + 20.02 + 1.5 \\
+                    h(1.43) &= -10.02 + 20.02 + 1.5 \\
+                    h(1.43) &\approx 11.5 \text{ meters}
+                \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Word Problem: Ball Toss (Solution Part 2A.1)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution Part 2A.1: Set up Equation]
+        \footnotesize
+        For $h(t) = -4.9t^2 + 14t + 1.5$, we have $a=-4.9$, $b=14$, $c=1.5$.
+        \begin{enumerate}
+            \item \textbf{When does the ball hit the ground after it is thrown?}
+            \item When the ball hits the ground, the height $h(t) = 0$. So, we solve:
+                \[ 0 = -4.9t^2 + 14t + 1.5 \]
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Word Problem: Ball Toss (Solution Part 2A.2A)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 2A.2A: Apply Quadratic Formula]
+        \footnotesize
+        For $0 = -4.9t^2 + 14t + 1.5$, we have $a=-4.9$, $b=14$, $c=1.5$.
+        \begin{itemize}
+            \item Use the Quadratic Formula:
+                \begin{align*}
+                    t &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \\
+                    t &= \frac{-(14) \pm \sqrt{(14)^2 - 4(-4.9)(1.5)}}{2(-4.9)}
+                \end{align*}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Word Problem: Ball Toss (Solution Part 2A.2B.1A)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 2A.2B.1A: Simplify Square Root]
+        \footnotesize
+        For $0 = -4.9t^2 + 14t + 1.5$, we have $a=-4.9$, $b=14$, $c=1.5$.
+        \begin{itemize}
+            \item Continuing the simplification of the Quadratic Formula:
+                \begin{align*}
+                    t &= \frac{-14 \pm \sqrt{196 + 29.4}}{-9.8}
+                \end{align*}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Word Problem: Ball Toss (Solution Part 2A.2B.1B)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 2A.2B.1B: Intermediate Result]
+        \footnotesize
+        For $0 = -4.9t^2 + 14t + 1.5$, we have $a=-4.9$, $b=14$, $c=1.5$.
+        \begin{itemize}
+            \item Continuing the simplification:
+                \begin{align*}
+                    t &= \frac{-14 \pm \sqrt{225.4}}{-9.8}
+                \end{align*}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Word Problem: Ball Toss (Solution Part 2B.1)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution Part 2B.1: Approximate Value]
+        \footnotesize
+        For $h(t) = -4.9t^2 + 14t + 1.5$, we have $a=-4.9$, $b=14$, $c=1.5$.
+        \begin{itemize}
+            \item Calculating the approximate value:
+                \begin{align*}
+                    t &= \frac{-14 \pm \sqrt{225.4}}{-9.8} \\
+                    t &= \frac{-14 \pm 15.013}{-9.8} \quad \text{(approx.)}
+                \end{align*}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Word Problem: Ball Toss (Solution Part 2B.2)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution Part 2B.2: Final Answers and Conclusion]
+        \footnotesize
+        For $h(t) = -4.9t^2 + 14t + 1.5$, we have $a=-4.9$, $b=14$, $c=1.5$.
+        \begin{itemize}
+            \item Two possible values for $t$:
+                \begin{align*}
+                    t_1 &= \frac{-14 + 15.013}{-9.8} = \frac{1.013}{-9.8} \approx -0.10 \text{ seconds (extraneous)} \\
+                    t_2 &= \frac{-14 - 15.013}{-9.8} = \frac{-29.013}{-9.8} \approx 2.96 \text{ seconds}
+                \end{align*}
+            \item Since time cannot be negative, the ball hits the ground after approximately \textbf{2.96 seconds}.
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Word Problem: Rocket Launch (Problem)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem]
+        \footnotesize
+        A small rocket is launched from a height of 5 meters above the ground. Its height $h$ (in meters) above the ground $t$ seconds after launch is modeled by the equation:
+        \[ h(t) = -3t^2 + 18t + 5 \]
+        The rocket\'s tracking device is designed to activate when the rocket is at a height of 20 meters. After how many seconds should the tracking device activate on its way down? (Round to 2 decimal places)
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Word Problem: Rocket Launch (Solution Part 1)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution Part 1: Set up Equation and Identify Coefficients]
+        \footnotesize
+        We want to find $t$ when $h(t) = 20$. So, set the equation:
+        \begin{align*}
+            20 &= -3t^2 + 18t + 5 \\
+            0 &= -3t^2 + 18t + 5 - 20 \\
+            0 &= -3t^2 + 18t - 15
+        \end{align*}
+        For $0 = -3t^2 + 18t - 15$, we have $a=-3$, $b=18$, $c=-15$.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Word Problem: Rocket Launch (Solution Part 2A.1)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution Part 2A.1: Apply Quadratic Formula]
+        \footnotesize
+        For $0 = -3t^2 + 18t - 15$, we have $a=-3$, $b=18$, $c=-15$.
+        \begin{itemize}
+            \item Use the Quadratic Formula:
+                \begin{align*}
+                    t &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \\
+                    t &= \frac{-(18) \pm \sqrt{(18)^2 - 4(-3)(-15)}}{2(-3)}
+                \end{align*}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Word Problem: Rocket Launch (Solution Part 2A.2)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution Part 2A.2: Simplify Quadratic Formula]
+        \footnotesize
+        For $0 = -3t^2 + 18t - 15$, we have $a=-3$, $b=18$, $c=-15$.
+        \begin{itemize}
+            \item Continuing the simplification:
+                \begin{align*}
+                    t &= \frac{-18 \pm \sqrt{324 - 180}}{-6} \\
+                    t &= \frac{-18 \pm \sqrt{144}}{-6}
+                \end{align*}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Word Problem: Rocket Launch (Solution Part 2B.1)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution Part 2B.1: Calculate Values]
+        \footnotesize
+        For $0 = -3t^2 + 18t - 15$, we have $a=-3$, $b=18$, $c=-15$.
+        \begin{itemize}
+            \item Continuing the calculation:
+                \begin{align*}
+                    t &= \frac{-18 \pm 12}{-6}
+                \end{align*}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Word Problem: Rocket Launch (Solution Part 2B.2)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution Part 2B.2: Final Conclusion]
+        \footnotesize
+        For $0 = -3t^2 + 18t - 15$, we have $a=-3$, $b=18$, $c=-15$.
+        \begin{itemize}
+            \item Two possible values for $t$:
+                \begin{align*}
+                    t_1 &= \frac{-18 + 12}{-6} = \frac{-6}{-6} = 1 \text{ second (on the way up)} \\
+                    t_2 &= \frac{-18 - 12}{-6} = \frac{-30}{-6} = 5 \text{ seconds (on the way down)}
+                \end{align*}
+            \item The tracking device should activate on its way down after approximately \textbf{5 seconds}.
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+% Section III: Where does the QF come From? (Derivation)
+\section{Derivation of the Quadratic Formula}
+
+\begin{frame}{III) Where Does the Quadratic Formula Come From?}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Derivation using Completing the Square]
+        \footnotesize
+        We will derive the Quadratic Formula by taking the standard quadratic equation and applying the method of \textbf{Completing the Square}. Then, we will isolate "$x$".
+
+        Starting with the standard form:
+        \[ ax^2 + bx + c = 0 \]
+        \textit{Follow the next slides for step-by-step derivation.}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Derivation Step 1: Isolate Constant Term}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Step 1]
+        \footnotesize
+        Move the constant term "$c$" to the right side of the equation:
+        \begin{align*}
+            ax^2 + bx + c &= 0 \\
+            ax^2 + bx &= -c
+        \end{align*}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Derivation Step 2: Divide by "$a$"}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Step 2]
+        \footnotesize
+        Divide the entire equation by the coefficient "$a$" (since $a \neq 0$):
+        \begin{align*}
+            \frac{ax^2}{a} + \frac{bx}{a} &= \frac{-c}{a} \\
+            x^2 + \frac{b}{a}x &= -\frac{c}{a}
+        \end{align*}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Derivation Step 3: Complete the Square}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Step 3]
+        \footnotesize
+        To complete the square on the left side, take half of the coefficient of "$x$" (which is $\frac{b}{a}$), square it, and add it to both sides.
+        Half of $\frac{b}{a}$ is $\frac{b}{2a}$. Squaring it gives $\left(\frac{b}{2a}\right)^2 = \frac{b^2}{4a^2}$.
+        \begin{align*}
+            x^2 + \frac{b}{a}x + \left(\frac{b}{2a}\right)^2 &= -\frac{c}{a} + \left(\frac{b}{2a}\right)^2 \\
+            x^2 + \frac{b}{a}x + \frac{b^2}{4a^2} &= -\frac{c}{a} + \frac{b^2}{4a^2}
+        \end{align*}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Derivation Step 4: Factor and Combine Terms}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Step 4]
+        \footnotesize
+        Factor the perfect square trinomial on the left side and combine the terms on the right side by finding a common denominator ($4a^2$):
+        \begin{align*}
+            \left(x + \frac{b}{2a}\right)^2 &= -\frac{c}{a} \cdot \frac{4a}{4a} + \frac{b^2}{4a^2} \\
+            \left(x + \frac{b}{2a}\right)^2 &= -\frac{4ac}{4a^2} + \frac{b^2}{4a^2} \\
+            \left(x + \frac{b}{2a}\right)^2 &= \frac{b^2 - 4ac}{4a^2}
+        \end{align*}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Derivation Step 5: Take the Square Root}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Step 5]
+        \footnotesize
+        Take the square root of both sides. Remember to include the $\pm$ sign on the right side:
+        \begin{align*}
+            \sqrt{\left(x + \frac{b}{2a}\right)^2} &= \pm\sqrt{\frac{b^2 - 4ac}{4a^2}} \\
+            x + \frac{b}{2a} &= \pm\frac{\sqrt{b^2 - 4ac}}{\sqrt{4a^2}} \\
+            x + \frac{b}{2a} &= \pm\frac{\sqrt{b^2 - 4ac}}{2|a|}
+        \end{align*}
+        Note: We can use $2a$ instead of $2|a|$ because the $\pm$ already accounts for both positive and negative cases.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Derivation Step 6: Isolate "$x$"}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Step 6]
+        \footnotesize
+        Subtract $\frac{b}{2a}$ from both sides to isolate "$x$":
+        \begin{align*}
+            x &= -\frac{b}{2a} \pm\frac{\sqrt{b^2 - 4ac}}{2a} \\
+            x &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+        \end{align*}
+        This is the Quadratic Formula.
+    \end{tcolorbox}
+\end{frame}
+
+\end{document} 

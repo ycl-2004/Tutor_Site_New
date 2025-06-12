@@ -1,0 +1,309 @@
+body {
+  background: linear-gradient(120deg, #f7fafd 0%, #e9eef5 100%);
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: #23272f;
+}
+.course-detail-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+h1 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #22336b;
+  letter-spacing: 0.5px;
+  text-shadow: none;
+}
+.chapter-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+.chapter-block {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 1.5fr 1.2fr;
+  gap: 36px;
+  align-items: flex-start;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 16px #dbe3eea0;
+  padding: 36px 32px 36px 36px;
+  border-left: 6px solid #22336b;
+  transition: box-shadow 0.3s, transform 0.3s;
+  position: relative;
+}
+.chapter-block:hover {
+  box-shadow: 0 6px 32px #b3c6e7a0;
+  transform: translateY(-2px) scale(1.01);
+}
+.chapter-sections h2 {
+  color: #22336b;
+  font-size: 1.18rem;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+.chapter-sections ul {
+  padding-left: 20px;
+}
+.chapter-sections li {
+  margin-bottom: 10px;
+  font-size: 1.07rem;
+  transition: color 0.2s;
+}
+.chapter-sections a {
+  color: #2456a6;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s, background 0.2s;
+  border-radius: 3px;
+  padding: 2px 3px;
+}
+.chapter-sections a:hover {
+  color: #fff;
+  background: #2456a6;
+}
+.chapter-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.chapter-ppt {
+  background: #f4f7fa;
+  border-radius: 7px;
+  padding: 14px 10px;
+  box-shadow: 0 1px 6px #e0e0e0;
+  text-align: center;
+  min-width: 90px;
+  border: 1px solid #e3e8f0;
+}
+.chapter-ppt h3 {
+  color: #2456a6;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+.chapter-ppt ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.chapter-ppt li {
+  margin-bottom: 6px;
+}
+.chapter-ppt a {
+  color: #2e7d32;
+  font-weight: 500;
+  text-decoration: underline;
+  transition: color 0.2s, background 0.2s;
+  border-radius: 3px;
+  padding: 2px 3px;
+}
+.chapter-ppt a:hover {
+  color: #fff;
+  background: #2e7d32;
+}
+.chapter-notes-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notes-link-btn {
+  display: inline-block;
+  background: #f4f7fa;
+  color: #2456a6;
+  font-weight: 600;
+  font-size: 1.01rem;
+  padding: 8px 18px;
+  border-radius: 7px;
+  text-decoration: none;
+  box-shadow: 0 1px 6px #e0e0e0;
+  border: 1px solid #e3e8f0;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+  margin-top: 4px;
+}
+.notes-link-btn:hover {
+  background: #2456a6;
+  color: #fff;
+  box-shadow: 0 2px 12px #2456a680;
+  transform: translateY(-1px) scale(1.03);
+}
+.chapter-homework {
+  background: #f8fafb;
+  border-radius: 7px;
+  padding: 18px 18px 18px 24px;
+  box-shadow: 0 1px 6px #e0e0e0;
+  border: 1px solid #e3e8f0;
+  margin-bottom: 0;
+  transition: box-shadow 0.2s;
+}
+.chapter-homework h4 {
+  color: #b71c1c;
+  font-size: 1.09rem;
+  margin-bottom: 8px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+.chapter-homework ul {
+  padding-left: 18px;
+  margin: 0;
+}
+.chapter-homework li {
+  margin-bottom: 7px;
+  font-size: 1.01rem;
+}
+.chapter-homework a {
+  color: #b71c1c;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s, background 0.2s;
+  border-radius: 3px;
+  padding: 2px 3px;
+}
+.chapter-homework a:hover {
+  color: #fff;
+  background: #b71c1c;
+}
+.chapter-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  min-height: 120px;
+  background: #f4f7fa;
+  border-radius: 7px;
+  box-shadow: 0 1px 6px #e0e0e0;
+  border: 1px solid #e3e8f0;
+  overflow: hidden;
+}
+.chapter-image img {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px #b3c6e7a0);
+}
+@media (max-width: 1100px) {
+  .chapter-block {
+    grid-template-columns: 1.5fr 0.8fr 1.2fr 1fr;
+    padding: 18px 8px 18px 12px;
+  }
+}
+@media (max-width: 900px) {
+  .chapter-block {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 16px 4px;
+    border-left: 4px solid #22336b;
+  }
+  .chapter-ppt,
+  .chapter-homework,
+  .chapter-right-col,
+  .chapter-image {
+    min-width: unset;
+  }
+  .chapter-right-col {
+    flex-direction: row;
+    gap: 12px;
+  }
+}
+.precal-intro-hero {
+  width: 100%;
+  background: linear-gradient(100deg, #e3eafc 60%, #c7d6ee 100%);
+  padding: 48px 0 36px 0;
+  margin-bottom: 36px;
+  box-shadow: 0 2px 16px #dbe3ee40;
+}
+.precal-intro-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 0 32px;
+}
+.precal-intro-left {
+  flex: 2;
+}
+.precal-intro-left h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #22336b;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+.precal-intro-desc {
+  font-size: 1.18rem;
+  color: #2a3a5e;
+  margin-bottom: 28px;
+  font-weight: 400;
+  max-width: 500px;
+}
+.precal-intro-btn {
+  display: inline-block;
+  background: #22336b;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.08rem;
+  padding: 13px 36px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px #b3c6e7a0;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  letter-spacing: 0.5px;
+}
+.precal-intro-btn:hover {
+  background: #2456a6;
+  color: #fff;
+  box-shadow: 0 4px 16px #2456a680;
+  transform: translateY(-2px) scale(1.04);
+}
+.precal-intro-right {
+  flex: 1.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.precal-intro-img {
+  max-width: 320px;
+  max-height: 220px;
+  border-radius: 10px;
+  box-shadow: 0 2px 16px #b3c6e7a0;
+  background: #fff;
+  object-fit: contain;
+}
+@media (max-width: 900px) {
+  .precal-intro-content {
+    flex-direction: column-reverse;
+    gap: 24px;
+    padding: 0 10px;
+  }
+  .precal-intro-img {
+    max-width: 90vw;
+    max-height: 180px;
+  }
+  .precal-intro-left h2 {
+    font-size: 2rem;
+  }
+}
+.back-home-btn {
+  display: inline-block;
+  margin: 18px 0 18px 32px;
+  padding: 8px 18px;
+  background: #f4f7fa;
+  color: #2456a6;
+  font-weight: 500;
+  font-size: 1.01rem;
+  border-radius: 7px;
+  text-decoration: none;
+  border: 1px solid #e3e8f0;
+  box-shadow: 0 1px 6px #e0e0e0;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.back-home-btn:hover {
+  background: #2456a6;
+  color: #fff;
+  box-shadow: 0 2px 12px #2456a680;
+}

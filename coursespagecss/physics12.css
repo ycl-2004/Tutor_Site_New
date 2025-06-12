@@ -1,0 +1,209 @@
+body {
+  background: linear-gradient(120deg, #e3e6fd 0%, #e0e7fa 100%);
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: #1a1a33;
+}
+.course-detail-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+h1 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #283593;
+  letter-spacing: 0.5px;
+  text-shadow: none;
+}
+.chapter-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+.chapter-block {
+  display: grid;
+  grid-template-columns: 2.5fr 1.2fr;
+  gap: 36px;
+  align-items: flex-start;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 16px #7986cb80;
+  padding: 36px 32px 36px 36px;
+  border-left: 6px solid #283593;
+  transition: box-shadow 0.3s, transform 0.3s;
+  position: relative;
+}
+.chapter-block:hover {
+  box-shadow: 0 6px 32px #5c6bc080;
+  transform: translateY(-2px) scale(1.01);
+}
+.chapter-sections h2 {
+  color: #283593;
+  font-size: 1.18rem;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+.section-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 18px;
+  background: #e8eaf6;
+  border-radius: 8px;
+  padding: 10px 18px;
+  box-shadow: 0 1px 4px #7986cb30;
+}
+.section-title {
+  flex: 2;
+  font-weight: 500;
+  color: #283593;
+  min-width: 220px;
+}
+.section-link {
+  flex: 1;
+  text-align: center;
+  background: #e3e6fd;
+  color: #3949ab;
+  font-weight: 600;
+  text-decoration: underline;
+  border-radius: 6px;
+  padding: 8px 0;
+  margin: 0 2px;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 1px 3px #7986cb20;
+  display: block;
+}
+.section-link:hover {
+  background: #3949ab;
+  color: #fff;
+}
+.chapter-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.chapter-notes-link,
+.chapter-summary-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+}
+.notes-link-btn {
+  display: inline-block;
+  background: #e8eaf6;
+  color: #283593;
+  font-weight: 600;
+  font-size: 1.01rem;
+  padding: 8px 18px;
+  border-radius: 7px;
+  text-decoration: none;
+  box-shadow: 0 1px 6px #7986cb80;
+  border: 1px solid #7986cb;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+  margin-top: 4px;
+}
+.notes-link-btn:hover {
+  background: #283593;
+  color: #fff;
+  box-shadow: 0 2px 12px #28359380;
+  transform: translateY(-1px) scale(1.03);
+}
+.back-home-btn {
+  display: inline-block;
+  margin: 24px 0 0 24px;
+  background: #283593;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.01rem;
+  padding: 10px 22px;
+  border-radius: 7px;
+  text-decoration: none;
+  box-shadow: 0 1px 6px #7986cb80;
+  border: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.back-home-btn:hover {
+  background: #3949ab;
+  color: #fff;
+  box-shadow: 0 2px 12px #3949ab80;
+  transform: translateY(-1px) scale(1.03);
+}
+.physics12-intro-hero {
+  width: 100%;
+  background: linear-gradient(100deg, #e8eaf6 60%, #c5cae9 100%);
+  padding: 48px 0 36px 0;
+  margin-bottom: 36px;
+  box-shadow: 0 2px 16px #7986cb40;
+}
+.physics12-intro-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 0 32px;
+}
+.physics12-intro-left {
+  flex: 2;
+}
+.physics12-intro-left h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #283593;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+.physics12-intro-desc {
+  font-size: 1.18rem;
+  color: #3949ab;
+  margin-bottom: 28px;
+  font-weight: 400;
+  max-width: 500px;
+}
+.physics12-intro-img {
+  max-width: 180px;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px #7986cb80;
+}
+@media (max-width: 900px) {
+  .chapter-block {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 16px 4px;
+    border-left: 4px solid #283593;
+  }
+  .chapter-right-col {
+    min-width: unset;
+  }
+  .physics12-intro-content {
+    flex-direction: column;
+    gap: 18px;
+    padding: 0 8px;
+  }
+  .physics12-intro-img {
+    max-width: 120px;
+  }
+  .physics12-intro-left h2 {
+    font-size: 1.5rem;
+  }
+  .section-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 10px 6px;
+  }
+  .section-title {
+    min-width: unset;
+    text-align: left;
+  }
+  .section-link {
+    padding: 8px 0;
+    margin: 0;
+  }
+  .chapter-summary-link {
+    text-align: left;
+  }
+}

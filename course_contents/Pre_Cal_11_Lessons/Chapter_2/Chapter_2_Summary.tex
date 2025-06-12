@@ -1,0 +1,235 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{xcolor}
+
+% Custom colors
+\definecolor{primary}{RGB}{41, 128, 185}
+\definecolor{secondary}{RGB}{52, 152, 219}
+\definecolor{accent}{RGB}{231, 76, 60}
+\definecolor{lightgray}{RGB}{236, 240, 241}
+
+% Page setup
+\geometry{a4paper, margin=1in}
+
+% Title page info
+\title{Pre-Calculus 11 \\ Chapter 2: Factoring and Quadratic Functions}
+\author{Created by Yi-Chen Lin}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Chapter Overview}
+This chapter covers various methods of factoring and solving quadratic functions, including:
+\begin{itemize}
+    \item Factoring trinomials
+    \item Solving quadratic equations
+    \item Graphing quadratic functions
+    \item Applications of quadratic functions
+\end{itemize}
+
+\section{2.1 Factoring Trinomials}
+\subsection*{Key Concepts}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Methods of Factoring]
+    \begin{enumerate}
+        \item \textbf{B.U.M. Method}
+        \begin{itemize}
+            \item Bring the First term to the Last term and Multiply
+            \item Factor the resulting trinomial
+            \item Bring the First term back in front of each x
+            \item Factor out any common factors
+        \end{itemize}
+        
+        \item \textbf{Criss-Cross Method}
+        \begin{itemize}
+            \item Find factors of first and last terms
+            \item Cross multiply and check if sum equals middle term
+            \item Write the factors in the correct positions
+        \end{itemize}
+        
+        \item \textbf{Grouping Method}
+        \begin{itemize}
+            \item Multiply first and last coefficients
+            \item Find two numbers that multiply to this product and add to middle coefficient
+            \item Split the middle term
+            \item Factor by grouping
+        \end{itemize}
+    \end{enumerate}
+\end{tcolorbox}
+
+\subsection*{Special Cases}
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=Special Factoring Patterns]
+    \begin{itemize}
+        \item \textbf{Perfect Square Trinomials}
+        \begin{align*}
+            a^2 + 2ab + b^2 &= (a + b)^2 \\
+            a^2 - 2ab + b^2 &= (a - b)^2
+        \end{align*}
+        
+        \item \textbf{Difference of Squares}
+        \begin{align*}
+            a^2 - b^2 &= (a + b)(a - b)
+        \end{align*}
+        
+        \item \textbf{Difference of Cubes}
+        \begin{align*}
+            a^3 - b^3 &= (a - b)(a^2 + ab + b^2)
+        \end{align*}
+    \end{itemize}
+\end{tcolorbox}
+
+\section{2.2 Solving Quadratic Equations by Factoring}
+\subsection*{Key Concepts}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Steps to Solve by Factoring]
+    \begin{enumerate}
+        \item Write equation in standard form: $ax^2 + bx + c = 0$
+        \item Factor the quadratic expression
+        \item Set each factor equal to zero
+        \item Solve for x
+    \end{enumerate}
+\end{tcolorbox}
+
+\subsection*{Zero Product Property}
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=Important Property]
+    If $ab = 0$, then either $a = 0$ or $b = 0$ (or both)
+\end{tcolorbox}
+
+\section{2.3 Graphing Quadratic Functions by Factoring}
+\subsection*{Key Concepts}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Graphing Steps]
+    \begin{enumerate}
+        \item Find x-intercepts by factoring
+        \item Find y-intercept by setting x = 0
+        \item Find vertex using symmetry
+        \item Plot points and draw parabola
+    \end{enumerate}
+\end{tcolorbox}
+
+\subsection*{Important Features}
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=Graph Features]
+    \begin{itemize}
+        \item \textbf{Vertex}: The highest or lowest point
+        \item \textbf{Axis of Symmetry}: Vertical line through vertex
+        \item \textbf{x-intercepts}: Points where y = 0
+        \item \textbf{y-intercept}: Point where x = 0
+    \end{itemize}
+\end{tcolorbox}
+
+\section{2.4 The Quadratic Formula}
+\subsection*{Key Concepts}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Quadratic Formula]
+    For $ax^2 + bx + c = 0$:
+    \begin{align*}
+        x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+    \end{align*}
+\end{tcolorbox}
+
+\subsection*{Discriminant}
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=Discriminant Analysis]
+    \begin{itemize}
+        \item $b^2 - 4ac > 0$: Two real solutions
+        \item $b^2 - 4ac = 0$: One real solution
+        \item $b^2 - 4ac < 0$: No real solutions
+    \end{itemize}
+\end{tcolorbox}
+
+\section{2.5 Graphing Quadratic Functions in APQ Form}
+\subsection*{Key Concepts}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Vertex Form]
+    \begin{align*}
+        y = a(x - h)^2 + k
+    \end{align*}
+    where $(h,k)$ is the vertex
+\end{tcolorbox}
+
+\subsection*{Graphing Steps}
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=Steps to Graph]
+    \begin{enumerate}
+        \item Identify vertex $(h,k)$
+        \item Determine direction of opening
+        \item Find y-intercept
+        \item Plot additional points if needed
+    \end{enumerate}
+\end{tcolorbox}
+
+\section{2.6 Completing the Square}
+\subsection*{Key Concepts}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Steps to Complete the Square]
+    \begin{enumerate}
+        \item Write in form $x^2 + bx + c$
+        \item Add and subtract $(\frac{b}{2})^2$
+        \item Factor perfect square trinomial
+        \item Simplify
+    \end{enumerate}
+\end{tcolorbox}
+
+\subsection*{Example}
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=Example]
+    \begin{align*}
+        x^2 + 6x + 2 &= 0 \\
+        x^2 + 6x &= -2 \\
+        x^2 + 6x + 9 &= 7 \\
+        (x + 3)^2 &= 7 \\
+        x &= -3 \pm \sqrt{7}
+    \end{align*}
+\end{tcolorbox}
+
+\section{2.7 Word Problems on Max/Min}
+\subsection*{Key Concepts}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem-Solving Steps]
+    \begin{enumerate}
+        \item Identify variables
+        \item Write equation
+        \item Find vertex (maximum/minimum)
+        \item Interpret solution
+    \end{enumerate}
+\end{tcolorbox}
+
+\subsection*{Common Applications}
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=Applications]
+    \begin{itemize}
+        \item Projectile motion
+        \item Area optimization
+        \item Revenue maximization
+        \item Cost minimization
+    \end{itemize}
+\end{tcolorbox}
+
+\section{2.8 Quadratic Inequalities}
+\subsection*{Key Concepts}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solving Steps]
+    \begin{enumerate}
+        \item Write in standard form
+        \item Find critical points
+        \item Test intervals
+        \item Write solution
+    \end{enumerate}
+\end{tcolorbox}
+
+\subsection*{Solution Methods}
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=Methods]
+    \begin{itemize}
+        \item \textbf{Graphical}: Plot and shade
+        \item \textbf{Algebraic}: Test points
+        \item \textbf{Sign Analysis}: Use number line
+    \end{itemize}
+\end{tcolorbox}
+
+\section*{Chapter Summary}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Takeaways]
+    \begin{itemize}
+        \item Multiple methods for factoring trinomials
+        \item Various ways to solve quadratic equations
+        \item Different forms of quadratic functions
+        \item Applications in real-world problems
+        \item Methods for solving inequalities
+    \end{itemize}
+\end{tcolorbox}
+
+\end{document} 

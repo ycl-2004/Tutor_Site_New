@@ -1,0 +1,577 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xcolor}
+
+% Custom colors
+\definecolor{primary}{RGB}{41, 128, 185}
+\definecolor{secondary}{RGB}{52, 152, 219}
+\definecolor{accent}{RGB}{231, 76, 60}
+\definecolor{lightgray}{RGB}{236, 240, 241}
+
+% Theme customization
+\usetheme{Madrid}
+\usecolortheme{whale}
+\setbeamercolor{structure}{fg=primary}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=black}
+
+% Title page info
+\title{Pre-Calculus 11}
+\subtitle{Lesson 3: Graphing Quadratic Functions}
+\author{Created by Yi-Chen Lin}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% REVIEW: LINEAR AND QUADRATIC FUNCTIONS
+\begin{frame}{REVIEW: LINEAR AND QUADRATIC FUNCTIONS}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Concepts]
+        \footnotesize
+        \begin{itemize}
+            \item \textbf{Linear Functions}
+            \begin{itemize}
+                \item Straight Lines
+                \item General Form: $y = mx + b$
+                \item Highest degree for "x" is one
+                \item m: Slope
+                \item b: Y-intercept
+            \end{itemize}
+            \item \textbf{Quadratic Functions}
+            \begin{itemize}
+                \item Curved, Shape of a "Parabola"
+                \item Highest Degree for "x" is two
+                \item General Form: $y = ax^2 + bx + c$, where $a, b, c$ are real numbers
+                \item Example: $y = x^2 + x - 10$ or $y = -x^2 - 4x + 10$
+            \end{itemize}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+% I) WHY IS A QUADRATIC FUNCTION U-SHAPED?
+\begin{frame}{I) WHY IS A QUADRATIC FUNCTION U-SHAPED?}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Understanding the Parabola Shape]
+        \footnotesize
+        \begin{itemize}
+            \item If we make a Table of Values (TOV), plot the coordinates, and connect the dots, the resulting shape is a Parabola.
+        \end{itemize}
+        
+        \textbf{Example TOV for $y = x^2$}
+        \begin{center}
+        \begin{tabular}{|c|c|}
+            \hline
+            \textbf{x} & \textbf{y} \\
+            \hline
+            -3 & 9 \\
+            -2 & 4 \\
+            -1 & 1 \\
+            0 & 0 \\
+            1 & 1 \\
+            2 & 4 \\
+            3 & 9 \\
+            \hline
+        \end{tabular}
+        \end{center}
+        \vspace{0.5em}
+        \textit{(Graph will be on the next page)}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Graph of $y = x^2$}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Visual Representation]
+        \centering
+        \includegraphics[width=0.7\textwidth]{y_xpower2.png}
+    \end{tcolorbox}
+\end{frame}
+
+% II) COMPONENTS OF A PARABOLA
+\begin{frame}{II) COMPONENTS OF A PARABOLA}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Components]
+        \footnotesize
+        \begin{itemize}
+            \item \textbf{Vertex:} The coordinates at either the top (maximum) or bottom (minimum) of the parabola. Always in the middle.
+            \item \textbf{Axis of Symmetry (AOS):} A vertical line that cuts the graph in the middle. Must be an equation (e.g., $x = k$).
+            \item \textbf{X-intercepts:} Intersection points between the parabola and the x-axis (where $y=0$). Can have zero, one, or two x-intercepts. Represented as $(x_1, 0)$ and $(x_2, 0)$.
+            \item \textbf{Y-intercept:} Intersection point between the parabola and the y-axis (where $x=0$). Always one y-intercept. Represented as $(0, y_0)$.
+        \end{itemize}
+        \vspace{0.5em}
+        \textit{(Insert diagram of a parabola with labeled components: Vertex, Axis of Symmetry, X-intercepts, Y-intercept)}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Ex: Given each parabola, indicate the components}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Example 1 - Graph]
+        \footnotesize
+        \textbf{Parabola 1: (Opening Up)}\
+        \centering
+        \includegraphics[width=0.7\textwidth]{given_para1.png}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Ex: Given each parabola, indicate the components - Example 1 Details}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Example 1 - Components]
+        \footnotesize
+        \textbf{Parabola 1: (Opening Up)}
+        
+        \begin{itemize}
+            \item \textbf{Vertex:} (1, -3)
+            \item \textbf{Axis of Symmetry:} $x = 1$
+            \item \textbf{X-intercepts:} (-0.5, 0) and (2.5, 0)
+            \item \textbf{Y-intercept:} (0, -2.5)
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Ex: Given each parabola, indicate the components}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Example 2 - Graph]
+        \footnotesize
+        \textbf{Parabola 2: (Opening Down)}\
+        \centering
+        \includegraphics[width=0.7\textwidth]{given_para2.png}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Ex: Given each parabola, indicate the components - Example 2 Details}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Example 2 - Components]
+        \footnotesize
+        \textbf{Parabola 2: (Opening Down)}
+        
+        \begin{itemize}
+            \item \textbf{Vertex:} (-2, 6)
+            \item \textbf{Axis of Symmetry:} $x = -2$
+            \item \textbf{X-intercepts:} (-4, 0) and (0, 0)
+            \item \textbf{Y-intercept:} (0, 0)
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+% GRAPHING PARABOLAS WITH XAVIER'S METHOD
+\begin{frame}{GRAPHING PARABOLAS WITH XAVIER'S METHOD}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Xavier's Method Steps]
+        \footnotesize
+        \begin{itemize}
+            \item First find the vertex using \textcolor{accent}{\textbf{X.A.V.}}
+            \begin{itemize}
+                \item \textbf{X:} x-intercepts by factoring (set $y=0$)
+                \item \textbf{A:} Axis of Symmetry (average of x-intercepts: $x = \frac{x_1 + x_2}{2}$)
+                \item \textbf{V:} Vertex (substitute AOS x-value into the original equation to find y-coordinate)
+            \end{itemize}
+            \item Use the constant "a" from $y=ax^2+bx+c$ to determine which way the graph opens:
+            \begin{itemize}
+                \item If $a > 0$ (positive), graph Opens Up (U-shape)
+                \item If $a < 0$ (negative), graph Opens Down (inverted U-shape)
+            \end{itemize}
+            \item Plot a couple of extra points for a better graph (e.g., y-intercept and its symmetric point).
+            \item \textbf{Note:} For Quadratic Functions that do not have x-intercepts, we will learn to graph them in the next section.
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+% EX: FIND THE X INTERCEPTS, AXIS OF SYMMETRY, VERTEX AND GRAPH y = x^2 - x - 6
+\begin{frame}{EX: FIND THE X INTERCEPTS, AOS, VERTEX, AND GRAPH $y = x^2 - 4x - 12$}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Step-by-Step Solution]
+        \footnotesize
+        Given: $y = x^2 - 4x - 12$
+        
+        \begin{enumerate}
+            \item \textbf{Find X-intercepts (by factoring):}
+            Set $y=0$:
+            \begin{align*}
+                x^2 - 4x - 12 &= 0 \\
+                (x - 6)(x + 2) &= 0
+            \end{align*}
+            So, $x - 6 = 0 \Rightarrow x = 6$ (X-intercept: $(6,0)$)
+            And, $x + 2 = 0 \Rightarrow x = -2$ (X-intercept: $(-2,0)$)
+            
+            \item \textbf{Find Axis of Symmetry (AOS) (Equation):}
+            Average of x-intercepts:
+            \begin{align*}
+                x &= \frac{6 + (-2)}{2} \\
+                x &= \frac{4}{2} \\
+                x &= 2
+            \end{align*}
+            AOS: $x = 2$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{EX: FIND THE X INTERCEPTS, AOS, VERTEX, AND GRAPH $y = x^2 - 4x - 12$}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Step-by-Step Solution (Cont.)]
+        \footnotesize
+        Given: $y = x^2 - 4x - 12$
+        
+        \begin{enumerate}
+            \setcounter{enumi}{2}
+            \item \textbf{Find Vertex (Coordinates):}
+            Substitute AOS $x=2$ into the original equation:
+            \begin{align*}
+                y &= (2)^2 - 4(2) - 12 \\
+                y &= 4 - 8 - 12 \\
+                y &= -16
+            \end{align*}
+            Vertex: $(2, -16)$
+            
+            \item \textbf{Determine opening direction:}
+            Since $a=1$ (positive), the parabola opens UP.
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{EX: FIND THE X INTERCEPTS, AOS, VERTEX, AND GRAPH $y = x^2 - 4x - 12$}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Graph - $y = x^2 - 4x - 12$]
+        \footnotesize
+        \textbf{Points to plot:}\
+        \begin{itemize}
+            \item X-intercepts: $(-2,0)$ and $(6,0)$
+            \item Vertex: $(2, -16)$
+            \item Y-intercept: Set $x=0$, $y = (0)^2 - 4(0) - 12 = -12$. So $(0,-12)$.
+            \item Additional points (symmetric to y-intercept): Since AOS is $x=2$, point symmetric to $(0,-12)$ is at $x=4$ (distance of 2 from AOS). For $x=4$, $y = (4)^2 - 4(4) - 12 = 16 - 16 - 12 = -12$. So $(4,-12)$.
+        \end{itemize}
+        \vspace{0.5em}
+        \textit{(Graph will be on the next page)}
+        
+        \textbf{Domain and Range:}\
+        \begin{itemize}
+            \item \textbf{Domain (D):} $x \in \mathbb{R}$ (All real numbers)
+            \item \textbf{Range (R):} $y \ge -16$ (Since it opens up, y-values are greater than or equal to the vertex's y-coordinate)
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Graph for $y = x^2 - 4x - 12$}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Visual Representation]
+        \centering
+        \includegraphics[width=0.7\textwidth]{y_xp_4x_12.png}
+    \end{tcolorbox}
+\end{frame}
+
+% PRACTICE: FIND THE X INTERCEPTS, AXIS OF SYMMETRY, VERTEX AND GRAPH y = 2x^2 + 3x - 9
+\begin{frame}{PRACTICE: FIND THE X INTERCEPTS, AOS, VERTEX, AND GRAPH $y = 3x^2 + 5x - 2$}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem]
+        \footnotesize
+        Find the X-intercepts, Axis of Symmetry, Vertex and Graph the following:\
+        $y = 3x^2 + 5x - 2$
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{PRACTICE: Solution $y = 3x^2 + 5x - 2$ (Part 1)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solution]
+        \footnotesize
+        Given: $y = 3x^2 + 5x - 2$
+        
+        \begin{enumerate}
+            \item \textbf{Find X-intercepts (by factoring):}
+            Set $y=0$:
+            \begin{align*}
+                3x^2 + 5x - 2 &= 0 \\
+                (3x - 1)(x + 2) &= 0
+            \end{align*}
+            So, $3x - 1 = 0 \Rightarrow 3x = 1 \Rightarrow x = \frac{1}{3}$ (X-intercept: $(\frac{1}{3},0)$)\
+            And, $x + 2 = 0 \Rightarrow x = -2$ (X-intercept: $(-2,0)$)
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{PRACTICE: Solution $y = 3x^2 + 5x - 2$ (Part 2)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solution (Part 2)]
+        \footnotesize
+        Given: $y = 3x^2 + 5x - 2$
+        
+        \begin{enumerate}
+            \setcounter{enumi}{1}
+            \item \textbf{Find Axis of Symmetry (AOS) (Equation):}
+            Average of x-intercepts:
+            \begin{align*}
+                x &= \frac{\frac{1}{3} + (-2)}{2} \\
+                x &= \frac{\frac{1}{3} - \frac{6}{3}}{2} \\
+                x &= \frac{-\frac{5}{3}}{2} \\
+                x &= -\frac{5}{6}
+            \end{align*}
+            AOS: $x = -\frac{5}{6}$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{PRACTICE: Solution $y = 3x^2 + 5x - 2$ (Part 3)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solution (Cont.)]
+        \footnotesize
+        Given: $y = 3x^2 + 5x - 2$
+        
+        \begin{enumerate}
+            \setcounter{enumi}{2}
+            \item \textbf{Find Vertex (Coordinates):}
+            Substitute AOS $x=-\frac{5}{6}$ into the original equation:
+            \begin{align*}
+                y &= 3(-\frac{5}{6})^2 + 5(-\frac{5}{6}) - 2 \\
+                y &= 3(\frac{25}{36}) - \frac{25}{6} - 2 \\
+                y &= \frac{25}{12} - \frac{50}{12} - \frac{24}{12} \\
+                y &= \frac{25 - 50 - 24}{12} \\
+                y &= -\frac{49}{12}
+            \end{align*}
+            Vertex: $(-\frac{5}{6}, -\frac{49}{12})$
+            
+            \item \textbf{Determine opening direction:}
+            Since $a=3$ (positive), the parabola opens UP.
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{PRACTICE: Graph $y = 3x^2 + 5x - 2$}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Graph - $y = 3x^2 + 5x - 2$]
+        \footnotesize
+        \textbf{Points to plot:}\
+        \begin{itemize}
+            \item X-intercepts: $(-2,0)$ and $(\frac{1}{3},0)$
+            \item Vertex: $(-\frac{5}{6}, -\frac{49}{12})$
+            \item Y-intercept: Set $x=0$, $y = 3(0)^2 + 5(0) - 2 = -2$. So $(0,-2)$.
+            \item Additional points (symmetric to y-intercept): Since AOS is $x=-\frac{5}{6}$, point symmetric to $(0,-2)$ is at $x = -\frac{5}{6} + (0 - (-\frac{5}{6})) = -\frac{5}{6} + \frac{5}{6} = -\frac{10}{6} = -\frac{5}{3}$. For $x=-\frac{5}{3}$, $y = 3(-\frac{5}{3})^2 + 5(-\frac{5}{3}) - 2 = 3(\frac{25}{9}) - \frac{25}{3} - 2 = \frac{25}{3} - \frac{25}{3} - 2 = -2$. So $(-\frac{5}{3},-2)$.
+        \end{itemize}
+        \vspace{0.5em}
+        \textit{(Graph will be on the next page)}
+        
+        \textbf{Domain and Range:}\
+        \begin{itemize}
+            \item \textbf{Domain (D):} $x \in \mathbb{R}$ (All real numbers)
+            \item \textbf{Range (R):} $y \ge -\frac{49}{12}$ (Since it opens up, y-values are greater than or equal to the vertex's y-coordinate)
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Graph for $y = 3x^2 + 5x - 2$}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Visual Representation]
+        \centering
+        \includegraphics[width=0.7\textwidth]{y_3xp_5x_2.png}
+    \end{tcolorbox}
+\end{frame}
+
+% REVIEW: DOMAIN AND RANGE
+\begin{frame}{REVIEW: DOMAIN AND RANGE}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Definitions]
+        \footnotesize
+        \begin{itemize}
+            \item \textbf{Domain:} The collection of all possible X-values (input) that a function can have. Look at the graph horizontally.
+            \item \textbf{Range:} The collection of all possible Y-values (output) that a function can have. Look at the graph vertically.
+        \end{itemize}
+        
+        \textbf{Example for finding Domain:}\
+        \textit{(Insert image of a graph that starts at x=-2 and continues to the right, e.g., a ray)}\
+        \begin{itemize}
+            \item This graph starts at $x=-2$ and continues to the right.
+            \item \textbf{Domain:} $x \ge -2$
+        \end{itemize}
+        
+        \textbf{Example for finding Range:}\
+        \textit{(Insert image of a graph with a lowest point at y=0, and then goes up, e.g., an upward opening parabola fragment or a V-shape)}\
+        \begin{itemize}
+            \item The lowest point of this graph is at $y=0$, and then it goes up.
+            \item \textbf{Range:} $y \ge 0$
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+% DOMAIN AND RANGE OF PARABOLAS:
+\begin{frame}{DOMAIN AND RANGE OF PARABOLAS:}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Rules for Parabolas]
+        \footnotesize
+        \begin{itemize}
+            \item Since a parabola that opens up or down extends infinitely to the left and right, it can take on any x-value.
+            \item So, the \textbf{Domain} of a parabola is always: \textbf{All Real Numbers} ($x \in \mathbb{R}$).
+            \item The \textbf{Range} of a parabola depends on which way the graph opens and the y-coordinate of its vertex:
+            \begin{itemize}
+                \item If it opens \textbf{up} ($a > 0$), range will be: $y \ge \text{lowest y-value (vertex y-coordinate)}$
+                \item If it opens \textbf{down} ($a < 0$), range will be: $y \le \text{highest y-value (vertex y-coordinate)}$
+            \end{itemize}
+        \end{itemize}
+        \vspace{0.5em}
+        \textit{(Insert diagram of an upward opening parabola with Domain: $x \in \mathbb{R}$ and Range: $y \ge -3$ labeled)}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{drex1: Parabola 1 Graph}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Visual Representation]
+        \centering
+        \includegraphics[width=0.7\textwidth]{drex1.png}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Ex: Indicate the domain and range for Parabola 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem]
+        \footnotesize
+        Given the parabola, indicate its domain and range.\
+        \textbf{Parabola 1: (Opening Up, Vertex at (2, -5))}
+        \textit{(Refer to previous page for graph)}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Ex: Indicate the domain and range for Parabola 1 - Solution}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solution]
+        \footnotesize
+        For Parabola 1:\
+        \begin{itemize}
+            \item \textbf{Domain:} $x \in \mathbb{R}$
+            \item \textbf{Range:} $y \ge -5$
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{drex2: Parabola 2 Graph}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Visual Representation]
+        \centering
+        \includegraphics[width=0.7\textwidth]{drex2.png}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Ex: Indicate the domain and range for Parabola 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem]
+        \footnotesize
+        Given the parabola, indicate its domain and range.\
+        \textbf{Parabola 2: (Opening Down, Vertex at (3, 7))}
+        \textit{(Refer to previous page for graph)}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Ex: Indicate the domain and range for Parabola 2 - Solution}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solution]
+        \footnotesize
+        For Parabola 2:\
+        \begin{itemize}
+            \item \textbf{Domain:} $x \in \mathbb{R}$
+            \item \textbf{Range:} $y \le 7$
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{drex3: Parabola 3 Graph}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Visual Representation]
+        \centering
+        \includegraphics[width=0.7\textwidth]{drex3.png}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Ex: Indicate the domain and range for Parabola 3}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem]
+        \footnotesize
+        Given the parabola, indicate its domain and range.\
+        \textbf{Parabola 3: (Opening Up, Vertex at (-1, 0))}
+        \textit{(Refer to previous page for graph)}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Ex: Indicate the domain and range for Parabola 3 - Solution}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solution]
+        \footnotesize
+        For Parabola 3:\
+        \begin{itemize}
+            \item \textbf{Domain:} $x \in \mathbb{R}$
+            \item \textbf{Range:} $y \ge 0$
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+% EX: MATCH EACH EQUATION WITH THE DESCRIPTION
+\begin{frame}{Ex: Match each equation with the description}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Match the following]
+        \footnotesize
+        \begin{columns}
+            \begin{column}{0.5\textwidth}
+                \begin{itemize}
+                    \item[] \textbf{Equations:}
+                    \item[a)] $y = x^2 - 9$
+                    \item[b)] $y = -2x^2 + 4x + 6$
+                    \item[c)] $y = x^2 + 4x + 3$
+                \end{itemize}
+            \end{column}
+            \begin{column}{0.5\textwidth}
+                \begin{itemize}
+                    \item[] \textbf{Descriptions:}
+                    \item[i)] Range is $y \ge -1$, Axis of symmetry is $x = -2$
+                    \item[ii)] X-intercepts at 3 and -3, Axis of symmetry is the Y-axis
+                    \item[iii)] Range is $y \le 8$, Axis of symmetry is $x = 1$
+                    \item[iv)] Graph opens up and vertex at (4,-5)
+                \end{itemize}
+            \end{column}
+        \end{columns}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Ex: Match each equation with the description - Solution}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+        \footnotesize
+        \begin{enumerate}
+            \item[a)] $y = x^2 - 9$
+            \begin{itemize}
+                \item Vertex: $(0,-9)$
+                \item AOS: $x=0$
+                \item X-intercepts: $x^2-9=0 \Rightarrow x^2=9 \Rightarrow x = \pm 3$. So $(3,0), (-3,0)$.
+                \item Range: $y \ge -9$ (opens up)
+                \item Matches \textbf{ii) X-intercepts at 3 and -3, Axis of symmetry is the Y-axis}
+            \end{itemize}
+            \item[b)] $y = -2x^2 + 4x + 6$
+            \begin{itemize}
+                \item Opens down ($a=-2$)
+                \item AOS: $x = \frac{-4}{2(-2)} = \frac{-4}{-4} = 1$. So $x=1$.
+                \item Vertex y-coord: $y = -2(1)^2 + 4(1) + 6 = -2 + 4 + 6 = 8$. Vertex: $(1,8)$.
+                \item Range: $y \le 8$
+                \item Matches \textbf{iii) Range is $y \le 8$, Axis of symmetry is $x = 1$}
+            \end{itemize}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Ex: Match each equation with the description - Solution (Cont.)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions (Cont.)]
+        \footnotesize
+        \begin{enumerate}
+            \setcounter{enumi}{2}
+            \item[c)] $y = x^2 + 4x + 3$
+            \begin{itemize}
+                \item Opens up ($a=1$)
+                \item AOS: $x = \frac{-4}{2(1)} = \frac{-4}{2} = -2$. So $x=-2$.
+                \item Vertex y-coord: $y = (-2)^2 + 4(-2) + 3 = 4 - 8 + 3 = -1$. Vertex: $(-2,-1)$.
+                \item Range: $y \ge -1$
+                \item Matches \textbf{i) Range is $y \ge -1$, Axis of symmetry is $x = -2$}
+            \end{itemize}
+            
+            \item[] Description \textbf{iv) Graph opens up and vertex at (4,-5)} does not match any equation provided.
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% THINGS TO REMEMBER:
+\begin{frame}{THINGS TO REMEMBER:}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Reminders]
+        \footnotesize
+        \begin{itemize}
+            \item The \textbf{vertex} is always in the middle between the two X-intercepts (if they exist).
+            \item The \textbf{Axis of Symmetry} must always be an equation: $x = k$, where "k" is the x-coordinate of the vertex.
+            \item The \textbf{domain} of a parabola that opens up or down will always be: $x \in \mathbb{R}$ (All Real Numbers).
+            \item To find the \textbf{Y-coordinate of the vertex}, plug the x-value of the AOS into the original equation and solve for "y".
+            \item The vertex, x-intercepts, and y-intercept should be provided as a \textbf{pair of coordinates} (a,b).
+            \item The y-coordinate of the Vertex will be used for the \textbf{range} of the function.
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+% WHAT DO YOU DO IF YOU CAN'T FACTOR THE TRINOMIAL?
+\begin{frame}{WHAT DO YOU DO IF YOU CAN'T FACTOR THE TRINOMIAL?}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Next Steps]
+        \footnotesize
+        \begin{itemize}
+            \item \textbf{Answer:} Use the Quadratic Formula (next lesson)!
+            \item \textbf{Quadratic Formula:}
+            \begin{align*}
+                x &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+            \end{align*}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\end{document} 

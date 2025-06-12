@@ -1,0 +1,359 @@
+\documentclass[aspectratio=169]{beamer}
+
+% Theme and colors
+\usetheme{Madrid}
+\usecolortheme{whale}
+% Custom colors
+\definecolor{primary}{RGB}{41, 128, 185}
+\definecolor{secondary}{RGB}{52, 152, 219}
+\definecolor{accent}{RGB}{231, 76, 60}
+\definecolor{lightgray}{RGB}{236, 240, 241}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathpazo} % Palatino font
+\usepackage{multirow}
+\usepackage{tcolorbox}
+\usepackage{tikz} % For diagrams
+\usepackage{caption} % For figure captions
+\usepackage{adjustbox} % For adjusting box
+\usepackage{float} % For better float control
+
+% Beamer specific configurations
+\setbeamercolor{structure}{fg=primary}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=black}
+
+% Information for the title page
+\title{Lesson 7: Word Problems with Quadratic Functions}
+\author{Yi-Chen Lin}
+\date{June 10, 2025}
+
+\begin{document}
+
+% Title page
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% Table of Contents
+\begin{frame}{Table of Contents}
+    \tableofcontents
+\end{frame}
+
+% Section I: Recap
+\section{Recap}
+
+\begin{frame}{I) Recap on What We Learned So Far}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Concepts]
+        \footnotesize
+        \begin{itemize}
+            \item The vertex is for finding the Max/Minimum of something
+            \item The x-intercepts is when the height is zero
+            \item The y-intercept is when t=0 or x=0, height at the beginning
+            \item The axis of symmetry is the x-value or the time when an object is at the vertex (highest point) or lowest point
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{I) General Form and APQ Form}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Forms]
+        \footnotesize
+        \textbf{General Form:}
+        \[y = ax^2 + bx + c\]
+        \[x = -\frac{b}{2a} \text{ (Axis of Symmetry)}\]
+        
+        \textbf{APQ Form:}
+        \[y = a(x-p)^2 + q\]
+        Vertex: $(p,q)$
+        A.O.S. $x = p$
+    \end{tcolorbox}
+\end{frame}
+
+% Section II: Applications
+\section{Applications}
+
+\begin{frame}{II) Applications of Quadratic Functions}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Applications]
+        \footnotesize
+        \begin{itemize}
+            \item Finance and Business:
+            \begin{itemize}
+                \item Maximize Revenue and Profit
+            \end{itemize}
+            \item Construction and Infrastructure
+            \begin{itemize}
+                \item Maximize the area of a park, building, room
+            \end{itemize}
+            \item Coding and Programming
+            \begin{itemize}
+                \item Maximize efficiency: minimize resources
+            \end{itemize}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{II) Common Terms in Word Problems}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Common Terms]
+        \footnotesize
+        \begin{itemize}
+            \item Sum $\rightarrow$ Add: $x + y = 10$
+            \item Difference $\rightarrow$ Subtract: $x - y = 8$
+            \item Product $\rightarrow$ Multiply: $M = x \cdot y$
+            \item Sum of squares $\rightarrow$ $Min = x^2 + y^2$
+            \item Perimeter $\rightarrow$ $P = 2L + 2W$
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+% Section III: Example 1
+\section{Example 1}
+
+\begin{frame}{III) Example 1: Product of Numbers}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem]
+        \footnotesize
+        The sum of two numbers is 95. Their product is 2100. Find the numbers.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{III) Example 1: Solution - Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution - Part 1]
+        \footnotesize
+        \begin{enumerate}
+            \item Write expressions:
+            \begin{itemize}
+                \item 1st value: $x$
+                \item 2nd value: $95 - x$
+            \end{itemize}
+            \item Product equation:
+            \[x(95 - x) = 2100\]
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{III) Example 1: Solution - Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution - Part 2]
+        \footnotesize
+        \begin{align*}
+            95x - x^2 &= 2100\\
+            -x^2 + 95x - 2100 &= 0\\
+            x^2 - 95x + 2100 &= 0\\
+            (x - 47.5)^2 &= 156.25\\
+            x - 47.5 &= \pm 12.5\\
+            x &= 47.5 \pm 12.5\\
+            x &= 60 \text{ or } 35
+        \end{align*}
+        The two numbers are 35 and 60.
+    \end{tcolorbox}
+\end{frame}
+
+% Section IV: Example 2
+\section{Example 2}
+
+\begin{frame}{IV) Example 2: Sum of Squares}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem]
+        \footnotesize
+        The difference of two numbers is 12. The sum of their squares is 74. Find the numbers.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{IV) Example 2: Solution - Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution - Part 1]
+        \footnotesize
+        \begin{enumerate}
+            \item Write expressions:
+            \begin{itemize}
+                \item 1st value: $x$
+                \item 2nd value: $x + 12$
+            \end{itemize}
+            \item Sum of squares equation:
+            \[x^2 + (x + 12)^2 = 74\]
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{IV) Example 2: Solution - Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution - Part 2]
+        \footnotesize
+        \begin{align*}
+            x^2 + x^2 + 24x + 144 &= 74\\
+            2x^2 + 24x + 70 &= 0\\
+            x^2 + 12x + 35 &= 0\\
+            (x + 6)^2 &= 1\\
+            x + 6 &= \pm 1\\
+            x &= -6 \pm 1
+        \end{align*}
+        The two sets of numbers are:
+        \[x = -5, y = 7\]
+        \[x = -7, y = 5\]
+    \end{tcolorbox}
+\end{frame}
+
+% Section V: Example 3
+\section{Example 3}
+
+\begin{frame}{V) Example 3: Projectile Motion}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem]
+        \footnotesize
+        The height, "H" metres, of a baseball "T" seconds after being hit is given by:
+        \[H = 35T - 5T^2\]
+        Find:
+        \begin{enumerate}
+            \item Height after 3 seconds
+            \item Time at height of 25m
+            \item Maximum height and when it occurs
+            \item When the ball hits the ground
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{V) Example 3: Solution - Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution - Part 1]
+        \footnotesize
+        \begin{enumerate}
+            \item Height after 3 seconds:
+            \[H = 35(3) - 5(3)^2 = 105 - 45 = 60 \text{ metres}\]
+            
+            \item Time at height of 25m:
+            \[25 = 35T - 5T^2\]
+            \[5T^2 - 35T + 25 = 0\]
+            \[T = 0.82 \text{ sec or } 6.18 \text{ sec}\]
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{V) Example 3: Solution - Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution - Part 2]
+        \footnotesize
+        \begin{enumerate}
+            \item Maximum height:
+            \[T = -\frac{b}{2a} = -\frac{35}{2(-5)} = 3.5 \text{ seconds}\]
+            \[H = 35(3.5) - 5(3.5)^2 = 122.5 - 61.25 = 61.25 \text{ metres}\]
+            
+            \item Time to hit ground:
+            \[0 = 35T - 5T^2\]
+            \[T = 0 \text{ or } 7 \text{ seconds}\]
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% Section VI: Example 4
+\section{Example 4}
+
+\begin{frame}{VI) Example 4: Maximum Area}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem]
+        \footnotesize
+        A farmer wants to build a rectangular barn using 120 meters of fencing for his cows and chickens. He needs to separate the two groups and make the largest possible area. Determine the dimensions.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{VI) Example 4: Solution - Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution - Part 1]
+        \footnotesize
+        \begin{enumerate}
+            \item Perimeter equation: $2L + 3W = 120$
+            \item Area equation: $A = L \times W$
+            \item Isolate L: $L = -1.5W + 60$
+            \item Substitute into area equation: $A = W(-1.5W + 60)$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{VI) Example 4: Solution - Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution - Part 2]
+        \footnotesize
+        \begin{enumerate}
+            \item Complete the square:
+            \[A = -1.5(W - 20)^2 + 600\]
+            \item Maximum area: $600 m^2$
+            \item Dimensions:
+            \begin{itemize}
+                \item Width: $20m$
+                \item Length: $30m$
+            \end{itemize}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% Section VII: Practice Problems
+\section{Practice Problems}
+
+\begin{frame}{VII) Practice Problem 1: Rectangle Area}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem]
+        \footnotesize
+        A rectangle has a perimeter of 80 meters. Find the dimensions that will give the maximum area.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{VII) Practice Problem 1: Solution}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution]
+        \footnotesize
+        \begin{enumerate}
+            \item Perimeter equation: $2L + 2W = 80$
+            \item Area equation: $A = L \times W$
+            \item Isolate L: $L = 40 - W$
+            \item Substitute: $A = W(40 - W)$
+            \item Complete the square:
+            \[A = -(W - 20)^2 + 400\]
+            \item Maximum area: $400 m^2$
+            \item Dimensions: $20m \times 20m$ (square)
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{VII) Practice Problem 2: Number Product}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem]
+        \footnotesize
+        Find two numbers whose sum is 50 and whose product is a maximum.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{VII) Practice Problem 2: Solution}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution]
+        \footnotesize
+        \begin{enumerate}
+            \item Let first number be $x$
+            \item Second number is $50 - x$
+            \item Product equation: $P = x(50 - x)$
+            \item Complete the square:
+            \[P = -(x - 25)^2 + 625\]
+            \item Maximum product: 625
+            \item Numbers: 25 and 25
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{VII) Practice Problem 3: Projectile}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem]
+        \footnotesize
+        A ball is thrown upward from a height of 2 meters with an initial velocity of 40 m/s. The height is given by:
+        \[H = -5T^2 + 40T + 2\]
+        Find:
+        \begin{enumerate}
+            \item Maximum height
+            \item Time to reach maximum height
+            \item When the ball hits the ground
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{VII) Practice Problem 3: Solution}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution]
+        \footnotesize
+        \begin{enumerate}
+            \item Time to maximum height:
+            \[T = -\frac{b}{2a} = -\frac{40}{2(-5)} = 4 \text{ seconds}\]
+            \item Maximum height:
+            \[H = -5(4)^2 + 40(4) + 2 = 82 \text{ meters}\]
+            \item Time to hit ground:
+            \[0 = -5T^2 + 40T + 2\]
+            \[T = 8.05 \text{ seconds}\]
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\end{document} 

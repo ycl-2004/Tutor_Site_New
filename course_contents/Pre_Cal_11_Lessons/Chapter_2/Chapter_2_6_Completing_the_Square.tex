@@ -1,0 +1,806 @@
+\documentclass[aspectratio=169]{beamer}
+
+% Theme and colors
+\usetheme{Madrid}
+\usecolortheme{whale}
+% Custom colors
+\definecolor{primary}{RGB}{41, 128, 185}
+\definecolor{secondary}{RGB}{52, 152, 219}
+\definecolor{accent}{RGB}{231, 76, 60}
+\definecolor{lightgray}{RGB}{236, 240, 241}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathpazo} % Palatino font
+\usepackage{multirow}
+\usepackage{tcolorbox}
+\usepackage{tikz} % For diagrams
+\usepackage{caption} % For figure captions
+\usepackage{adjustbox} % For adjusting box
+\usepackage{float} % For better float control
+
+% Beamer specific configurations
+\setbeamercolor{structure}{fg=primary}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=black}
+
+% Information for the title page
+\title{Lesson 6: Completing the Square \\& Converting to APQ Form}
+\author{Yi-Chen Lin}
+\date{June 10, 2025}
+
+\begin{document}
+
+% Title page
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% Table of Contents
+\begin{frame}{Table of Contents}
+    \tableofcontents
+\end{frame}
+
+% Section I: Perfect Trinomials
+\section{Perfect Trinomials}
+
+\begin{frame}{I) Perfect Trinomials - Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Concepts]
+        \footnotesize
+        \begin{itemize}
+            \item \textbf{When a perfect trinomial is factored, both binomials will be equal}
+                \begin{itemize}
+                    \item \(x^2 + 12x + 36 = (x+6)(x+6) = (x+6)^2\)
+                    \item \(x^2 - 14x + 49 = (x-7)(x-7) = (x-7)^2\)
+                    \item \(x^2 + 4x + 4 = (x+2)(x+2) = (x+2)^2\)
+                \end{itemize}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{I) Perfect Trinomials - Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Concepts (Cont.)]
+        \footnotesize
+        \begin{itemize}
+            \item \textbf{The third term in a perfect trinomial is equal to the second term divided by 2 and then squared}
+                \begin{itemize}
+                    \item \(\left(\frac{12}{2}\right)^2 = 6^2 = 36\)
+                    \item \(\left(\frac{-14}{2}\right)^2 = (-7)^2 = 49\)
+                    \item \(\left(\frac{4}{2}\right)^2 = 2^2 = 4\)
+                \end{itemize}
+            \item \textbf{The term in the binomial is equal to the second term divided by 2}
+                \begin{itemize}
+                    \item \(\frac{12}{2} = 6\)
+                \end{itemize}
+            \item \textbf{When we CTS, we change the trinomial into a perfect trinomial}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+% Section II: What is Completing the Square
+\section{What is Completing the Square}
+
+\begin{frame}{II) What is Completing the Square?}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Concept]
+        \footnotesize
+        \textbf{Completing the Square} is a process that changes a quadratic function from:
+        \[ \textbf{Standard Form: } y = Ax^2 + Bx + C \]
+        to
+        \[ \textbf{Vertex Form: } y = a(x-p)^2 + q \]
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Example: Completing the Square (Part 1)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Example: $y = x^2 - 8x + 10$]
+        \footnotesize
+        Starting with $y = x^2 - 8x + 10$:
+        \begin{itemize}
+            \item \textbf{Bracket the first two terms!}
+                \begin{align*}
+                    y &= (x^2 - 8x) + 10
+                \end{align*}
+            \item \textbf{Divide the second term by 2 and square it!}
+                \item The purpose is to make the expression in the bracket into a perfect square!
+                \begin{align*}
+                    y &= (x^2 - 8x + 16) + 10 - 16
+                \end{align*}
+            \item \textbf{Take the negative square outside of the brackets!}
+                \begin{align*}
+                    y &= (x^2 - 8x + 16) + (10 - 16)
+                \end{align*}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Example: Completing the Square (Part 2)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Example: $y = x^2 - 8x + 10$ (Cont.)]
+        \footnotesize
+        Continuing from $y = (x^2 - 8x + 16) + (10 - 16)$:
+        \begin{itemize}
+            \item \textbf{The trinomial becomes two equal binomials}
+                \begin{align*}
+                    y &= (x-4)(x-4) - 6
+                \end{align*}
+            \item \textbf{Simplified to Vertex Form:}
+                \begin{align*}
+                    y &= (x-4)^2 - 6
+                \end{align*}
+            \item Now the equation is in vertex form: $a=1$, $p=4$, $q=-6$.
+            \item Vertex: $(4,-6)$
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Complete the Square and Find the Vertex}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem]
+        \footnotesize
+        Complete the square and find the vertex for: 
+        \[ y = x^2 + 10x + 15 \]
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Complete the Square and Find the Vertex (Solution) - Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution - Part 1]
+        \footnotesize
+        For $y = x^2 + 10x + 15$:
+        \begin{itemize}
+            \item \textbf{Bracket the first two terms!}
+                \begin{align*}
+                    y &= (x^2 + 10x) + 15
+                \end{align*}
+            \item \textbf{Divide the second term by 2 and square it!}
+                \item Purpose: Make the expression in the bracket into a perfect square!
+                \begin{align*}
+                    y &= (x^2 + 10x + 25) + 15 - 25
+                \end{align*}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Complete the Square and Find the Vertex (Solution) - Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution - Part 2 (Cont.)]
+        \footnotesize
+        Continuing for $y = (x^2 + 10x + 25) + 15 - 25$:
+        \begin{itemize}
+            \item \textbf{Take the negative square outside of the brackets!}
+                \begin{align*}
+                    y &= (x^2 + 10x + 25) + (15 - 25)
+                \end{align*}
+            \item \textbf{The trinomial becomes two equal binomials}
+                \begin{align*}
+                    y &= (x+5)(x+5) - 10
+                \end{align*}
+            \item \textbf{Now the equation is in vertex form:}
+                \begin{align*}
+                    y &= (x+5)^2 - 10
+                \end{align*}
+            \item Here, $a=1$, $p=-5$, $q=-10$.
+            \item \textbf{Vertex:} $(-5, -10)$
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+% Section III: CTS with a Leading Coefficient
+\section{CTS with a Leading Coefficient}
+
+\begin{frame}{III) CTS with a Leading Coefficient}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Steps]
+        \footnotesize
+        \begin{itemize}
+            \item \textbf{Factor out any coefficient for $x^2$}
+                \begin{align*}
+                    y &= 3x^2 - 12x + 15 \\
+                    y &= 3(x^2 - 4x) + 15
+                \end{align*}
+            \item \textbf{Divide the second term by 2 and square it!}
+                \item This makes the expression in the bracket into a perfect square!
+                \begin{align*}
+                    y &= 3\left(x^2 - 4x + \left(\frac{-4}{2}\right)^2\right) + 15 - 3\left(\frac{-4}{2}\right)^2
+                \end{align*}
+            \item \textbf{Take the negative square outside of the brackets and multiply with coefficient in front!}
+                \begin{align*}
+                    y &= 3\left(x^2 - 4x + 4\right) + 15 - 3(4) \\
+                    y &= 3(x^2 - 4x + 4) + 15 - 12
+                \end{align*}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{III) CTS with a Leading Coefficient (Cont.)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Steps (Cont.)]
+        \footnotesize
+        Continuing for $y = 3(x^2 - 4x + 4) + 15 - 12$:
+        \begin{itemize}
+            \item \textbf{The trinomial becomes two equal binomials}
+                \begin{align*}
+                    y &= 3(x-2)(x-2) + 3
+                \end{align*}
+            \item \textbf{Now the equation is in vertex form:}
+                \begin{align*}
+                    y &= 3(x-2)^2 + 3
+                \end{align*}
+            \item Here, $a=3$, $p=2$, $q=3$.
+            \item \textbf{Vertex:} $(2, 3)$
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Convert to APQ Form (Problem 1)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem 1]
+        \footnotesize
+        Convert the following equation to APQ Form:
+        \[ y = 4x^2 + 8x - 5 \]
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Convert to APQ Form (Solution 1) - Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 1 - Part 1]
+        \footnotesize
+        For $y = 4x^2 + 8x - 5$:
+        \begin{itemize}
+            \item \textbf{Factor out any coefficient for $x^2$}
+                \begin{align*}
+                    y &= 4(x^2 + 2x) - 5
+                \end{align*}
+            \item \textbf{Divide the second term by 2 and square it!}
+                \begin{align*}
+                    y &= 4\left(x^2 + 2x + \left(\frac{2}{2}\right)^2\right) - 5 - 4\left(\frac{2}{2}\right)^2 \\
+                    y &= 4(x^2 + 2x + 1) - 5 - 4(1)
+                \end{align*}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Convert to APQ Form (Solution 1) - Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 1 - Part 2 (Cont.)]
+        \footnotesize
+        Continuing for $y = 4(x^2 + 2x + 1) - 5 - 4$:
+        \begin{itemize}
+            \item \textbf{The trinomial becomes two equal binomials}
+                \begin{align*}
+                    y &= 4(x+1)(x+1) - 9
+                \end{align*}
+            \item \textbf{Vertex Form:}
+                \begin{align*}
+                    y &= 4(x+1)^2 - 9
+                \end{align*}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Convert to APQ Form (Problem 2)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem 2]
+        \footnotesize
+        Convert the following equation to APQ Form:
+        \[ y = \frac{1}{3}x^2 - 6x + 20 \]
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Convert to APQ Form (Solution 2) - Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 2 - Part 1]
+        \footnotesize
+        For $y = \frac{1}{3}x^2 - 6x + 20$:
+        \begin{itemize}
+            \item \textbf{Factor out any coefficient for $x^2$}
+                \begin{align*}
+                    y &= \frac{1}{3}(x^2 - 18x) + 20
+                \end{align*}
+            \item \textbf{Divide the second term by 2 and square it!}
+                \begin{align*}
+                    y &= \frac{1}{3}(x^2 - 18x + (-9)^2) + 20 - \frac{1}{3}(-9)^2 \\
+                    y &= \frac{1}{3}(x^2 - 18x + 81) + 20 - \frac{1}{3}(81)
+                \end{align*}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Convert to APQ Form (Solution 2) - Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 2 - Part 2 (Cont.)]
+        \footnotesize
+        Continuing for $y = \frac{1}{3}(x^2 - 18x + 81) + 20 - \frac{1}{3}(81)$:
+        \begin{itemize}
+            \item \textbf{Simplify constants}
+                \begin{align*}
+                    y &= \frac{1}{3}(x^2 - 18x + 81) + 20 - 27 \\
+                    y &= \frac{1}{3}(x^2 - 18x + 81) - 7
+                \end{align*}
+            \item \textbf{The trinomial becomes two equal binomials}
+                \begin{align*}
+                    y &= \frac{1}{3}(x-9)^2 - 7
+                \end{align*}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Convert to APQ Form (Problem 3)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem 3]
+        \footnotesize
+        Convert the following equation to APQ Form:
+        \[ y = -\frac{1}{4}x^2 + 2x - 1 \]
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Convert to APQ Form (Solution 3) - Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 3 - Part 1]
+        \footnotesize
+        For $y = -\frac{1}{4}x^2 + 2x - 1$:
+        \begin{itemize}
+            \item \textbf{Factor out any coefficient for $x^2$}
+                \begin{align*}
+                    y &= -\frac{1}{4}(x^2 - 8x) - 1
+                \end{align*}
+            \item \textbf{Divide the second term by 2 and square it!}
+                \begin{align*}
+                    y &= -\frac{1}{4}(x^2 - 8x + (-4)^2) - 1 - \left(-\frac{1}{4}\right)(-4)^2 \\
+                    y &= -\frac{1}{4}(x^2 - 8x + 16) - 1 - \left(-\frac{1}{4}\right)(16)
+                \end{align*}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Convert to APQ Form (Solution 3) - Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 3 - Part 2 (Cont.)]
+        \footnotesize
+        Continuing for $y = -\frac{1}{4}(x^2 - 8x + 16) - 1 - \left(-\frac{1}{4}\right)(16)$:
+        \begin{itemize}
+            \item \textbf{Simplify constants}
+                \begin{align*}
+                    y &= -\frac{1}{4}(x^2 - 8x + 16) - 1 + 4
+                \end{align*}
+            \item \textbf{The trinomial becomes two equal binomials}
+                \begin{align*}
+                    y &= -\frac{1}{4}(x-4)^2 + 3
+                \end{align*}
+            \item \textbf{Vertex Form:}
+                \begin{align*}
+                    y &= -\frac{1}{4}(x-4)^2 + 3
+                \end{align*}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+% Section IV: Solving Equations in APQ Form
+\section{Solving Equations in APQ Form}
+
+\begin{frame}{IV) Solving Equations in APQ Form - Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Steps - Part 1]
+        \footnotesize
+        When an equation is in APQ form, solving for the x-intercepts requires very little algebra.
+        \begin{enumerate}
+            \item \textbf{Step 1:} The "y" coordinate is zero at the x-intercept, so the "Y variable should be zero."
+                \begin{align*}
+                    y &= 2(x+3)^2 - 18 \\
+                    0 &= 2(x+3)^2 - 18
+                \end{align*}
+            \item \textbf{Step 2:} Isolate the brackets with the exponent.
+                \begin{align*}
+                    18 &= 2(x+3)^2 \\
+                    9 &= (x+3)^2
+                \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{IV) Solving Equations in APQ Form - Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Steps - Part 2 (Cont.)]
+        \footnotesize
+        Continuing from $(x+3)^2 = 9$:
+        \begin{enumerate}
+            \item \textbf{Step 3:} Square root both sides to get rid of the exponent. Remember: There are two answers! Positive \& negative!
+                \begin{align*}
+                    \pm\sqrt{9} &= x+3 \\
+                    \pm 3 &= x+3
+                \end{align*}
+            \item \textbf{Step 4:} Solve for "x" by adding/subtracting the constant.
+                \begin{align*}
+                    x &= -3 \pm 3
+                \end{align*}
+            \item You now have two answers:
+                \begin{itemize}
+                    \item \(x_1 = -3 + 3 = 0\)
+                    \item \(x_2 = -3 - 3 = -6\)
+                \end{itemize}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Solve for "x" (Problem 1)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem 1]
+        \footnotesize
+        Solve for "x":
+        \[ (x+8)^2 - 25 = 0 \]
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Solve for "x" (Solution 1) - Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 1 - Part 1]
+        \footnotesize
+        For $(x+8)^2 - 25 = 0$:
+        \begin{align*}
+            (x+8)^2 &= 25 \\
+            x+8 &= \pm\sqrt{25} \\
+            x+8 &= \pm 5
+        \end{align*}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Solve for "x" (Solution 1) - Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 1 - Part 2 (Cont.)]
+        \footnotesize
+        Continuing for $x+8 = \pm 5$:
+        \begin{align*}
+            x &= -8 \pm 5
+        \end{align*}
+        So, $x_1 = -8 + 5 = -3$ and $x_2 = -8 - 5 = -13$.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Solve for "x" (Problem 2)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem 2]
+        \footnotesize
+        Solve for "x":
+        \[ 5(x-4)^2 - 45 = 0 \]
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Solve for "x" (Solution 2)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 2]
+        \footnotesize
+        For $5(x-4)^2 - 45 = 0$:
+        \begin{align*}
+            5(x-4)^2 &= 45 \\
+            (x-4)^2 &= 9 \\
+            x-4 &= \pm\sqrt{9} \\
+            x-4 &= \pm 3 \\
+            x &= 4 \pm 3
+        \end{align*}
+        So, $x_1 = 4 + 3 = 7$ and $x_2 = 4 - 3 = 1$.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Solve for "x" (Problem 3)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem 3]
+        \footnotesize
+        Solve for "x":
+        \[ 3x^2 + 7 = 0 \]
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Solve for "x" (Solution 3)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 3]
+        \footnotesize
+        For $3x^2 + 7 = 0$:
+        \begin{align*}
+            3x^2 &= -7 \\
+            x^2 &= -\frac{7}{3}
+        \end{align*}
+        Since a square cannot be negative, there are \textbf{No Real Solutions}.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Solve for "x" by CTS (Problem 4)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem 4]
+        \footnotesize
+        Solve for "x" by completing the square:
+        \[ 0 = x^2 + 4x + 6 \]
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Solve for "x" by CTS (Solution 4) - Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 4 - Part 1]
+        \footnotesize
+        For $0 = x^2 + 4x + 6$:
+        \begin{itemize}
+            \item \textbf{Bracket the first two terms!}
+                \begin{align*}
+                    0 &= (x^2 + 4x) + 6
+                \end{align*}
+            \item \textbf{Divide the second term by 2 and square it!}
+                \begin{align*}
+                    0 &= (x^2 + 4x + 4) + 6 - 4
+                \end{align*}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Solve for "x" by CTS (Solution 4) - Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 4 - Part 2 (Cont.)]
+        \footnotesize
+        Continuing for $0 = (x^2 + 4x + 4) + 6 - 4$:
+        \begin{itemize}
+            \item \textbf{Take the negative square outside of the brackets!}
+                \begin{align*}
+                    0 &= (x^2 + 4x + 4) + 2
+                \end{align*}
+            \item \textbf{The trinomial becomes two equal binomials}
+                \begin{align*}
+                    0 &= (x+2)^2 + 2
+                \end{align*}
+            \item \textbf{Solve for "x" by square rooting both sides:}
+                \begin{align*}
+                    -2 &= (x+2)^2
+                \end{align*}
+            \item Since a square cannot be negative, there are \textbf{No Real Solutions}.
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Solve for "x" by CTS (Problem 5)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem 5]
+        \footnotesize
+        Solve for "x" by completing the square:
+        \[ 0 = 3x^2 + 9x - 6 \]
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Solve for "x" by CTS (Solution 5) - Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 5 - Part 1]
+        \footnotesize
+        For $0 = 3x^2 + 9x - 6$:
+        \begin{itemize}
+            \item \textbf{Factor out any coefficient for $x^2$}
+                \begin{align*}
+                    0 &= 3(x^2 + 3x) - 6
+                \end{align*}
+            \item \textbf{Divide the second term by 2 and square it!}
+                \begin{align*}
+                    0 &= 3\left(x^2 + 3x + (1.5)^2\right) - 6 - 3(1.5)^2 \\
+                    0 &= 3(x^2 + 3x + 2.25) - 6 - 6.75
+                \end{align*}
+            \item \textbf{Take the negative square outside of the brackets and multiply with coefficient in front!}
+                \begin{align*}
+                    0 &= 3(x^2 + 3x + 2.25) - 12.75
+                \end{align*}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Solve for "x" by CTS (Solution 5) - Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 5 - Part 2 (Cont.)]
+        \footnotesize
+        Continuing for $0 = 3(x^2 + 3x + 2.25) - 12.75$:
+        \begin{itemize}
+            \item \textbf{The trinomial becomes two equal binomials}
+                \begin{align*}
+                    0 &= 3(x+1.5)^2 - 12.75
+                \end{align*}
+            \item \textbf{Solve for "x" by square rooting both sides:}
+                \begin{align*}
+                    12.75 &= 3(x+1.5)^2 \\
+                    4.25 &= (x+1.5)^2 \\
+                    \pm\sqrt{4.25} &= x+1.5 \\
+                    x &= -1.5 \pm\sqrt{4.25}
+                \end{align*}
+            \item So, $x_1 = -1.5 + \sqrt{4.25}$ and $x_2 = -1.5 - \sqrt{4.25}$.
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Solve for "x" (Problem 6)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem 6]
+        \footnotesize
+        Solve for "x":
+        \[ 2x^2 + 16x + 30 = 0 \]
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Solve for "x" (Solution 6) - Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 6 - Part 1]
+        \footnotesize
+        For $2x^2 + 16x + 30 = 0$:
+        \begin{itemize}
+            \item \textbf{Factor out any coefficient for $x^2$}
+                \begin{align*}
+                    0 &= 2(x^2 + 8x) + 30
+                \end{align*}
+            \item \textbf{Divide the second term by 2 and square it!}
+                \begin{align*}
+                    0 &= 2(x^2 + 8x + (-4)^2) + 30 - 2(-4)^2 \\
+                    0 &= 2(x^2 + 8x + 16) + 30 - 2(16)
+                \end{align*}
+            \item \textbf{Simplify constants}
+                \begin{align*}
+                    0 &= 2(x^2 + 8x + 16) + 30 - 32 \\
+                    0 &= 2(x^2 + 8x + 16) - 2
+                \end{align*}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Solve for "x" (Solution 6) - Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 6 - Part 2 (Cont.)]
+        \footnotesize
+        Continuing for $0 = 2(x^2 + 8x + 16) - 2$:
+        \begin{itemize}
+            \item \textbf{The trinomial becomes two equal binomials}
+                \begin{align*}
+                    0 &= 2(x+4)^2 - 2
+                \end{align*}
+            \item \textbf{Solve for "x" by square rooting both sides:}
+                \begin{align*}
+                    2 &= 2(x+4)^2 \\
+                    1 &= (x+4)^2 \\
+                    \pm\sqrt{1} &= x+4 \\
+                    x &= -4 \pm 1
+                \end{align*}
+            \item So, $x_1 = -4 + 1 = -3$ and $x_2 = -4 - 1 = -5$.
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Solve for "x" (Problem 7)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem 7]
+        \footnotesize
+        Solve for "x":
+        \[ 0.25x^2 - 2x + 1 = 0 \]
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Solve for "x" (Solution 7) - Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 7 - Part 1]
+        \footnotesize
+        For $0.25x^2 - 2x + 1 = 0$:
+        \begin{itemize}
+            \item \textbf{Factor out any coefficient for $x^2$}
+                \begin{align*}
+                    0 &= 0.25(x^2 - 8x) + 1
+                \end{align*}
+            \item \textbf{Divide the second term by 2 and square it!}
+                \begin{align*}
+                    0 &= 0.25(x^2 - 8x + (-4)^2) + 1 - 0.25(-4)^2 \\
+                    0 &= 0.25(x^2 - 8x + 16) + 1 - 0.25(16)
+                \end{align*}
+            \item \textbf{Simplify constants}
+                \begin{align*}
+                    0 &= 0.25(x^2 - 8x + 16) + 1 - 4
+                \end{align*}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Solve for "x" (Solution 7) - Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution 7 - Part 2 (Cont.)]
+        \footnotesize
+        Continuing for $0 = 0.25(x^2 - 8x + 16) + 1 - 4$:
+        \begin{itemize}
+            \item \textbf{The trinomial becomes two equal binomials}
+                \begin{align*}
+                    0 &= 0.25(x-4)^2 - 3
+                \end{align*}
+            \item \textbf{Solve for "x" by square rooting both sides:}
+                \begin{align*}
+                    3 &= 0.25(x-4)^2 \\
+                    12 &= (x-4)^2 \\
+                    \pm\sqrt{12} &= x-4 \\
+                    \pm 2\sqrt{3} &= x-4 \\
+                    x &= 4 \pm 2\sqrt{3}
+                \end{align*}
+            \item So, $x_1 = 4 + 2\sqrt{3}$ and $x_2 = 4 - 2\sqrt{3}$.
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+% Section V: CTS with Algebra Tiles
+\section{CTS with Algebra Tiles}
+
+\begin{frame}{IV) CTS with Algebra Tiles}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Concept: $y = x^2 + 10x + 25$]
+        \footnotesize
+        \begin{figure}[H]
+            \centering
+            % Placeholder for Algebra Tiles image for x^2 + 10x + 25, if available.
+            % Replace with \includegraphics{path/to/image.png} if you have one.
+            % For now, we will describe it textually or leave it as a conceptual point.
+            The tiles can be organized together to become a square
+            
+            \begin{itemize}
+                \item Side 1: $x+5$
+                \item Side 2: $x+5$
+                \item So, $(x+5)(x+5) = (x+5)^2$
+            \end{itemize}
+        \end{figure}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{IV) CTS with Algebra Tiles (Cont.)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Concept: $y = x^2 - 6x + 2$]
+        \footnotesize
+        \begin{figure}[H]
+            \centering
+            % Placeholder for Algebra Tiles image for x^2 - 6x + 2, if available.
+            % Replace with \includegraphics{path/to/image.png} if you have one.
+            % For now, we will describe it textually or leave it as a conceptual point.
+            The equation is now in vertex form.
+            Create a bunch of zero pairs to complete the square.
+            
+            \begin{itemize}
+                \item Side 1: $x-3$
+                \item Side 2: $x-3$
+                \item Additional constant: $-7$
+                \item So, $(x-3)^2 - 7$
+            \end{itemize}
+        \end{figure}
+    \end{tcolorbox}
+\end{frame}
+
+% Section VI: Word Problem
+\section{Word Problem}
+
+\begin{frame}{Word Problem: Rock Thrown into Air (Problem)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem]
+        \footnotesize
+        A rock is thrown into the air. The height of the rock is given by the formula:
+        \[ h(t) = -3.5t^2 + 18t + 4 \]
+        Where "H" is the height in meters and "T" is the time after the rock is thrown in seconds.
+        \begin{enumerate}
+            \item Convert the following equation to APQ form.
+            \item When will the rock be at the maximum height?
+            \item What is the maximum height?
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Word Problem: Rock Thrown into Air (Solution Part A) - Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution Part A: Convert to APQ Form - Part 1]
+        \footnotesize
+        For $h(t) = -3.5t^2 + 18t + 4$:
+        \begin{itemize}
+            \item \textbf{Factor out any coefficient for $t^2$}
+                \begin{align*}
+                    h(t) &= -3.5\left(t^2 - \frac{18}{3.5}t\right) + 4 \\
+                    h(t) &= -3.5(t^2 - 5.142857t) + 4 \quad \text{(approx.)}
+                \end{align*}
+            \item \textbf{Divide the second term by 2 and square it!}
+                \begin{align*}
+                    h(t) &= -3.5\left(t^2 - 5.142857t + \left(\frac{-5.142857}{2}\right)^2\right) + 4 - (-3.5)\left(\frac{-5.142857}{2}\right)^2 \\
+                    h(t) &= -3.5(t^2 - 5.142857t + (2.5714285)^2) + 4 + 3.5(2.5714285)^2
+                \end{align*}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Word Problem: Rock Thrown into Air (Solution Part A) - Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution Part A: Convert to APQ Form - Part 2 (Cont.)]
+        \footnotesize
+        Continuing for $h(t) = -3.5(t^2 - 5.142857t + (2.5714285)^2) + 4 + 3.5(2.5714285)^2$:
+        \begin{itemize}
+            \item \textbf{Simplify and combine constants}
+                \begin{align*}
+                    h(t) &= -3.5(t^2 - 5.142857t + 6.612244) + 4 + 23.142854
+                \end{align*}
+            \item \textbf{The trinomial becomes two equal binomials}
+                \begin{align*}
+                    h(t) &= -3.5(t - 2.5714285)^2 + 27.142854
+                \end{align*}
+            \item \textbf{APQ Form:}
+                \begin{align*}
+                    h(t) &= -3.5(t - 2.57)^2 + 27.14 \quad \text{(approx.)}
+                \end{align*}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Word Problem: Rock Thrown into Air (Solution Part B & C)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution Part B & C: Max Height]
+        \footnotesize
+        For $h(t) = -3.5(t - 2.57)^2 + 27.14$:
+        \begin{itemize}
+            \item The rock will be at maximum height at the vertex of the equation.
+            \item From the APQ form, the vertex is $(p,q) = (2.57, 27.14)$.
+            \item \textbf{When will the rock be at the maximum height?}
+                \begin{itemize}
+                    \item \textbf{Answer:} Approximately 2.57 seconds.
+                \end{itemize}
+            \item \textbf{What is the maximum height?}
+                \begin{itemize}
+                    \item \textbf{Answer:} Approximately 27.14 meters.
+                \end{itemize}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\end{document} 

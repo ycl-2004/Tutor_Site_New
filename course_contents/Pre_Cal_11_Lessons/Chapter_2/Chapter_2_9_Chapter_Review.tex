@@ -1,0 +1,379 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xcolor}
+
+% Custom colors
+\definecolor{primary}{RGB}{41, 128, 185}
+\definecolor{secondary}{RGB}{52, 152, 219}
+\definecolor{accent}{RGB}{231, 76, 60}
+\definecolor{lightgray}{RGB}{236, 240, 241}
+
+% Theme customization
+\usetheme{Madrid}
+\usecolortheme{whale}
+\setbeamercolor{structure}{fg=primary}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=black}
+
+% Title page info
+\title{Pre-Calculus 11}
+\subtitle{Chapter 2 Review: Factoring and Quadratic Functions}
+\author{Created by Yi-Chen Lin}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% Introduction
+\begin{frame}{Chapter 2 Review}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Chapter Overview]
+        \footnotesize
+        \begin{itemize}
+            \item 2.1 Factoring Trinomials
+            \item 2.2 Solving Quadratic Equations by Factoring
+            \item 2.3 Graphing Quadratic Functions by Factoring
+            \item 2.4 The Quadratic Formula
+            \item 2.5 Graphing Quadratic Functions in APQ form
+            \item 2.6 Completing the Square
+            \item 2.7 Word Problems on Max/Min
+            \item 2.8 Quadratic Inequalities
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+% Section 1: Factoring Review
+\begin{frame}{Section 1: Factoring Review}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Practice Problems]
+        \footnotesize
+        Factor each of the following expressions:
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item $6x^2 + 17x + 5$ (Basic trinomial)
+            \item $4x^2 - 12x + 9$ (Perfect square)
+            \item $9x^2 - 16$ (Difference of squares)
+            \item $8x^3 - 27$ (Difference of cubes)
+            \item $x^4 - 16$ (Multiple factoring steps)
+            \item $12x^2y - 18xy^2$ (Common factor)
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% Section 1: Solutions Part 1
+\begin{frame}{Section 1: Solutions (Part 1)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+        \footnotesize
+        \begin{enumerate}
+            \item $6x^2 + 17x + 5$
+            \begin{align*}
+                &= (3x + 1)(2x + 5)
+            \end{align*}
+            
+            \item $4x^2 - 12x + 9$
+            \begin{align*}
+                &= (2x - 3)^2
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% Section 1: Solutions Part 2
+\begin{frame}{Section 1: Solutions (Part 2)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions (Continued)]
+        \footnotesize
+        \begin{enumerate}
+            \setcounter{enumi}{2}
+            \item $9x^2 - 16$
+            \begin{align*}
+                &= (3x + 4)(3x - 4)
+            \end{align*}
+            
+            \item $8x^3 - 27$
+            \begin{align*}
+                &= (2x - 3)(4x^2 + 6x + 9)
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% Section 1: Solutions Part 3
+\begin{frame}{Section 1: Solutions (Part 3)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions (Continued)]
+        \footnotesize
+        \begin{enumerate}
+            \setcounter{enumi}{4}
+            \item $x^4 - 16$
+            \begin{align*}
+                &= (x^2 + 4)(x^2 - 4) \\
+                &= (x^2 + 4)(x + 2)(x - 2)
+            \end{align*}
+            
+            \item $12x^2y - 18xy^2$
+            \begin{align*}
+                &= 6xy(2x - 3y)
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% Section 2: Solving Quadratic Equations
+\begin{frame}{Section 2: Solving Quadratic Equations}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Practice Problems]
+        \footnotesize
+        Solve each quadratic equation using the most appropriate method:
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item $x^2 + 5x + 6 = 0$ (by factoring)
+            \item $2x^2 - 5x + 3 = 0$ (using quadratic formula)
+            \item $x^2 + 6x + 2 = 0$ (by completing the square)
+            \item $3x^2 - 12 = 0$ (by square root method)
+            \item $x^2 - 4x + 4 = 0$ (perfect square)
+            \item $2x^2 + 7x - 4 = 0$ (mixed methods)
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% Section 2: Solutions Part 1
+\begin{frame}{Section 2: Solutions (Part 1)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+        \footnotesize
+        \begin{enumerate}
+            \item $x^2 + 5x + 6 = 0$
+            \begin{align*}
+                (x + 2)(x + 3) &= 0 \\
+                x &= -2 \text{ or } x = -3
+            \end{align*}
+            
+            \item $2x^2 - 5x + 3 = 0$
+            \begin{align*}
+                x &= \frac{5 \pm \sqrt{25 - 24}}{4} \\
+                &= \frac{5 \pm 1}{4} \\
+                x &= \frac{3}{2} \text{ or } x = 1
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% Section 2: Solutions Part 2
+\begin{frame}{Section 2: Solutions (Part 2)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions (Continued)]
+        \footnotesize
+        \begin{enumerate}
+            \setcounter{enumi}{2}
+            \item $x^2 + 6x + 2 = 0$
+            \begin{align*}
+                x^2 + 6x &= -2 \\
+                x^2 + 6x + 9 &= 7 \\
+                (x + 3)^2 &= 7 \\
+                x &= -3 \pm \sqrt{7}
+            \end{align*}
+            
+            \item $3x^2 - 12 = 0$
+            \begin{align*}
+                3x^2 &= 12 \\
+                x^2 &= 4 \\
+                x &= \pm 2
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% Section 2: Solutions Part 3
+\begin{frame}{Section 2: Solutions (Part 3)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions (Continued)]
+        \footnotesize
+        \begin{enumerate}
+            \setcounter{enumi}{4}
+            \item $x^2 - 4x + 4 = 0$
+            \begin{align*}
+                (x - 2)^2 &= 0 \\
+                x &= 2 \text{ (double root)}
+            \end{align*}
+            
+            \item $2x^2 + 7x - 4 = 0$
+            \begin{align*}
+                x &= \frac{-7 \pm \sqrt{49 + 32}}{4} \\
+                &= \frac{-7 \pm 9}{4} \\
+                x &= \frac{1}{2} \text{ or } x = -4
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% Section 3: Graphing and Applications
+\begin{frame}{Section 3: Graphing and Applications}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Practice Problems]
+        \footnotesize
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item Find the vertex and axis of symmetry of $y = x^2 - 4x + 3$
+            \item A ball is thrown upward from a height of 6 feet with an initial velocity of 40 feet per second. The height h of the ball after t seconds is given by $h = -16t^2 + 40t + 6$. Find the maximum height of the ball.
+            \item Solve the inequality: $x^2 - 4x - 5 > 0$
+            \item Find the domain and range of $y = -2x^2 + 8x - 5$
+            \item A rectangular garden has a perimeter of 100 feet. Find the dimensions that maximize the area.
+            \item Solve the system of inequalities:
+            \begin{align*}
+                y &> x^2 - 4x + 3 \\
+                y &< -x^2 + 6x - 5
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% Section 3: Solutions Part 1
+\begin{frame}{Section 3: Solutions (Part 1)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+        \footnotesize
+        \begin{enumerate}
+            \item $y = x^2 - 4x + 3$
+            \begin{align*}
+                \text{Vertex form: } y &= (x - 2)^2 - 1 \\
+                \text{Vertex: } (2, -1) \\
+                \text{Axis of symmetry: } x &= 2
+            \end{align*}
+            
+            \item Maximum height problem:
+            \begin{align*}
+                h &= -16t^2 + 40t + 6 \\
+                t &= \frac{-40}{2(-16)} = 1.25 \text{ seconds} \\
+                h &= -16(1.25)^2 + 40(1.25) + 6 \\
+                &= 31 \text{ feet}
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% Section 3: Solutions Part 2
+\begin{frame}{Section 3: Solutions (Part 2)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions (Continued)]
+        \footnotesize
+        \begin{enumerate}
+            \setcounter{enumi}{2}
+            \item $x^2 - 4x - 5 > 0$
+            \begin{align*}
+                (x - 5)(x + 1) &> 0 \\
+                x &< -1 \text{ or } x > 5
+            \end{align*}
+            
+            \item Domain and Range:
+            \begin{align*}
+                \text{Domain: } &(-\infty, \infty) \\
+                \text{Range: } &(-\infty, 3] \text{ (since vertex is at } (2,3))
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% Section 3: Solutions Part 3
+\begin{frame}{Section 3: Solutions (Part 3)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions (Continued)]
+        \footnotesize
+        \begin{enumerate}
+            \setcounter{enumi}{4}
+            \item Garden problem:
+            \begin{align*}
+                \text{Let } x &= \text{ width} \\
+                \text{Then } 50-x &= \text{ length} \\
+                A &= x(50-x) = -x^2 + 50x \\
+                \text{Maximum at } x &= 25 \text{ feet} \\
+                \text{Dimensions: } &25 \text{ ft by } 25 \text{ ft}
+            \end{align*}
+            
+            \item System of inequalities:
+            \begin{align*}
+                \text{Solution region is between the parabolas} \\
+                \text{where } 1 < x < 4
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% Final Review Questions
+\begin{frame}{Final Review Questions}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Comprehensive Review]
+        \footnotesize
+        \begin{enumerate}
+            \setlength{\itemsep}{0.5em}
+            \item Factor completely: $12x^2 - 27$
+            \item Solve: $3x^2 + 7x - 6 = 0$
+            \item Find the vertex and graph: $y = -2x^2 + 8x - 5$
+            \item Solve the inequality: $2x^2 - 5x - 3 \leq 0$
+            \item A projectile is launched from ground level. Its height h in meters after t seconds is given by $h = -4.9t^2 + 20t$. Find the maximum height and time to reach it.
+            \item Solve the equation: $\sqrt{x^2 - 4x + 4} = x - 2$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% Final Review Solutions Part 1
+\begin{frame}{Final Review Solutions (Part 1)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+        \footnotesize
+        \begin{enumerate}
+            \item $12x^2 - 27$
+            \begin{align*}
+                &= 3(4x^2 - 9) \\
+                &= 3(2x + 3)(2x - 3)
+            \end{align*}
+            
+            \item $3x^2 + 7x - 6 = 0$
+            \begin{align*}
+                x &= \frac{-7 \pm \sqrt{49 + 72}}{6} \\
+                &= \frac{-7 \pm 11}{6} \\
+                x &= \frac{2}{3} \text{ or } x = -3
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% Final Review Solutions Part 2
+\begin{frame}{Final Review Solutions (Part 2)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions (Continued)]
+        \footnotesize
+        \begin{enumerate}
+            \setcounter{enumi}{2}
+            \item $y = -2x^2 + 8x - 5$
+            \begin{align*}
+                \text{Vertex: } (2, 3) \\
+                \text{Axis of symmetry: } x &= 2
+            \end{align*}
+            
+            \item $2x^2 - 5x - 3 \leq 0$
+            \begin{align*}
+                (2x + 1)(x - 3) &\leq 0 \\
+                -\frac{1}{2} &\leq x \leq 3
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% Final Review Solutions Part 3
+\begin{frame}{Final Review Solutions (Part 3)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions (Continued)]
+        \footnotesize
+        \begin{enumerate}
+            \setcounter{enumi}{4}
+            \item Projectile problem:
+            \begin{align*}
+                t &= \frac{-20}{2(-4.9)} \approx 2.04 \text{ seconds} \\
+                h &= -4.9(2.04)^2 + 20(2.04) \\
+                &\approx 20.4 \text{ meters}
+            \end{align*}
+            
+            \item $\sqrt{x^2 - 4x + 4} = x - 2$
+            \begin{align*}
+                \sqrt{(x-2)^2} &= x - 2 \\
+                |x-2| &= x - 2 \\
+                x &\geq 2
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\end{document} 

@@ -1,0 +1,283 @@
+/* 
+  SPACING SYSTEM (px)
+  2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+  FONT SIZE SYSTEM (px)
+  10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98 
+  
+*/
+
+:root {
+  --color-background: #fffdf9; /* Light, warm creamy off-white */
+  --color-card-background: #f7f2eb; /* Slightly darker cream for cards */
+  --color-border: #c4b59f; /* Richer medium beige for borders */
+  --color-text-dark: #333; /* Dark gray for text */
+  --color-text-medium: #555;
+  --color-text-light: #666;
+  --color-hover: rgba(0, 0, 0, 0.05); /* Subtle hover effect */
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--color-text-dark);
+  background-color: var(--color-background);
+  overflow-x: hidden;
+}
+
+/* ------------------------------------------- */
+/* HEADER */
+
+.sticky .head {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--color-background);
+  z-index: 999;
+  height: 6rem;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
+}
+
+.sticky .hero {
+  margin-top: 9.6rem;
+}
+
+.head {
+  height: 6.2rem;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--color-text-dark);
+
+  background-color: var(--color-background);
+
+  position: relative;
+}
+
+.mobile {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  display: none;
+}
+
+.mobile-icon {
+  height: 4.8rem;
+  width: 4.8rem;
+  color: var(--color-text-dark);
+}
+
+.mobile-icon[name="close-outline"] {
+  display: none;
+}
+
+.head-nav {
+  margin-right: 3.2rem;
+}
+
+.head-link {
+  list-style: none;
+
+  display: flex;
+  gap: 3rem; /* Adjusted gap for navigation links */
+}
+
+.head-link a {
+  text-decoration: none;
+  color: var(--color-text-medium);
+
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font-size: 1.6rem; /* Adjusted font size */
+  font-weight: 500;
+  background-color: transparent; /* Make background transparent */
+  border: none; /* Remove border */
+}
+
+.head-link-in:link,
+.head-link-in:visited {
+  font-size: 1.6rem; /* Adjusted font size */
+  font-weight: 500;
+
+  display: inline-block;
+
+  background-color: transparent; /* Make background transparent */
+  color: var(--color-text-medium);
+  padding: 0.8rem 1.6rem; /* Adjusted padding to make them clickable areas */
+  border-radius: 4px; /* Slight rounding for the clickable area */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.head-link-in:hover,
+.head-link-in:active,
+.head-link-in.active-link {
+  background-color: var(--color-hover);
+  color: var(--color-text-dark);
+  transform: translateY(-2px); /* Slight lift effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.community-link {
+  color: #ff7b54; /* Initial color from inline style */
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for hover */
+}
+
+.community-link:hover {
+  color: #e66743; /* Slightly darker shade on hover */
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* ------------------------------------------- */
+/* HERO SECTION_ */
+
+.hero-section-new-design {
+  background-color: var(--color-background);
+  padding: 1.2rem 0;
+  min-height: calc(100vh - 6.2rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content-card {
+  max-width: 95rem;
+  width: 90%;
+  margin: 0 auto;
+  padding: 2.8rem; /* Reduced padding inside the card for a slightly smaller vertical look */
+  background-color: var(--color-card-background);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3.2rem;
+
+  position: relative;
+  transition: all 0.3s ease-in-out; /* Add transition for smooth effects */
+}
+
+.hero-content-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+}
+
+.hero-text-content {
+  flex: 1.5;
+  text-align: left;
+}
+
+.hero-main-name {
+  font-size: 4.8rem;
+  color: var(--color-text-dark);
+  margin-bottom: 1.6rem;
+  font-weight: 700;
+}
+
+.hero-main-title {
+  font-size: 2rem;
+  margin-bottom: 2.4rem;
+  color: var(--color-text-medium);
+  font-weight: 500;
+}
+
+.hero-main-description {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--color-text-light);
+}
+
+.hero-image-display {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.hero-image-card-style {
+  width: 100%;
+  max-width: 28rem; /* Reduced max-width for a slightly smaller image */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  object-fit: cover;
+  display: block;
+  transition: all 0.3s ease-in-out; /* Add transition for smooth effects */
+}
+
+.hero-image-card-style:hover {
+  transform: scale(1.03); /* Slightly zoom in on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* More prominent shadow on hover */
+}
+
+/* ------------------------------------------- */
+/* HERO SECTION END */
+
+/* Interactive Effects */
+.tutor-main-block:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.tutor-main-block,
+.courses-location {
+  transition: all 0.3s ease-in-out; /* Ensure transition covers border-radius */
+}
+
+.courses-location:hover {
+  transform: translateY(-15px) scale(1.05); /* Slightly less pronounced lift and scale */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25); /* Adjusted shadow for less depth */
+  background-color: var(
+    --color-card-background
+  ); /* Slight background change on hover */
+  z-index: 10; /* Bring hovered element to the front */
+  border-radius: 2.5rem;
+}
+
+.tutor-img-textbook,
+.tutor-img-class {
+  transition: all 0.3s ease-in-out; /* Smooth transition for images */
+}
+
+.tutor-img-textbook:hover,
+.tutor-img-class:hover {
+  transform: scale(1.03); /* Slightly zoom in on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* More prominent shadow on hover */
+}
+
+.courses-offered {
+  transition: all 0.3s ease-in-out; /* Add transition for smooth effects */
+  padding: 0; /* Changed padding to 0 as requested */
+  min-width: 60rem; /* Ensure enough space for two columns */
+}
+
+.courses-offered:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+}

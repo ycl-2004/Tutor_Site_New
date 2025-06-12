@@ -1,0 +1,213 @@
+body {
+  background: linear-gradient(120deg, #f7fafd 0%, #e9eef5 100%);
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: #23272f;
+}
+.course-detail-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+h1 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #6a1b9a;
+  letter-spacing: 0.5px;
+  text-shadow: none;
+}
+.chapter-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+.chapter-block {
+  display: grid;
+  grid-template-columns: 2.5fr 1.2fr;
+  gap: 36px;
+  align-items: flex-start;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 16px #d1b3e7a0;
+  padding: 36px 32px 36px 36px;
+  border-left: 6px solid #6a1b9a;
+  transition: box-shadow 0.3s, transform 0.3s;
+  position: relative;
+}
+.chapter-block:hover {
+  box-shadow: 0 6px 32px #b39ddb80;
+  transform: translateY(-2px) scale(1.01);
+}
+.chapter-sections h2 {
+  color: #6a1b9a;
+  font-size: 1.18rem;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+.chapter-sections ul {
+  padding-left: 20px;
+}
+.chapter-sections li {
+  margin-bottom: 10px;
+  font-size: 1.07rem;
+  transition: color 0.2s;
+}
+.chapter-sections a {
+  color: #512da8;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s, background 0.2s;
+  border-radius: 3px;
+  padding: 2px 3px;
+}
+.chapter-sections a:hover {
+  color: #fff;
+  background: #512da8;
+}
+.chapter-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.chapter-ppt {
+  background: #f4f7fa;
+  border-radius: 7px;
+  padding: 14px 10px;
+  box-shadow: 0 1px 6px #e0e0e0;
+  text-align: center;
+  min-width: 90px;
+  border: 1px solid #e3e8f0;
+}
+.chapter-ppt h3 {
+  color: #512da8;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+.chapter-ppt ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.chapter-ppt li {
+  margin-bottom: 6px;
+}
+.chapter-ppt a {
+  color: #00897b;
+  font-weight: 500;
+  text-decoration: underline;
+  transition: color 0.2s, background 0.2s;
+  border-radius: 3px;
+  padding: 2px 3px;
+}
+.chapter-ppt a:hover {
+  color: #fff;
+  background: #00897b;
+}
+.chapter-notes-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notes-link-btn {
+  display: inline-block;
+  background: #f4f7fa;
+  color: #6a1b9a;
+  font-weight: 600;
+  font-size: 1.01rem;
+  padding: 8px 18px;
+  border-radius: 7px;
+  text-decoration: none;
+  box-shadow: 0 1px 6px #e0e0e0;
+  border: 1px solid #e3e8f0;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+  margin-top: 4px;
+}
+.notes-link-btn:hover {
+  background: #6a1b9a;
+  color: #fff;
+  box-shadow: 0 2px 12px #6a1b9a80;
+  transform: translateY(-1px) scale(1.03);
+}
+.back-home-btn {
+  display: inline-block;
+  margin: 24px 0 0 24px;
+  background: #6a1b9a;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.01rem;
+  padding: 10px 22px;
+  border-radius: 7px;
+  text-decoration: none;
+  box-shadow: 0 1px 6px #b39ddb80;
+  border: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.back-home-btn:hover {
+  background: #512da8;
+  color: #fff;
+  box-shadow: 0 2px 12px #512da880;
+  transform: translateY(-1px) scale(1.03);
+}
+.precal11-intro-hero {
+  width: 100%;
+  background: linear-gradient(100deg, #ede7f6 60%, #d1c4e9 100%);
+  padding: 48px 0 36px 0;
+  margin-bottom: 36px;
+  box-shadow: 0 2px 16px #d1b3e740;
+}
+.precal11-intro-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 0 32px;
+}
+.precal11-intro-left {
+  flex: 2;
+}
+.precal11-intro-left h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #6a1b9a;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+.precal11-intro-desc {
+  font-size: 1.18rem;
+  color: #512da8;
+  margin-bottom: 28px;
+  font-weight: 400;
+  max-width: 500px;
+}
+.precal11-intro-img {
+  max-width: 180px;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px #b39ddb80;
+}
+@media (max-width: 900px) {
+  .chapter-block {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 16px 4px;
+    border-left: 4px solid #6a1b9a;
+  }
+  .chapter-ppt,
+  .chapter-right-col {
+    min-width: unset;
+  }
+  .precal11-intro-content {
+    flex-direction: column;
+    gap: 18px;
+    padding: 0 8px;
+  }
+  .precal11-intro-img {
+    max-width: 120px;
+  }
+  .precal11-intro-left h2 {
+    font-size: 1.5rem;
+  }
+}

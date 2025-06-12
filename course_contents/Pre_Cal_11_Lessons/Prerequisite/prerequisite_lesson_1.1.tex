@@ -1,0 +1,390 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning}
+
+% Custom colors
+\definecolor{primary}{RGB}{41, 128, 185}
+\definecolor{secondary}{RGB}{52, 152, 219}
+\definecolor{accent}{RGB}{231, 76, 60}
+\definecolor{lightgray}{RGB}{236, 240, 241}
+
+% Theme customization
+\usetheme{Madrid}
+\usecolortheme{whale}
+\setbeamercolor{structure}{fg=primary}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=black}
+
+% Title page info
+\title{Pre-Calculus 11}
+\subtitle{Prerequisite Skills Review}
+\author{Created by Yi-Chen Lin}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+    \begin{tikzpicture}[remember picture,overlay]
+        \fill[primary,opacity=0.1] (current page.south west) rectangle (current page.north east);
+    \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{BEDMAS}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=BEDMAS Order]
+        \begin{itemize}
+            \item Brackets
+            \item Exponents
+            \item Divide
+            \item Multiply
+            \item Add
+            \item Subtract
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{BEDMAS Practice}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Practice Problems]
+        Evaluate each expression:
+        \begin{enumerate}
+            \item $4 \times 7$
+            \item $(15 + 9)^2$
+            \item $(-6)^2 - 3 \times 4$
+            \item $(14 + 5)^2$
+            \item $\frac{8^2 + 5^2}{4 - 5}$
+            \item $\frac{3^3}{4^2}$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{BEDMAS Solutions - Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solutions]
+        \begin{enumerate}
+            \item $4 \times 7 = 28$
+            \item $(15 + 9)^2 = 24^2 = 576$
+            \item $(-6)^2 - 3 \times 4 = 36 - 12 = 24$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{BEDMAS Solutions - Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solutions]
+        \begin{enumerate}
+            \setcounter{enumi}{3}
+            \item $(14 + 5)^2 = 19^2 = 361$
+            \item $\frac{8^2 + 5^2}{4 - 5} = \frac{64 + 25}{-1} = -89$
+            \item $\frac{3^3}{4^2} = \frac{27}{16}$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Solving Equations - Practice}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Steps]
+        \begin{itemize}
+            \item Isolate the variable
+            \item Perform the same operation on both sides
+            \item Simplify step by step
+        \end{itemize}
+    \end{tcolorbox}
+    
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Practice Problems]
+        Solve each equation:
+        \begin{enumerate}
+            \item $4x = 16$
+            \item $\frac{7x}{5} = 14$
+            \item $5x - 15 = -35$
+            \item $6x + 17 = -13$
+            \item $5(9x - 4) = 8x + 7$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Solving Equations - Solutions Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+        \begin{enumerate}
+            \item $4x = 16$ \\
+                Step 1: Divide both sides by 4 \\
+                $\frac{4x}{4} = \frac{16}{4}$ \\
+                $x = 4$
+            
+            \item $\frac{7x}{5} = 14$ \\
+                Step 1: Multiply both sides by 5 \\
+                $7x = 70$ \\
+                Step 2: Divide both sides by 7 \\
+                $x = 10$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Solving Equations - Solutions Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+        \begin{enumerate}
+            \setcounter{enumi}{2}
+            \item $5x - 15 = -35$ \\
+                Step 1: Add 15 to both sides \\
+                $5x = -20$ \\
+                Step 2: Divide both sides by 5 \\
+                $x = -4$
+            
+            \item $6x + 17 = -13$ \\
+                Step 1: Subtract 17 from both sides \\
+                $6x = -30$ \\
+                Step 2: Divide both sides by 6 \\
+                $x = -5$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Solving Equations - Solutions Part 3}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+        \begin{enumerate}
+            \setcounter{enumi}{4}
+            \item $5(9x - 4) = 8x + 7$ \\
+                Step 1: Distribute the 5 \\
+                $45x - 20 = 8x + 7$ \\
+                Step 2: Move all x terms to one side \\
+                $45x - 8x = 7 + 20$ \\
+                Step 3: Combine like terms \\
+                $37x = 27$ \\
+                Step 4: Divide both sides by 37 \\
+                $x = \frac{27}{37}$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Table of Values - Practice}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Practice Problems]
+        \footnotesize
+        Complete the table of values for each equation:
+        
+        1. $y = 6x - 4$
+        \vspace*{-1.5em}
+        \begin{center}
+        \begin{tabular}{|c|c|}
+            \hline
+            \rowcolor{primary!20} x & y \\
+            \hline
+            2 & \\
+            5 & \\
+            8 & \\
+            \hline
+        \end{tabular}
+        \end{center}
+        
+        2. $4x + 5y = 30$
+        \vspace*{-1.5em}
+        \begin{center}
+        \begin{tabular}{|c|c|}
+            \hline
+            \rowcolor{primary!20} x & y \\
+            \hline
+            0 & \\
+            3 & \\
+            6 & \\
+            9 & \\
+            \hline
+        \end{tabular}
+        \end{center}
+    \end{tcolorbox}
+    \vfill
+\end{frame}
+
+\begin{frame}{Table of Values - Solutions Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution for $y = 6x - 4$]
+        \footnotesize
+        Step 1: For each x value, substitute into the equation \\
+        When x = 2: $y = 6(2) - 4 = 12 - 4 = 8$ \\
+        When x = 5: $y = 6(5) - 4 = 30 - 4 = 26$ \\
+        When x = 8: $y = 6(8) - 4 = 48 - 4 = 44$
+        \vspace*{-1.5em}
+        \begin{center}
+        \begin{tabular}{|c|c|}
+            \hline
+            \rowcolor{primary!20} x & y \\
+            \hline
+            2 & 8 \\
+            5 & 26 \\
+            8 & 44 \\
+            \hline
+        \end{tabular}
+        \end{center}
+    \end{tcolorbox}
+    \vfill
+\end{frame}
+
+\begin{frame}{Table of Values - Solutions Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution for $4x + 5y = 30$]
+        \footnotesize
+        \begin{columns}
+            \begin{column}{0.6\textwidth}
+                Step 1: Solve for y \\
+                $5y = 30 - 4x$ \\[2em]
+                $y = 6 - \frac{4x}{5}$ \\[2.5em]
+                
+                Step 2: Substitute x values \\
+                When x = 0: $y = 6 - \frac{4(0)}{5} = 6$ \\[1.5em]
+                When x = 3: $y = 6 - \frac{4(3)}{5} = 3.6$ \\[1.5em]
+                When x = 6: $y = 6 - \frac{4(6)}{5} = 1.2$ \\[1.5em]
+                When x = 9: $y = 6 - \frac{4(9)}{5} = -1.2$
+            \end{column}
+            \begin{column}{0.4\textwidth}
+                \vspace*{-1.5em} % Adjust vertical space for the table
+                \begin{center}
+                \begin{tabular}{|c|c|}
+                    \hline
+                    \rowcolor{primary!20} x & y \\
+                    \hline
+                    0 & 6 \\
+                    3 & 3.6 \\
+                    6 & 1.2 \\
+                    9 & -1.2 \\
+                    \hline
+                \end{tabular}
+                \end{center}
+            \end{column}
+        \end{columns}
+    \end{tcolorbox}
+    \vfill
+\end{frame}
+
+\begin{frame}{Lines: Slopes and Y-intercepts - Practice}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Standard Form: $y = mx + b$]
+        \footnotesize
+        \begin{itemize}
+            \setlength{\itemsep}{0pt}
+            \addtolength{\itemsep}{-0.5em}
+            \item $m$ = slope
+            \item $b$ = y-intercept
+        \end{itemize}
+    \end{tcolorbox}
+    \vspace*{-1em}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Practice Problems]
+        \footnotesize
+        Find slope and y-intercept for each equation:
+        \begin{enumerate}
+            \setlength{\itemsep}{0pt}
+            \addtolength{\itemsep}{-0.5em}
+            \item $y = 4x + 3$
+            \item $y = -7x + 5$
+            \item $y = 0.8x + 12$
+            \item $3x + y = 15$
+            \item $\frac{18x - 9}{3} = y$
+            \item $9x + 12y = -6$
+        \end{enumerate}
+    \end{tcolorbox}
+    \vfill
+\end{frame}
+
+\begin{frame}{Lines: Slopes and Y-intercepts - Solutions Part 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+        \begin{enumerate}
+            \item $y = 4x + 3$ \\
+                Slope = 4 (coefficient of x) \\
+                Y-intercept = 3 (constant term)
+            
+            \item $y = -7x + 5$ \\
+                Slope = -7 (coefficient of x) \\
+                Y-intercept = 5 (constant term)
+            
+            \item $y = 0.8x + 12$ \\
+                Slope = 0.8 (coefficient of x) \\
+                Y-intercept = 12 (constant term)
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Lines: Slopes and Y-intercepts - Solutions Part 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+        \begin{enumerate}
+            \setcounter{enumi}{3}
+            \item $3x + y = 15$ \\
+                Step 1: Solve for y \\
+                $y = -3x + 15$ \\
+                Slope = -3 \\
+                Y-intercept = 15
+            
+            \item $\frac{18x - 9}{3} = y$ \\
+                Step 1: Simplify \\
+                $y = 6x - 3$ \\
+                Slope = 6 \\
+                Y-intercept = -3
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Lines: Slopes and Y-intercepts - Solutions Part 3}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+        \begin{enumerate}
+            \setcounter{enumi}{5}
+            \item $9x + 12y = -6$ \\
+                Step 1: Solve for y \\
+                $12y = -9x - 6$ \\
+                Step 2: Divide by 12 \\
+                $y = -\frac{9}{12}x - \frac{6}{12}$ \\
+                Step 3: Simplify \\
+                $y = -\frac{3}{4}x - \frac{1}{2}$ \\
+                Slope = $-\frac{3}{4}$ \\
+                Y-intercept = $-\frac{1}{2}$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Isolating Variables - Practice}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Steps]
+        \begin{itemize}
+            \item Move all terms with the variable to one side
+            \item Move all other terms to the opposite side
+            \item Factor out the variable if necessary
+            \item Divide by the coefficient
+        \end{itemize}
+    \end{tcolorbox}
+    
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Practice Problems]
+        Isolate x in each equation:
+        \begin{enumerate}
+            \item $bd + cx = e$
+            \item $bx + c = fx + d$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Isolating Variables - Solutions}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+        \begin{enumerate}
+            \item $bd + cx = e$ \\
+                Step 1: Move bd to the other side \\
+                $cx = e - bd$ \\
+                Step 2: Divide by c \\
+                $x = \frac{e - bd}{c}$
+            
+            \item $bx + c = fx + d$ \\
+                Step 1: Move all x terms to one side \\
+                $bx - fx = d - c$ \\
+                Step 2: Factor out x \\
+                $x(b - f) = d - c$ \\
+                Step 3: Divide by (b - f) \\
+                $x = \frac{d - c}{b - f}$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Summary}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Concepts]
+        \begin{itemize}
+            \item BEDMAS order of operations
+            \item Solving equations step by step
+            \item Creating and using tables of values
+            \item Understanding slopes and y-intercepts
+            \item Isolating variables in equations
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\end{document} 

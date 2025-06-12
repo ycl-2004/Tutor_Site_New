@@ -1,0 +1,816 @@
+\documentclass[aspectratio=169]{beamer}
+
+% Theme and colors
+\usetheme{Madrid}
+\usecolortheme{whale}
+% Custom colors
+\definecolor{primary}{RGB}{41, 128, 185}
+\definecolor{secondary}{RGB}{52, 152, 219}
+\definecolor{accent}{RGB}{231, 76, 60}
+\definecolor{lightgray}{RGB}{236, 240, 241}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathpazo} % Palatino font
+\usepackage{multirow}
+\usepackage{tcolorbox}
+\usepackage{tikz} % For diagrams
+\usepackage{caption} % For figure captions
+\usepackage{adjustbox} % For adjusting box
+\usepackage{float} % For better float control
+
+% Beamer specific configurations
+\setbeamercolor{structure}{fg=primary}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=black}
+
+% Information for the title page
+\title{Lesson 8: Quadratic Inequalities and Discriminants}
+\author{Yi-Chen Lin}
+\date{June 10, 2025}
+
+\begin{document}
+
+% Title page
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% Table of Contents
+\begin{frame}{Table of Contents}
+    \tableofcontents
+\end{frame}
+
+% Section I: Solving Inequalities
+\section{Solving Inequalities}
+
+\begin{frame}{I) Visualizing Inequalities}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Concept]
+        \footnotesize
+        \begin{itemize}
+            \item One way to solve inequalities is to visualize them as graphs
+            \item For linear inequalities:
+            \begin{itemize}
+                \item Left side is a straight line
+                \item Right side (y=0) is the x-axis
+                \item Inequality shows where the line is above/below the x-axis
+            \end{itemize}
+            \item For quadratic inequalities:
+            \begin{itemize}
+                \item Left side is a parabola
+                \item Right side (y=0) is the x-axis
+                \item Inequality shows where the parabola is above/below the x-axis
+            \end{itemize}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{I) Linear Inequality Example}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Example: $3x-4>0$]
+        \footnotesize
+        \begin{itemize}
+            \item Straight line: $y=3x-4$
+            \item Slope: $m=3$
+            \item Y-intercept: $b=-4$
+            \item Looking for where line is above x-axis
+            \item Solution: $x>\frac{4}{3}$
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{I) Quadratic Inequality Example}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Example: $x^2-3x-4>0$]
+        \footnotesize
+        \begin{itemize}
+            \item Parabola: $y=x^2-3x-4$
+            \item Factored form: $(x+1)(x-4)>0$
+            \item X-intercepts: $x=-1$ and $x=4$
+            \item Looking for where parabola is above x-axis
+            \item Solution: $x<-1$ or $x>4$
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+% Section II: Steps for Solving
+\section{Steps for Solving}
+
+\begin{frame}{II) Steps for Solving Inequalities}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Steps]
+        \footnotesize
+        \begin{enumerate}
+            \item Move all terms to one side (make one side zero)
+            \item Solve for x (find intersection points)
+            \item Sketch the graph
+            \item Use inequality to determine if looking for:
+            \begin{itemize}
+                \item Above the x-axis
+                \item Below the x-axis
+                \item Equal to the x-axis
+            \end{itemize}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{II) Examples of Different Cases}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Examples]
+        \footnotesize
+        \begin{itemize}
+            \item $3x-8+4\leq0$: Line below or equal to x-axis
+            \item $x^2-9<0$: Parabola below x-axis
+            \item $x^2+2x+6>0$: Parabola above x-axis
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+% Section III: Practice Problems
+\section{Practice Problems}
+
+\begin{frame}{III) Practice Problem 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem]
+        \footnotesize
+        Solve: $5x+2 \geq 17$
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{III) Practice Problem 1: Solution}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution]
+        \footnotesize
+        \begin{align*}
+            5x+2 &\geq 17\\
+            5x &\geq 15\\
+            x &\geq 3
+        \end{align*}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{III) Practice Problem 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem]
+        \footnotesize
+        Solve: $2x^2+5x-7 \leq 0$
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{III) Practice Problem 2: Solution - Step 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution: Step 1 - Find X-intercepts]
+        \footnotesize
+        To solve the quadratic inequality $2x^2+5x-7 \leq 0$, first, we need to find the x-intercepts of the corresponding quadratic equation $2x^2+5x-7=0$. We use the quadratic formula:
+        \begin{align*}
+            x &= \frac{-b \pm \sqrt{b^2-4ac}}{2a}\\[0.5em]
+            x &= \frac{-(5) \pm \sqrt{(5)^2 - 4(2)(-7)}}{2(2)}\\[0.5em]
+            x &= \frac{-5 \pm \sqrt{25 + 56}}{4}\\[0.5em]
+            x &= \frac{-5 \pm \sqrt{81}}{4}\\[0.5em]
+            x &= \frac{-5 \pm 9}{4}
+        \end{align*}
+        The x-intercepts are $x_1 = \frac{-5 - 9}{4} = \frac{-14}{4} = -3.5$ and $x_2 = \frac{-5 + 9}{4} = \frac{4}{4} = 1$.
+        \newline
+        Approximately, $x_1 = -3.5$ and $x_2 = 1$.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{III) Practice Problem 2: Solution - Step 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution: Step 2 - Use Test Values]
+        \footnotesize
+        The x-intercepts $x_1 = -3.5$ and $x_2 = 1$ divide the number line into three intervals: $(-\infty, -3.5]$, $[-3.5, 1]$, and $[1, +\infty)$.
+        \newline
+        We choose a test value from each interval and substitute it into the original inequality $2x^2+5x-7 \leq 0$ to check if the inequality holds true.
+        \newline
+        \textbf{Interval 1: $(-\infty, -3.5]$}
+        \begin{itemize}
+            \item Test value: $x=-4$
+            \item Substitute: $2(-4)^2 + 5(-4) - 7 = 2(16) - 20 - 7 = 32 - 20 - 7 = 5$
+            \item Check inequality: $5 \leq 0$ (False)
+        \end{itemize}
+        \newline
+        \textbf{Interval 2: $[-3.5, 1]$}
+        \begin{itemize}
+            \item Test value: $x=0$
+            \item Substitute: $2(0)^2 + 5(0) - 7 = -7$
+            \item Check inequality: $-7 \leq 0$ (True)
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{III) Practice Problem 2: Solution - Step 3}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution: Step 3 - Use Test Values (Cont.) and State Solution]
+        \footnotesize
+        \textbf{Interval 3: $[1, +\infty)$}
+        \begin{itemize}
+            \item Test value: $x=2$
+            \item Substitute: $2(2)^2 + 5(2) - 7 = 2(4) + 10 - 7 = 8 + 10 - 7 = 11$
+            \item Check inequality: $11 \leq 0$ (False)
+        \end{itemize}
+        \newline
+        Based on the test values, the inequality $2x^2+5x-7 \leq 0$ is true only in the interval where the test value yielded a true statement.
+        \newline
+        Therefore, the solution to the inequality is:
+        \[
+            -3.5 \leq x \leq 1
+        \]
+        In interval notation, this can be written as $[-3.5, 1]$.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{III) Practice Problem 3}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem]
+        \footnotesize
+        Solve the inequality: $x^2 + 2x - 8 < 0$
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{III) Practice Problem 3: Solution - Step 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution: Step 1 - Find X-intercepts]
+        \footnotesize
+        First, find the x-intercepts of the corresponding quadratic equation $x^2 + 2x - 8 = 0$.
+        We can factor the quadratic expression:
+        \begin{align*}
+            x^2 + 2x - 8 &= 0 \\
+            (x+4)(x-2) &= 0
+        \end{align*}
+        So, the x-intercepts are $x=-4$ and $x=2$.
+        These roots divide the number line into three intervals: $(-\infty, -4)$, $(-4, 2)$, and $(2, +\infty)$.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{III) Practice Problem 3: Solution - Step 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution: Step 2 - Use Test Values]
+        \footnotesize
+        Now, we choose a test value from each interval and substitute it into the original inequality $x^2 + 2x - 8 < 0$ to check if the inequality holds true.
+        \newline
+        \textbf{Interval 1: $(-\infty, -4)$}
+        \begin{itemize}
+            \item Test value: $x=-5$
+            \item Substitute: $(-5)^2 + 2(-5) - 8 = 25 - 10 - 8 = 7$
+            \item Check inequality: $7 < 0$ (False)
+        \end{itemize}
+        \newline
+        \textbf{Interval 2: $(-4, 2)$}
+        \begin{itemize}
+            \item Test value: $x=0$
+            \item Substitute: $(0)^2 + 2(0) - 8 = -8$
+            \item Check inequality: $-8 < 0$ (True)
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{III) Practice Problem 3: Solution - Step 2 (Cont.)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution: Step 2 - Use Test Values (Cont.)]
+        \footnotesize
+        \textbf{Interval 3: $(2, +\infty)$}
+        \begin{itemize}
+            \item Test value: $x=3$
+            \item Substitute: $(3)^2 + 2(3) - 8 = 9 + 6 - 8 = 7$
+            \item Check inequality: $7 < 0$ (False)
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{III) Practice Problem 3: Solution - Step 3}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution: Step 3 - State the Solution]
+        \footnotesize
+        Based on the test values, the inequality $x^2 + 2x - 8 < 0$ is true in the intervals where the test value yielded a true statement.
+        \newline
+        Therefore, the solution to the inequality is:
+        \[
+            -4 < x < 2
+        \]
+        In interval notation, this can be written as $(-4, 2)$.
+    \end{tcolorbox}
+\end{frame}
+
+% Section IV: The Discriminant
+\section{The Discriminant}
+
+\begin{frame}{IV) Nature of Roots}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Concept]
+        \footnotesize
+        \begin{itemize}
+            \item The discriminant determines the nature of roots
+            \item Formula: $D=b^2-4ac$
+            \item Three possible cases:
+            \begin{itemize}
+                \item $D>0$: Two distinct real roots
+                \item $D=0$: One double root
+                \item $D<0$: No real roots
+            \end{itemize}
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{IV) Discriminant Examples}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Examples]
+        \footnotesize
+        \begin{enumerate}
+            \item $x^2-4x+7=8$
+            \begin{align*}
+                D &= (-4)^2-4(1)(-1)\\
+                D &= 16+4 = 20 > 0
+            \end{align*}
+            Two distinct roots
+            
+            \item $3x^2-5x+12=0$
+            \begin{align*}
+                D &= (-5)^2-4(3)(12)\\
+                D &= 25-144 = -119 < 0
+            \end{align*}
+            No real roots
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% Section V: Finding k Values
+\section{Finding k Values}
+
+\begin{frame}{V) Finding k Values}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem Type]
+        \footnotesize
+        \begin{itemize}
+            \item Find values of k that give:
+            \begin{itemize}
+                \item Two distinct roots
+                \item One double root
+                \item No real roots
+            \end{itemize}
+            \item Use discriminant to solve for k
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{V) Example: Finding k}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Example]
+        \footnotesize
+        For what values of k does $x^2+kx+8=0$ have:
+        \begin{enumerate}
+            \item Two distinct roots
+            \item One double root
+            \item No real roots
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{V) Example: Solution}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution]
+        \footnotesize
+        \begin{enumerate}
+            \item Two distinct roots:
+            \begin{align*}
+                k^2-32 &> 0\\
+                k^2 &> 32\\
+                k &> 4\sqrt{2} \text{ or } k < -4\sqrt{2}
+            \end{align*}
+            
+            \item One double root:
+            \begin{align*}
+                k^2-32 &= 0\\
+                k &= \pm 4\sqrt{2}
+            \end{align*}
+            
+            \item No real roots:
+            \begin{align*}
+                k^2-32 &< 0\\
+                -4\sqrt{2} &< k < 4\sqrt{2}
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% Section VI: Practice Problems
+\section{More Practice}
+
+\begin{frame}{VI) Practice Problem 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem]
+        \footnotesize
+        For what values of k does $9x^2-2kx+4=0$ have:
+        \begin{enumerate}
+            \item Two equal roots
+            \item No real roots
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{VI) Practice Problem 1: Solution}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution]
+        \footnotesize
+        \begin{enumerate}
+            \item Two equal roots:
+            \begin{align*}
+                4k^2-144 &= 0\\
+                k^2 &= 36\\
+                k &= \pm 6
+            \end{align*}
+            
+            \item No real roots:
+            \begin{align*}
+                4k^2-144 &< 0\\
+                -6 &< k < 6
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{VI) Practice Problem 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problem]
+        \footnotesize
+        For what values of k does $(2k-1)x^2-8x+4=0$ have:
+        \begin{enumerate}
+            \item Two different roots
+            \item No real roots
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{VI) Practice Problem 2: Solution}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution]
+        \footnotesize
+        \begin{enumerate}
+            \item Two different roots:
+            \begin{align*}
+                64-16(2k-1) &> 0\\
+                64-32k+16 &> 0\\
+                -32k &> -80\\
+                k &< 2.5
+            \end{align*}
+            
+            \item No real roots:
+            \begin{align*}
+                64-16(2k-1) &< 0\\
+                k &> 2.5
+            \end{align*}
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\section{General Practice Problems}
+
+\begin{frame}{General Practice Problems}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solve Each Inequality]
+        \footnotesize
+        Solve each of the following inequalities:
+        \begin{enumerate}
+            \item $3x - 10 > 5x + 4$
+            \item $x^2 - 7x + 10 \geq 0$
+            \item $2x^2 + x - 3 < 0$
+            \item $-x^2 + 6x - 9 \leq 0$
+            \item $x(x-5) > 14$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{General Practice Problems: Solution - Inequality 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution: $3x - 10 > 5x + 4$]
+        \footnotesize
+        \begin{align*}
+            3x - 10 &> 5x + 4 \\
+            3x - 5x &> 4 + 10 \\
+            -2x &> 14 \\
+            x &< \frac{14}{-2} \\
+            x &< -7
+        \end{align*}
+        \newline
+        \textbf{Final Solution:} $x < -7$
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{General Practice Problems: Solution - Inequality 2 (Step 1)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution: $x^2 - 7x + 10 \geq 0$ (Step 1 - Find X-intercepts)]
+        \footnotesize
+        To solve the inequality $x^2 - 7x + 10 \geq 0$, first, find the x-intercepts of the corresponding equation $x^2 - 7x + 10 = 0$.
+        Factor the quadratic expression:
+        \begin{align*}
+            x^2 - 7x + 10 &= 0 \\
+            (x-2)(x-5) &= 0
+        \end{align*}
+        So, the x-intercepts are $x=2$ and $x=5$.
+        These roots divide the number line into three intervals: $(-\infty, 2]$, $[2, 5]$, and $[5, +\infty)$.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{General Practice Problems: Solution - Inequality 2 (Step 2)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution: $x^2 - 7x + 10 \geq 0$ (Step 2 - Use Test Values)]
+        \footnotesize
+        Choose a test value from each interval and substitute it into the original inequality $x^2 - 7x + 10 \geq 0$ to check if the inequality holds true.
+        \newline
+        \textbf{Interval 1: $(-\infty, 2]$}
+        \begin{itemize}
+            \item Test value: $x=0$
+            \item Substitute: $(0)^2 - 7(0) + 10 = 10$
+            \item Check inequality: $10 \geq 0$ (True)
+        \end{itemize}
+        \newline
+        \textbf{Interval 2: $[2, 5]$}
+        \begin{itemize}
+            \item Test value: $x=3$
+            \item Substitute: $(3)^2 - 7(3) + 10 = 9 - 21 + 10 = -2$
+            \item Check inequality: $-2 \geq 0$ (False)
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{General Practice Problems: Solution - Inequality 2 (Step 3)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution: $x^2 - 7x + 10 \geq 0$ (Step 3 - Final Solution)]
+        \footnotesize
+        \textbf{Interval 3: $[5, +\infty)$}
+        \begin{itemize}
+            \item Test value: $x=6$
+            \item Substitute: $(6)^2 - 7(6) + 10 = 36 - 42 + 10 = 4$
+            \item Check inequality: $4 \geq 0$ (True)
+        \end{itemize}
+        \newline
+        Based on the test values, the inequality $x^2 - 7x + 10 \geq 0$ is true in the intervals where the test value yielded a true statement.
+        \newline
+        \textbf{Final Solution:} $x \leq 2$ or $x \geq 5$
+        \newline
+        In interval notation: $(-\infty, 2] \cup [5, +\infty)$.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{General Practice Problems: Solution - Inequality 3 (Step 1)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution: $2x^2 + x - 3 < 0$ (Step 1 - Find X-intercepts)]
+        \footnotesize
+        To solve the inequality $2x^2 + x - 3 < 0$, first, find the x-intercepts of the corresponding equation $2x^2 + x - 3 = 0$.
+        Factor the quadratic expression:
+        \begin{align*}
+            2x^2 + x - 3 &= 0 \\
+            (2x+3)(x-1) &= 0
+        \end{align*}
+        So, the x-intercepts are $2x+3=0 \Rightarrow x = -\frac{3}{2} = -1.5$ and $x-1=0 \Rightarrow x=1$.
+        These roots divide the number line into three intervals: $(-\infty, -1.5)$, $(-1.5, 1)$, and $(1, +\infty)$.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{General Practice Problems: Solution - Inequality 3 (Step 2)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution: $2x^2 + x - 3 < 0$ (Step 2 - Use Test Values)]
+        \footnotesize
+        Choose a test value from each interval and substitute it into the original inequality $2x^2 + x - 3 < 0$ to check if the inequality holds true.
+        \newline
+        \textbf{Interval 1: $(-\infty, -1.5)$}
+        \begin{itemize}
+            \item Test value: $x=-2$
+            \item Substitute: $2(-2)^2 + (-2) - 3 = 2(4) - 2 - 3 = 8 - 2 - 3 = 3$
+            \item Check inequality: $3 < 0$ (False)
+        \end{itemize}
+        \newline
+        \textbf{Interval 2: $(-1.5, 1)$}
+        \begin{itemize}
+            \item Test value: $x=0$
+            \item Substitute: $2(0)^2 + (0) - 3 = -3$
+            \item Check inequality: $-3 < 0$ (True)
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{General Practice Problems: Solution - Inequality 3 (Step 3)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution: $2x^2 + x - 3 < 0$ (Step 3 - Final Solution)]
+        \footnotesize
+        \textbf{Interval 3: $(1, +\infty)$}
+        \begin{itemize}
+            \item Test value: $x=2$
+            \item Substitute: $2(2)^2 + (2) - 3 = 2(4) + 2 - 3 = 8 + 2 - 3 = 7$
+            \item Check inequality: $7 < 0$ (False)
+        \end{itemize}
+        \newline
+        Based on the test values, the inequality $2x^2 + x - 3 < 0$ is true only in the interval where the test value yielded a true statement.
+        \newline
+        \textbf{Final Solution:} $-1.5 < x < 1$
+        \newline
+        In interval notation: $(-1.5, 1)$ or $(-\frac{3}{2}, 1)$.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{General Practice Problems: Solution - Inequality 4 (Step 1)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution: $-x^2 + 6x - 9 \leq 0$ (Step 1 - Find X-intercepts)]
+        \footnotesize
+        To solve the inequality $-x^2 + 6x - 9 \leq 0$, first, find the x-intercepts of the corresponding equation $-x^2 + 6x - 9 = 0$.
+        Factor the quadratic expression:
+        \begin{align*}
+            -(x^2 - 6x + 9) &= 0 \\
+            -(x-3)^2 &= 0
+        \end{align*}
+        So, there is one x-intercept (a double root) at $x=3$.
+        This root divides the number line into two intervals: $(-\infty, 3]$ and $[3, +\infty)$.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{General Practice Problems: Solution - Inequality 4 (Step 2)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution: $-x^2 + 6x - 9 \leq 0$ (Step 2 - Use Test Values and Final Solution)]
+        \footnotesize
+        Choose a test value from each interval and substitute it into the original inequality $-x^2 + 6x - 9 \leq 0$ to check if the inequality holds true.
+        \newline
+        \textbf{Interval 1: $(-\infty, 3]$}
+        \begin{itemize}
+            \item Test value: $x=0$
+            \item Substitute: $-(0)^2 + 6(0) - 9 = -9$
+            \item Check inequality: $-9 \leq 0$ (True)
+        \end{itemize}
+        \newline
+        \textbf{Interval 2: $[3, +\infty)$}
+        \begin{itemize}
+            \item Test value: $x=4$
+            \item Substitute: $-(4)^2 + 6(4) - 9 = -16 + 24 - 9 = -1$
+            \item Check inequality: $-1 \leq 0$ (True)
+        \end{itemize}
+        \newline
+        Since the inequality holds true for both intervals, and at $x=3$ (where $-x^2+6x-9 = 0$), the solution includes all real numbers.
+        \newline
+        \textbf{Final Solution:} All real numbers ($x \in \mathbb{R}$)
+        In interval notation: $(-\infty, +\infty)$.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{General Practice Problems: Solution - Inequality 5 (Step 1)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution: $x(x-5) > 14$ (Step 1 - Find X-intercepts)]
+        \footnotesize
+        To solve the inequality $x(x-5) > 14$, first, rearrange it into standard quadratic form and find the x-intercepts of the corresponding equation:
+        \begin{align*}
+            x(x-5) &> 14 \\
+            x^2 - 5x &> 14 \\
+            x^2 - 5x - 14 &= 0
+        \end{align*}
+        Factor the quadratic expression:
+        \begin{align*}
+            (x-7)(x+2) &= 0
+        \end{align*}
+        So, the x-intercepts are $x=7$ and $x=-2$.
+        These roots divide the number line into three intervals: $(-\infty, -2)$, $(-2, 7)$, and $(7, +\infty)$.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{General Practice Problems: Solution - Inequality 5 (Step 2)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution: $x(x-5) > 14$ (Step 2 - Use Test Values)]
+        \footnotesize
+        Choose a test value from each interval and substitute it into the original inequality $x^2 - 5x - 14 > 0$ to check if the inequality holds true.
+        \newline
+        \textbf{Interval 1: $(-\infty, -2)$}
+        \begin{itemize}
+            \item Test value: $x=-3$
+            \item Substitute: $(-3)^2 - 5(-3) - 14 = 9 + 15 - 14 = 10$
+            \item Check inequality: $10 > 0$ (True)
+        \end{itemize}
+        \newline
+        \textbf{Interval 2: $(-2, 7)$}
+        \begin{itemize}
+            \item Test value: $x=0$
+            \item Substitute: $(0)^2 - 5(0) - 14 = -14$
+            \item Check inequality: $-14 > 0$ (False)
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{General Practice Problems: Solution - Inequality 5 (Step 3)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution: $x(x-5) > 14$ (Step 3 - Final Solution)]
+        \footnotesize
+        \textbf{Interval 3: $(7, +\infty)$}
+        \begin{itemize}
+            \item Test value: $x=8$
+            \item Substitute: $(8)^2 - 5(8) - 14 = 64 - 40 - 14 = 10$
+            \item Check inequality: $10 > 0$ (True)
+        \end{itemize}
+        \newline
+        Based on the test values, the inequality $x(x-5) > 14$ is true in the intervals where the test value yielded a true statement.
+        \newline
+        \textbf{Final Solution:} $x < -2$ or $x > 7$
+        \newline
+        In interval notation: $(-\infty, -2) \cup (7, +\infty)$.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{General Practice Problems (Cont.)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Nature of Roots]
+        \footnotesize
+        Determine the nature of the roots for each equation (Do not solve):
+        \begin{enumerate}
+            \item $x^2 - 10x + 25 = 0$
+            \item $3x^2 + 2x + 1 = 0$
+            \item $2x^2 - 7x - 4 = 0$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{General Practice Problems: Solution - Nature of Roots 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution: $x^2 - 10x + 25 = 0$]
+        \footnotesize
+        For the equation $x^2 - 10x + 25 = 0$, we have $a=1$, $b=-10$, and $c=25$.
+        Calculate the discriminant $D = b^2 - 4ac$:
+        \begin{align*}
+            D &= (-10)^2 - 4(1)(25) \\
+            D &= 100 - 100 \\
+            D &= 0
+        \end{align*}
+        Since $D=0$, there is **one double root (or two equal real roots)**.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{General Practice Problems: Solution - Nature of Roots 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution: $3x^2 + 2x + 1 = 0$]
+        \footnotesize
+        For the equation $3x^2 + 2x + 1 = 0$, we have $a=3$, $b=2$, and $c=1$.
+        Calculate the discriminant $D = b^2 - 4ac$:
+        \begin{align*}
+            D &= (2)^2 - 4(3)(1) \\
+            D &= 4 - 12 \\
+            D &= -8
+        \end{align*}
+        Since $D<0$, there are **no real roots**.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{General Practice Problems: Solution - Nature of Roots 3}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution: $2x^2 - 7x - 4 = 0$]
+        \footnotesize
+        For the equation $2x^2 - 7x - 4 = 0$, we have $a=2$, $b=-7$, and $c=-4$.
+        Calculate the discriminant $D = b^2 - 4ac$:
+        \begin{align*}
+            D &= (-7)^2 - 4(2)(-4) \\
+            D &= 49 - (-32) \\
+            D &= 49 + 32 \\
+            D &= 81
+        \end{align*}
+        Since $D>0$, there are **two distinct real roots**.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{General Practice Problems (Cont.)}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solving for k]
+        \footnotesize
+        For what values of 'k' does the equation have:
+        \begin{enumerate}
+            \item $x^2 + (k-2)x + 9 = 0$ have two equal roots?
+            \item $kx^2 - 4x + k = 0$ have no real roots?
+            \item $(k+1)x^2 + 5x + 2 = 0$ have two distinct real roots?
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{General Practice Problems: Solution - Solving for k 1}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution: $x^2 + (k-2)x + 9 = 0$ (Two Equal Roots)]
+        \footnotesize
+        For the equation $x^2 + (k-2)x + 9 = 0$, we have $a=1$, $b=(k-2)$, and $c=9$.
+        For two equal roots, the discriminant $D$ must be equal to zero ($D=b^2-4ac=0$).
+        \begin{align*}
+            (k-2)^2 - 4(1)(9) &= 0 \\
+            (k-2)^2 - 36 &= 0 \\
+            (k-2)^2 &= 36 \\
+            k-2 &= \pm\sqrt{36} \\
+            k-2 &= \pm 6
+        \end{align*}
+        This gives two possible values for $k$:
+        \begin{itemize}
+            \item $k-2 = 6 \Rightarrow k = 8$
+            \item $k-2 = -6 \Rightarrow k = -4$
+        \end{itemize}
+        \textbf{Final Solution:} $k=8$ or $k=-4$.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{General Practice Problems: Solution - Solving for k 2}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution: $kx^2 - 4x + k = 0$ (No Real Roots)]
+        \footnotesize
+        For the equation $kx^2 - 4x + k = 0$, we have $a=k$, $b=-4$, and $c=k$.
+        For no real roots, the discriminant $D$ must be less than zero ($D=b^2-4ac<0$).
+        \begin{align*}
+            (-4)^2 - 4(k)(k) &< 0 \\
+            16 - 4k^2 &< 0 \\
+            -4k^2 &< -16 \\
+            k^2 &> \frac{-16}{-4} \\
+            k^2 &> 4
+        \end{align*}
+        To solve $k^2 > 4$, we find the critical points $k=\pm 2$.
+        Testing intervals, we find that the inequality holds true for $k < -2$ or $k > 2$.
+        \textbf{Final Solution:} $k < -2$ or $k > 2$.
+        \newline
+        In interval notation: $(-\infty, -2) \cup (2, +\infty)$.
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{General Practice Problems: Solution - Solving for k 3}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution: $(k+1)x^2 + 5x + 2 = 0$ (Two Distinct Real Roots)]
+        \footnotesize
+        For the equation $(k+1)x^2 + 5x + 2 = 0$, we have $a=(k+1)$, $b=5$, and $c=2$.
+        For two distinct real roots, the discriminant $D$ must be greater than zero ($D=b^2-4ac>0$).
+        \begin{align*}
+            (5)^2 - 4(k+1)(2) &> 0 \\
+            25 - 8(k+1) &> 0 \\
+            25 - 8k - 8 &> 0 \\
+            17 - 8k &> 0 \\
+            -8k &> -17 \\
+            k &< \frac{-17}{-8} \\
+            k &< \frac{17}{8}
+        \end{align*}
+    \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{General Practice Problems: Solution - Solving for k 3 (Cont.)}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution: $(k+1)x^2 + 5x + 2 = 0$ (Cont.)]
+        \footnotesize
+        Additionally, for the equation to be a quadratic, the coefficient of $x^2$ cannot be zero, so $k+1 \neq 0 \Rightarrow k \neq -1$.
+        \newline
+        \textbf{Final Solution:} $k < \frac{17}{8}$ and $k \neq -1$.
+        \newline
+        In interval notation: $(-\infty, -1) \cup (-1, \frac{17}{8})$.
+    \end{tcolorbox}
+\end{frame}
+
+\end{document} 
