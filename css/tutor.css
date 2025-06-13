@@ -130,11 +130,13 @@
 }
 
 .tutor-img-textbook {
-  width: 45%; /* Slightly reduced image size */
-  height: 35%; /* Slightly reduced image size */
+  width: 100%; /* Set to 100% to fill its container */
+  max-width: 45%; /* Retain original max-width intent */
+  height: auto; /* Maintain aspect ratio */
 }
 
 .tutor-img-class {
-  width: 55%; /* Slightly reduced image size */
-  height: 45%; /* Slightly reduced image size */
+  width: 100%; /* Set to 100% to fill its container */
+  max-width: 55%; /* Retain original max-width intent */
+  height: auto; /* Maintain aspect ratio */
 }
