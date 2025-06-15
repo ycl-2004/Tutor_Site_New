@@ -108,10 +108,10 @@
 }
 
 .courses-list-title {
-  font-size: 1.8rem; /* Slightly reduced font size */
-  font-weight: 500;
-  margin-bottom: 2.4rem; /* Increased margin for more space below headings */
-  padding-left: 1.2rem; /* Increased vertical padding for more space around headings */
+  text-align: center;
+  max-width: 90%;
+  margin: 0 auto 2.4rem auto;
+  font-size: 2rem;
 }
 
 .courses-list-item {
@@ -284,6 +284,10 @@
 }
 
 .courses-lists.grid-2-2 > div {
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
   padding: 3.2rem 0; /* Removed horizontal padding for maximum stretch */
   background-color: var(--color-card-background); /* Consistent background */
   border-radius: 1.6rem; /* Consistent border-radius */

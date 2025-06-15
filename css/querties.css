@@ -206,7 +206,7 @@
   .tutor-container,
   .courses-container,
   .apply-container {
-    padding: 6.4rem 3.2rem;
+    padding: 4.8rem 3.2rem;
   }
 
   .apply-form {
@@ -335,6 +335,7 @@
   .tutor-container,
   .courses-container,
   .apply-container {
+    width: 95vw;
     padding: 4.8rem 1.6rem;
   }
 
