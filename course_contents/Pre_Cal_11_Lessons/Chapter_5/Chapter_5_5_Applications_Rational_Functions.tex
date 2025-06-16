@@ -1,0 +1,332 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+
+% Custom colors
+\definecolor{primary}{RGB}{41, 128, 185}
+\definecolor{secondary}{RGB}{52, 152, 219}
+\definecolor{accent}{RGB}{231, 76, 60}
+\definecolor{lightgray}{RGB}{236, 240, 241}
+
+% Theme customization
+\usetheme{Madrid}
+\usecolortheme{whale}
+\setbeamercolor{structure}{fg=primary}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=black}
+
+\title{Chapter 5.5: Applications of Rational Functions}
+\subtitle{Rational Expressions - Lesson 5}
+\author{Created by Yi-Chen Lin}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+% I) Speed, Time, Distance (STD) Applications
+\begin{frame}{Speed, Time, Distance (STD) Applications}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Concepts]
+\footnotesize
+\begin{itemize}
+  \item Rational functions are used in problems involving speed, time, and distance.
+  \item $D = S \times T$, $T = \frac{D}{S}$, $S = \frac{D}{T}$
+  \item Applications include travel, fuel efficiency, wind/drag, and more.
+\end{itemize}
+\end{tcolorbox}
+\end{frame}
+
+% Example Q1: Basic STD
+\begin{frame}{Example Q1: Basic STD (Part 1)}
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=Example Q1 (Part 1)]
+\footnotesize
+A cyclist travels 60 km at a speed of $x$ km/h. Write an expression for the time required.
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Example Q1: Basic STD (Part 2)}
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=Example Q1 (Part 2)]
+\footnotesize
+\textbf{Solution:}
+\[
+T = \frac{D}{S} = \frac{60}{x} \text{ hours}
+\]
+\end{tcolorbox}
+\end{frame}
+
+% II) Rate of Work Problems
+\begin{frame}{Applications: Rate of Work Problems}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Concepts]
+\footnotesize
+\begin{itemize}
+  \item Rate of work: If one person can do a job in $a$ hours, their rate is $\frac{1}{a}$ jobs/hour.
+  \item For $n$ people: $\frac{x}{a} + \frac{x}{b} + ... = 1$ (where $x$ is the time working together)
+\end{itemize}
+\end{tcolorbox}
+\end{frame}
+
+% Example Q2: Rate of Work
+\begin{frame}{Example Q2: Rate of Work (Part 1)}
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=Example Q2 (Part 1)]
+\footnotesize
+Sam can paint a wall in 4 hours, Tim in 6 hours, and Sara in 5 hours. How long will it take them to paint it together?
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Example Q2: Rate of Work (Part 2)}
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=Example Q2 (Part 2)]
+\footnotesize
+\textbf{Let $x$ be the time to finish together:}
+\[
+\frac{x}{4} + \frac{x}{6} + \frac{x}{5} = 1
+\]
+\textbf{Step 1: Find LCD:} $60$
+\[
+\frac{15x}{60} + \frac{10x}{60} + \frac{12x}{60} = 1
+\]
+\[
+(15x + 10x + 12x) = 60
+37x = 60
+x = \frac{60}{37} \approx 1.62 \text{ hours}
+\]
+\end{tcolorbox}
+\end{frame}
+
+% Practice Q3: Rate of Work
+\begin{frame}{Practice Q3: Rate of Work}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Practice Q3]
+\footnotesize
+Mike can mow a lawn in 2 hours, his brother Tim in 4 hours. How long if they work together?
+\end{tcolorbox}
+\end{frame}
+
+% Solution Q3
+\begin{frame}{Solution Q3 (Part 1)}
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution Q3 (Part 1)]
+\footnotesize
+Let $x$ be the time together:
+\[
+\frac{x}{2} + \frac{x}{4} = 1
+\]
+\textbf{Step 1: Find LCD:} $4$
+\[
+2x + x = 4
+3x = 4
+\]
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Solution Q3 (Part 2)}
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution Q3 (Part 2)]
+\footnotesize
+\textbf{Step 2: Solve:}
+\[
+x = \frac{4}{3} \text{ hours}
+\]
+\end{tcolorbox}
+\end{frame}
+
+% III) Travelling with Different Speeds
+\begin{frame}{Applications: Travelling with Different Speeds}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Concepts]
+\footnotesize
+\begin{itemize}
+  \item When two vehicles travel the same distance at different speeds, time difference can be modeled with rational functions.
+  \item Use $T = \frac{D}{S}$ for each.
+\end{itemize}
+\end{tcolorbox}
+\end{frame}
+
+% Example Q4: Travelling with Different Speeds
+\begin{frame}{Example Q4: Travelling with Different Speeds (Part 1)}
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=Example Q4 (Part 1)]
+\footnotesize
+A car travels 400 km at $8x$ km/h. Tom runs at $x$ km/h and takes 4.5 hours longer. Find $x$.
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Example Q4: Travelling with Different Speeds (Part 2)}
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=Example Q4 (Part 2)]
+\footnotesize
+\textbf{Step 1: Write time for each:}
+\[
+T_{car} = \frac{400}{8x},\quad T_{Tom} = \frac{400}{x}
+\]
+\textbf{Step 2: Set up equation:}
+\[
+\frac{400}{x} - \frac{400}{8x} = 4.5
+\]
+\textbf{Step 3: Simplify:}
+\[
+\frac{400(1 - \frac{1}{8})}{x} = 4.5
+\frac{400 \times \frac{7}{8}}{x} = 4.5
+\frac{350}{x} = 4.5
+x = \frac{350}{4.5} \approx 77.78 \text{ km/h}
+\]
+\end{tcolorbox}
+\end{frame}
+
+% Practice Q5: Travelling
+\begin{frame}{Practice Q5: Travelling}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Practice Q5]
+\footnotesize
+Jack and Steven leave Portland for Bellingham (300 km). Jack takes a plane, Steven drives. Jack is 10 times faster and arrives 4.5 hours earlier. How fast is each travelling?
+\end{tcolorbox}
+\end{frame}
+
+% Solution Q5
+\begin{frame}{Solution Q5 (Part 1)}
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution Q5 (Part 1)]
+\footnotesize
+Let $x$ be Steven's speed. Jack's speed is $10x$.
+\[
+T_{Jack} = \frac{300}{10x},\quad T_{Steven} = \frac{300}{x}
+\]
+\textbf{Time difference:}
+\[
+\frac{300}{x} - \frac{300}{10x} = 4.5
+\]
+\textbf{Step 1: Simplify:}
+\[
+\frac{300(1 - \frac{1}{10})}{x} = 4.5
+\frac{300 \times \frac{9}{10}}{x} = 4.5
+\frac{270}{x} = 4.5
+\]
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Solution Q5 (Part 2)}
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution Q5 (Part 2)]
+\footnotesize
+\textbf{Step 2: Solve:}
+\[
+x = \frac{270}{4.5} = 60 \text{ km/h}
+\]
+\textbf{Jack's speed:}
+\[
+10x = 600 \text{ km/h}
+\]
+\end{tcolorbox}
+\end{frame}
+
+% IV) Plane Questions with Wind Speed
+\begin{frame}{Applications: Plane Questions with Wind Speed}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Concepts]
+\footnotesize
+\begin{itemize}
+  \item For round trips with wind, use $T = \frac{D}{S}$ for each leg.
+  \item Let $x$ be plane speed, $w$ wind speed. Outbound: $x+w$, return: $x-w$.
+  \item Total time: $T = \frac{D}{x+w} + \frac{D}{x-w}$
+\end{itemize}
+\end{tcolorbox}
+\end{frame}
+
+% Example Q6: Plane with Wind
+\begin{frame}{Example Q6: Plane with Wind (Part 1)}
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=Example Q6 (Part 1)]
+\footnotesize
+A plane flies 3400 km to Toronto with a tailwind, returns with a headwind. Wind speed is $w$ km/h. Write an equation for total round trip time if plane speed is $x$ km/h.
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Example Q6: Plane with Wind (Part 2)}
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=Example Q6 (Part 2)]
+\footnotesize
+\textbf{Total time:}
+\[
+T = \frac{3400}{x+w} + \frac{3400}{x-w}
+\]
+\end{tcolorbox}
+\end{frame}
+
+% Practice Q7: Plane with Wind
+\begin{frame}{Practice Q7: Plane with Wind}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Practice Q7]
+\footnotesize
+The distance from Vancouver to Hong Kong is 10300 km. Wind speed is 60 km/h. If a round trip takes 25 hours, how fast must the plane fly?
+\end{tcolorbox}
+\end{frame}
+
+% Solution Q7
+\begin{frame}{Solution Q7 (Part 1)}
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution Q7 (Part 1)]
+\footnotesize
+Let $x$ be the plane's speed.
+\[
+25 = \frac{10300}{x+60} + \frac{10300}{x-60}
+\]
+\textbf{Step 1: Multiply both sides by $(x+60)(x-60)$:}
+\[
+25(x+60)(x-60) = 10300(x-60) + 10300(x+60)
+\]
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Solution Q7 (Part 2)}
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution Q7 (Part 2)]
+\footnotesize
+\textbf{Step 2: Expand and solve:}
+\[
+25(x^2-3600) = 10300x - 618000 + 10300x + 618000
+25x^2 - 90000 = 20600x
+25x^2 - 20600x - 90000 = 0
+\]
+\textbf{Step 3: Quadratic formula:}
+\[
+x = \frac{20600 \pm \sqrt{20600^2 + 4 \times 25 \times 90000}}{2 \times 25}
+\]
+\end{tcolorbox}
+\end{frame}
+
+% Challenge Q8: New Application
+\begin{frame}{Challenge Q8: River Current}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Challenge Q8]
+\footnotesize
+A boat travels 120 km downstream and returns upstream. The current is $y$ km/h. The boat's speed in still water is $b$ km/h. The round trip takes 10 hours. If $y=4$, find $b$.
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Solution Q8 (Part 1)}
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution Q8 (Part 1)]
+\footnotesize
+\textbf{Step 1: Write time for each leg:}
+\[
+T_{down} = \frac{120}{b+4},\quad T_{up} = \frac{120}{b-4}
+\]
+\textbf{Step 2: Set up equation:}
+\[
+\frac{120}{b+4} + \frac{120}{b-4} = 10
+\]
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Solution Q8 (Part 2)}
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=Solution Q8 (Part 2)]
+\footnotesize
+\textbf{Step 3: Multiply both sides by $(b+4)(b-4)$:}
+\[
+120(b-4) + 120(b+4) = 10(b+4)(b-4)
+\]
+\textbf{Step 4: Expand and solve:}
+\[
+120b - 480 + 120b + 480 = 10(b^2-16)
+240b = 10b^2 - 160
+10b^2 - 240b - 160 = 0
+\]
+\textbf{Step 5: Quadratic formula:}
+\[
+b = \frac{240 \pm \sqrt{240^2 + 4 \times 10 \times 160}}{2 \times 10}
+\]
+\end{tcolorbox}
+\end{frame}
+
+\end{document} 

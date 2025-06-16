@@ -1,0 +1,475 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+
+% Custom colors
+\definecolor{primary}{RGB}{41, 128, 185}
+\definecolor{secondary}{RGB}{52, 152, 219}
+\definecolor{accent}{RGB}{231, 76, 60}
+\definecolor{lightgray}{RGB}{236, 240, 241}
+
+% Theme customization
+\usetheme{Madrid}
+\usecolortheme{whale}
+\setbeamercolor{structure}{fg=primary}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=black}
+
+\title{Chapter 5.1: Rational Functions}
+\subtitle{Simplifying Rational Expressions and NPV's}
+\author{Created by Yi-Chen Lin}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+% I) What are Rational Expressions?
+\begin{frame}{What are Rational Expressions?}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Definition]
+\footnotesize
+\begin{itemize}
+  \item A rational expression is a fraction where both the numerator and denominator are polynomials
+  \item In this section, the numerator and denominator are binomials and trinomials that can be factored
+  \item "x" can't be an exponent or inside a radical, exponents of 'x' must be integers [not fractions]
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=Example]
+\footnotesize
+\begin{align*}
+\frac{x^2 - 3x - 4}{x^2 - 16} &= \frac{(x-4)(x+1)}{(x+4)(x-4)} \\
+&= \frac{x+1}{x+4}
+\end{align*}
+\end{tcolorbox}
+\end{frame}
+
+% II) Identifying Rational Expressions
+\begin{frame}{Are These Rational Expressions?}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Practice]
+\footnotesize
+Indicate whether the following expressions are rational expressions:
+\begin{enumerate}
+  \item $\frac{x^2 - 4x - 9}{x^3 - 3}$
+  \item $\frac{x^3 - 8}{x^4 - 5}$
+  \item $\frac{x^2 - 7}{x^3 - 10}$
+  \item $\frac{x^3 - 9x^2 + 4}{x^2 - 12}$
+  \item $\frac{x^4 - 1}{x^3 + 3}$
+  \item $\frac{x^2 - 3}{x^4 + 5}$
+  \item $\frac{x^4 - 7x^2 + 2}{x^3 - 8}$
+  \item $\frac{x^3 - 5}{x^2 + 3}$
+  \item $\frac{x^4 - 6}{x^3 + x}$
+\end{enumerate}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Are These Rational Expressions? - Solutions Part 1}
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+\footnotesize
+\begin{enumerate}
+  \item $\frac{x^2 - 4x - 9}{x^3 - 3}$ \\
+  \textbf{Yes} - Both numerator and denominator are polynomials with integer exponents
+
+  \item $\frac{x^3 - 8}{x^4 - 5}$ \\
+  \textbf{Yes} - Both numerator and denominator are polynomials with integer exponents
+
+  \item $\frac{x^2 - 7}{x^3 - 10}$ \\
+  \textbf{Yes} - Both numerator and denominator are polynomials with integer exponents
+
+  \item $\frac{x^3 - 9x^2 + 4}{x^2 - 12}$ \\
+  \textbf{Yes} - Both numerator and denominator are polynomials with integer exponents
+\end{enumerate}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Are These Rational Expressions? - Solutions Part 2}
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+\footnotesize
+\begin{enumerate}
+  \setcounter{enumi}{4}
+  \item $\frac{x^4 - 1}{x^3 + 3}$ \\
+  \textbf{Yes} - Both numerator and denominator are polynomials with integer exponents
+
+  \item $\frac{x^2 - 3}{x^4 + 5}$ \\
+  \textbf{Yes} - Both numerator and denominator are polynomials with integer exponents
+
+  \item $\frac{x^4 - 7x^2 + 2}{x^3 - 8}$ \\
+  \textbf{Yes} - Both numerator and denominator are polynomials with integer exponents
+
+  \item $\frac{x^3 - 5}{x^2 + 3}$ \\
+  \textbf{Yes} - Both numerator and denominator are polynomials with integer exponents
+
+  \item $\frac{x^4 - 6}{x^3 + x}$ \\
+  \textbf{Yes} - Both numerator and denominator are polynomials with integer exponents
+\end{enumerate}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Are These Rational Expressions? - Explanation}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Points]
+\footnotesize
+\begin{itemize}
+  \item All expressions are rational expressions because:
+  \begin{itemize}
+    \item Both numerator and denominator are polynomials
+    \item All exponents are integers
+    \item No radicals in the expressions
+    \item No fractional exponents
+  \end{itemize}
+  \item Examples of expressions that would NOT be rational:
+  \begin{itemize}
+    \item $\frac{\sqrt{x}}{x^2}$ (contains radical)
+    \item $\frac{x^{1/2}}{x^3}$ (contains fractional exponent)
+    \item $\frac{\sin x}{x^2}$ (contains trigonometric function)
+  \end{itemize}
+\end{itemize}
+\end{tcolorbox}
+\end{frame}
+
+% --- Split: More Examples of Non-Rational Expressions (Page 1) ---
+
+\begin{frame}{More Examples of Non-Rational Expressions (1/2)}
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=Examples: Radicals & Fractional Exponents]
+\footnotesize
+\begin{enumerate}
+  \item Expressions with Radicals:
+  \begin{itemize}
+    \item $\frac{\sqrt{x+1}}{x^2}$ (square root in numerator)
+    \item $\frac{x^2}{\sqrt[3]{x-2}}$ (cube root in denominator)
+    \item $\frac{\sqrt{x^2+1}}{x+1}$ (square root of polynomial)
+  \end{itemize}
+
+  \item Expressions with Fractional Exponents:
+  \begin{itemize}
+    \item $\frac{x^{3/2}}{x^2}$ (fractional exponent in numerator)
+    \item $\frac{x^2}{x^{-1/3}}$ (negative fractional exponent)
+    \item $\frac{(x+1)^{1/4}}{x^2}$ (fractional exponent of binomial)
+  \end{itemize}
+\end{enumerate}
+\end{tcolorbox}
+\end{frame}
+
+% --- Split: More Examples of Non-Rational Expressions (Page 2) ---
+
+\begin{frame}{More Examples of Non-Rational Expressions (2/2)}
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=Examples: Trig, Logarithms, Mixed]
+\footnotesize
+\begin{enumerate}
+  \setcounter{enumi}{2}
+  \item Expressions with Trigonometric Functions:
+  \begin{itemize}
+    \item $\frac{\sin x}{x^2}$ (sine function)
+    \item $\frac{x^2}{\cos x}$ (cosine function)
+    \item $\frac{\tan x}{x+1}$ (tangent function)
+  \end{itemize}
+
+  \item Expressions with Logarithms:
+  \begin{itemize}
+    \item $\frac{\ln x}{x^2}$ (natural logarithm)
+    \item $\frac{x^2}{\log x}$ (common logarithm)
+    \item $\frac{\log_2(x+1)}{x}$ (logarithm with base 2)
+  \end{itemize}
+
+  \item Mixed Non-Rational Expressions:
+  \begin{itemize}
+    \item $\frac{\sqrt{x} + \sin x}{x^2}$ (combination of radical and trig)
+    \item $\frac{x^{1/2} + \ln x}{x+1}$ (combination of fractional exponent and log)
+    \item $\frac{\sqrt{x^2+1} + \cos x}{x^3}$ (combination of radical and trig)
+  \end{itemize}
+\end{enumerate}
+\end{tcolorbox}
+\end{frame}
+
+% --- Split: Why These Are Not Rational Expressions (Page 1) ---
+
+\begin{frame}{Why These Are Not Rational Expressions (1/2)}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Explanation: Radicals & Fractional Exponents]
+\footnotesize
+\begin{itemize}
+  \item \textbf{Radicals}: 
+  \begin{itemize}
+    \item Cannot be written as polynomials
+    \item Involve non-integer exponents
+    \item Example: $\sqrt{x} = x^{1/2}$
+  \end{itemize}
+
+  \item \textbf{Fractional Exponents}:
+  \begin{itemize}
+    \item Not allowed in polynomials
+    \item Cannot be simplified to integer exponents
+    \item Example: $x^{3/2} = \sqrt{x^3}$
+  \end{itemize}
+\end{itemize}
+\end{tcolorbox}
+\end{frame}
+
+% --- Split: Why These Are Not Rational Expressions (Page 2) ---
+
+\begin{frame}{Why These Are Not Rational Expressions (2/2)}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Explanation: Trig Functions & Logarithms]
+\footnotesize
+\begin{itemize}
+  \item \textbf{Trigonometric Functions}:
+  \begin{itemize}
+    \item Not polynomials
+    \item Cannot be expressed as finite sums of terms
+    \item Example: $\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - ...$
+  \end{itemize}
+
+  \item \textbf{Logarithms}:
+  \begin{itemize}
+    \item Not polynomials
+    \item Cannot be expressed as finite sums of terms
+    \item Example: $\ln x$ cannot be written as a polynomial
+  \end{itemize}
+\end{itemize}
+\end{tcolorbox}
+\end{frame}
+
+% III) Simplifying Rational Expressions
+\begin{frame}{Simplifying Rational Expressions}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Rules]
+\footnotesize
+\begin{itemize}
+  \item You can only simplify fractions when you have a common factor in both the numerator \& denominator
+  \item When simplifying binomials, factor out the common factor first, then simplify
+  \item You can only cancel out a binomial when it's a common factor in both the Numerator \& Denominator
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=Common Mistakes]
+\footnotesize
+\begin{itemize}
+  \item You CANNOT cancel a common term from the top and bottom if it is added or subtracted!
+  \item Example: $\frac{x+3}{x+5} \neq \frac{3}{5}$
+  \item Example: $\frac{x+5}{x-5} \neq 1$
+  \item Example: $\frac{2x+10}{x+5} \neq 4$
+\end{itemize}
+\end{tcolorbox}
+\end{frame}
+
+% IV) Practice Problems
+\begin{frame}{Practice: Factor and Simplify}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Problems]
+\footnotesize
+Simplify each expression:
+\begin{enumerate}
+  \item $\frac{a^2 - 6a - 3}{a - 3}$
+  \item $\frac{a^2 - 2ab - b^2}{a^2 + ab}$
+  \item $\frac{3xy^2 - 18y}{y^2 - 2xy}$
+  \item $\frac{3a^2 + 3ab - 60b^2}{2a^2 + 4ab - 48b^2}$
+\end{enumerate}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Solutions Part 1}
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+\footnotesize
+\begin{enumerate}
+  \item $\frac{a^2 - 6a - 3}{a - 3}$
+  \begin{align*}
+    &= \frac{(a-3)(a+1)}{a-3} \\
+    &= a+1
+  \end{align*}
+  \item $\frac{a^2 - 2ab - b^2}{a^2 + ab}$
+  \begin{align*}
+    &= \frac{(a-b)(a+b)}{a(a+b)} \\
+    &= \frac{a-b}{a}
+  \end{align*}
+\end{enumerate}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Practice: Solutions Part 2}
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+\footnotesize
+\begin{enumerate}
+  \setcounter{enumi}{2}
+  \item $\frac{3xy^2 - 18y}{y^2 - 2xy}$
+  \begin{align*}
+    &= \frac{3y(xy-6)}{y(y-2x)} \\
+    &= \frac{3(xy-6)}{y-2x}
+  \end{align*}
+  \item $\frac{3a^2 + 3ab - 60b^2}{2a^2 + 4ab - 48b^2}$
+  \begin{align*}
+    &= \frac{3(a^2 + ab - 20b^2)}{2(a^2 + 2ab - 24b^2)} \\
+    &= \frac{3(a+5b)(a-4b)}{2(a+6b)(a-4b)} \\
+    &= \frac{3(a+5b)}{2(a+6b)}
+  \end{align*}
+\end{enumerate}
+\end{tcolorbox}
+\end{frame}
+
+% V) Non-Permissible Values (NPV)
+\begin{frame}{Non-Permissible Values (NPV)}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Definition]
+\footnotesize
+\begin{itemize}
+  \item Permissible → Allowed, Non-Permissible → Not Allowed
+  \item When evaluating rational expressions, the denominator is not allowed to be Zero
+  \item Can't divide by zero → Undefined!
+  \item Any value of "x" that makes the denominator equal to zero is called a NPV
+\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=lightgray,colframe=secondary,title=Steps to Find NPV]
+\footnotesize
+\begin{enumerate}
+  \item Take the entire denominator
+  \item Make it equal to zero
+  \item Solve for "x"
+  \item Factor the denominator
+  \item These are values that "x" cannot be
+\end{enumerate}
+\end{tcolorbox}
+\end{frame}
+
+% VI) NPV Practice
+\begin{frame}{Find the NPV}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Practice]
+\footnotesize
+Find the non-permissible values for each expression:
+\begin{enumerate}
+  \item $\frac{3x - 6}{6x + 2}$
+  \item $\frac{2x^2 - 2x - 8}{4x^2 - 81}$
+  \item $\frac{5x^2 - 10x + 12}{x^2 - 11x + 30}$
+  \item $\frac{2x^2 - 2x - 8}{x^2 - 7xy + 10y^2}$
+\end{enumerate}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{NPV Solutions Part 1}
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+\footnotesize
+\begin{enumerate}
+  \item $\frac{3x - 6}{6x + 2}$
+  \begin{align*}
+    6x + 2 &= 0 \\
+    6x &= -2 \\
+    x &= -\frac{1}{3}
+  \end{align*}
+  NPV: $x \neq -\frac{1}{3}$
+
+  \item $\frac{2x^2 - 2x - 8}{4x^2 - 81}$
+  \begin{align*}
+    4x^2 - 81 &= 0 \\
+    (2x+9)(2x-9) &= 0 \\
+    x &= -\frac{9}{2} \text{ or } x = \frac{9}{2}
+  \end{align*}
+  NPV: $x \neq \pm\frac{9}{2}$
+\end{enumerate}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{NPV Solutions Part 2}
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+\footnotesize
+\begin{enumerate}
+  \setcounter{enumi}{2}
+  \item $\frac{5x^2 - 10x + 12}{x^2 - 11x + 30}$
+  \begin{align*}
+    x^2 - 11x + 30 &= 0 \\
+    (x-5)(x-6) &= 0 \\
+    x &= 5 \text{ or } x = 6
+  \end{align*}
+  NPV: $x \neq 5, 6$
+
+  \item $\frac{2x^2 - 2x - 8}{x^2 - 7xy + 10y^2}$
+  \begin{align*}
+    x^2 - 7xy + 10y^2 &= 0 \\
+    (x-5y)(x-2y) &= 0 \\
+    x &= 5y \text{ or } x = 2y
+  \end{align*}
+  NPV: $x \neq 5y, 2y$
+\end{enumerate}
+\end{tcolorbox}
+\end{frame}
+
+% Additional Challenging NPV Problems
+\begin{frame}{Additional Challenging NPV Problems}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Advanced Practice]
+\footnotesize
+Find the non-permissible values for each expression:
+\begin{enumerate}
+  \item $\frac{x^3 - 8}{x^4 - 16}$
+  \item $\frac{x^2 - 9}{x^3 - 27}$
+  \item $\frac{x^4 - 1}{x^3 + x^2 - x - 1}$
+  \item $\frac{x^3 - 2x^2 - 5x + 6}{x^4 - 5x^2 + 4}$
+\end{enumerate}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Challenging NPV Solutions Part 1}
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+\footnotesize
+\begin{enumerate}
+  \item $\frac{x^3 - 8}{x^4 - 16}$
+  \begin{align*}
+    x^4 - 16 &= 0 \\
+    (x^2+4)(x^2-4) &= 0 \\
+    (x^2+4)(x+2)(x-2) &= 0 \\
+    x &= \pm 2
+  \end{align*}
+  NPV: $x \neq \pm 2$
+
+  \item $\frac{x^2 - 9}{x^3 - 27}$
+  \begin{align*}
+    x^3 - 27 &= 0 \\
+    (x-3)(x^2+3x+9) &= 0 \\
+    x &= 3
+  \end{align*}
+  NPV: $x \neq 3$
+\end{enumerate}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Challenging NPV Solutions Part 2}
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=Detailed Solutions]
+\footnotesize
+\begin{enumerate}
+  \setcounter{enumi}{2}
+  \item $\frac{x^4 - 1}{x^3 + x^2 - x - 1}$
+  \begin{align*}
+    x^3 + x^2 - x - 1 &= 0 \\
+    (x+1)(x^2-1) &= 0 \\
+    (x+1)(x+1)(x-1) &= 0 \\
+    x &= \pm 1
+  \end{align*}
+  NPV: $x \neq \pm 1$
+
+  \item $\frac{x^3 - 2x^2 - 5x + 6}{x^4 - 5x^2 + 4}$
+  \begin{align*}
+    x^4 - 5x^2 + 4 &= 0 \\
+    (x^2-4)(x^2-1) &= 0 \\
+    (x+2)(x-2)(x+1)(x-1) &= 0 \\
+    x &= \pm 2, \pm 1
+  \end{align*}
+  NPV: $x \neq \pm 2, \pm 1$
+\end{enumerate}
+\end{tcolorbox}
+\end{frame}
+
+% VII) Summary
+\begin{frame}{Summary}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Points]
+\footnotesize
+\begin{itemize}
+  \item Rational expressions are fractions with polynomials
+  \item Simplify by factoring and canceling common factors
+  \item Watch out for common mistakes in simplification
+  \item Always find and state non-permissible values
+  \item Remember: denominator cannot be zero
+\end{itemize}
+\end{tcolorbox}
+\end{frame}
+
+\end{document} 

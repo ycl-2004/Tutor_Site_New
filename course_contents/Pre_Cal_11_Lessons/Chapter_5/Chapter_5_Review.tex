@@ -1,0 +1,326 @@
+% !TEX program = xelatex
+\documentclass[aspectratio=169]{beamer}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+
+% Custom colors
+\definecolor{primary}{RGB}{41, 128, 185}
+\definecolor{secondary}{RGB}{52, 152, 219}
+\definecolor{accent}{RGB}{231, 76, 60}
+\definecolor{lightgray}{RGB}{236, 240, 241}
+
+% Theme customization
+\usetheme{Madrid}
+\usecolortheme{whale}
+\setbeamercolor{structure}{fg=primary}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=black}
+
+% Title page info
+\title{Pre-Calculus 11}
+\subtitle{Chapter 5 Review: Rational Expressions and Equations \\ 第五章复习：有理式与方程}
+\author{Created by Yi-Chen Lin}
+\date{\today}
+
+\begin{document}
+
+% Title Page
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% Overview
+\begin{frame}{Chapter 5 Overview / 本章总览}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Topics Covered]
+        \footnotesize
+        \begin{itemize}
+            \item 5.1 Simplifying Rational Expressions and NPV's / 有理式化简与无定义值
+            \item 5.2 Multiplying and Dividing Rational Expressions / 有理式的乘除
+            \item 5.3 Adding and Subtracting Rational Expressions / 有理式的加减
+            \item 5.4 Solving Rational Equations / 有理方程求解
+            \item 5.5 Applications of Rational Functions / 有理函数应用
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+% 5.1 Simplifying Rational Expressions and NPV's
+\begin{frame}{5.1 Simplifying Rational Expressions and NPV's / 有理式化简与无定义值}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Points / 重点]
+        \footnotesize
+        \begin{itemize}
+            \item A rational expression is a fraction with polynomials in numerator and denominator.
+            \item Non-permissible values (NPV): values that make the denominator zero.
+            \item Simplify by factoring and reducing common factors.
+
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+% 5.1 Practice
+\begin{frame}{5.1 Practice Problems / 练习题}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Practice]
+        \footnotesize
+        \begin{enumerate}
+            \item[Q1] Simplify and state NPV: $\frac{x^2-9}{x^2-4x+3}$
+            \item[Q2] Simplify and state NPV: $\frac{2x^2+5x+2}{x^2+3x+2}$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% 5.1 Solutions
+\begin{frame}{5.1 Solutions / 解答}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solutions]
+        \footnotesize
+        \textbf{Q1.}
+        \begin{align*}
+            &\frac{x^2-9}{x^2-4x+3} = \frac{(x-3)(x+3)}{(x-3)(x-1)} = \frac{x+3}{x-1},\ x\neq3,1
+        \end{align*}
+        \textbf{NPV:} $x=3,1$
+        
+        \textbf{Q2.}
+        \begin{align*}
+            &\frac{2x^2+5x+2}{x^2+3x+2} = \frac{(2x+1)(x+2)}{(x+1)(x+2)} = \frac{2x+1}{x+1},\ x\neq-1,-2
+        \end{align*}
+        \textbf{NPV:} $x=-1,-2$
+    \end{tcolorbox}
+\end{frame}
+
+% 5.2 Multiplying and Dividing Rational Expressions
+\begin{frame}{5.2 Multiplying and Dividing Rational Expressions / 有理式的乘除}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Points / 重点]
+        \footnotesize
+        \begin{itemize}
+            \item Multiply: factor, reduce, then multiply numerators and denominators.
+            \item Divide: multiply by the reciprocal.
+            \item Always state NPV before and after simplification.
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+% 5.2 Practice
+\begin{frame}{5.2 Practice Problems / 练习题}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Practice]
+        \footnotesize
+        \begin{enumerate}
+            \item[Q3] $\frac{x^2-4}{x^2+2x} \times \frac{x+2}{x-2}$
+            \item[Q4] $\frac{2x}{x^2-9} \div \frac{x+3}{x-3}$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% 5.2 Solutions
+\begin{frame}{5.2 Solutions / 解答}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solutions]
+        \footnotesize
+        \textbf{Q3.}
+        \begin{align*}
+            &\frac{x^2-4}{x^2+2x} \times \frac{x+2}{x-2} = \frac{(x-2)(x+2)}{x(x+2)} \times \frac{x+2}{x-2} \\
+            &= \frac{(x-2)(x+2)}{x(x+2)} \times \frac{x+2}{x-2} = \frac{x+2}{x},\ x\neq0,-2,2
+        \end{align*}
+        \textbf{NPV:} $x=0,-2,2$
+        
+        \textbf{Q4.}
+        \begin{align*}
+            &\frac{2x}{x^2-9} \div \frac{x+3}{x-3} = \frac{2x}{(x+3)(x-3)} \times \frac{x-3}{x+3} \\
+            &= \frac{2x(x-3)}{(x+3)^2(x-3)} = \frac{2x}{(x+3)^2},\ x\neq-3,3,0
+        \end{align*}
+        \textbf{NPV:} $x=-3,3,0$
+    \end{tcolorbox}
+\end{frame}
+
+% 5.3 Adding and Subtracting Rational Expressions
+\begin{frame}{5.3 Adding and Subtracting Rational Expressions / 有理式的加减}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Points / 重点]
+        \footnotesize
+        \begin{itemize}
+            \item Find the lowest common denominator (LCD).
+            \item Rewrite each expression with the LCD.
+            \item Add or subtract numerators, keep LCD.
+            \item State NPV.
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+% 5.3 Practice
+\begin{frame}{5.3 Practice Problems / 练习题}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Practice]
+        \footnotesize
+        \begin{enumerate}
+            \item[Q5] $\frac{2}{x} + \frac{3}{x+1}$
+            \item[Q6] $\frac{x}{x-2} - \frac{2}{x+2}$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% 5.3 Solutions
+\begin{frame}{5.3 Solutions / 解答}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solutions]
+        \footnotesize
+        \textbf{Q5.}
+        \begin{align*}
+            &\frac{2}{x} + \frac{3}{x+1} = \frac{2(x+1)+3x}{x(x+1)} = \frac{2x+2+3x}{x(x+1)} = \frac{5x+2}{x(x+1)},\ x\neq0,-1
+        \end{align*}
+        \textbf{NPV:} $x=0,-1$
+        
+        \textbf{Q6.}
+        \begin{align*}
+            &\frac{x}{x-2} - \frac{2}{x+2} = \frac{x(x+2)-2(x-2)}{(x-2)(x+2)} = \frac{x^2+2x-2x+4}{x^2-4} = \frac{x^2+4}{x^2-4},\ x\neq2,-2
+        \end{align*}
+        \textbf{NPV:} $x=2,-2$
+    \end{tcolorbox}
+\end{frame}
+
+% 5.4 Solving Rational Equations
+\begin{frame}{5.4 Solving Rational Equations / 有理方程求解}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Points / 重点]
+        \footnotesize
+        \begin{itemize}
+            \item Find LCD, multiply both sides to clear denominators.
+            \item Solve resulting equation, check for extraneous solutions.
+            \item Always check NPV.
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+% 5.4 Practice
+\begin{frame}{5.4 Practice Problems / 练习题}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Practice]
+        \footnotesize
+        \begin{enumerate}
+            \item[Q7] $\frac{2}{x} = \frac{3}{x+1}$
+            \item[Q8] $\frac{x}{x-2} + 1 = \frac{4}{x-2}$
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% 5.4 Solutions (Q7 only)
+
+% 5.4 Solutions Q7
+\begin{frame}{5.4 Solutions}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solutions]
+        \footnotesize
+        \textbf{Q7.}
+        \begin{align*}
+            &\frac{2}{x} = \frac{3}{x+1} \\
+            &2(x+1) = 3x \\
+            &2x+2 = 3x \\
+            &x=2
+        \end{align*}
+        \textbf{NPV:} $x=0,-1$; $x=2$ is valid.
+    \end{tcolorbox}
+\end{frame}
+
+% 5.4 Solutions Q8
+\begin{frame}{5.4 Solutions}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solutions]
+        \footnotesize
+        \textbf{Q8.}
+        \begin{align*}
+            &\frac{x}{x-2} + 1 = \frac{4}{x-2} \\
+            &\frac{x+ (x-2)}{x-2} = \frac{4}{x-2} \\
+            &\frac{2x-2}{x-2} = \frac{4}{x-2} \\
+            &2x-2=4 \\
+            &2x=6 \\
+            &x=3
+        \end{align*}
+        \textbf{NPV:} $x=2$; $x=3$ is valid.
+    \end{tcolorbox}
+\end{frame}
+
+% 5.5 Applications of Rational Functions
+\begin{frame}{5.5 Applications of Rational Functions / 有理函数应用}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Points / 重点]
+        \footnotesize
+        \begin{itemize}
+            \item Speed-Time-Distance (STD) problems
+            \item Rate of work, mixture, and travel problems
+            \item Use rational equations to model and solve
+        \end{itemize}
+    \end{tcolorbox}
+\end{frame}
+
+% 5.5 Practice
+\begin{frame}{5.5 Practice Problems / 练习题}
+    \begin{tcolorbox}[colback=lightgray,colframe=accent,title=Practice]
+        \footnotesize
+        \begin{enumerate}
+            \item[Q9] (STD) A car travels 120 km at $x$ km/h. Write an expression for the time taken. If $x=60$, how long does it take?
+            \item[Q10] (Work) If A can do a job in 4 hours and B in 6 hours, how long together?
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% 5.5 Solutions
+\begin{frame}{5.5 Solutions / 解答}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solutions]
+        \footnotesize
+        \textbf{Q9.}
+        \begin{align*}
+            &\text{Time} = \frac{120}{x} \text{ hours} \\
+            &x=60 \Rightarrow \frac{120}{60} = 2 \text{ hours}
+        \end{align*}
+        
+        \textbf{Q10.}
+        \begin{align*}
+            &\text{A's rate: } \frac{1}{4},\ \text{B's rate: } \frac{1}{6} \\
+            &\text{Together: } \frac{1}{4}+\frac{1}{6}=\frac{5}{12} \\
+            &\text{Time} = \frac{1}{5/12} = \frac{12}{5} = 2.4 \text{ hours}
+        \end{align*}
+    \end{tcolorbox}
+\end{frame}
+
+% Final Review Questions
+\begin{frame}{Final Review Questions / 综合练习}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Comprehensive Review]
+        \footnotesize
+        \begin{enumerate}
+            \item[Q11] Simplify: $\frac{x^2-16}{x^2-4x}$
+            \item[Q12] Solve: $\frac{3}{x} + \frac{2}{x+1} = 1$
+            \item[Q13] (应用) A boat travels 30 km downstream in 2 hours and returns upstream in 3 hours. Find the speed of the boat in still water and the speed of the current.
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% Final Review Solutions
+\begin{frame}{Final Review Solutions / 综合解答}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solutions]
+        \footnotesize
+        \textbf{Q11.}
+        \begin{align*}
+            &\frac{x^2-16}{x^2-4x} = \frac{(x-4)(x+4)}{x(x-4)} = \frac{x+4}{x},\ x\neq0,4
+        \end{align*}
+        \textbf{NPV:} $x=0,4$
+        
+        \textbf{Q12.}
+        \begin{align*}
+            &\frac{3}{x} + \frac{2}{x+1} = 1 \\
+            &\frac{3(x+1)+2x}{x(x+1)}=1 \\
+            &3x+3+2x=x^2+x \\
+            &5x+3=x^2+x \\
+            &x^2-4x-3=0 \\
+            &(x-3)(x-1)=0 \\
+            &x=3,1
+        \end{align*}
+        \textbf{NPV:} $x=0,-1$; $x=3,1$ are valid.
+        
+        \textbf{Q13.}
+        \begin{align*}
+            &\text{Let } b=\text{boat speed},\ c=\text{current} \\
+            &\frac{30}{b+c}=2,\ \frac{30}{b-c}=3 \\
+            &30=2b+2c,\ 30=3b-3c \\
+            &2b+2c=3b-3c \\
+            &b=5c \\
+            &30=2b+2c=2(5c)+2c=12c \Rightarrow c=2.5,\ b=12.5
+        \end{align*}
+        \textbf{Answer:} Boat speed $=12.5$ km/h, current $=2.5$ km/h
+    \end{tcolorbox}
+\end{frame}
+
+\end{document} 
