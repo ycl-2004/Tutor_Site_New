@@ -1,0 +1,311 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+
+% Custom colors
+\definecolor{primary}{RGB}{41, 128, 185}
+\definecolor{secondary}{RGB}{52, 152, 219}
+\definecolor{accent}{RGB}{231, 76, 60}
+\definecolor{lightgray}{RGB}{236, 240, 241}
+
+% Theme customization
+\usetheme{Madrid}
+\usecolortheme{whale}
+\setbeamercolor{structure}{fg=primary}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=black}
+
+\title{Chapter 4.4: Chapter 4 Review}
+\subtitle{Pre-Calculus 11 - Review}
+\author{Created by Yi-Chen Lin}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+% Overview
+\begin{frame}{Overview: Chapter 4 Review}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Concepts]
+\footnotesize
+\begin{itemize}
+  \item Simplifying radicals and fractional exponents
+  \item Multiplying, dividing, and rationalizing radicals
+  \item Solving radical equations and checking for extraneous roots
+  \item FOIL and expanding expressions with radicals
+\end{itemize}
+\end{tcolorbox}
+\end{frame}
+
+% Summary of Key Concepts
+\begin{frame}{Summary of Key Concepts}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Summary]
+\footnotesize
+\begin{itemize}
+  \item $\sqrt{a} \times \sqrt{b} = \sqrt{ab}$
+  \item $\frac{a\sqrt{b}}{c\sqrt{d}} = \frac{a}{c} \times \sqrt{\frac{b}{d}}$
+  \item Rationalize denominators by multiplying by the radical or conjugate
+  \item To solve $\sqrt{ax+b} = c$, isolate, square both sides, solve, and check
+  \item Always check for extraneous roots in radical equations
+  \item FOIL: $(a+\sqrt{b})(a-\sqrt{b}) = a^2-b$
+\end{itemize}
+\end{tcolorbox}
+\end{frame}
+
+% Review Practice Problems
+\begin{frame}{Review Practice Problems}
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=Practice Problems]
+\footnotesize
+\begin{columns}[T]
+\column{0.5\textwidth}
+\begin{enumerate}
+  \item Simplify: $\sqrt{50} + 2\sqrt{8} - \sqrt{18}$
+  \item Multiply: $3\sqrt{2} \times 4\sqrt{3}$
+  \item Divide: $\frac{6\sqrt{27}}{2\sqrt{3}}$
+  \item Rationalize: $\frac{5}{\sqrt{2}}$
+\end{enumerate}
+\column{0.5\textwidth}
+\begin{enumerate}
+  \item Solve: $\sqrt{2x+3} = 5$
+  \item Solve: $\sqrt{x-1} + 2 = 7$
+  \item Expand: $(x+\sqrt{5})(x-\sqrt{5})$
+  \item Identify extraneous roots: $\sqrt{x+4} = x-2$
+\end{enumerate}
+\end{columns}
+\end{tcolorbox}
+\end{frame}
+
+% Review Practice Solutions (1/2)
+\begin{frame}{Review Practice Solutions (1/2)}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solutions]
+\footnotesize
+\begin{enumerate}
+  \item $\sqrt{50} + 2\sqrt{8} - \sqrt{18} = 5\sqrt{2} + 4\sqrt{2} - 3\sqrt{2} = 6\sqrt{2}$
+  \item $3\sqrt{2} \times 4\sqrt{3} = 12\sqrt{6}$
+  \item $\frac{6\sqrt{27}}{2\sqrt{3}} = \frac{6\times3\sqrt{3}}{2\sqrt{3}} = \frac{18\sqrt{3}}{2\sqrt{3}} = 9$
+  \item $\frac{5}{\sqrt{2}} \times \frac{\sqrt{2}}{\sqrt{2}} = \frac{5\sqrt{2}}{2}$
+\end{enumerate}
+\end{tcolorbox}
+\end{frame}
+
+% Review Practice Solutions (2/2)
+\begin{frame}{Review Practice Solutions (2/2)}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solutions]
+\footnotesize
+\begin{enumerate}
+  \item Solve $\sqrt{2x+3} = 5$
+  \begin{align*}
+    &\sqrt{2x+3} = 5 \\
+    &2x+3 = 25 \\
+    &2x = 22 \\
+    &x = 11
+  \end{align*}
+  \item Solve $\sqrt{x-1} + 2 = 7$
+  \begin{align*}
+    &\sqrt{x-1} = 5 \\
+    &x-1 = 25 \\
+    &x = 26
+  \end{align*}
+  \item Expand $(x+\sqrt{5})(x-\sqrt{5}) = x^2-5$
+\end{enumerate}
+\end{tcolorbox}
+\end{frame}
+
+% New frame for question 4
+\begin{frame}{Review Practice Solutions: Checking Extraneous Roots}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solution: $\sqrt{x+4} = x-2$]
+\footnotesize
+\begin{columns}[T]
+\column{0.52\textwidth}
+\textbf{Solving:}
+\begin{align*}
+  &\sqrt{x+4} = x-2 \\
+  &x+4 = (x-2)^2 \\
+  &x+4 = x^2-4x+4 \\
+  &0 = x^2-5x \\
+  &x(x-5) = 0 \\
+  &x = 0 \text{ or } x = 5
+\end{align*}
+
+\column{0.48\textwidth}
+\textbf{Checking:}
+
+For $x=0$:
+\begin{align*}
+  &\sqrt{0+4} = 2 \\
+  &0-2 = -2
+\end{align*}
+$2 \neq -2$ (not valid)
+
+For $x=5$:
+\begin{align*}
+  &\sqrt{5+4} = 3 \\
+  &5-2 = 3
+\end{align*}
+$3 = 3$ (valid)
+
+\textbf{Conclusion:} Only $x=5$ is a valid solution.
+\end{columns}
+\end{tcolorbox}
+\end{frame}
+
+% Add 10 more review questions
+
+\begin{frame}{More Review Practice Problems}
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=More Practice Problems]
+\footnotesize
+\begin{enumerate}
+  \item Simplify: $2\sqrt{18} - 3\sqrt{8} + \sqrt{32}$
+  \item Multiply: $5\sqrt{7} \times 2\sqrt{14}$
+  \item Divide: $\frac{8\sqrt{45}}{4\sqrt{5}}$
+  \item Rationalize: $\frac{3}{2\sqrt{3}}$
+  \item Solve: $\sqrt{3x-2} = 4$
+  \item Solve: $\sqrt{5x+1} + 1 = 6$
+  \item Expand: $(2+\sqrt{3})(2-\sqrt{3})$
+  \item Identify extraneous roots: $\sqrt{2x+5} = x-1$
+  \item Word Problem: The area of a square is $50$ cm$^2$. What is the length of one side in simplest radical form?
+  \item Conceptual: Explain why $\sqrt{x^2} = |x|$ for all real $x$.
+\end{enumerate}
+\end{tcolorbox}
+\end{frame}
+
+% Solutions for the 10 new questions, 2 per page
+
+\begin{frame}{More Review Practice Solutions (1/5)}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solutions]
+\footnotesize
+\textbf{1.} $2\sqrt{18} - 3\sqrt{8} + \sqrt{32}$
+\begin{align*}
+  &= 2 \times 3\sqrt{2} - 3 \times 2\sqrt{2} + 4\sqrt{2} \\
+  &= 6\sqrt{2} - 6\sqrt{2} + 4\sqrt{2} \\
+  &= 4\sqrt{2}
+\end{align*}
+\vspace{0.5em}
+\textbf{2.} $5\sqrt{7} \times 2\sqrt{14}$
+\begin{align*}
+  &= 10\sqrt{98} \\
+  &= 10 \times 7\sqrt{2} \\
+  &= 70\sqrt{2}
+\end{align*}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{More Review Practice Solutions (2/5)}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solutions]
+\footnotesize
+\textbf{3.} $\frac{8\sqrt{45}}{4\sqrt{5}}$
+\begin{align*}
+  &= \frac{8 \times 3\sqrt{5}}{4\sqrt{5}} \\
+  &= \frac{24\sqrt{5}}{4\sqrt{5}} \\
+  &= 6
+\end{align*}
+\textbf{4.} $\frac{3}{2\sqrt{3}}$
+\begin{align*}
+  &= \frac{3}{2\sqrt{3}} \times \frac{\sqrt{3}}{\sqrt{3}} \\
+  &= \frac{3\sqrt{3}}{2 \times 3} \\
+  &= \frac{\sqrt{3}}{2}
+\end{align*}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{More Review Practice Solutions (3/5)}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solutions]
+\footnotesize
+\textbf{5.} Solve $\sqrt{3x-2} = 4$
+\begin{align*}
+  &\sqrt{3x-2} = 4 \\
+  &3x-2 = 16 \\
+  &3x = 18 \\
+  &x = 6
+\end{align*}
+\vspace{0.5em}
+\textbf{6.} Solve $\sqrt{5x+1} + 1 = 6$
+\begin{align*}
+  &\sqrt{5x+1} = 5 \\
+  &5x+1 = 25 \\
+  &5x = 24 \\
+  &x = \frac{24}{5}
+\end{align*}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{More Review Practice Solutions (4/5)}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solutions]
+\footnotesize
+\textbf{7.} Expand $(2+\sqrt{3})(2-\sqrt{3})$
+\begin{align*}
+  &= 4 - 2\sqrt{3} + 2\sqrt{3} - 3 \\
+  &= 4 - 3 \\
+  &= 1
+\end{align*}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{More Review Practice Solutions (Checking Extraneous Roots)}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solution: $\sqrt{2x+5} = x-1$]
+\footnotesize
+\begin{columns}[T]
+\column{0.52\textwidth}
+\textbf{Solving:}
+\begin{align*}
+  &\sqrt{2x+5} = x-1 \\
+  &2x+5 = (x-1)^2 \\
+  &2x+5 = x^2-2x+1 \\
+  &0 = x^2-4x-4 \\
+  &x^2-4x-4=0
+\end{align*}
+Quadratic formula:
+\begin{align*}
+  &x = \frac{4 \pm \sqrt{16+16}}{2} \\
+  &x = \frac{4 \pm \sqrt{32}}{2} \\
+  &x = \frac{4 \pm 4\sqrt{2}}{2} \\
+  &x = 2 \pm 2\sqrt{2}
+\end{align*}
+
+\column{0.48\textwidth}
+\textbf{Checking:}
+
+For $x = 2 + 2\sqrt{2}$:
+\begin{align*}
+  &x-1 = (2+2\sqrt{2})-1 = 1+2\sqrt{2} \\
+  &(1+2\sqrt{2})^2 = 1 + 4\sqrt{2} + 8 = 9 + 4\sqrt{2} \\
+  &\text{So } \sqrt{9+4\sqrt{2}} = 1+2\sqrt{2} \text{ (valid)}
+\end{align*}
+
+For $x = 2 - 2\sqrt{2}$:
+\begin{align*}
+  &x-1 = (2-2\sqrt{2})-1 = 1-2\sqrt{2} \\
+  &(1-2\sqrt{2})^2 = 1 - 4\sqrt{2} + 8 = 9 - 4\sqrt{2} \\
+  &\text{So } \sqrt{9-4\sqrt{2}} = 1-2\sqrt{2} \text{ (valid)}
+\end{align*}
+
+\textbf{Conclusion:} Both $x = 2 + 2\sqrt{2}$ and $x = 2 - 2\sqrt{2}$ are valid solutions (no extraneous roots).
+\end{columns}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{More Review Practice Solutions (5/5)}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solutions]
+\footnotesize
+\textbf{9.} Word Problem: The area of a square is $50$ cm$^2$. What is the length of one side in simplest radical form?
+\begin{align*}
+  &s^2 = 50 \\
+  &s = \sqrt{50} = 5\sqrt{2} \text{ cm}
+\end{align*}
+\vspace{0.5em}
+\textbf{10.} Conceptual: Explain why $\sqrt{x^2} = |x|$ for all real $x$.
+
+The square root of $x^2$ is always non-negative, so $\sqrt{x^2}$ gives the absolute value of $x$.
+\end{tcolorbox}
+\end{frame}
+
+\end{document} 

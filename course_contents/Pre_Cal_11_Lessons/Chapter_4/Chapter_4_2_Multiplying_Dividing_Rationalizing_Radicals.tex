@@ -1,0 +1,379 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+
+% Custom colors
+\definecolor{primary}{RGB}{41, 128, 185}
+\definecolor{secondary}{RGB}{52, 152, 219}
+\definecolor{accent}{RGB}{231, 76, 60}
+\definecolor{lightgray}{RGB}{236, 240, 241}
+
+% Theme customization
+\usetheme{Madrid}
+\usecolortheme{whale}
+\setbeamercolor{structure}{fg=primary}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=black}
+
+\title{Chapter 4.2: Multiplying, Dividing, and Rationalizing Radicals}
+\subtitle{Pre-Calculus 11 - Lesson 2}
+\author{Created by Yi-Chen Lin}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+% Overview
+\begin{frame}{Overview: Multiplying, Dividing, and Rationalizing Radicals}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Concepts]
+\footnotesize
+\begin{itemize}
+  \item Multiplying radicals: outside × outside, inside × inside; same radicals multiply to whole numbers
+  \item Dividing radicals: divide outside and inside separately, never leave a radical in the denominator
+  \item Rationalizing radicals: multiply numerator and denominator by the radical (monomial) or conjugate (binomial) to eliminate radicals in the denominator
+\end{itemize}
+\end{tcolorbox}
+\end{frame}
+
+% I) Multiplying Radicals
+\begin{frame}{I) Multiplying Radicals}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Rules]
+\footnotesize
+\begin{itemize}
+  \item $\sqrt{a} \times \sqrt{a} = a$
+  \item $\sqrt{a} \times \sqrt{b} = \sqrt{ab}$
+  \item $(a\sqrt{b}) \times (c\sqrt{d}) = ac\sqrt{bd}$
+  \item Numbers outside stay outside, numbers inside stay inside
+\end{itemize}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Multiplying Radicals - Practice}
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=Practice Problems]
+\footnotesize
+\begin{columns}[T]
+\column{0.5\textwidth}
+\begin{enumerate}[label=1\textbf{a})]
+  \item $2\sqrt{3} \times 6\sqrt{2}$
+\end{enumerate}
+\begin{enumerate}[label=1\textbf{b})]
+  \item $\sqrt{5} \times \sqrt{20}$
+\end{enumerate}
+\begin{enumerate}[label=1\textbf{c})]
+  \item $3\sqrt{7} \times 8\sqrt{5}$
+\end{enumerate}
+\column{0.5\textwidth}
+\begin{enumerate}[label=1\textbf{d})]
+  \item $\sqrt[3]{4} \times \sqrt[3]{6}$
+\end{enumerate}
+\begin{enumerate}[label=1\textbf{e})]
+  \item $2\sqrt{10} \times 7\sqrt{90}$
+\end{enumerate}
+\begin{enumerate}[label=1\textbf{f})]
+  \item $\sqrt{8x} \times \sqrt{2x^3}$
+\end{enumerate}
+\end{columns}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Multiplying Radicals - Solutions}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solutions]
+\footnotesize
+\begin{columns}[T]
+\column{0.5\textwidth}
+\begin{enumerate}[label=1\textbf{a})]
+  \item $2\sqrt{3} \times 6\sqrt{2} = 12\sqrt{6}$
+\end{enumerate}
+\begin{enumerate}[label=1\textbf{b})]
+  \item $\sqrt{5} \times \sqrt{20} = \sqrt{100} = 10$
+\end{enumerate}
+\begin{enumerate}[label=1\textbf{c})]
+  \item $3\sqrt{7} \times 8\sqrt{5} = 24\sqrt{35}$
+\end{enumerate}
+\column{0.5\textwidth}
+\begin{enumerate}[label=1\textbf{d})]
+  \item $\sqrt[3]{4} \times \sqrt[3]{6} = \sqrt[3]{24}$
+\end{enumerate}
+\begin{enumerate}[label=1\textbf{e})]
+  \item $2\sqrt{10} \times 7\sqrt{90} = 14\sqrt{900} = 14 \times 30 = 420$
+\end{enumerate}
+\begin{enumerate}[label=1\textbf{f})]
+  \item $\sqrt{8x} \times \sqrt{2x^3} = \sqrt{16x^4} = 4x^2$
+\end{enumerate}
+\end{columns}
+\end{tcolorbox}
+\end{frame}
+
+% II) Dividing Radicals
+\begin{frame}{II) Dividing Radicals}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Rules]
+\footnotesize
+\begin{itemize}
+  \item $\frac{a\sqrt{b}}{c\sqrt{d}} = \frac{a}{c} \times \sqrt{\frac{b}{d}}$
+  \item Simplify outside and inside separately
+  \item Never leave a radical in the denominator
+\end{itemize}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Dividing Radicals - Practice}
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=Practice Problems]
+\footnotesize
+\begin{columns}[T]
+\column{0.5\textwidth}
+\begin{enumerate}[label=2\textbf{a})]
+  \item $\frac{6\sqrt{50}}{3\sqrt{2}}$
+\end{enumerate}
+\begin{enumerate}[label=2\textbf{b})]
+  \item $\frac{8\sqrt{18}}{4\sqrt{3}}$
+\end{enumerate}
+\begin{enumerate}[label=2\textbf{c})]
+  \item $\frac{5\sqrt{12x}}{10\sqrt{3x}}$
+\end{enumerate}
+\column{0.5\textwidth}
+\begin{enumerate}[label=2\textbf{d})]
+  \item $\frac{\sqrt[3]{54}}{\sqrt[3]{2}}$
+\end{enumerate}
+\begin{enumerate}[label=2\textbf{e})]
+  \item $\frac{7\sqrt{45}}{14\sqrt{5}}$
+\end{enumerate}
+\begin{enumerate}[label=2\textbf{f})]
+  \item $\frac{\sqrt{32y^3}}{4\sqrt{2y}}$
+\end{enumerate}
+\end{columns}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Dividing Radicals - Solutions}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solutions]
+\footnotesize
+\begin{columns}[T]
+\column{0.5\textwidth}
+\begin{enumerate}[label=2\textbf{a})]
+  \item $\frac{6\sqrt{50}}{3\sqrt{2}} = 2\sqrt{25} = 10$
+\end{enumerate}
+\begin{enumerate}[label=2\textbf{b})]
+  \item $\frac{8\sqrt{18}}{4\sqrt{3}} = 2\sqrt{6}$
+\end{enumerate}
+\begin{enumerate}[label=2\textbf{c})]
+  \item $\frac{5\sqrt{12x}}{10\sqrt{3x}} = \frac{1}{2}\sqrt{4} = 1$
+\end{enumerate}
+\column{0.5\textwidth}
+\begin{enumerate}[label=2\textbf{d})]
+  \item $\frac{\sqrt[3]{54}}{\sqrt[3]{2}} = \sqrt[3]{27} = 3$
+\end{enumerate}
+\begin{enumerate}[label=2\textbf{e})]
+  \item $\frac{7\sqrt{45}}{14\sqrt{5}} = \frac{1}{2}\sqrt{9} = \frac{3}{2}$
+\end{enumerate}
+\begin{enumerate}[label=2\textbf{f})]
+  \item $\frac{\sqrt{32y^3}}{4\sqrt{2y}} = \frac{1}{4}\sqrt{16y^2} = \frac{1}{4} \times 4y = y$
+\end{enumerate}
+\end{columns}
+\end{tcolorbox}
+\end{frame}
+
+% III) Rationalizing Radicals
+\begin{frame}{III) Rationalizing Radicals}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Rules]
+\footnotesize
+\begin{itemize}
+  \item If denominator is a monomial: multiply top and bottom by the radical in the denominator
+  \item If denominator is a binomial: multiply top and bottom by the conjugate of the denominator
+  \item This eliminates the radical in the denominator
+\end{itemize}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Rationalizing Radicals (Monomial) - Practice}
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=Practice Problems]
+\footnotesize
+\begin{columns}[T]
+\column{0.5\textwidth}
+\begin{enumerate}[label=3\textbf{a})]
+  \item $\frac{1}{\sqrt{3}}$
+\end{enumerate}
+\begin{enumerate}[label=3\textbf{b})]
+  \item $\frac{5}{2\sqrt{5}}$
+\end{enumerate}
+\begin{enumerate}[label=3\textbf{c})]
+  \item $\frac{7}{\sqrt{2x}}$
+\end{enumerate}
+\column{0.5\textwidth}
+\begin{enumerate}[label=3\textbf{d})]
+  \item $\frac{3}{\sqrt[3]{4}}$
+\end{enumerate}
+\begin{enumerate}[label=3\textbf{e})]
+  \item $\frac{2x}{\sqrt{8x}}$
+\end{enumerate}
+\begin{enumerate}[label=3\textbf{f})]
+  \item $\frac{4}{2\sqrt{y}}$
+\end{enumerate}
+\end{columns}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Rationalizing Radicals (Monomial) - Solutions}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solutions]
+\footnotesize
+\begin{columns}[T]
+\column{0.5\textwidth}
+\begin{enumerate}[label=3\textbf{a})]
+  \item $\frac{1}{\sqrt{3}} = \frac{\sqrt{3}}{3}$
+\end{enumerate}
+\begin{enumerate}[label=3\textbf{b})]
+  \item $\frac{5}{2\sqrt{5}} = \frac{5\sqrt{5}}{2\times 5} = \frac{\sqrt{5}}{2}$
+\end{enumerate}
+\begin{enumerate}[label=3\textbf{c})]
+  \item $\frac{7}{\sqrt{2x}} = \frac{7\sqrt{2x}}{2x}$
+\end{enumerate}
+\column{0.5\textwidth}
+\begin{enumerate}[label=3\textbf{d})]
+  \item $\frac{3}{\sqrt[3]{4}} = \frac{3\sqrt[3]{16}}{4}$
+\end{enumerate}
+\begin{enumerate}[label=3\textbf{e})]
+  \item $\frac{2x}{\sqrt{8x}} = \frac{2x\sqrt{8x}}{8x} = \frac{\sqrt{8x}}{4}$
+\end{enumerate}
+\begin{enumerate}[label=3\textbf{f})]
+  \item $\frac{4}{2\sqrt{y}} = \frac{2}{\sqrt{y}} = \frac{2\sqrt{y}}{y}$
+\end{enumerate}
+\end{columns}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Rationalizing Radicals (Binomial) - Practice}
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=Practice Problems]
+\footnotesize
+\begin{columns}[T]
+\column{0.5\textwidth}
+\begin{enumerate}[label=4\textbf{a})]
+  \item $\frac{1}{1+\sqrt{2}}$
+\end{enumerate}
+\begin{enumerate}[label=4\textbf{b})]
+  \item $\frac{3}{2-\sqrt{5}}$
+\end{enumerate}
+\begin{enumerate}[label=4\textbf{c})]
+  \item $\frac{5}{\sqrt{3}-1}$
+\end{enumerate}
+\column{0.5\textwidth}
+\begin{enumerate}[label=4\textbf{d})]
+  \item $\frac{2}{1-\sqrt{7}}$
+\end{enumerate}
+\begin{enumerate}[label=4\textbf{e})]
+  \item $\frac{4}{2+\sqrt{y}}$
+\end{enumerate}
+\begin{enumerate}[label=4\textbf{f})]
+  \item $\frac{6}{\sqrt{5}+\sqrt{2}}$
+\end{enumerate}
+\end{columns}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Rationalizing Radicals (Binomial) - Solutions}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solutions]
+\footnotesize
+\begin{columns}[T]
+\column{0.5\textwidth}
+\begin{enumerate}[label=4\textbf{a})]
+  \item $\frac{1}{1+\sqrt{2}} = \frac{1\times(1-\sqrt{2})}{(1+\sqrt{2})(1-\sqrt{2})} = \frac{1-\sqrt{2}}{1-2} = \frac{1-\sqrt{2}}{-1} = \sqrt{2}-1$
+\end{enumerate}
+\begin{enumerate}[label=4\textbf{b})]
+  \item $\frac{3}{2-\sqrt{5}} = \frac{3(2+\sqrt{5})}{(2-\sqrt{5})(2+\sqrt{5})} = \frac{6+3\sqrt{5}}{4-5} = -6-3\sqrt{5}$
+\end{enumerate}
+\begin{enumerate}[label=4\textbf{c})]
+  \item $\frac{5}{\sqrt{3}-1} = \frac{5(\sqrt{3}+1)}{(\sqrt{3}-1)(\sqrt{3}+1)} = \frac{5\sqrt{3}+5}{3-1} = \frac{5\sqrt{3}+5}{2}$
+\end{enumerate}
+\column{0.5\textwidth}
+\begin{enumerate}[label=4\textbf{d})]
+  \item $\frac{2}{1-\sqrt{7}} = \frac{2(1+\sqrt{7})}{(1-\sqrt{7})(1+\sqrt{7})} = \frac{2+2\sqrt{7}}{1-7} = -\frac{2+2\sqrt{7}}{6}$
+\end{enumerate}
+\begin{enumerate}[label=4\textbf{e})]
+  \item $\frac{4}{2+\sqrt{y}} = \frac{4(2-\sqrt{y})}{(2+\sqrt{y})(2-\sqrt{y})} = \frac{8-4\sqrt{y}}{4-y}$
+\end{enumerate}
+\begin{enumerate}[label=4\textbf{f})]
+  \item $\frac{6}{\sqrt{5}+\sqrt{2}} = \frac{6(\sqrt{5}-\sqrt{2})}{(\sqrt{5}+\sqrt{2})(\sqrt{5}-\sqrt{2})} = \frac{6\sqrt{5}-6\sqrt{2}}{5-2} = 2\sqrt{5}-2\sqrt{2}$
+\end{enumerate}
+\end{columns}
+\end{tcolorbox}
+\end{frame}
+
+% Rationalize (cube roots and binomials, new values)
+\begin{frame}{Rationalize:}
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=Practice Problems]
+\footnotesize
+\begin{columns}[T]
+\column{0.5\textwidth}
+\begin{enumerate}[label=5\textbf{a})]
+  \item $\dfrac{2+\sqrt[3]{5}}{\sqrt[3]{16}}$
+\end{enumerate}
+\column{0.5\textwidth}
+\begin{enumerate}[label=5\textbf{b})]
+  \item $\dfrac{7}{\sqrt[3]{9}+\sqrt[3]{12}}$
+\end{enumerate}
+\end{columns}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Rationalize - Solutions}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solutions]
+\footnotesize
+\begin{enumerate}[label=5\textbf{a})]
+  \item $\dfrac{2+\sqrt[3]{5}}{\sqrt[3]{16}} = \dfrac{2+\sqrt[3]{5}}{2} = 1+\dfrac{1}{2}\sqrt[3]{5}$
+\end{enumerate}
+\begin{enumerate}[label=5\textbf{b})]
+  \item $\dfrac{7}{\sqrt[3]{9}+\sqrt[3]{12}}$ (Multiply numerator and denominator by $\sqrt[3]{9^2}-\sqrt[3]{9}\sqrt[3]{12}+\sqrt[3]{12^2}$ to rationalize, or leave as a challenge for students)
+\end{enumerate}
+\end{tcolorbox}
+\end{frame}
+
+% FOIL: Expand the following (radical binomials, new values)
+\begin{frame}{FOIL: Expand the Following}
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=Practice Problems]
+\footnotesize
+\begin{columns}[T]
+\column{0.5\textwidth}
+\begin{enumerate}[label=6\textbf{a})]
+  \item $\left(2+\sqrt{3}\right)\left(5-\sqrt{3}\right)$
+\end{enumerate}
+\begin{enumerate}[label=6\textbf{b})]
+  \item $\left(4+2\sqrt{2}\right)\left(4-2\sqrt{2}\right)$
+\end{enumerate}
+\column{0.5\textwidth}
+\begin{enumerate}[label=6\textbf{c})]
+  \item $\left(6+\sqrt{7}\right)\left(2-\sqrt{7}\right)$
+\end{enumerate}
+\begin{enumerate}[label=6\textbf{d})]
+  \item $\left(8-\sqrt{5}\right)\left(8+\sqrt{5}\right)$
+\end{enumerate}
+\end{columns}
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}{FOIL: Expand the Following - Solutions}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solutions]
+\footnotesize
+\begin{enumerate}[label=6\textbf{a})]
+  \item $\left(2+\sqrt{3}\right)\left(5-\sqrt{3}\right) = 2\times5 - 2\times\sqrt{3} + 5\times\sqrt{3} - (\sqrt{3})^2 = 10 + 3\sqrt{3} - 3 = 7 + 3\sqrt{3}$
+\end{enumerate}
+\begin{enumerate}[label=6\textbf{b})]
+  \item $\left(4+2\sqrt{2}\right)\left(4-2\sqrt{2}\right) = 16 - 8\sqrt{2} + 8\sqrt{2} - 8 = 16 - 8 = 8$
+\end{enumerate}
+\begin{enumerate}[label=6\textbf{c})]
+  \item $\left(6+\sqrt{7}\right)\left(2-\sqrt{7}\right) = 12 - 6\sqrt{7} + 2\sqrt{7} - 7 = 12 - 7 - 4\sqrt{7} = 5 - 4\sqrt{7}$
+\end{enumerate}
+\begin{enumerate}[label=6\textbf{d})]
+  \item $\left(8-\sqrt{5}\right)\left(8+\sqrt{5}\right) = 64 + 8\sqrt{5} - 8\sqrt{5} - 5 = 64 - 5 = 59$
+\end{enumerate}
+\end{tcolorbox}
+\end{frame}
+
+\end{document} 
