@@ -1,0 +1,225 @@
+% !TEX program = xelatex
+\documentclass[aspectratio=169]{beamer}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{intersections,decorations.pathreplacing,angles,quotes}
+\usepackage[utf8]{inputenc}
+
+% Custom colors
+\definecolor{primary}{RGB}{41, 128, 185}
+\definecolor{secondary}{RGB}{52, 152, 219}
+\definecolor{accent}{RGB}{231, 76, 60}
+\definecolor{lightgray}{RGB}{236, 240, 241}
+
+% Theme customization
+\usetheme{Madrid}
+\usecolortheme{whale}
+\setbeamercolor{structure}{fg=primary}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=black}
+
+% Title page info
+\title{Pre-Calculus 11}
+\subtitle{\textbf{6.3 Solving Absolute Value Equations}}
+\author{Created by Yi-Chen Lin}
+\date{\today}
+
+\begin{document}
+
+% Title Page
+\begin{frame}
+    \titlepage
+    \vfill
+  
+\end{frame}
+
+% Introduction and Key Ideas
+\begin{frame}{Solving Absolute Value Equations}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Idea]
+        \footnotesize
+        When solving $|x| = a$, the value inside the absolute value can be both positive or negative.\par
+        \vspace{0.5em}
+        \textbf{For example:} $|x| = 5$ means $x = 5$ or $x = -5$.
+    \end{tcolorbox}
+    \vspace{1em}
+    \textbf{General Steps:}
+    \begin{enumerate}
+        \item Isolate the absolute value expression.
+        \item Set up two cases: one for the positive, one for the negative.
+        \item Solve each case for $x$.
+        \item Check for extraneous roots by substituting back into the original equation.
+    \end{enumerate}
+\end{frame}
+
+% Example: Step-by-step
+\begin{frame}{Example: Solve $|x+3| = 5$}
+    \textbf{Step 1:} Set up two cases.\\
+    $x+3 = 5$ \hspace{2em} or \hspace{2em} $x+3 = -5$\\[1em]
+    \textbf{Step 2:} Solve each case.\\
+    $x = 2$ \hspace{2em} or \hspace{2em} $x = -8$\\[1em]
+    \textbf{Step 3:} Check for extraneous roots.\\
+    Substitute $x=2$: $|2+3| = |5| = 5$ (valid)\\
+    Substitute $x=-8$: $|-8+3| = |-5| = 5$ (valid)\\[1em]
+    \textbf{Final Answer:} $x = 2$ and $x = -8$
+\end{frame}
+
+% Graphical Interpretation
+\begin{frame}{Graphical Interpretation}
+    \footnotesize
+    If we solve $|x+3|=5$ graphically, we are finding the $x$-values where $y=|x+3|$ intersects $y=5$.
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{abs_graph_example.png} % (Add a graph if desired)
+    \end{center}
+\end{frame}
+
+% Steps for Solving Absolute Value Equations
+\begin{frame}{Steps for Solving Absolute Value Equations}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Steps]
+        \footnotesize
+        \begin{enumerate}
+            \item \textbf{Isolate} the absolute value.
+            \item \textbf{Set up two cases} (positive and negative).
+            \item \textbf{Solve} each case for $x$.
+            \item \textbf{Check for extraneous roots} by substituting back into the original equation.
+        \end{enumerate}
+        Extraneous roots occur when a solution does not satisfy the original equation (e.g., if the absolute value equals a negative number).
+    \end{tcolorbox}
+\end{frame}
+
+% No Solution Question
+\begin{frame}{Which Equations Have No Solutions?}
+    \footnotesize
+    Which of the following equations will have no solutions?\\[0.5em]
+    \begin{enumerate}[label=6.3.\alph*)]
+        \item $|x-5|=20$
+        \item $|x+4|=-7$
+        \item $|-2x+3|=-10$
+        \item $|-x-7|=13$
+        \item $|x-5|=-20$
+        \item $|-x|=5$
+    \end{enumerate}
+    \vspace{1em}
+    \textbf{Hint:} An absolute value cannot equal a negative number.
+\end{frame}
+
+% Practice Problems
+\begin{frame}{Practice: Solve for $x$ and Check for Extraneous Roots}
+    \footnotesize
+    Solve for $x$ and check for extraneous roots:
+    \begin{enumerate}[label=Q\arabic*]
+        \item $|x-1| = x+1$
+        \item $|7-16x| = 3x+8$
+        \item $|x^2-4| = 2x$
+        \item $|2x-2| = 3x-8$
+        \item $|2x^2-16x+8| = x^2-3x+5$
+        \item $|3x-15| = 5x-9$
+    \end{enumerate}
+\end{frame}
+
+% Practice Solutions (1 per slide for clarity)
+\begin{frame}{Solution Q1: $|x-1| = x+1$}
+    \footnotesize
+    \textbf{Case 1:} $x-1 = x+1$ \rightarrow $-1=1$ (No solution)\\
+    \textbf{Case 2:} $x-1 = -(x+1)$ \rightarrow $x-1 = -x-1$ \rightarrow $2x=0$ \rightarrow $x=0$\\
+    \textbf{Check:} $|0-1| = | -1 | = 1$, $0+1=1$ (Valid)\\
+    \textbf{Final Answer:} $x=0$
+\end{frame}
+
+\begin{frame}{Solution Q2: $|7-16x| = 3x+8$}
+    \footnotesize
+    \textbf{Case 1:} $7-16x = 3x+8$ $\rightarrow$ $7-16x-3x=8$ $\rightarrow$ $-19x=1$ $\rightarrow$ $x=-\frac{1}{19}$\\
+    \textbf{Case 2:} $7-16x = -(3x+8)$ $\rightarrow$ $7-16x=-3x-8$ $\rightarrow$ $7+8=-3x+16x$ $\rightarrow$ $15=13x$ $\rightarrow$ $x=\frac{15}{13}$\\
+    \textbf{Check:} Substitute both values into the original equation to verify.\\
+    $x=-\frac{1}{19}$: $|7-16(-\frac{1}{19})| = 3(-\frac{1}{19})+8$\\
+    $|7+\frac{16}{19}| = -\frac{3}{19}+8$\\
+    $|\frac{149}{19}| = \frac{149}{19}$ (Valid)\\
+    $x=\frac{15}{13}$: $|7-16\cdot\frac{15}{13}| = 3\cdot\frac{15}{13}+8$\\
+    $|7-\frac{240}{13}| = \frac{45}{13}+8$\\
+    $|\frac{91-240}{13}| = \frac{45+104}{13}$\\
+    $|\frac{-149}{13}| = \frac{149}{13}$ (Valid)\\
+    \textbf{Final Answer:} $x=-\frac{1}{19}$ and $x=\frac{15}{13}$
+\end{frame}
+
+% New, more difficult questions and solutions
+\begin{frame}{Practice: More Challenging Questions}
+    \footnotesize
+    Try these more challenging absolute value equations:
+    \begin{enumerate}[label=Q\arabic*, start=7]
+        \item $|2x-5| = |x+4|$
+        \item $|x^2-6x+8| = 2$
+        \item $|3x+1| = 2x-4$
+        \item $|x-2| + |x+2| = 6$
+    \end{enumerate}
+\end{frame}
+
+% Solution Q7
+\begin{frame}{Solution Q7: $|2x-5| = |x+4|$}
+    \footnotesize
+    \textbf{Case 1:} $2x-5 = x+4$ $\rightarrow$ $x=9$\\
+    \textbf{Case 2:} $2x-5 = -(x+4)$ $\rightarrow$ $2x-5 = -x-4$ $\rightarrow$ $3x = 1$ $\rightarrow$ $x=\frac{1}{3}$\\
+    \textbf{Case 3:} $-(2x-5) = x+4$ $\rightarrow$ $-2x+5 = x+4$ $\rightarrow$ $-3x = -1$ $\rightarrow$ $x=\frac{1}{3}$\\
+    \textbf{Case 4:} $-(2x-5) = -(x+4)$ $\rightarrow$ $-2x+5 = -x-4$ $\rightarrow$ $-x = -9$ $\rightarrow$ $x=9$\\
+    \textbf{Unique solutions:} $x=9,\ \frac{1}{3}$\\
+    \textbf{Check:} Both values satisfy the original equation.
+\end{frame}
+
+% Solution Q8
+\begin{frame}{Solution Q8: $|x^2-6x+8| = 2$}
+    \footnotesize
+    \textbf{Case 1:} $x^2-6x+8 = 2$ \rightarrow $x^2-6x+6=0$ \rightarrow $x=3\pm\sqrt{3}$\\
+    \textbf{Case 2:} $x^2-6x+8 = -2$ \rightarrow $x^2-6x+10=0$ \rightarrow $x=3\pm i$ (no real solution)\\
+    \textbf{Final Answer:} $x=3+\sqrt{3},\ 3-\sqrt{3}$
+\end{frame}
+
+% Solution Q9
+\begin{frame}{Solution Q9: $|3x+1| = 2x-4$}
+    \footnotesize
+    \textbf{Case 1:} $3x+1 = 2x-4$ $\rightarrow$ $x=-5$\\
+    \textbf{Case 2:} $3x+1 = -(2x-4)$ $\rightarrow$ $3x+1 = -2x+4$ $\rightarrow$ $5x=3$ $\rightarrow$ $x=\frac{3}{5}$\\
+    \textbf{Check:} $x=-5$: $|3(-5)+1| = |-15+1| = |-14| = 14$, $2(-5)-4 = -10-4 = -14$ (not valid, since $|3x+1|$ cannot be negative)\\
+    $x=\frac{3}{5}$: $|3\cdot\frac{3}{5}+1| = |\frac{9}{5}+1| = |\frac{14}{5}| = \frac{14}{5}$, $2\cdot\frac{3}{5}-4 = \frac{6}{5}-4 = \frac{6}{5}-\frac{20}{5} = -\frac{14}{5}$ (not valid)\\
+    \textbf{Final Answer:} No real solution.
+\end{frame}
+
+% Solution Q10
+\begin{frame}{Solution Q10: $|x-2| + |x+2| = 6$}
+    \footnotesize
+    Consider three intervals: $x\leq-2$, $-2<x<2$, $x\geq2$.
+    
+    \textbf{Case 1:} $x\leq-2$
+    
+    $|x-2|=-(x-2)$, $|x+2|=-(x+2)$
+    
+    $-(x-2) + -(x+2) = 6$
+    $-x+2-x-2=6$
+    $-2x=6 \rightarrow x=-3$
+    
+    Check: $x=-3\leq-2$, $|-3-2|+|-3+2|=| -5 | + | -1 | = 5+1=6$ (valid)
+    
+    \textbf{Case 2:} $-2<x<2$
+    
+    $|x-2|=-(x-2)$, $|x+2|=x+2$
+    
+    $-(x-2)+(x+2)=6$
+    $-x+2+x+2=6$
+    $4=6$ (no solution)
+    
+    \textbf{Case 3:} $x\geq2$
+    
+    $|x-2|=x-2$, $|x+2|=x+2$
+    
+    $(x-2)+(x+2)=6$
+    $2x=6 \rightarrow x=3$
+    
+    Check: $x=3\geq2$, $|3-2|+|3+2|=1+5=6$ (valid)
+    
+    \textbf{Final Answer:} $x=-3,\ x=3$
+\end{frame}
+
+\end{document} 

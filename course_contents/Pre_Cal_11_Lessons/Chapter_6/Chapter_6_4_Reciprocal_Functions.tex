@@ -1,0 +1,435 @@
+% !TEX program = xelatex
+\documentclass[aspectratio=169]{beamer}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{intersections,decorations.pathreplacing,angles,quotes}
+\usepackage[utf8]{inputenc}
+
+% Custom colors
+\definecolor{primary}{RGB}{41, 128, 185}
+\definecolor{secondary}{RGB}{52, 152, 219}
+\definecolor{accent}{RGB}{231, 76, 60}
+\definecolor{lightgray}{RGB}{236, 240, 241}
+
+% Theme customization
+\usetheme{Madrid}
+\usecolortheme{whale}
+\setbeamercolor{structure}{fg=primary}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=black}
+
+% Title page info
+\title{Pre-Calculus 11}
+\subtitle{\textbf{6.4 Reciprocal Functions}}
+\author{Created by Yi-Chen Lin}
+\date{\today}
+
+\begin{document}
+
+% Title Page
+\begin{frame}
+    \titlepage
+    \vfill
+\end{frame}
+
+% Overview
+\begin{frame}{Overview 概述}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=What We Will Learn 学习目标]
+        \footnotesize
+        \begin{enumerate}
+            \item Understand the concept of reciprocal functions
+            \item Learn about asymptotes and invariant points
+            \item Graph reciprocal functions of linear and quadratic functions
+            \item Determine domain and range of reciprocal functions
+            \item Apply these concepts to solve problems
+        \end{enumerate}
+    \end{tcolorbox}
+    \vspace{1em}
+    \textbf{Key Questions:}
+    \begin{itemize}
+        \item How do we find the reciprocal of a function?
+        \item What happens to the graph when we take the reciprocal?
+        \item Where do asymptotes occur and why?
+        \item What are invariant points and why are they important?
+    \end{itemize}
+\end{frame}
+
+% Section: What is a Reciprocal?
+\begin{frame}{What is a Reciprocal? 什么是倒数？}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Definition 定义]
+        \footnotesize
+        The reciprocal of a number $a$ is $\frac{1}{a}$, where $a \neq 0$.
+        \par
+        一个数$a$的倒数是$\frac{1}{a}$，其中$a \neq 0$。
+    \end{tcolorbox}
+    \vspace{1em}
+    \textbf{Key Properties 重要性质:}
+    \begin{itemize}
+        \item $a \cdot \frac{1}{a} = 1$ (product of a number and its reciprocal is 1)
+        \item The reciprocal of 1 is 1, the reciprocal of -1 is -1
+        \item The reciprocal of 0 is undefined
+        \item Taking the reciprocal preserves the sign
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Examples of Reciprocals 倒数的例子}
+    \footnotesize
+    \textbf{Complete the table:}
+    \begin{center}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            \textbf{Number} & \textbf{Reciprocal} & \textbf{Check} \\
+            \hline
+            2 & $\frac{1}{2}$ & $2 \cdot \frac{1}{2} = 1$ \\
+            \hline
+            -5 & $-\frac{1}{5}$ & $-5 \cdot (-\frac{1}{5}) = 1$ \\
+            \hline
+            0.5 & 2 & $0.5 \cdot 2 = 1$ \\
+            \hline
+            1 & 1 & $1 \cdot 1 = 1$ \\
+            \hline
+            -1 & -1 & $-1 \cdot (-1) = 1$ \\
+            \hline
+            0 & Undefined & Cannot divide by zero \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \vspace{1em}
+    \textbf{Pattern:} Small numbers have large reciprocals, large numbers have small reciprocals.
+\end{frame}
+
+% Section: Reciprocal of a Function
+\begin{frame}{The Reciprocal of a Function 函数的倒数}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Definition 定义]
+        \footnotesize
+        Given a function $f(x)$, its reciprocal function is $y = \frac{1}{f(x)}$.
+        \par
+        给定函数$f(x)$，其倒数函数是$y = \frac{1}{f(x)}$。
+    \end{tcolorbox}
+    \vspace{1em}
+    \textbf{Examples 例子:}
+    \begin{itemize}
+        \item If $f(x) = x + 3$, then $y = \frac{1}{x + 3}$
+        \item If $f(x) = 2x^2 - 5$, then $y = \frac{1}{2x^2 - 5}$
+        \item If $f(x) = \sqrt{x}$, then $y = \frac{1}{\sqrt{x}}$
+    \end{itemize}
+    \vspace{1em}
+    \textbf{Important Notes 重要注意:}
+    \begin{itemize}
+        \item The reciprocal function is undefined where $f(x) = 0$
+        \item The sign of $f(x)$ is preserved in the reciprocal
+        \item The reciprocal function has different behavior than the original function
+    \end{itemize}
+\end{frame}
+
+% Section: Asymptotes and Invariant Points
+\begin{frame}{Asymptotes and Invariant Points 渐近线与不变点}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Concepts 关键概念]
+        \footnotesize
+        \begin{enumerate}
+            \item \textbf{Vertical Asymptotes 垂直渐近线}: Occur where $f(x) = 0$
+            \item \textbf{Horizontal Asymptote 水平渐近线}: Usually $y = 0$ as $x \to \pm\infty$
+            \item \textbf{Invariant Points 不变点}: Where $f(x) = 1$ or $f(x) = -1$
+        \end{enumerate}
+    \end{tcolorbox}
+    \vspace{1em}
+    \textbf{Why These Points Are Important 为什么这些点重要:}
+    \begin{itemize}
+        \item Vertical asymptotes: Division by zero is undefined
+        \item Invariant points: $\frac{1}{1} = 1$ and $\frac{1}{-1} = -1$
+        \item These points help us sketch the graph accurately
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Understanding Asymptotes 理解渐近线}
+    \footnotesize
+    \textbf{Vertical Asymptotes 垂直渐近线:}
+    \begin{itemize}
+        \item Occur when $f(x) = 0$ because $\frac{1}{0}$ is undefined
+        \item The graph approaches but never touches these lines
+        \item Example: For $f(x) = x - 2$, the reciprocal has a vertical asymptote at $x = 2$
+    \end{itemize}
+    \vspace{1em}
+    \textbf{Horizontal Asymptotes 水平渐近线:}
+    \begin{itemize}
+        \item Usually $y = 0$ because as $|f(x)|$ gets large, $\frac{1}{f(x)}$ gets small
+        \item The graph approaches this line as $x \to \pm\infty$
+        \item Example: For $f(x) = x^2$, as $x \to \infty$, $y = \frac{1}{x^2} \to 0$
+    \end{itemize}
+\end{frame}
+
+% Section: Graphing the Reciprocal of Linear Functions
+\begin{frame}{Graphing the Reciprocal of a Linear Function 线性函数的倒数图像}
+    \footnotesize
+    \textbf{Step-by-Step Process 逐步过程:}
+    \begin{enumerate}
+        \item Graph the original linear function $f(x)$
+        \item Find where $f(x) = 0$ (vertical asymptote)
+        \item Find where $f(x) = 1$ and $f(x) = -1$ (invariant points)
+        \item Take the reciprocal of y-coordinates for other points
+        \item Sketch the reciprocal function
+    \end{enumerate}
+    \vspace{1em}
+    \textbf{Example:} $f(x) = x - 1$
+    \begin{itemize}
+        \item $f(x) = 0$ when $x = 1$ (vertical asymptote)
+        \item $f(x) = 1$ when $x = 2$ (invariant point)
+        \item $f(x) = -1$ when $x = 0$ (invariant point)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Graphing Example: $f(x) = x - 1$}
+    \footnotesize
+    \textbf{Original Function:} $f(x) = x - 1$ (linear)\\
+    \textbf{Reciprocal Function:} $y = \frac{1}{x - 1}$\\
+    \vspace{1em}
+    \textbf{Key Points:}
+    \begin{itemize}
+        \item Vertical asymptote: $x = 1$
+        \item Invariant points: $(2, 1)$ and $(0, -1)$
+        \item As $x \to \infty$, $y \to 0^+$
+        \item As $x \to -\infty$, $y \to 0^-$
+    \end{itemize}
+    \vspace{0.3em}
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{y_x-1.png}
+    \end{center}
+\end{frame}
+
+% Enlarged image only for linear example
+\begin{frame}{Graphing Example: $f(x) = x - 1$ (Enlarged)}
+    \begin{center}
+        \includegraphics[width=1.0\textwidth]{y_x-1.png}
+    \end{center}
+\end{frame}
+
+% Section: Graphing the Reciprocal of a Quadratic Function
+\begin{frame}{Graphing the Reciprocal of a Quadratic Function 二次函数的倒数图像}
+    \footnotesize
+    \textbf{Key Differences from Linear Functions 与线性函数的主要区别:}
+    \begin{itemize}
+        \item Quadratic functions can have 0, 1, or 2 x-intercepts
+        \item Each x-intercept becomes a vertical asymptote
+        \item Can have up to 4 invariant points (2 for $f(x) = 1$, 2 for $f(x) = -1$)
+        \item The graph has more complex behavior
+    \end{itemize}
+    \vspace{1em}
+    \textbf{Example:} $f(x) = x^2 - 4$
+    \begin{itemize}
+        \item $f(x) = 0$ at $x = 2$ and $x = -2$ (two vertical asymptotes)
+        \item $f(x) = 1$ at $x = \pm\sqrt{5}$ (two invariant points)
+        \item $f(x) = -1$ at $x = \pm\sqrt{3}$ (two invariant points)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Graphing Example: $f(x) = x^2 - 4$}
+    \footnotesize
+    \textbf{Original Function:} $f(x) = x^2 - 4$ (parabola)\\
+    \textbf{Reciprocal Function:} $y = \frac{1}{x^2 - 4}$\\
+    \vspace{1em}
+    \textbf{Key Features:}
+    \begin{itemize}
+        \item Vertical asymptotes: $x = 2$ and $x = -2$
+        \item Invariant points: $(\pm\sqrt{5}, 1)$ and $(\pm\sqrt{3}, -1)$
+        \item Horizontal asymptote: $y = 0$
+        \item Three distinct regions: left, middle, right
+    \end{itemize}
+    \vspace{0.3em}
+    \begin{center}
+        \includegraphics[width=0.5\textwidth]{y_x^2.png}
+    \end{center}
+\end{frame}
+
+% Enlarged image only for quadratic example
+\begin{frame}{Graphing Example: $f(x) = x^2 - 4$ (Enlarged)}
+    \begin{center}
+        \includegraphics[width=1.0\textwidth]{y_x^2.png}
+    \end{center}
+\end{frame}
+
+% Section: Domain and Range
+\begin{frame}{Domain and Range 定义域与值域}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Domain 定义域]
+        \footnotesize
+        All real numbers $x$ such that $f(x) \neq 0$.
+        \par
+        所有使$f(x) \neq 0$的实数$x$。
+    \end{tcolorbox}
+    \vspace{1em}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Range 值域]
+        \footnotesize
+        All real numbers $y \neq 0$ (except possibly at invariant points).
+        \par
+        所有$y \neq 0$的实数（除不变点外）。
+    \end{tcolorbox}
+    \vspace{1em}
+    \textbf{Examples 例子:}
+    \begin{itemize}
+        \item For $y = \frac{1}{x + 2}$: Domain = $\{x | x \neq -2\}$, Range = $\{y | y \neq 0\}$
+        \item For $y = \frac{1}{x^2}$: Domain = $\{x | x \neq 0\}$, Range = $\{y | y > 0\}$
+    \end{itemize}
+\end{frame}
+
+% Section: Practice Problems
+\begin{frame}{Practice: Find the Reciprocal Function and Key Features}
+    \footnotesize
+    For each function $f(x)$ below, complete the following:
+    \begin{enumerate}
+        \item Write the reciprocal function $y = \frac{1}{f(x)}$
+        \item Find all vertical asymptotes
+        \item Find all invariant points
+        \item State the domain and range
+        \item Describe the key features of the graph
+    \end{enumerate}
+    \vspace{1em}
+    \textbf{Functions to analyze:}
+    \begin{enumerate}[label=Q\arabic*]
+        \item $f(x) = x + 2$
+        \item $f(x) = 2x - 4$
+        \item $f(x) = x^2 - 1$
+        \item $f(x) = x^2 + 2x + 1$
+        \item $f(x) = x^2 + 4$
+    \end{enumerate}
+\end{frame}
+
+% Section: Practice Solutions (1 per slide)
+\begin{frame}{Solution Q1: $f(x) = x + 2$}
+    \footnotesize
+    \textbf{Reciprocal Function:} $y = \frac{1}{x + 2}$\\
+    \vspace{0.5em}
+    \textbf{Vertical Asymptote:} $x = -2$ (where $f(x) = 0$)\\
+    \vspace{0.5em}
+    \textbf{Invariant Points:}
+    \begin{itemize}
+        \item $f(x) = 1$ when $x + 2 = 1$, so $x = -1$. Point: $(-1, 1)$
+        \item $f(x) = -1$ when $x + 2 = -1$, so $x = -3$. Point: $(-3, -1)$
+    \end{itemize}
+    \vspace{0.5em}
+    \textbf{Domain:} $\{x | x \neq -2\}$\\
+    \textbf{Range:} $\{y | y \neq 0\}$\\
+    \vspace{0.5em}
+    \textbf{Graph Features:} Hyperbola with vertical asymptote at $x = -2$, approaches $y = 0$ as $x \to \pm\infty$
+\end{frame}
+
+\begin{frame}{Solution Q2: $f(x) = 2x - 4$}
+    \footnotesize
+    \textbf{Reciprocal Function:} $y = \frac{1}{2x - 4}$\\
+    \vspace{0.5em}
+    \textbf{Vertical Asymptote:} $x = 2$ (where $f(x) = 0$)\\
+    \vspace{0.5em}
+    \textbf{Invariant Points:}
+    \begin{itemize}
+        \item $f(x) = 1$ when $2x - 4 = 1$, so $x = 2.5$. Point: $(2.5, 1)$
+        \item $f(x) = -1$ when $2x - 4 = -1$, so $x = 1.5$. Point: $(1.5, -1)$
+    \end{itemize}
+    \vspace{0.5em}
+    \textbf{Domain:} $\{x | x \neq 2\}$\\
+    \textbf{Range:} $\{y | y \neq 0\}$\\
+    \vspace{0.5em}
+    \textbf{Graph Features:} Hyperbola with vertical asymptote at $x = 2$, approaches $y = 0$ as $x \to \pm\infty$
+\end{frame}
+
+\begin{frame}{Solution Q3: $f(x) = x^2 - 1$}
+    \footnotesize
+    \textbf{Reciprocal Function:} $y = \frac{1}{x^2 - 1}$\\
+    \vspace{0.5em}
+    \textbf{Vertical Asymptotes:} $x = 1$ and $x = -1$ (where $f(x) = 0$)\\
+    \vspace{0.5em}
+    \textbf{Invariant Points:}
+    \begin{itemize}
+        \item $f(x) = 1$ when $x^2 - 1 = 1$, so $x^2 = 2$, $x = \pm\sqrt{2}$. Points: $(\sqrt{2}, 1)$, $(-\sqrt{2}, 1)$
+        \item $f(x) = -1$ when $x^2 - 1 = -1$, so $x^2 = 0$, $x = 0$. Point: $(0, -1)$
+    \end{itemize}
+    \vspace{0.5em}
+    \textbf{Domain:} $\{x | x \neq 1, x \neq -1\}$\\
+    \textbf{Range:} $\{y | y \neq 0\}$\\
+    \vspace{0.5em}
+    \textbf{Graph Features:} Three regions separated by vertical asymptotes, approaches $y = 0$ as $x \to \pm\infty$
+\end{frame}
+
+\begin{frame}{Solution Q4: $f(x) = x^2 + 2x + 1 = (x + 1)^2$}
+    \footnotesize
+    \textbf{Reciprocal Function:} $y = \frac{1}{(x + 1)^2}$\\
+    \vspace{0.5em}
+    \textbf{Vertical Asymptote:} $x = -1$ (where $f(x) = 0$)\\
+    \vspace{0.5em}
+    \textbf{Invariant Points:}
+    \begin{itemize}
+        \item $f(x) = 1$ when $(x + 1)^2 = 1$, so $x + 1 = \pm 1$, $x = 0$ or $x = -2$. Points: $(0, 1)$, $(-2, 1)$
+        \item $f(x) = -1$ when $(x + 1)^2 = -1$ (no real solution)
+    \end{itemize}
+    \vspace{0.5em}
+    \textbf{Domain:} $\{x | x \neq -1\}$\\
+    \textbf{Range:} $\{y | y > 0\}$ (since $(x + 1)^2 \geq 0$)\\
+    \vspace{0.5em}
+    \textbf{Graph Features:} Always positive, vertical asymptote at $x = -1$, approaches $y = 0$ as $x \to \pm\infty$
+\end{frame}
+
+\begin{frame}{Solution Q5: $f(x) = x^2 + 4$}
+    \footnotesize
+    \textbf{Reciprocal Function:} $y = \frac{1}{x^2 + 4}$\\
+    \vspace{0.5em}
+    \textbf{Vertical Asymptotes:} None (since $x^2 + 4 > 0$ for all real $x$)\\
+    \vspace{0.5em}
+    \textbf{Invariant Points:}
+    \begin{itemize}
+        \item $f(x) = 1$ when $x^2 + 4 = 1$, so $x^2 = -3$ (no real solution)
+        \item $f(x) = -1$ when $x^2 + 4 = -1$, so $x^2 = -5$ (no real solution)
+    \end{itemize}
+    \vspace{0.5em}
+    \textbf{Domain:} All real numbers $\mathbb{R}$\\
+    \textbf{Range:} $\{y | 0 < y \leq \frac{1}{4}\}$ (maximum at $x = 0$)\\
+    \vspace{0.5em}
+    \textbf{Graph Features:} Bell-shaped curve, maximum at $(0, \frac{1}{4})$, approaches $y = 0$ as $x \to \pm\infty$
+\end{frame}
+
+% Additional Practice
+\begin{frame}{Additional Practice: Match Functions with Their Reciprocals}
+    \footnotesize
+    Match each function with its reciprocal function:
+    \begin{enumerate}[label=Q\arabic*]
+        \item $f(x) = x - 3$
+        \item $f(x) = x^2 - 9$
+        \item $f(x) = x^2 + 1$
+        \item $f(x) = 3x + 6$
+    \end{enumerate}
+    \vspace{1em}
+    \textbf{Reciprocal Functions:}
+    \begin{enumerate}[label=A\alph*]
+        \item $y = \frac{1}{x - 3}$
+        \item $y = \frac{1}{x^2 - 9}$
+        \item $y = \frac{1}{x^2 + 1}$
+        \item $y = \frac{1}{3x + 6}$
+    \end{enumerate}
+\end{frame}
+
+% Summary
+\begin{frame}{Summary 总结}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Points 要点]
+        \footnotesize
+        \begin{enumerate}
+            \item The reciprocal of $f(x)$ is $y = \frac{1}{f(x)}$
+            \item Vertical asymptotes occur where $f(x) = 0$
+            \item Invariant points occur where $f(x) = 1$ or $f(x) = -1$
+            \item Domain excludes values where $f(x) = 0$
+            \item Range is usually all real numbers except $y = 0$
+            \item The graph behavior changes significantly from the original function
+        \end{enumerate}
+    \end{tcolorbox}
+    \vspace{1em}
+    \textbf{Graphing Strategy 绘图策略:}
+    \begin{enumerate}
+        \item Find vertical asymptotes (where $f(x) = 0$)
+        \item Find invariant points (where $f(x) = \pm 1$)
+        \item Determine behavior as $x \to \pm\infty$
+        \item Sketch the graph using these key features
+    \end{enumerate}
+\end{frame}
+
+\end{document} 

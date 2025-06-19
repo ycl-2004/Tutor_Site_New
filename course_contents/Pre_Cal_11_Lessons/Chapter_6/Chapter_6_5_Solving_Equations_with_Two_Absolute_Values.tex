@@ -1,0 +1,408 @@
+% !TEX program = xelatex
+\documentclass[aspectratio=169]{beamer}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{intersections,decorations.pathreplacing,angles,quotes}
+\usepackage[utf8]{inputenc}
+
+% Custom colors
+\definecolor{primary}{RGB}{41, 128, 185}
+\definecolor{secondary}{RGB}{52, 152, 219}
+\definecolor{accent}{RGB}{231, 76, 60}
+\definecolor{lightgray}{RGB}{236, 240, 241}
+
+% Theme customization
+\usetheme{Madrid}
+\usecolortheme{whale}
+\setbeamercolor{structure}{fg=primary}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=black}
+
+% Title page info
+\title{Pre-Calculus 11}
+\subtitle{\textbf{6.5 Solving Equations with Two or More Absolute Values}}
+\author{Created by Yi-Chen Lin}
+\date{\today}
+
+\begin{document}
+
+% Title Page
+\begin{frame}
+    \titlepage
+    \vfill
+\end{frame}
+
+% Overview
+\begin{frame}{Overview 概述}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=What We Will Learn 学习目标]
+        \footnotesize
+        \begin{enumerate}
+            \item Understand how to solve equations with two or more absolute values
+            \item Learn to set up and solve all possible cases
+            \item Check solutions for extraneous roots
+            \item Use graphical methods to verify solutions
+        \end{enumerate}
+    \end{tcolorbox}
+    \vspace{1em}
+    \textbf{Key Questions:}
+    \begin{itemize}
+        \item How do we set up cases for multiple absolute values?
+        \item Why do we need to check for extraneous solutions?
+        \item How can graphs help us solve these equations?
+    \end{itemize}
+\end{frame}
+
+% Concept
+\begin{frame}{Solving Equations with Two Absolute Values 含两个绝对值的方程}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Idea 关键思路]
+        \footnotesize
+        When an equation contains two absolute values, consider all possible sign combinations (cases) for each absolute value expression.
+        \par
+        含有两个绝对值的方程，需要考虑每个绝对值表达式为正或负的所有组合（共4种情况）。
+    \end{tcolorbox}
+    \vspace{1em}
+    \textbf{General Steps:}
+    \begin{enumerate}
+        \item Isolate absolute value expressions if possible
+        \item Set up all possible cases (both positive/negative)
+        \item Solve each case for $x$
+        \item Check each solution in the original equation (extraneous roots)
+    \end{enumerate}
+\end{frame}
+
+% Example 1: Step-by-step
+\begin{frame}{Example: $|x-2| + |x+6| = 11$}
+    \footnotesize
+    Since there are two absolute values, consider all four cases:
+    \begin{itemize}
+        \item Case 1: $x-2 \geq 0$, $x+6 \geq 0$ ($x \geq -6$)
+        \item Case 2: $x-2 \geq 0$, $x+6 < 0$ ($2 \leq x < -6$) (impossible)
+        \item Case 3: $x-2 < 0$, $x+6 \geq 0$ ($-6 \leq x < 2$)
+        \item Case 4: $x-2 < 0$, $x+6 < 0$ ($x < -6$)
+    \end{itemize}
+    \vspace{1em}
+    \textbf{Set up equations for each valid case:}
+    \begin{itemize}
+        \item Case 1: $(x-2) + (x+6) = 11$
+        \item Case 3: $-(x-2) + (x+6) = 11$
+        \item Case 4: $-(x-2) - (x+6) = 11$
+    \end{itemize}
+\end{frame}
+
+% Example 1: Solution (Page 1)
+\begin{frame}{Example Solution: $|x-2| + |x+6| = 11$ (Part 1)}
+    \footnotesize
+    \textbf{Case 1:} $x \geq -6$
+    \begin{align*}
+        (x-2) + (x+6) &= 11 \\
+        2x + 4 &= 11 \\
+        2x &= 7 \\
+        x &= 3.5
+    \end{align*}
+    Check: $|3.5-2| + |3.5+6| = 1.5 + 9.5 = 11$ (Valid)
+    \vspace{1em}
+    \textbf{Case 3:} $-6 \leq x < 2$
+    \begin{align*}
+        -(x-2) + (x+6) &= 11 \\
+        -x+2+x+6 &= 11 \\
+        8 &= 11
+    \end{align*}
+    No solution in this case.
+\end{frame}
+
+% Example 1: Solution (Page 2)
+\begin{frame}{Example Solution: $|x-2| + |x+6| = 11$ (Part 2)}
+    \footnotesize
+    \textbf{Case 4:} $x < -6$
+    \begin{align*}
+        -(x-2) - (x+6) &= 11 \\
+        -x+2-x-6 &= 11 \\
+        -2x-4 &= 11 \\
+        -2x &= 15 \\
+        x &= -7.5
+    \end{align*}
+    Check: $|-7.5-2| + |-7.5+6| = |-9.5| + |-1.5| = 9.5 + 1.5 = 11$ (Valid)
+\end{frame}
+
+% Example 1: Graphical Solution
+\begin{frame}{Graphical Solution 图像解法}
+    \footnotesize
+    \textbf{Graph:} $y_1 = |x-2| + |x+6|$, $y_2 = 11$
+    \begin{center}
+        \includegraphics[width=0.8\textwidth]{absval_2_graph1.png}
+    \end{center}
+    \textbf{Intersections:} $x = -7.5$, $x = 3.5$
+\end{frame}
+
+% Example 1: Enlarged Graph
+\begin{frame}{Graphical Solution (Enlarged)}
+    \begin{center}
+        \includegraphics[width=1.0\textwidth]{absval_2_graph1.png}
+    \end{center}
+\end{frame}
+
+% Practice Problem 1
+\begin{frame}{Practice: $|x-1| + |x+5| = 8$}
+    \footnotesize
+    \textbf{Try:} Solve $|x-1| + |x+5| = 8$ by considering all cases.\par
+    \textbf{(Solutions on next slide)}
+\end{frame}
+
+% Practice Problem 1 Solution (Page 1)
+\begin{frame}{Solution: $|x-1| + |x+5| = 8$ (Part 1)}
+    \footnotesize
+    \textbf{Case 1:} $x \geq -5$
+    \begin{align*}
+        (x-1) + (x+5) &= 8 \\
+        2x + 4 &= 8 \\
+        2x &= 4 \\
+        x &= 2
+    \end{align*}
+    Check: $|2-1| + |2+5| = 1 + 7 = 8$ (Valid)
+    \vspace{1em}
+    \textbf{Case 3:} $-5 \leq x < 1$
+    \begin{align*}
+        -(x-1) + (x+5) &= 8 \\
+        -x+1+x+5 &= 8 \\
+        6 &= 8
+    \end{align*}
+    No solution in this case.
+\end{frame}
+
+% Practice Problem 1 Solution (Page 2)
+\begin{frame}{Solution: $|x-1| + |x+5| = 8$ (Part 2)}
+    \footnotesize
+    \textbf{Case 4:} $x < -5$
+    \begin{align*}
+        -(x-1) - (x+5) &= 8 \\
+        -x+1-x-5 &= 8 \\
+        -2x-4 &= 8 \\
+        -2x &= 12 \\
+        x &= -6
+    \end{align*}
+    Check: $|-6-1| + |-6+5| = 7 + 1 = 8$ (Valid)
+\end{frame}
+
+% Practice Problem 1: Graph
+\begin{frame}{Graphical Solution}
+    \footnotesize
+    \textbf{Graph:} $y_1 = |x-1| + |x+5|$, $y_2 = 8$
+    \begin{center}
+        \includegraphics[width=0.8\textwidth]{absval_2_graph2.png}
+    \end{center}
+    \textbf{Intersections:} $x = -6$, $x = 2$
+\end{frame}
+
+% Practice Problem 1: Enlarged Graph
+\begin{frame}{Graphical Solution (Enlarged)}
+    \begin{center}
+        \includegraphics[width=1.0\textwidth]{absval_2_graph2.png}
+    \end{center}
+\end{frame}
+
+% Practice Problem 2
+\begin{frame}{Practice: $|x-3| + |x+4| = 9$}
+    \footnotesize
+    \textbf{Try:} Solve $|x-3| + |x+4| = 9$ by considering all cases.\par
+    \textbf{(Solutions on next slide)}
+\end{frame}
+
+% Practice Problem 2 Solution (Page 1)
+\begin{frame}{Solution: $|x-3| + |x+4| = 9$ (Part 1)}
+    \footnotesize
+    \textbf{Case 1:} $x \geq -4$
+    \begin{align*}
+        (x-3) + (x+4) &= 9 \\
+        2x + 1 &= 9 \\
+        2x &= 8 \\
+        x &= 4
+    \end{align*}
+    Check: $|4-3| + |4+4| = 1 + 8 = 9$ (Valid)
+    \vspace{1em}
+    \textbf{Case 3:} $-4 \leq x < 3$
+    \begin{align*}
+        -(x-3) + (x+4) &= 9 \\
+        -x+3+x+4 &= 9 \\
+        7 &= 9
+    \end{align*}
+    No solution in this case.
+\end{frame}
+
+% Practice Problem 2 Solution (Page 2)
+\begin{frame}{Solution: $|x-3| + |x+4| = 9$ (Part 2)}
+    \footnotesize
+    \textbf{Case 4:} $x < -4$
+    \begin{align*}
+        -(x-3) - (x+4) &= 9 \\
+        -x+3-x-4 &= 9 \\
+        -2x-1 &= 9 \\
+        -2x &= 10 \\
+        x &= -5
+    \end{align*}
+    Check: $|-5-3| + |-5+4| = 8 + 1 = 9$ (Valid)
+\end{frame}
+
+% Practice Problem 2: Graph
+\begin{frame}{Graphical Solution}
+    \footnotesize
+    \textbf{Graph:} $y_1 = |x-3| + |x+4|$, $y_2 = 9$
+    \begin{center}
+        \includegraphics[width=0.8\textwidth]{absval_2_graph3.png}
+    \end{center}
+    \textbf{Intersections:} $x = -5$, $x = 4$
+\end{frame}
+
+% Practice Problem 2: Enlarged Graph
+\begin{frame}{Graphical Solution (Enlarged)}
+    \begin{center}
+        \includegraphics[width=1.0\textwidth]{absval_2_graph3.png}
+    \end{center}
+\end{frame}
+
+% Summary
+\begin{frame}{Summary 总结}
+    \begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Points 要点]
+        \footnotesize
+        \begin{enumerate}
+            \item For equations with two or more absolute values, always consider all possible sign cases
+            \item Solve each case and check for extraneous solutions
+            \item Use graphs to visualize and confirm solutions
+            \item Solutions must satisfy the original equation and the domain of each case
+        \end{enumerate}
+    \end{tcolorbox}
+\end{frame}
+
+% --- New Practice Problems ---
+% Practice 3
+\begin{frame}{Practice: $|x-7| + |x+2| = 13$}
+    \footnotesize
+    Solve $|x-7| + |x+2| = 13$ by considering all cases.\par
+    \textbf{(Solution on next slide)}
+\end{frame}
+
+% Practice 3 Solution (Page 1)
+\begin{frame}{Solution: $|x-7| + |x+2| = 13$ (Part 1)}
+    \footnotesize
+    \textbf{Case 1:} $x \geq 7$
+    \begin{align*}
+        (x-7) + (x+2) &= 13 \\
+        2x - 5 &= 13 \\
+        2x &= 18 \\
+        x &= 9
+    \end{align*}
+    Check: $|9-7| + |9+2| = 2 + 11 = 13$ (Valid)
+    \vspace{1em}
+    \textbf{Case 3:} $-2 \leq x < 7$
+    \begin{align*}
+        -(x-7) + (x+2) &= 13 \\
+        -x+7+x+2 &= 13 \\
+        9 &= 13
+    \end{align*}
+    No solution in this case.
+\end{frame}
+
+% Practice 3 Solution (Page 2)
+\begin{frame}{Solution: $|x-7| + |x+2| = 13$ (Part 2)}
+    \footnotesize
+    \textbf{Case 4:} $x < -2$
+    \begin{align*}
+        -(x-7) - (x+2) &= 13 \\
+        -x+7-x-2 &= 13 \\
+        -2x+5 &= 13 \\
+        -2x &= 8 \\
+        x &= -4
+    \end{align*}
+    Check: $|-4-7| + |-4+2| = 11 + 2 = 13$ (Valid)
+\end{frame}
+
+% Practice 4
+\begin{frame}{Practice: $|x-6| + |x+1| = 10$}
+    \footnotesize
+    Solve $|x-6| + |x+1| = 10$ by considering all cases.\par
+    \textbf{(Solution on next slide)}
+\end{frame}
+
+% Practice 4 Solution (Page 1)
+\begin{frame}{Solution: $|x-6| + |x+1| = 10$ (Part 1)}
+    \footnotesize
+    \textbf{Case 1:} $x \geq 6$
+    \begin{align*}
+        (x-6) + (x+1) &= 10 \\
+        2x - 5 &= 10 \\
+        2x &= 15 \\
+        x &= 7.5
+    \end{align*}
+    Check: $|7.5-6| + |7.5+1| = 1.5 + 8.5 = 10$ (Valid)
+    \vspace{1em}
+    \textbf{Case 3:} $-1 \leq x < 6$
+    \begin{align*}
+        -(x-6) + (x+1) &= 10 \\
+        -x+6+x+1 &= 10 \\
+        7 &= 10
+    \end{align*}
+    No solution in this case.
+\end{frame}
+
+% Practice 4 Solution (Page 2)
+\begin{frame}{Solution: $|x-6| + |x+1| = 10$ (Part 2)}
+    \footnotesize
+    \textbf{Case 4:} $x < -1$
+    \begin{align*}
+        -(x-6) - (x+1) &= 10 \\
+        -x+6-x-1 &= 10 \\
+        -2x+5 &= 10 \\
+        -2x &= 5 \\
+        x &= -2.5
+    \end{align*}
+    Check: $|-2.5-6| + |-2.5+1| = 8.5 + 1.5 = 10$ (Valid)
+\end{frame}
+
+% Practice 5
+\begin{frame}{Practice: $|x-8| + |x+3| = 15$}
+    \footnotesize
+    Solve $|x-8| + |x+3| = 15$ by considering all cases.\par
+    \textbf{(Solution on next slide)}
+\end{frame}
+
+% Practice 5 Solution (Page 1)
+\begin{frame}{Solution: $|x-8| + |x+3| = 15$ (Part 1)}
+    \footnotesize
+    \textbf{Case 1:} $x \geq 8$
+    \begin{align*}
+        (x-8) + (x+3) &= 15 \\
+        2x - 5 &= 15 \\
+        2x &= 20 \\
+        x &= 10
+    \end{align*}
+    Check: $|10-8| + |10+3| = 2 + 13 = 15$ (Valid)
+    \vspace{1em}
+    \textbf{Case 3:} $-3 \leq x < 8$
+    \begin{align*}
+        -(x-8) + (x+3) &= 15 \\
+        -x+8+x+3 &= 15 \\
+        11 &= 15
+    \end{align*}
+    No solution in this case.
+\end{frame}
+
+% Practice 5 Solution (Page 2)
+\begin{frame}{Solution: $|x-8| + |x+3| = 15$ (Part 2)}
+    \footnotesize
+    \textbf{Case 4:} $x < -3$
+    \begin{align*}
+        -(x-8) - (x+3) &= 15 \\
+        -x+8-x-3 &= 15 \\
+        -2x+5 &= 15 \\
+        -2x &= 10 \\
+        x &= -5
+    \end{align*}
+    Check: $|-5-8| + |-5+3| = 13 + 2 = 15$ (Valid)
+\end{frame}
+
+\end{document} 
