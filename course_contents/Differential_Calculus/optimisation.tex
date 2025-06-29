@@ -1,0 +1,467 @@
+% !TEX program = pdflatex
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Madrid}
+\usecolortheme{default}
+\usepackage{tikz}
+
+% Custom colors
+\definecolor{myblue}{RGB}{0,114,178}
+\definecolor{myorange}{RGB}{230,159,0}
+\definecolor{mygreen}{RGB}{0,158,115}
+\definecolor{myred}{RGB}{213,94,0}
+\definecolor{mypurple}{RGB}{204,121,167}
+\definecolor{mybrown}{RGB}{240,228,66}
+\definecolor{mygray}{RGB}{189,189,189}
+
+% Set colors
+\setbeamercolor{title}{fg=white,bg=myblue}
+\setbeamercolor{frametitle}{fg=white,bg=myblue}
+\setbeamercolor{section title}{fg=white,bg=myblue}
+\setbeamercolor{subsection title}{fg=white,bg=myorange}
+\setbeamercolor{item}{fg=myblue}
+\setbeamercolor{subitem}{fg=myorange}
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% Title page
+\title{Optimisation}
+\subtitle{Applications of Derivatives: Finding Maximum and Minimum Values}
+\author{Differential Calculus}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}{Why Optimisation?}
+\begin{itemize}
+    \item One important application of differential calculus is to find the maximum (or minimum) value of a function.
+    \item This often finds real world applications in problems such as:
+    \begin{itemize}
+        \item Maximizing area with limited materials
+        \item Minimizing cost while maintaining quality
+        \item Finding optimal dimensions for containers
+        \item Determining shortest paths or distances
+    \end{itemize}
+    \item Goal: Use derivatives to find where functions achieve their extreme values.
+\end{itemize}
+\end{frame}
+
+\section{Local and Global Extrema}
+
+\begin{frame}{Types of Extrema}
+\begin{itemize}
+    \item \textbf{Global (Absolute) Maximum:} The largest value of $f(x)$ on an interval
+    \item \textbf{Global (Absolute) Minimum:} The smallest value of $f(x)$ on an interval
+    \item \textbf{Local Maximum:} $f(x) \leq f(c)$ for all $x$ near $c$
+    \item \textbf{Local Minimum:} $f(x) \geq f(c)$ for all $x$ near $c$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Critical Points and Singular Points}
+\begin{itemize}
+    \item \textbf{Critical Point:} Where $f'(c) = 0$ (derivative exists and equals zero)
+    \item \textbf{Singular Point:} Where $f'(c)$ does not exist
+    \item \textbf{Important:} Local extrema can occur at:
+    \begin{itemize}
+        \item Critical points
+        \item Singular points
+        \item Endpoints of the interval
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{First Derivative Test}
+\textbf{Theorem:} If $f(x)$ has a local maximum or minimum at $x = c$ and $f'(c)$ exists, then $f'(c) = 0$.
+
+\textbf{Note:} The converse is NOT true! A critical point doesn't guarantee a local extremum.
+
+\textbf{Example:} $f(x) = x^3$ has $f'(0) = 0$ but no local extremum at $x = 0$.
+\end{frame}
+
+\begin{frame}{Second Derivative Test}
+\textbf{Theorem:} Let $f(x)$ be defined on interval $I$ and $c \in I$ with $f'(c) = 0$.
+
+\begin{itemize}
+    \item If $f''(c) < 0$, then $f(x)$ has a local maximum at $c$
+    \item If $f''(c) > 0$, then $f(x)$ has a local minimum at $c$
+    \item If $f''(c) = 0$, the test is inconclusive
+\end{itemize}
+
+\textbf{Note:} This test only works when $f'(c) = 0$ and $f''(c)$ exists.
+\end{frame}
+
+\section{Finding Global Extrema}
+
+\begin{frame}{Method for Finding Global Extrema}
+\textbf{Corollary:} To find the global maximum and minimum of $f(x)$ on $[a,b]$:
+
+\begin{enumerate}
+    \item Find all critical points: solve $f'(x) = 0$
+    \item Find all singular points: where $f'(x)$ doesn't exist
+    \item Evaluate $f(x)$ at all critical points, singular points, and endpoints
+    \item The largest value is the global maximum, smallest is the global minimum
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Example: Finding Global Extrema}
+\textbf{Find the global extrema of} $f(x) = 2x^{5/3} + 3x^{2/3}$ \textbf{on} $[-1,1]$
+
+\textbf{Solution:}
+\begin{itemize}
+    \item Endpoints: $f(-1) = 1$, $f(1) = 5$
+    \item $f'(x) = \frac{10x + 6}{3x^{1/3}}$
+    \item Singular point: $x = 0$ (denominator zero), $f(0) = 0$
+    \item Critical point: $f'(x) = 0$ when $x = -3/5$, $f(-3/5) \approx 1.28$
+    \item Global maximum: $5$ at $x = 1$
+    \item Global minimum: $0$ at $x = 0$
+\end{itemize}
+\end{frame}
+
+\section{Optimisation Strategy}
+
+\begin{frame}{General Problem-Solving Strategy}
+\begin{enumerate}
+    \item \textbf{Read} the problem carefully
+    \item \textbf{Draw} a diagram
+    \item \textbf{Define} variables with units
+    \item \textbf{Find} relations between variables
+    \item \textbf{Reduce} to a function of one variable
+    \item \textbf{Find} critical points and evaluate
+    \item \textbf{Check} that answers make sense
+    \item \textbf{Answer} the question asked
+\end{enumerate}
+\end{frame}
+
+\section{Worked Examples}
+
+\begin{frame}{Example 1: Fencing Problem}
+\textbf{Problem:} A farmer has 400m of fencing. What is the largest rectangular paddock that can be enclosed?
+
+\textbf{Think about:}
+\begin{itemize}
+    \item What variables should you define?
+    \item What is the constraint equation?
+    \item How can you express area as a function of one variable?
+    \item What is the domain of your function?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example 1: Fencing Problem - Solution}
+\textbf{Solution:}
+\begin{itemize}
+    \item Let dimensions be $x$ by $y$ metres
+    \item Area: $A = xy$
+    \item Constraint: $2x + 2y = 400$ (use all fencing)
+    \item So $y = 200 - x$
+    \item Area function: $A(x) = x(200-x) = 200x - x^2$
+    \item Domain: $0 \leq x \leq 200$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example 1: Fencing Problem - Solution (Continued)}
+\textbf{Find maximum area:}
+\begin{itemize}
+    \item $A'(x) = 200 - 2x$
+    \item Critical point: $200 - 2x = 0 \implies x = 100$
+    \item Evaluate: $A(0) = 0$, $A(100) = 10,000$, $A(200) = 0$
+    \item Maximum area: $10,000$ m$^2$ when $x = 100$m, $y = 100$m
+    \item Answer: A square paddock of 100m × 100m
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example 2: Box Volume}
+\textbf{Problem:} A rectangular sheet of cardboard is 6" by 9". Four identical squares are cut from the corners and the remaining piece is folded into an open box. What size squares maximize the volume?
+
+\textbf{Think about:}
+\begin{itemize}
+    \item What will be the dimensions of the box after folding?
+    \item How can you express volume as a function of the square size?
+    \item What are the constraints on the square size?
+    \item What is the domain of your volume function?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example 2: Box Volume - Solution}
+\textbf{Solution:}
+\begin{itemize}
+    \item Let square side length be $x$ inches
+    \item Box dimensions: $(9-2x) \times (6-2x) \times x$
+    \item Volume: $V(x) = x(9-2x)(6-2x) = 54x - 30x^2 + 4x^3$
+    \item Domain: $0 \leq x \leq 3$ (since $6-2x \geq 0$)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example 2: Box Volume - Solution (Continued)}
+\textbf{Find maximum volume:}
+\begin{itemize}
+    \item $V'(x) = 54 - 60x + 12x^2 = 6(9 - 10x + 2x^2)$
+    \item Critical points: $x = \frac{5 \pm \sqrt{7}}{2}$
+    \item Only $x = \frac{5 - \sqrt{7}}{2} \approx 1.18$ is in domain
+    \item Evaluate: $V(0) = 0$, $V(1.18) \approx 24.5$, $V(3) = 0$
+    \item Maximum volume: approximately 24.5 cubic inches
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example 3: Distance Problem}
+\textbf{Problem:} Find the point on the line $y = 6 - 3x$ that is closest to the point $(7,5)$.
+
+\textbf{Think about:}
+\begin{itemize}
+    \item How do you calculate distance between two points?
+    \item How can you express distance as a function of $x$?
+    \item Is it easier to minimize distance or distance squared?
+    \item What is the domain of your function?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example 3: Distance Problem - Solution}
+\textbf{Solution:}
+\begin{itemize}
+    \item Let $(x,y)$ be a point on the line
+    \item Distance: $d = \sqrt{(x-7)^2 + (y-5)^2}$
+    \item Since $y = 6 - 3x$: $d = \sqrt{(x-7)^2 + (1-3x)^2}$
+    \item Minimize $d^2 = (x-7)^2 + (1-3x)^2 = 10x^2 - 20x + 50$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example 3: Distance Problem - Solution (Continued)}
+\textbf{Find minimum distance:}
+\begin{itemize}
+    \item $\frac{d}{dx}(d^2) = 20x - 20$
+    \item Critical point: $20x - 20 = 0 \implies x = 1$
+    \item When $x = 1$: $y = 6 - 3(1) = 3$
+    \item Distance: $d = \sqrt{10(1)^2 - 20(1) + 50} = \sqrt{40} = 2\sqrt{10}$
+    \item Answer: The point $(1,3)$ is closest to $(7,5)$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example 4: Snell's Law}
+\textbf{Problem:} Use Fermat's principle (light takes the path of least time) to derive Snell's law: $\frac{\sin \theta_i}{\sin \theta_r} = \frac{c_a}{c_w}$
+
+\textbf{Think about:}
+\begin{itemize}
+    \item How do you calculate time for light to travel a distance?
+    \item What variables can you use to describe the path?
+    \item How can you express total time as a function of one variable?
+    \item What happens when you minimize this function?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example 4: Snell's Law - Solution}
+\textbf{Solution:}
+\begin{itemize}
+    \item Let $c_a$ = speed in air, $c_w$ = speed in water
+    \item Total time: $T = \frac{\ell_P}{c_a} + \frac{\ell_Q}{c_w}$
+    \item Minimize $T$ with respect to $x$ (position on interface)
+    \item $\frac{dT}{dx} = -\frac{\sin \theta_i}{c_a} + \frac{\sin \theta_r}{c_w}$
+    \item At minimum: $\frac{\sin \theta_i}{c_a} = \frac{\sin \theta_r}{c_w}$
+    \item Therefore: $\frac{\sin \theta_i}{\sin \theta_r} = \frac{c_a}{c_w}$
+\end{itemize}
+\end{frame}
+
+\section{Special Cases}
+
+\begin{frame}{Unbounded Domains}
+\textbf{Theorem:} If $f(x)$ is defined for all real $x$ and:
+\begin{itemize}
+    \item $\lim_{x \to \pm \infty} f(x) = +\infty$, then global minimum occurs at a critical or singular point
+    \item $\lim_{x \to \pm \infty} f(x) = -\infty$, then global maximum occurs at a critical or singular point
+\end{itemize}
+
+\textbf{Example:} $f(x) = x^2 - 4x + 5$ has $\lim_{x \to \pm \infty} f(x) = +\infty$, so minimum occurs at critical point $x = 2$.
+\end{frame}
+
+\section{Practice Problems}
+
+\begin{frame}{Practice Problem 1}
+\textbf{Problem:} Find the dimensions of the rectangle of largest area that can be inscribed in a circle of radius 5.
+
+\textbf{Hint:} Use the fact that if a rectangle is inscribed in a circle, its diagonal is the diameter of the circle.
+\end{frame}
+
+\begin{frame}{Practice Problem 2}
+\textbf{Problem:} A cylindrical can is to hold 1000 cm³. Find the radius and height that minimize the surface area.
+
+\textbf{Hint:} Use the volume constraint to express height in terms of radius.
+\end{frame}
+
+\begin{frame}{Practice Problem 3}
+\textbf{Problem:} Find the point on the parabola $y = x^2$ that is closest to the point $(0,3)$.
+
+\textbf{Hint:} Minimize the distance squared between $(x,x^2)$ and $(0,3)$.
+\end{frame}
+
+\begin{frame}{Practice Problem 4}
+\textbf{Problem:} A rectangular storage container with an open top is to have a volume of 10 m³. The length of its base is twice the width. Material for the base costs \$10 per square meter. Material for the sides costs \$6 per square meter. Find the cost of materials for the cheapest such container.
+
+\textbf{Hint:} Express cost as a function of width, then minimize.
+\end{frame}
+
+\begin{frame}{Practice Problem 5}
+\textbf{Problem:} Find the global maximum and minimum of $f(x) = x^3 - 3x^2 + 1$ on the interval $[-1,4]$.
+
+\textbf{Hint:} Find critical points, evaluate at endpoints, and compare.
+\end{frame}
+
+\begin{frame}{Practice Problem 6}
+\textbf{Problem:} A piece of wire 10 m long is cut into two pieces. One piece is bent into a square and the other is bent into an equilateral triangle. How should the wire be cut so that the total area enclosed is a minimum?
+
+\textbf{Hint:} Let $x$ be the length used for the square, then $(10-x)$ is used for the triangle.
+\end{frame}
+
+\begin{frame}{Practice Problem 7}
+\textbf{Problem:} Find the dimensions of the rectangle of largest area that can be inscribed in an equilateral triangle of side length 6 if one side of the rectangle lies on the base of the triangle.
+
+\textbf{Hint:} Use similar triangles to relate the rectangle's height to its width.
+\end{frame}
+
+\begin{frame}{Practice Problem 8}
+\textbf{Problem:} A Norman window has the shape of a rectangle surmounted by a semicircle. If the perimeter of the window is 30 ft, find the dimensions that will allow the maximum amount of light to pass through.
+
+\textbf{Hint:} Express area as a function of the rectangle's width, using the perimeter constraint.
+\end{frame}
+
+\section{Solutions to Practice Problems}
+
+\begin{frame}{Practice Problem 1 - Solution}
+\textbf{Solution:} Rectangle inscribed in circle of radius 5
+
+\begin{itemize}
+    \item Let rectangle have dimensions $2x$ by $2y$
+    \item Diagonal constraint: $(2x)^2 + (2y)^2 = (10)^2$ (diameter = 10)
+    \item So $x^2 + y^2 = 25$
+    \item Area: $A = 4xy = 4x\sqrt{25-x^2}$
+    \item $A'(x) = 4\sqrt{25-x^2} + 4x \cdot \frac{-x}{\sqrt{25-x^2}} = \frac{4(25-x^2-x^2)}{\sqrt{25-x^2}}$
+    \item Critical point: $25-2x^2 = 0 \implies x = \frac{5}{\sqrt{2}}$
+    \item Then $y = \frac{5}{\sqrt{2}}$ (square!)
+    \item Maximum area: $4 \cdot \frac{5}{\sqrt{2}} \cdot \frac{5}{\sqrt{2}} = 50$ square units
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Practice Problem 2 - Solution}
+\textbf{Solution:} Cylindrical can with volume 1000 cm³
+
+\begin{itemize}
+    \item Volume: $V = \pi r^2 h = 1000$
+    \item So $h = \frac{1000}{\pi r^2}$
+    \item Surface area: $S = 2\pi r^2 + 2\pi rh = 2\pi r^2 + 2\pi r \cdot \frac{1000}{\pi r^2}$
+    \item $S(r) = 2\pi r^2 + \frac{2000}{r}$
+    \item $S'(r) = 4\pi r - \frac{2000}{r^2}$
+    \item Critical point: $4\pi r = \frac{2000}{r^2} \implies r^3 = \frac{500}{\pi} \implies r = \sqrt[3]{\frac{500}{\pi}} \approx 5.4$ cm
+    \item $h = \frac{1000}{\pi (5.4)^2} \approx 10.8$ cm
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Practice Problem 3 - Solution}
+\textbf{Solution:} Point on $y = x^2$ closest to $(0,3)$
+
+\begin{itemize}
+    \item Distance squared: $d^2 = (x-0)^2 + (x^2-3)^2 = x^2 + x^4 - 6x^2 + 9 = x^4 - 5x^2 + 9$
+    \item $\frac{d}{dx}(d^2) = 4x^3 - 10x = 2x(2x^2 - 5)$
+    \item Critical points: $x = 0$ or $x = \pm\sqrt{\frac{5}{2}}$
+    \item Test: $d^2(0) = 9$, $d^2(\sqrt{\frac{5}{2}}) = \frac{25}{4} - \frac{25}{2} + 9 = \frac{11}{4}$
+    \item Minimum at $x = \sqrt{\frac{5}{2}} \approx 1.58$
+    \item Point: $(\sqrt{\frac{5}{2}}, \frac{5}{2})$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Practice Problem 4 - Solution}
+\textbf{Solution:} Storage container cost optimization
+
+\begin{itemize}
+    \item Let width = $x$, length = $2x$, height = $h$
+    \item Volume: $2x^2 h = 10 \implies h = \frac{5}{x^2}$
+    \item Cost: $C = 10 \cdot 2x^2 + 6 \cdot (2xh + 2 \cdot 2xh) = 20x^2 + 6 \cdot 6xh = 20x^2 + 36xh$
+    \item $C(x) = 20x^2 + 36x \cdot \frac{5}{x^2} = 20x^2 + \frac{180}{x}$
+    \item $C'(x) = 40x - \frac{180}{x^2}$
+    \item Critical point: $40x = \frac{180}{x^2} \implies x^3 = 4.5 \implies x = \sqrt[3]{4.5} \approx 1.65$ m
+    \item Cost: $C(1.65) \approx \$163.50$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Practice Problem 5 - Solution}
+\textbf{Solution:} Global extrema of $f(x) = x^3 - 3x^2 + 1$ on $[-1,4]$
+
+\begin{itemize}
+    \item $f'(x) = 3x^2 - 6x = 3x(x-2)$
+    \item Critical points: $x = 0, 2$
+    \item Evaluate: $f(-1) = -1 - 3 + 1 = -3$
+    \item $f(0) = 1$, $f(2) = 8 - 12 + 1 = -3$, $f(4) = 64 - 48 + 1 = 17$
+    \item Global maximum: $17$ at $x = 4$
+    \item Global minimum: $-3$ at $x = -1$ and $x = 2$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Practice Problem 6 - Solution}
+\textbf{Solution:} Wire cutting for minimum total area
+
+\begin{itemize}
+    \item Let $x$ = length for square, $(10-x)$ = length for triangle
+    \item Square side length: $\frac{x}{4}$, area: $(\frac{x}{4})^2 = \frac{x^2}{16}$
+    \item Triangle side length: $\frac{10-x}{3}$, area: $\frac{\sqrt{3}}{4}(\frac{10-x}{3})^2 = \frac{\sqrt{3}}{36}(10-x)^2$
+    \item Total area: $A(x) = \frac{x^2}{16} + \frac{\sqrt{3}}{36}(10-x)^2$
+    \item $A'(x) = \frac{x}{8} - \frac{\sqrt{3}}{18}(10-x)$
+    \item Critical point: $\frac{x}{8} = \frac{\sqrt{3}}{18}(10-x) \implies x \approx 4.35$ m
+    \item Use about 4.35 m for square, 5.65 m for triangle
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Practice Problem 7 - Solution}
+\textbf{Solution:} Rectangle in equilateral triangle
+
+\begin{itemize}
+    \item Let rectangle width = $2x$, height = $y$
+    \item Using similar triangles: $\frac{y}{\sqrt{3}} = \frac{3-x}{3}$
+    \item So $y = \sqrt{3}(1-\frac{x}{3}) = \sqrt{3} - \frac{x}{\sqrt{3}}$
+    \item Area: $A(x) = 2x \cdot (\sqrt{3} - \frac{x}{\sqrt{3}}) = 2\sqrt{3}x - \frac{2x^2}{\sqrt{3}}$
+    \item $A'(x) = 2\sqrt{3} - \frac{4x}{\sqrt{3}}$
+    \item Critical point: $2\sqrt{3} = \frac{4x}{\sqrt{3}} \implies x = \frac{3}{2}$
+    \item Dimensions: width = $3$, height = $\frac{\sqrt{3}}{2}$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Practice Problem 8 - Solution}
+\textbf{Solution:} Norman window with perimeter 30 ft
+
+\begin{itemize}
+    \item Let rectangle width = $2r$, height = $h$, semicircle radius = $r$
+    \item Perimeter: $2h + 2r + \pi r = 30 \implies h = 15 - r - \frac{\pi r}{2}$
+    \item Area: $A = 2rh + \frac{\pi r^2}{2} = 2r(15 - r - \frac{\pi r}{2}) + \frac{\pi r^2}{2}$
+    \item $A(r) = 30r - 2r^2 - \pi r^2 + \frac{\pi r^2}{2} = 30r - 2r^2 - \frac{\pi r^2}{2}$
+    \item $A'(r) = 30 - 4r - \pi r$
+    \item Critical point: $30 = r(4 + \pi) \implies r = \frac{30}{4 + \pi} \approx 4.2$ ft
+    \item $h = 15 - 4.2 - \frac{\pi \cdot 4.2}{2} \approx 4.2$ ft
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}
+    \item Use derivatives to find critical points ($f'(x) = 0$)
+    \item Check singular points (where $f'(x)$ doesn't exist)
+    \item Evaluate function at critical points, singular points, and endpoints
+    \item Compare values to find global extrema
+    \item Always verify that answers make physical sense
+    \item Optimization problems require careful setup and constraint handling
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Thank You!}
+\centering
+\vspace{2cm}
+{\Huge \textcolor{myblue}{\textbf{Questions?}}}
+
+\vspace{1cm}
+{\Large Optimization is a powerful application of calculus in the real world!}
+\end{frame}
+
+\end{document} 

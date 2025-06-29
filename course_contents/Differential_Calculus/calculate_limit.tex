@@ -1,0 +1,669 @@
+% !TEX program = pdflatex
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Madrid}
+\usecolortheme{default}
+\usepackage{tikz}
+
+% Custom colors
+\definecolor{myblue}{RGB}{0,114,178}
+\definecolor{myorange}{RGB}{230,159,0}
+\definecolor{mygreen}{RGB}{0,158,115}
+\definecolor{myred}{RGB}{213,94,0}
+\definecolor{mypurple}{RGB}{204,121,167}
+\definecolor{mybrown}{RGB}{240,228,66}
+\definecolor{mygray}{RGB}{189,189,189}
+
+% Set colors
+\setbeamercolor{title}{fg=white,bg=myblue}
+\setbeamercolor{frametitle}{fg=white,bg=myblue}
+\setbeamercolor{section title}{fg=white,bg=myblue}
+\setbeamercolor{subsection title}{fg=white,bg=myorange}
+\setbeamercolor{item}{fg=myblue}
+\setbeamercolor{subitem}{fg=myorange}
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% Custom commands
+\newcommand{\limx}[2]{\lim_{x \to #1} #2}
+
+% Title page
+\title{1.4 Calculating Limits with Limit Laws}
+\subtitle{Limit Laws and Their Applications}
+\author{Differential Calculus}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}{Building Blocks of Functions}
+\begin{itemize}
+  \item Constants: $c$
+  \item Monomials: $x^n$
+  \item Trigonometric functions: $\sin(x)$, $\cos(x)$, $\tan(x)$
+  \item (Soon: exponentials, inverses, etc.)
+\end{itemize}
+\vspace{1em}
+Functions are constructed from these using:
+\begin{itemize}
+  \item Addition, subtraction, multiplication, division
+  \item Substitution (composition)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Limits of Building Blocks}
+\begin{itemize}
+  \item We want to compute limits of these basic pieces
+  \item Then use arithmetic to compute limits of more complicated functions
+  \item This avoids plugging in numbers or $\epsilon$-$\delta$ arguments
+\end{itemize}
+\end{frame}
+
+\section{Limits of Polynomials and Constants}
+
+\begin{frame}{Limits of Polynomials}
+\begin{block}{Key Fact}
+For any polynomial $P(x)$ and any real number $a$:
+$$\limx{a}{P(x)} = P(a)$$
+\end{block}
+\begin{itemize}
+  \item To evaluate the limit, just plug in the number
+  \item We will build up to this result step by step
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Easiest Limits}
+\begin{block}{Theorem 1.4.1}
+Let $a, c \in \mathbb{R}$. Then:
+\begin{align*}
+  \limx{a}{c} &= c \\
+  \limx{a}{x} &= a
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{Understanding Theorem 1.4.1}
+\begin{itemize}
+  \item $a, c$ are real numbers
+  \item $\limx{a}{c} = c$: The limit of a constant function is just that constant
+  \item $\limx{a}{x} = a$: The limit of $f(x) = x$ as $x$ approaches $a$ is $a$
+\end{itemize}
+\end{frame}
+
+\section{Arithmetic of Limits}
+
+\begin{frame}{Arithmetic of Limits}
+\begin{block}{Theorem 1.4.2}
+Let $a, c \in \mathbb{R}$, and $f(x), g(x)$ defined near $a$ with $\limx{a}{f(x)} = F$, $\limx{a}{g(x)} = G$ (both real). Then:
+\begin{itemize}
+  \item $\limx{a}{(f(x) + g(x))} = F + G$
+  \item $\limx{a}{(f(x) - g(x))} = F - G$
+  \item $\limx{a}{c f(x)} = cF$
+  \item $\limx{a}{(f(x) g(x))} = FG$
+  \item If $G \neq 0$, $\limx{a}{\frac{f(x)}{g(x)}} = \frac{F}{G}$
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Applying Arithmetic of Limits}
+\begin{block}{Example 1.4.3}
+Suppose $\limx{1}{f(x)} = 3$ and $\limx{1}{g(x)} = 2$.
+\begin{align*}
+  \limx{1}{3f(x)} &= 3 \times 3 = 9 \\
+  \limx{1}{3f(x) - g(x)} &= 3 \times 3 - 2 = 7 \\
+  \limx{1}{f(x)g(x)} &= 3 \times 2 = 6 \\
+  \limx{1}{\frac{f(x)}{f(x) - g(x)}} &= \frac{3}{3-2} = 3
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{Step-by-Step Example}
+\begin{block}{Example 1.4.4}
+Find $\limx{3}{4x^2 - 1}$
+\end{block}
+\begin{align*}
+  \limx{3}{4x^2 - 1} &= \limx{3}{4x^2} - \limx{3}{1} \\
+  &= 4 \limx{3}{x^2} - 1 \\
+  &= 4 (\limx{3}{x})^2 - 1 \\
+  &= 4 \times 3 \times 3 - 1 \\
+  &= 36 - 1 = 35
+\end{align*}
+\end{frame}
+
+\begin{frame}{Another Example}
+\begin{block}{Example 1.4.5}
+Compute $\limx{2}{\frac{x}{x-1}}$
+\end{block}
+\begin{align*}
+  \limx{2}{x} &= 2 \\
+  \limx{2}{x-1} &= 2-1 = 1 \\
+  \limx{2}{\frac{x}{x-1}} &= \frac{2}{1} = 2
+\end{align*}
+\end{frame}
+
+\begin{frame}{When the Denominator is Zero}
+\begin{block}{Example 1.4.6}
+Be careful: If $\limx{a}{g(x)} = 0$, the limit law for quotients does not apply!
+\end{block}
+\begin{itemize}
+  \item If $\limx{a}{f(x)} \neq 0$ and $\limx{a}{g(x)} = 0$, then $\limx{a}{\frac{f(x)}{g(x)}} = \text{DNE}$
+  \item If $\limx{a}{f(x)} = 0$ and $\limx{a}{g(x)} = 0$, more analysis is needed:
+    \begin{itemize}
+      \item $\limx{0}{\frac{x}{x^2}} = \limx{0}{\frac{1}{x}} = \text{DNE}$
+      \item $\limx{0}{\frac{x^2}{x}} = 0$
+      \item $\limx{0}{\frac{x^2}{x^4}} = \limx{0}{\frac{1}{x^2}} = +\infty$
+      \item $\limx{0}{\frac{x}{x}} = 1$
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\section{More Examples and Cautions}
+
+\begin{frame}{Rational Function Example}
+\begin{block}{Example 1.4.7}
+Let $h(x) = \frac{2x-3}{x^2+5x-6}$. Find $\limx{2}{h(x)}$.
+\end{block}
+\begin{align*}
+  \limx{2}{2x-3} &= 2 \times 2 - 3 = 1 \\
+  \limx{2}{x^2+5x-6} &= 2^2 + 5 \times 2 - 6 = 4 + 10 - 6 = 8 \\
+  \limx{2}{h(x)} &= \frac{1}{8}
+\end{align*}
+\end{frame}
+
+\begin{frame}{When the Limit Does Not Exist}
+\begin{block}{Example 1.4.7 (continued)}
+Find $\limx{1}{\frac{2x-3}{x^2+5x-6}}$
+\end{block}
+\begin{align*}
+  \limx{1}{2x-3} &= 2 \times 1 - 3 = -1 \\
+  \limx{1}{x^2+5x-6} &= 1^2 + 5 \times 1 - 6 = 1 + 5 - 6 = 0 \\
+  \text{Since denominator $\to 0$ and numerator $\to -1 \neq 0$, the limit does not exist.}
+\end{align*}
+\end{frame}
+
+\section{Powers and Roots}
+
+\begin{frame}{Powers and Roots}
+\begin{block}{Theorem 1.4.8}
+Let $n$ be a positive integer, $a \in \mathbb{R}$, and $\limx{a}{f(x)} = F$ (real). Then:
+\begin{itemize}
+  \item $\limx{a}{(f(x))^n} = (\limx{a}{f(x)})^n = F^n$
+  \item If $n$ even and $F > 0$, or $n$ odd, then $\limx{a}{(f(x))^{1/n}} = (\limx{a}{f(x)})^{1/n} = F^{1/n}$
+  \item More generally, if $F > 0$ and $p$ is real, $\limx{a}{(f(x))^p} = (\limx{a}{f(x)})^p = F^p$
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Example: Roots and Powers}
+\begin{block}{Example 1.4.9}
+$\limx{2}{(4x^2-3)^{1/3}} = (4 \times 2^2 - 3)^{1/3} = (16-3)^{1/3} = 13^{1/3}$
+\end{block}
+\end{frame}
+
+\section{Polynomials and Rational Functions}
+
+\begin{frame}{Limits of Polynomials and Rational Functions}
+\begin{block}{Theorem 1.4.10}
+Let $a \in \mathbb{R}$, $P(x)$ a polynomial, $R(x)$ a rational function. Then:
+\begin{itemize}
+  \item $\limx{a}{P(x)} = P(a)$
+  \item If $R(x)$ is defined at $x=a$, $\limx{a}{R(x)} = R(a)$
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Quick Examples}
+\begin{align*}
+  \limx{2}{\frac{2x-3}{x^2+5x-6}} &= \frac{4-3}{4+10-6} = \frac{1}{8} \\
+  \limx{2}{4x^2-1} &= 16-1 = 15 \\
+  \limx{2}{\frac{x}{x-1}} &= \frac{2}{2-1} = 2
+\end{align*}
+\end{frame}
+
+\section{Factoring and Cancellation}
+
+\begin{frame}{When Denominator is Zero: Factor and Cancel}
+\begin{block}{Example 1.4.11}
+Compute $\limx{1}{\frac{x^3-x^2}{x-1}}$
+\end{block}
+\begin{itemize}
+  \item Both numerator and denominator $\to 0$ as $x \to 1$
+  \item Factor: $x^3-x^2 = x^2(x-1)$
+  \item $\frac{x^3-x^2}{x-1} = x^2$ for $x \neq 1$
+  \item So $\limx{1}{\frac{x^3-x^2}{x-1}} = \limx{1}{x^2} = 1$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{General Principle}
+\begin{block}{Theorem 1.4.12}
+If $f(x) = g(x)$ except at $x=a$, then $\limx{a}{f(x)} = \limx{a}{g(x)}$ (if the latter exists).
+\end{block}
+\end{frame}
+
+\begin{frame}{Example: Factor and Cancel}
+\begin{block}{Example 1.4.13}
+Compute $\lim_{h \to 0} \frac{(1+h)^2-1}{h}$
+\end{block}
+\begin{align*}
+  (1+h)^2-1 &= 1+2h+h^2-1 = 2h+h^2 \\
+  \frac{2h+h^2}{h} &= 2+h
+\end{align*}
+So $\lim_{h \to 0} \frac{(1+h)^2-1}{h} = 2$
+\end{frame}
+
+\begin{frame}{Example: Factor and Cancel (Short Version)}
+\begin{block}{Example 1.4.14}
+$\lim_{h \to 0} \frac{(1+h)^2-1}{h} = \lim_{h \to 0} \frac{2h+h^2}{h} = \lim_{h \to 0} 2+h = 2$
+\end{block}
+\end{frame}
+
+\begin{frame}{Example: Factor and Cancel (Terse)}
+\begin{block}{Example 1.4.15}
+$\lim_{h \to 0} \frac{(1+h)^2-1}{h} = \lim_{h \to 0} 2+h = 2$
+\end{block}
+\end{frame}
+
+\begin{frame}{Radical Example}
+\begin{block}{Example 1.4.16}
+Compute $\limx{0}{\frac{x}{\sqrt{1+x}-1}}$
+\end{block}
+\begin{itemize}
+  \item Both numerator and denominator $\to 0$ as $x \to 0$
+  \item Multiply numerator and denominator by $\sqrt{1+x}+1$
+  \item $\frac{x}{\sqrt{1+x}-1} \cdot \frac{\sqrt{1+x}+1}{\sqrt{1+x}+1} = \frac{x(\sqrt{1+x}+1)}{x}$
+  \item $= \sqrt{1+x}+1$ for $x \neq 0$
+  \item So $\limx{0}{\frac{x}{\sqrt{1+x}-1}} = 2$
+\end{itemize}
+\end{frame}
+
+\section{Squeeze Theorem}
+
+\begin{frame}{Squeeze Theorem}
+\begin{block}{Theorem 1.4.17 (Squeeze/Sandwich/Pinch Theorem)}
+If $f(x) \leq g(x) \leq h(x)$ for all $x$ near $a$ (except possibly at $a$), and $\limx{a}{f(x)} = \limx{a}{h(x)} = L$, then $\limx{a}{g(x)} = L$.
+\end{block}
+\end{frame}
+
+\begin{frame}{Squeeze Theorem Example}
+\begin{block}{Example 1.4.18}
+Compute $\limx{0}{x^2 \sin(\pi/x)}$
+\end{block}
+\begin{itemize}
+  \item $-1 \leq \sin(\pi/x) \leq 1$ for all $x \neq 0$
+  \item $-x^2 \leq x^2 \sin(\pi/x) \leq x^2$
+  \item $\limx{0}{x^2} = \limx{0}{-x^2} = 0$
+  \item By the squeeze theorem, $\limx{0}{x^2 \sin(\pi/x)} = 0$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Squeeze Theorem Example 2}
+\begin{block}{Example 1.4.19}
+Let $1 \leq f(x) \leq x^2-2x+2$. Find $\limx{1}{f(x)}$
+\end{block}
+\begin{itemize}
+  \item $\limx{1}{1} = 1$
+  \item $\limx{1}{x^2-2x+2} = 1-2+2 = 1$
+  \item By the squeeze theorem, $\limx{1}{f(x)} = 1$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Why the Squeeze Theorem Works (Intuition)}
+If $f(x) \leq g(x) \leq h(x)$ and $f(x), h(x) \to L$ as $x \to a$, then $g(x)$ is trapped between two functions that both get arbitrarily close to $L$.
+
+For any $\epsilon > 0$, we can make $f(x)$ and $h(x)$ within $\epsilon$ of $L$ by taking $x$ close enough to $a$. Then $g(x)$ is also within $\epsilon$ of $L$.
+
+This is the essence of the squeeze theorem.
+\end{frame}
+
+% --- Practice Problems Section ---
+
+\section{Practice Problems}
+
+% Practice 1 & 2
+\begin{frame}{Practice: 1 and 2}
+\textbf{Practice 1:}
+\[
+\lim_{x \to 3} \left(\frac{4x-2}{x+2}\right)^4
+\]
+\vspace{1em}
+\textbf{Practice 2:}
+\[
+\lim_{t \to -3} \frac{1-t}{\cos(t)}
+\]
+\end{frame}
+
+% Practice 3 & 4
+\begin{frame}{Practice: 3 and 4}
+\textbf{Practice 3:}
+\[
+\lim_{h \to 0} \frac{(2+h)^2-4}{2h}
+\]
+\vspace{1em}
+\textbf{Practice 4:}
+\[
+\lim_{t \to -2} \frac{t-5}{t+4}
+\]
+\end{frame}
+
+% Practice 5 & 6
+\begin{frame}{Practice: 5 and 6}
+\textbf{Practice 5:}
+\[
+\lim_{x \to 1} 5x^3 + 4
+\]
+\vspace{1em}
+\textbf{Practice 6:}
+\[
+\lim_{t \to -1} \frac{t-2}{t+3}
+\]
+\end{frame}
+
+% Practice 7 & 8
+\begin{frame}{Practice: 7 and 8}
+\textbf{Practice 7:}
+\[
+\lim_{x \to 1} \frac{\log(1+x)-x}{x^2}
+\]
+\vspace{1em}
+\textbf{Practice 8:}
+\[
+\lim_{x \to 2} \frac{x-2}{x^2-4}
+\]
+\end{frame}
+
+% Practice 9 & 10
+\begin{frame}{Practice: 9 and 10}
+\textbf{Practice 9:}
+\[
+\lim_{x \to 4} \frac{x^2-4x}{x^2-16}
+\]
+\vspace{1em}
+\textbf{Practice 10:}
+\[
+\lim_{x \to 2} \frac{x^2+x-6}{x-2}
+\]
+\end{frame}
+
+% Practice 11 & 12
+\begin{frame}{Practice: 11 and 12}
+\textbf{Practice 11:}
+\[
+\lim_{x \to -3} \frac{x^2-9}{x+3}
+\]
+\vspace{1em}
+\textbf{Practice 12:}
+\[
+\lim_{t \to 2} \frac{1}{2t^4-3t^3+t}
+\]
+\end{frame}
+
+% Practice 13 & 14
+\begin{frame}{Practice: 13 and 14}
+\textbf{Practice 13:}
+\[
+\lim_{x \to -1} \frac{\sqrt{x^2+8}-3}{x+1}
+\]
+\vspace{1em}
+\textbf{Practice 14:}
+\[
+\lim_{x \to 2} \frac{\sqrt{x+7}-\sqrt{11-x}}{2x-4}
+\]
+\end{frame}
+
+% Practice 15 & 16
+\begin{frame}{Practice: 15 and 16}
+\textbf{Practice 15:}
+\[
+\lim_{x \to 1} \frac{\sqrt{x+2}-\sqrt{4-x}}{x-1}
+\]
+\vspace{1em}
+\textbf{Practice 16:}
+\[
+\lim_{x \to 3} \frac{\sqrt{x-2}-\sqrt{4-x}}{x-3}
+\]
+\end{frame}
+
+% --- Solutions Section ---
+
+\section{Solutions to Practice Problems}
+
+% Practice 1 Solution
+\begin{frame}{Solution to Practice 1}
+\textbf{Practice 1:}
+\[
+\lim_{x \to 3} \left(\frac{4x-2}{x+2}\right)^4
+\]
+\textbf{Solution:}
+\begin{align*}
+\lim_{x \to 3} \frac{4x-2}{x+2} &= \frac{4\times 3-2}{3+2} = \frac{12-2}{5} = 2 \\
+\text{So,}\quad \lim_{x \to 3} \left(\frac{4x-2}{x+2}\right)^4 &= 2^4 = 16
+\end{align*}
+\end{frame}
+
+% Practice 2 Solution
+\begin{frame}{Solution to Practice 2}
+\textbf{Practice 2:}
+\[
+\lim_{t \to -3} \frac{1-t}{\cos(t)}
+\]
+\textbf{Solution:}
+\begin{align*}
+\lim_{t \to -3} (1-t) &= 1-(-3) = 4 \\
+\lim_{t \to -3} \cos(t) &= \cos(-3) = \cos(3) \approx -0.9900 \\
+\text{So,}\quad \lim_{t \to -3} \frac{1-t}{\cos(t)} &\approx \frac{4}{-0.9900} \approx -4.04
+\end{align*}
+\end{frame}
+
+% Practice 3 Solution
+\begin{frame}{Solution to Practice 3}
+\textbf{Practice 3:}
+\[
+\lim_{h \to 0} \frac{(2+h)^2-4}{2h}
+\]
+\textbf{Solution:}
+\begin{align*}
+(2+h)^2-4 &= 4+4h+h^2-4 = 4h+h^2 \\
+\frac{4h+h^2}{2h} &= \frac{h(4+h)}{2h} = \frac{4+h}{2} \quad (h \neq 0) \\
+\lim_{h \to 0} \frac{4+h}{2} &= 2
+\end{align*}
+\end{frame}
+
+% Practice 4 Solution
+\begin{frame}{Solution to Practice 4}
+\textbf{Practice 4:}
+\[
+\lim_{t \to -2} \frac{t-5}{t+4}
+\]
+\textbf{Solution:}
+\begin{align*}
+\lim_{t \to -2} (t-5) &= -2-5 = -7 \\
+\lim_{t \to -2} (t+4) &= -2+4 = 2 \\
+\text{So,}\quad \lim_{t \to -2} \frac{t-5}{t+4} &= \frac{-7}{2}
+\end{align*}
+\end{frame}
+
+% Practice 5 Solution
+\begin{frame}{Solution to Practice 5}
+\textbf{Practice 5:}
+\[
+\lim_{x \to 1} 5x^3 + 4
+\]
+\textbf{Solution:}
+\begin{align*}
+\lim_{x \to 1} 5x^3 + 4 &= 5\times 1^3 + 4 = 5+4 = 9
+\end{align*}
+\end{frame}
+
+% Practice 6 Solution
+\begin{frame}{Solution to Practice 6}
+\textbf{Practice 6:}
+\[
+\lim_{t \to -1} \frac{t-2}{t+3}
+\]
+\textbf{Solution:}
+\begin{align*}
+\lim_{t \to -1} (t-2) &= -1-2 = -3 \\
+\lim_{t \to -1} (t+3) &= -1+3 = 2 \\
+\text{So,}\quad \lim_{t \to -1} \frac{t-2}{t+3} &= \frac{-3}{2}
+\end{align*}
+\end{frame}
+
+% Practice 7 Solution
+\begin{frame}{Solution to Practice 7}
+\textbf{Practice 7:}
+\[
+\lim_{x \to 1} \frac{\log(1+x)-x}{x^2}
+\]
+\textbf{Solution:}
+\begin{align*}
+\text{Direct substitution:}\quad \frac{\log(2)-1}{1^2} = \log(2)-1 \approx -0.3069
+\end{align*}
+\end{frame}
+
+% Practice 8 Solution
+\begin{frame}{Solution to Practice 8}
+\textbf{Practice 8:}
+\[
+\lim_{x \to 2} \frac{x-2}{x^2-4}
+\]
+\textbf{Solution:}
+\begin{align*}
+x^2-4 &= (x-2)(x+2) \\
+\frac{x-2}{x^2-4} &= \frac{x-2}{(x-2)(x+2)} = \frac{1}{x+2} \quad (x \neq 2) \\
+\lim_{x \to 2} \frac{1}{x+2} &= \frac{1}{4}
+\end{align*}
+\end{frame}
+
+% Practice 9 Solution
+\begin{frame}{Solution to Practice 9}
+\textbf{Practice 9:}
+\[
+\lim_{x \to 4} \frac{x^2-4x}{x^2-16}
+\]
+\textbf{Solution:}
+\begin{align*}
+x^2-4x &= x(x-4) \\
+x^2-16 &= (x-4)(x+4) \\
+\frac{x^2-4x}{x^2-16} &= \frac{x(x-4)}{(x-4)(x+4)} = \frac{x}{x+4} \quad (x \neq 4) \\
+\lim_{x \to 4} \frac{x}{x+4} &= \frac{4}{8} = \frac{1}{2}
+\end{align*}
+\end{frame}
+
+% Practice 10 Solution
+\begin{frame}{Solution to Practice 10}
+\textbf{Practice 10:}
+\[
+\lim_{x \to 2} \frac{x^2+x-6}{x-2}
+\]
+\textbf{Solution:}
+\begin{align*}
+x^2+x-6 &= (x-3)(x+2) \\
+\frac{x^2+x-6}{x-2} &= \frac{(x-3)(x+2)}{x-2} \text{ (cannot cancel, so substitute)} \\
+\lim_{x \to 2} \frac{2^2+2-6}{2-2} &= \frac{4+2-6}{0} = \frac{0}{0} \text{ (indeterminate)} \\
+\text{Try factoring numerator:}\quad x^2+x-6 = (x-2)(x+3) \\
+\frac{x^2+x-6}{x-2} &= \frac{(x-2)(x+3)}{x-2} = x+3 \quad (x \neq 2) \\
+\lim_{x \to 2} x+3 &= 5
+\end{align*}
+\end{frame}
+
+% Practice 11 Solution
+\begin{frame}{Solution to Practice 11}
+\textbf{Practice 11:}
+\[
+\lim_{x \to -3} \frac{x^2-9}{x+3}
+\]
+\textbf{Solution:}
+\begin{align*}
+x^2-9 &= (x-3)(x+3) \\
+\frac{x^2-9}{x+3} &= \frac{(x-3)(x+3)}{x+3} = x-3 \quad (x \neq -3) \\
+\lim_{x \to -3} x-3 &= -3-3 = -6
+\end{align*}
+\end{frame}
+
+% Practice 12 Solution
+\begin{frame}{Solution to Practice 12}
+\textbf{Practice 12:}
+\[
+\lim_{t \to 2} \frac{1}{2t^4-3t^3+t}
+\]
+\textbf{Solution:}
+\begin{align*}
+2t^4-3t^3+t \big|_{t=2} &= 2\times 16 - 3\times 8 + 2 = 32-24+2 = 10 \\
+\lim_{t \to 2} \frac{1}{2t^4-3t^3+t} &= \frac{1}{10}
+\end{align*}
+\end{frame}
+
+% Practice 13 Solution
+\begin{frame}{Solution to Practice 13}
+\textbf{Practice 13:}
+\[
+\lim_{x \to -1} \frac{\sqrt{x^2+8}-3}{x+1}
+\]
+\textbf{Solution:}
+\begin{align*}
+\text{Substitute:}\quad x=-1 \implies \sqrt{(-1)^2+8}-3 = \sqrt{9}-3 = 3-3=0,\ x+1=0 \\
+\text{Indeterminate, so rationalize:} \\
+\frac{\sqrt{x^2+8}-3}{x+1} \cdot \frac{\sqrt{x^2+8}+3}{\sqrt{x^2+8}+3} = \frac{x^2+8-9}{(x+1)(\sqrt{x^2+8}+3)} = \frac{x^2-1}{(x+1)(\sqrt{x^2+8}+3)} \\
+= \frac{(x-1)(x+1)}{(x+1)(\sqrt{x^2+8}+3)} = \frac{x-1}{\sqrt{x^2+8}+3} \quad (x \neq -1) \\
+\lim_{x \to -1} \frac{x-1}{\sqrt{x^2+8}+3} = \frac{-2}{3+3} = -\frac{1}{3}
+\end{align*}
+\end{frame}
+
+% Practice 14 Solution
+\begin{frame}{Solution to Practice 14}
+\textbf{Practice 14:}
+\[
+\lim_{x \to 2} \frac{\sqrt{x+7}-\sqrt{11-x}}{2x-4}
+\]
+\textbf{Solution:}
+\begin{align*}
+\text{Substitute:}\quad x=2 \implies \sqrt{2+7}-\sqrt{11-2}=3-3=0,\ 2x-4=0 \\
+\text{Indeterminate, so rationalize:} \\
+\frac{\sqrt{x+7}-\sqrt{11-x}}{2x-4} \cdot \frac{\sqrt{x+7}+\sqrt{11-x}}{\sqrt{x+7}+\sqrt{11-x}} = \frac{(x+7)-(11-x)}{(2x-4)(\sqrt{x+7}+\sqrt{11-x})} \\
+= \frac{2x-4}{(2x-4)(\sqrt{x+7}+\sqrt{11-x})} = \frac{1}{\sqrt{x+7}+\sqrt{11-x}} \quad (x \neq 2) \\
+\lim_{x \to 2} \frac{1}{\sqrt{2+7}+\sqrt{11-2}} = \frac{1}{3+3} = \frac{1}{6}
+\end{align*}
+\end{frame}
+
+% Practice 15 Solution
+\begin{frame}{Solution to Practice 15}
+\textbf{Practice 15:}
+\[
+\lim_{x \to 1} \frac{\sqrt{x+2}-\sqrt{4-x}}{x-1}
+\]
+\textbf{Solution:}
+\begin{align*}
+\text{Substitute:}\quad x=1 \implies \sqrt{1+2}-\sqrt{4-1}=\sqrt{3}-\sqrt{3}=0,\ x-1=0 \\
+\text{Indeterminate, so rationalize:} \\
+\frac{\sqrt{x+2}-\sqrt{4-x}}{x-1} \cdot \frac{\sqrt{x+2}+\sqrt{4-x}}{\sqrt{x+2}+\sqrt{4-x}} = \frac{(x+2)-(4-x)}{(x-1)(\sqrt{x+2}+\sqrt{4-x})} \\
+= \frac{2x-2}{(x-1)(\sqrt{x+2}+\sqrt{4-x})} = \frac{2(x-1)}{(x-1)(\sqrt{x+2}+\sqrt{4-x})} = \frac{2}{\sqrt{x+2}+\sqrt{4-x}} \quad (x \neq 1) \\
+\lim_{x \to 1} \frac{2}{\sqrt{1+2}+\sqrt{4-1}} = \frac{2}{\sqrt{3}+\sqrt{3}} = \frac{2}{2\sqrt{3}} = \frac{1}{\sqrt{3}}
+\end{align*}
+\end{frame}
+
+% Practice 16 Solution
+\begin{frame}{Solution to Practice 16}
+\textbf{Practice 16:}
+\[
+\lim_{x \to 3} \frac{\sqrt{x-2}-\sqrt{4-x}}{x-3}
+\]
+\textbf{Solution:}
+\begin{align*}
+\text{Substitute:}\quad x=3 \implies \sqrt{3-2}-\sqrt{4-3}=1-1=0,\ x-3=0 \\
+\text{Indeterminate, so rationalize:} \\
+\frac{\sqrt{x-2}-\sqrt{4-x}}{x-3} \cdot \frac{\sqrt{x-2}+\sqrt{4-x}}{\sqrt{x-2}+\sqrt{4-x}} = \frac{(x-2)-(4-x)}{(x-3)(\sqrt{x-2}+\sqrt{4-x})} \\
+= \frac{2x-6}{(x-3)(\sqrt{x-2}+\sqrt{4-x})} = \frac{2(x-3)}{(x-3)(\sqrt{x-2}+\sqrt{4-x})} = \frac{2}{\sqrt{x-2}+\sqrt{4-x}} \quad (x \neq 3) \\
+\lim_{x \to 3} \frac{2}{\sqrt{3-2}+\sqrt{4-3}} = \frac{2}{1+1} = 1
+\end{align*}
+\end{frame}
+
+\end{document} 

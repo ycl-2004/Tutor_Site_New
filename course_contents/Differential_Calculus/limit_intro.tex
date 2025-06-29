@@ -1,0 +1,535 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Madrid}
+\usecolortheme{default}
+\usepackage{tikz}
+
+% Custom colors
+\definecolor{myblue}{RGB}{0,114,178}
+\definecolor{myorange}{RGB}{230,159,0}
+\definecolor{mygreen}{RGB}{0,158,115}
+\definecolor{myred}{RGB}{213,94,0}
+\definecolor{mypurple}{RGB}{204,121,167}
+\definecolor{mybrown}{RGB}{240,228,66}
+\definecolor{mygray}{RGB}{189,189,189}
+
+% Set colors
+\setbeamercolor{title}{fg=white,bg=myblue}
+\setbeamercolor{frametitle}{fg=white,bg=myblue}
+\setbeamercolor{section title}{fg=white,bg=myblue}
+\setbeamercolor{subsection title}{fg=white,bg=myorange}
+\setbeamercolor{item}{fg=myblue}
+\setbeamercolor{subitem}{fg=myorange}
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% Custom commands
+\newcommand{\limx}[2]{\lim_{x \to #1} #2}
+\newcommand{\limxa}[1]{\lim_{x \to a} #1}
+\newcommand{\limxap}[1]{\lim_{x \to a^+} #1}
+\newcommand{\limxam}[1]{\lim_{x \to a^-} #1}
+
+% Title page
+\title{1.3 The Limit of a Function}
+\subtitle{Introduction to Limits}
+\author{Differential Calculus}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+% Table of Contents
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+\section{Notation and Basic Concepts}
+
+\begin{frame}{Limit Notation}
+\frametitle{1.3 The Limit of a Function}
+
+\begin{block}{Limit Notation}
+We write:
+$$\limx{a}{f(x)} = L$$
+
+This should be read as:\\
+\textbf{The limit of $f(x)$ as $x$ approaches $a$ is $L$.}
+\end{block}
+
+\begin{itemize}
+\item This is shorthand notation to avoid writing long sentences
+\item Mathematically precise and language-independent
+\item Can also be written as: $f(x) \to L$ as $x \to a$
+\item Both notations mean exactly the same thing
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Example 1.3.2: Piecewise Function}
+\frametitle{Understanding Limits with a Simple Example}
+
+\begin{block}{Consider the function:}
+$$f(x) = \begin{cases}
+2x & \text{if } x < 3 \\
+9 & \text{if } x = 3 \\
+2x & \text{if } x > 3
+\end{cases}$$
+\end{block}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.3]
+\draw[->] (-1,0) -- (6,0) node[right] {$x$};
+\draw[->] (0,-1) -- (0,10) node[above] {$y$};
+\draw[grid=both,color=mygray!30] (-1,-1) grid (6,10);
+
+% Draw the function
+\draw[color=myblue,thick] (-0.5,-1) -- (2.9,5.8);
+\draw[color=myblue,thick] (3.1,6.2) -- (5.5,11);
+
+% Open circle at (3,6)
+\draw[color=myblue,thick,fill=white] (3,6) circle (0.1);
+
+% Closed circle at (3,9)
+\draw[color=myred,thick,fill=myred] (3,9) circle (0.1);
+
+% Labels
+
+\node at (3,-0.5) {3};
+\node at (-0.5,6) {6};
+\node at (-0.5,9) {9};
+\end{tikzpicture}
+\end{center}
+
+\end{frame}
+
+\begin{frame}{Analyzing the Function Near x = 3}
+\frametitle{What happens as x approaches 3?}
+
+\begin{block}{Let's plug in values close to 3:}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$x$ & 2.9 & 2.99 & 2.999 & 3.001 & 3.01 & 3.1 \\
+\hline
+$f(x)$ & 5.8 & 5.98 & 5.998 & 6.002 & 6.02 & 6.2 \\
+\hline
+\end{tabular}
+\end{center}
+\end{block}
+
+\begin{itemize}
+\item As $x$ gets closer to 3, $f(x)$ gets closer to 6
+\item We write: $\limx{3}{f(x)} = 6$
+\item Note: $f(3) = 9$, but the limit is 6
+\item The limit does NOT depend on the value at $x = 3$
+\end{itemize}
+
+\end{frame}
+
+\section{Informal Definition}
+
+\begin{frame}{Informal Definition of Limit}
+\frametitle{Definition 1.3.3}
+
+\begin{block}{Informal Definition}
+We write $\limx{a}{f(x)} = L$ if the value of the function $f(x)$ is sure to be arbitrarily close to $L$ whenever the value of $x$ is close enough to $a$, \textbf{without being exactly $a$}.
+\end{block}
+
+\begin{itemize}
+\item This is an informal definition sufficient for most purposes
+\item The condition "without being exactly $a$" is important
+\item We'll see why this matters when we study derivatives
+\item For now, this gives us a working understanding of limits
+\end{itemize}
+
+\end{frame}
+
+\section{More Examples}
+
+\begin{frame}{Example 1.3.4: Rational Function}
+\frametitle{Computing a Limit}
+
+\begin{block}{Consider:}
+$$\limx{2}{\frac{x-2}{x^2+x-6}}$$
+\end{block}
+
+\begin{itemize}
+\item If we try to compute $f(2)$, we get $\frac{0}{0}$ which is \textbf{undefined}
+\item This is exactly why we need limits!
+\item We must "sneak up" on points where functions are not defined
+\end{itemize}
+
+\begin{block}{Important:}
+$\frac{0}{0}$ is \textbf{not} $\infty$ and it is \textbf{not} 1. It is \textbf{undefined}.
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Example 1.3.4: Numerical Approach}
+\frametitle{Let's plug in values close to 2}
+
+\begin{block}{Numerical Analysis:}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$x$ & 1.9 & 1.99 & 1.999 & 2.001 & 2.01 & 2.1 \\
+\hline
+$f(x)$ & 0.20408 & 0.20040 & 0.20004 & 0.19996 & 0.19960 & 0.19608 \\
+\hline
+\end{tabular}
+\end{center}
+\end{block}
+
+\begin{itemize}
+\item As $x$ approaches 2, $f(x)$ approaches 0.2
+\item Therefore: $\limx{2}{\frac{x-2}{x^2+x-6}} = 0.2$
+\item The limit exists even though the function is not defined at $x = 2$
+\end{itemize}
+
+\end{frame}
+
+\section{When Limits Don't Exist}
+
+\begin{frame}{Example 1.3.5: Oscillating Function}
+\frametitle{When Limits Don't Exist - Case 1}
+
+\begin{block}{Consider:}
+$$\limx{0}{\sin\left(\frac{\pi}{x}\right)}$$
+\end{block}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\draw[->] (-3,0) -- (3,0) node[right] {$x$};
+\draw[->] (0,-2) -- (0,2) node[above] {$y$};
+\draw[grid=both,color=mygray!30] (-3,-2) grid (3,2);
+
+% Draw oscillating function
+\draw[color=myblue,thick,domain=-2.5:-0.1,samples=200] plot (\x,{sin(3.14159/\x r)});
+\draw[color=myblue,thick,domain=0.1:2.5,samples=200] plot (\x,{sin(3.14159/\x r)});
+
+\node at (0,-2.5) {Oscillates faster and faster as $x \to 0$};
+\end{tikzpicture}
+\end{center}
+
+\begin{itemize}
+\item As $x \to 0$, $\frac{\pi}{x}$ becomes larger and larger
+\item $\sin$ oscillates faster and faster
+\item Function doesn't approach a single number
+\item Therefore: $\limx{0}{\sin\left(\frac{\pi}{x}\right)} = \text{DNE}$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Example 1.3.6: Jump Discontinuity}
+\frametitle{When Limits Don't Exist - Case 2}
+
+\begin{block}{Consider:}
+$$f(x) = \begin{cases}
+x & \text{if } x < 2 \\
+-1 & \text{if } x = 2 \\
+x + 3 & \text{if } x > 2
+\end{cases}$$
+\end{block}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.4]
+\draw[->] (-1,0) -- (6,0) node[right] {$x$};
+\draw[->] (0,-2) -- (0,6) node[above] {$y$};
+\draw[grid=both,color=mygray!30] (-1,-2) grid (6,6);
+
+% Draw the function
+\draw[color=myblue,thick] (-0.5,-0.5) -- (1.9,1.9);
+\draw[color=myblue,thick] (2.1,5.1) -- (5.5,8.5);
+
+% Point at x=2
+\draw[color=myred,thick,fill=myred] (2,-1) circle (0.1);
+
+% Open circles
+\draw[color=myblue,thick,fill=white] (2,2) circle (0.1);
+\draw[color=myblue,thick,fill=white] (2,5) circle (0.1);
+
+\node at (2,-1.5) {$(2,-1)$};
+\node at (2,2.5) {$(2,2)$};
+\node at (2,5.5) {$(2,5)$};
+\end{tikzpicture}
+\end{center}
+
+\end{frame}
+
+\begin{frame}{Example 1.3.6: Numerical Analysis}
+\frametitle{Approaching from Different Sides}
+
+\begin{block}{Let's plug in values close to 2:}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$x$ & 1.9 & 1.99 & 1.999 & 2.001 & 2.01 & 2.1 \\
+\hline
+$f(x)$ & 1.9 & 1.99 & 1.999 & 5.001 & 5.01 & 5.1 \\
+\hline
+\end{tabular}
+\end{center}
+\end{block}
+
+\begin{itemize}
+\item From below: $f(x) \to 2$
+\item From above: $f(x) \to 5$
+\item Since we get different values, the limit does not exist
+\item $\limx{2}{f(x)} = \text{DNE}$
+\end{itemize}
+
+\end{frame}
+
+\section{One-Sided Limits}
+
+\begin{frame}{One-Sided Limits}
+\frametitle{Definition 1.3.7}
+
+\begin{block}{Left-Hand Limit:}
+$$\limxam{f(x)} = K$$
+When $f(x)$ gets closer to $K$ as $x < a$ approaches $a$ from below.
+\end{block}
+
+\begin{block}{Right-Hand Limit:}
+$$\limxap{f(x)} = L$$
+When $f(x)$ gets closer to $L$ as $x > a$ approaches $a$ from above.
+\end{block}
+
+\begin{itemize}
+\item Also called "left-hand" and "right-hand" limits
+\item Be careful to include the superscript $+$ and $-$ 
+\item Alternative notations exist but we'll use the standard ones
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Relationship Between Limits}
+\frametitle{Theorem 1.3.8}
+
+\begin{block}{Important Theorem:}
+$$\limxa{f(x)} = L \text{ if and only if } \limxam{f(x)} = L \text{ and } \limxap{f(x)} = L$$
+\end{block}
+
+\begin{itemize}
+\item The two-sided limit exists only if both one-sided limits exist and are equal
+\item If either one-sided limit doesn't exist, or if they're different, then the two-sided limit doesn't exist
+\item This gives us a systematic way to check if limits exist
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Two Functions - Which Limits Exist?}
+\frametitle{Function $f(x)$}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\draw[->] (-1,0) -- (3,0) node[right] {$x$};
+\draw[->] (0,0) -- (0,4) node[above] {$y$};
+\draw[grid=both,color=mygray!30] (-1,0) grid (3,4);
+\draw[color=myblue,thick] (-0.5,1) -- (0.9,1.9);
+\draw[color=myblue,thick] (1.1,2.1) -- (2.5,3);
+\draw[color=myred,thick,fill=white] (1,2) circle (0.1);
+\node at (1,2.5) {$(1,2)$};
+\end{tikzpicture}
+\end{center}
+
+\textbf{Function $f(x)$:}
+\begin{align*}
+\lim_{x\to 1^-} f(x) &= 2 \\
+\lim_{x\to 1^+} f(x) &= 2 \\
+\therefore \lim_{x\to 1} f(x) &= 2
+\end{align*}
+
+\end{frame}
+
+\begin{frame}{Two Functions - Which Limits Exist?}
+\frametitle{Function $g(t)$}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\draw[->] (-1,0) -- (3,0) node[right] {$t$};
+\draw[->] (0,-3) -- (0,3) node[above] {$y$};
+\draw[grid=both,color=mygray!30] (-1,-3) grid (3,3);
+\draw[color=myblue,thick] (-0.5,1) -- (0.9,1.9);
+\draw[color=myblue,thick] (1.1,-2.1) -- (2.5,-3);
+\draw[color=myred,thick,fill=white] (1,2) circle (0.1);
+\draw[color=myred,thick,fill=white] (1,-2) circle (0.1);
+\node at (1,2.5) {$(1,2)$};
+\node at (1,-2.5) {$(1,-2)$};
+\end{tikzpicture}
+\end{center}
+
+\textbf{Function $g(t)$:}
+\begin{align*}
+\lim_{t\to 1^-} g(t) &= 2 \\
+\lim_{t\to 1^+} g(t) &= -2 \\
+\therefore \lim_{t\to 1} g(t) &= \text{DNE}
+\end{align*}
+
+\end{frame}
+
+\section{Infinite Limits}
+
+\begin{frame}{Definition 1.3.10: Positive Infinity}
+\begin{block}{Positive Infinity:}
+$$\lim_{x\to a} f(x) = +\infty$$
+When $f(x)$ becomes arbitrarily large and positive as $x$ approaches $a$.
+\end{block}
+\end{frame}
+
+\begin{frame}{Definition 1.3.10: Negative Infinity}
+\begin{block}{Negative Infinity:}
+$$\lim_{x\to a} f(x) = -\infty$$
+When $f(x)$ becomes arbitrarily large and negative as $x$ approaches $a$.
+\end{block}
+\end{frame}
+
+\begin{frame}{Graph: Infinite Limits}
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+  \draw[->] (-2,0) -- (2,0) node[right] {$x$};
+  \draw[->] (0,0) -- (0,4) node[above] {$y$};
+  \draw[grid=both,color=mygray!30] (-2,0) grid (2,4);
+  \draw[color=myblue,thick,domain=-1.9:-0.1,samples=100] plot (\x,{1/(\x*\x)});
+  \draw[color=myblue,thick,domain=0.1:1.9,samples=100] plot (\x,{1/(\x*\x)});
+  \node at (0,4.3) {$f(x) = \frac{1}{x^2}$};
+\end{tikzpicture}
+
+\vspace{1em}
+$\displaystyle \lim_{x\to 0} \frac{1}{x^2} = +\infty$
+\end{center}
+\end{frame}
+
+\begin{frame}{One-Sided Infinite Limits}
+\frametitle{Definition 1.3.11}
+
+\begin{block}{Right-Hand Infinite Limits:}
+$$\limxap{f(x)} = +\infty \text{ or } \limxap{f(x)} = -\infty$$
+\end{block}
+
+\begin{block}{Left-Hand Infinite Limits:}
+$$\limxam{f(x)} = +\infty \text{ or } \limxam{f(x)} = -\infty$$
+\end{block}
+
+\begin{itemize}
+\item These occur when functions approach infinity from only one side
+\item Very common in rational functions and trigonometric functions
+\item Important for understanding vertical asymptotes
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Example 1.3.12: Trigonometric Function}
+\frametitle{One-Sided Infinite Limits}
+
+\begin{block}{Consider:}
+$$g(x) = \frac{1}{\sin(x)}$$
+Find the one-sided limits as $x \to \pi$.
+\end{block}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.4]
+\draw[->] (0,0) -- (7,0) node[right] {$x$};
+\draw[->] (0,-4) -- (0,4) node[above] {$y$};
+\draw[grid=both,color=mygray!30] (0,-4) grid (7,4);
+
+% Draw sin(x)
+\draw[color=myorange,thick,domain=0:6.28,samples=100] plot (\x,{sin(\x r)});
+\node at (6.5,0.5) {$\sin(x)$};
+
+% Draw 1/sin(x) with asymptotes
+\draw[color=myblue,thick,domain=0.1:3.04,samples=100] plot (\x,{1/sin(\x r)});
+\draw[color=myblue,thick,domain=3.24:6.18,samples=100] plot (\x,{1/sin(\x r)});
+
+% Vertical asymptotes
+\draw[color=myred,dashed] (3.14159,-4) -- (3.14159,4);
+\draw[color=myred,dashed] (6.28318,-4) -- (6.28318,4);
+
+\node at (3.14159,-4.5) {$\pi$};
+\node at (6.28318,-4.5) {$2\pi$};
+\end{tikzpicture}
+\end{center}
+
+\end{frame}
+
+\begin{frame}{Understanding the Behavior: Analysis}
+\begin{block}{Analysis:}
+\begin{itemize}
+  \item As $x \to \pi^-$: $\sin(x) \to 0^+$ (small positive numbers)
+  \item Therefore: $\dfrac{1}{\sin(x)} \to +\infty$
+  \item As $x \to \pi^+$: $\sin(x) \to 0^-$ (small negative numbers)
+  \item Therefore: $\dfrac{1}{\sin(x)} \to -\infty$
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Understanding the Behavior: Result}
+\begin{block}{Result:}
+\[
+\lim_{x \to \pi^-} \frac{1}{\sin(x)} = +\infty \\
+\lim_{x \to \pi^+} \frac{1}{\sin(x)} = -\infty
+\]
+\end{block}
+
+\begin{itemize}
+  \item Since the one-sided limits are different, $\lim_{x \to \pi} \frac{1}{\sin(x)} = \text{DNE}$
+  \item But the one-sided infinite limits give us more information than just "DNE"
+\end{itemize}
+\end{frame}
+
+\section{Summary}
+
+\begin{frame}{Summary: Types of Limits}
+\frametitle{What We've Learned}
+
+\begin{block}{Limits That Exist:}
+\begin{itemize}
+\item $\limxa{f(x)} = L$ where $L$ is a finite number
+\item Both one-sided limits exist and are equal
+\end{itemize}
+\end{block}
+
+\begin{block}{Limits That Don't Exist:}
+\begin{enumerate}
+\item \textbf{Oscillation}: Function oscillates wildly (like $\sin(\frac{\pi}{x})$)
+\item \textbf{Jump}: One-sided limits are different
+\item \textbf{Infinite}: Function approaches $\pm\infty$
+\end{enumerate}
+\end{block}
+
+\begin{block}{One-Sided Limits:}
+\begin{itemize}
+\item $\limxam{f(x)} = L$ (left-hand limit)
+\item $\limxap{f(x)} = L$ (right-hand limit)
+\item Can be finite numbers or $\pm\infty$
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Key Takeaways}
+\frametitle{Important Concepts}
+
+\begin{block}{Notation:}
+$$\limxa{f(x)} = L \quad \text{vs} \quad f(a) = L$$
+\end{block}
+
+\begin{block}{Critical Points:}
+\begin{itemize}
+\item Limits describe behavior \textbf{near} a point, not \textbf{at} the point
+\item A function can have a limit at $x = a$ even if $f(a)$ is undefined
+\item Infinity is not a number - it's a description of behavior
+\item One-sided limits help us understand discontinuities
+\end{itemize}
+\end{block}
+
+\begin{block}{Next Steps:}
+We'll develop systematic methods for computing limits using limit laws and algebraic techniques.
+\end{block}
+
+\end{frame}
+
+\end{document} 

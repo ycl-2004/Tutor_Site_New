@@ -1,0 +1,220 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{xcolor}
+
+% Custom colors
+\definecolor{primary}{RGB}{41, 128, 185}
+\definecolor{secondary}{RGB}{52, 152, 219}
+\definecolor{accent}{RGB}{231, 76, 60}
+\definecolor{lightgray}{RGB}{236, 240, 241}
+
+% Page setup
+\geometry{a4paper, margin=1in}
+
+% Title page info
+\title{Pre-Calculus 11 \\ Chapter 6: Absolute Values and Reciprocal Functions}
+\author{Created by Yi-Chen Lin}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Chapter Overview}
+This chapter covers absolute values and reciprocal functions, including:
+\begin{itemize}
+    \item Understanding and evaluating absolute values
+    \item Graphing absolute value functions and transformations
+    \item Solving absolute value equations and inequalities
+    \item Understanding reciprocal functions and their properties
+    \item Solving equations with multiple absolute values
+\end{itemize}
+
+\section{6.1 Basics with Absolute Values}
+\subsection*{Key Concepts}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Absolute Value Definition]
+    \begin{itemize}
+        \item $|x| = \begin{cases} x, & \text{if } x \geq 0 \\ -x, & \text{if } x < 0 \end{cases}$
+        \item $|x| = \sqrt{x^2}$
+        \item Absolute value represents distance from zero on the number line
+        \item Always non-negative: $|x| \geq 0$ for all real numbers $x$
+    \end{itemize}
+\end{tcolorbox}
+
+\subsection*{Properties}
+\begin{itemize}
+    \item $|a \cdot b| = |a| \cdot |b|$
+    \item $|\frac{a}{b}| = \frac{|a|}{|b|}$ (where $b \neq 0$)
+    \item $|a + b| \leq |a| + |b|$ (Triangle Inequality)
+    \item $|x| = |-x|$
+\end{itemize}
+
+\subsection*{Examples}
+\begin{enumerate}
+    \item $|-15| = 15$
+    \item $|25 - 17| = |8| = 8$
+    \item $|x + 5| = 12$ has solutions $x = 7$ and $x = -17$
+\end{enumerate}
+
+\section{6.2 Absolute Value Functions}
+\subsection*{Key Concepts}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Graphing Absolute Value Functions]
+    \begin{itemize}
+        \item $y = |f(x)|$ reflects any negative parts of $f(x)$ above the $x$-axis
+        \item Find $x$-intercepts of $f(x)$ to determine reflection points
+        \item Piecewise definition: $y = \begin{cases} f(x), & f(x) \geq 0 \\ -f(x), & f(x) < 0 \end{cases}$
+    \end{itemize}
+\end{tcolorbox}
+
+\subsection*{Common Transformations}
+\begin{itemize}
+    \item $y = |x|$: V-shape with vertex at $(0,0)$
+    \item $y = |x - h| + k$: V-shape with vertex at $(h,k)$
+    \item $y = a|x - h| + k$: V-shape with vertex at $(h,k)$, slope $\pm a$
+\end{itemize}
+
+\subsection*{Examples}
+\begin{enumerate}
+    \item $y = |x^2 - 4|$: Reflects the parabola below $x$-axis upward
+    \item $y = |x + 2|$: V-shape with vertex at $(-2,0)$
+    \item $y = |x^3 - x|$: Reflects negative parts of cubic function
+\end{enumerate}
+
+\section{6.3 Solving Absolute Value Equations}
+\subsection*{Key Concepts}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Solving Absolute Value Equations]
+    \begin{enumerate}
+        \item For $|x| = a$, set up two cases: $x = a$ and $x = -a$
+        \item For $|f(x)| = a$, solve $f(x) = a$ and $f(x) = -a$
+        \item Always check for extraneous solutions
+        \item $|x| = -a$ has no solution if $a > 0$
+    \end{enumerate}
+\end{tcolorbox}
+
+\subsection*{Solution Process}
+\begin{enumerate}
+    \item Isolate the absolute value expression
+    \item Set up two equations (positive and negative cases)
+    \item Solve each equation separately
+    \item Check all solutions in the original equation
+\end{enumerate}
+
+\subsection*{Examples}
+\begin{enumerate}
+    \item $|x-3| = 7$: $x-3 = 7$ or $x-3 = -7$; $x = 10$ or $x = -4$
+    \item $|2x-5| = |x+4|$: Consider all sign combinations; $x = 9$ or $x = \frac{1}{3}$
+    \item $|x-1| = x+1$: Only $x = 0$ is valid (check for extraneous roots)
+\end{enumerate}
+
+\section{6.4 Reciprocal Functions}
+\subsection*{Key Concepts}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Reciprocal Functions]
+    \begin{itemize}
+        \item $y = \frac{1}{f(x)}$ is the reciprocal of $f(x)$
+        \item Vertical asymptotes occur where $f(x) = 0$
+        \item Invariant points occur where $f(x) = 1$ or $f(x) = -1$
+        \item Horizontal asymptote is usually $y = 0$
+    \end{itemize}
+\end{tcolorbox}
+
+\subsection*{Graphing Process}
+\begin{enumerate}
+    \item Graph the original function $f(x)$
+    \item Mark vertical asymptotes where $f(x) = 0$
+    \item Mark invariant points where $f(x) = \pm 1$
+    \item Take reciprocals of other $y$-values
+    \item Sketch the reciprocal function
+\end{enumerate}
+
+\subsection*{Examples}
+\begin{enumerate}
+    \item $y = \frac{1}{x-2}$: Vertical asymptote at $x = 2$, invariant point at $(3,1)$
+    \item $y = \frac{1}{x^2-4}$: Vertical asymptotes at $x = \pm 2$, horizontal asymptote at $y = 0$
+    \item $y = \frac{1}{\sqrt{x-3}}$: Domain $x > 3$, vertical asymptote at $x = 3$
+\end{enumerate}
+
+\section{6.5 Solving Equations with Two Absolute Values}
+\subsection*{Key Concepts}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Multiple Absolute Values]
+    \begin{itemize}
+        \item Consider all possible sign combinations for each absolute value
+        \item Use number line to determine valid intervals
+        \item Check all solutions for extraneous roots
+        \item For $|x-a| + |x-b| = c$, consider 3 cases based on relative positions
+    \end{itemize}
+\end{tcolorbox}
+
+\subsection*{Solution Strategy}
+\begin{enumerate}
+    \item Identify critical points (where each absolute value equals zero)
+    \item Divide number line into intervals based on critical points
+    \item For each interval, determine signs of absolute value expressions
+    \item Set up and solve equations for each valid case
+    \item Check all solutions in original equation
+\end{enumerate}
+
+\subsection*{Examples}
+\begin{enumerate}
+    \item $|x-2| + |x+6| = 11$: Solutions $x = 3.5$ and $x = -7.5$
+    \item $|x-1| + |x+5| = 8$: Solutions $x = 2$ and $x = -6$
+    \item $|x+3| - |x-2| = 4$: Solution $x = 1.5$
+\end{enumerate}
+
+\section*{Practice Problems}
+\subsection*{Basic Absolute Values}
+\begin{enumerate}
+    \item Evaluate: $|-23| + |17| - |8|$
+    \item Solve: $|3x + 7| = 13$
+    \item Order from least to greatest: $|-5.2|, |-3.8|, |-7.1|$
+\end{enumerate}
+
+\subsection*{Absolute Value Functions}
+\begin{enumerate}
+    \item Graph $y = |x^2 - 9|$
+    \item Write piecewise form for $y = |2x - 6|$
+    \item Find domain and range of $y = |x^3 - 4x|$
+\end{enumerate}
+
+\subsection*{Solving Equations}
+\begin{enumerate}
+    \item Solve $|x-4| = 2x + 1$
+    \item Solve $|x^2-5x+6| = 2$
+    \item Solve $|x+2| + |x-3| = 7$
+\end{enumerate}
+
+\subsection*{Reciprocal Functions}
+\begin{enumerate}
+    \item Find asymptotes of $y = \frac{1}{x^2-16}$
+    \item Find invariant points of $y = \frac{1}{x-5}$
+    \item Graph $y = \frac{1}{x^2+1}$
+\end{enumerate}
+
+\section*{Chapter Summary}
+\begin{tcolorbox}[colback=lightgray,colframe=primary,title=Key Takeaways]
+    \begin{itemize}
+        \item Master the definition and properties of absolute values
+        \item Understand how to graph absolute value functions and transformations
+        \item Practice solving absolute value equations with proper case analysis
+        \item Learn to identify asymptotes and invariant points in reciprocal functions
+        \item Develop systematic approach for equations with multiple absolute values
+        \item Always check for extraneous solutions and state domains appropriately
+    \end{itemize}
+\end{tcolorbox}
+
+\section*{Common Mistakes to Avoid}
+\begin{tcolorbox}[colback=lightgray,colframe=accent,title=Watch Out For]
+    \begin{itemize}
+        \item Forgetting to check for extraneous solutions
+        \item Not considering all cases when solving absolute value equations
+        \item Confusing absolute value functions with reciprocal functions
+        \item Missing vertical asymptotes in reciprocal functions
+        \item Incorrectly applying absolute value properties
+    \end{itemize}
+\end{tcolorbox}
+
+\end{document} 

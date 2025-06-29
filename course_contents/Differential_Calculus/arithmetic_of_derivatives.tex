@@ -1,0 +1,889 @@
+% !TEX program = pdflatex
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Madrid}
+\usecolortheme{default}
+\usepackage{tikz}
+
+% Custom colors
+\definecolor{myblue}{RGB}{0,114,178}
+\definecolor{myorange}{RGB}{230,159,0}
+\definecolor{mygreen}{RGB}{0,158,115}
+\definecolor{myred}{RGB}{213,94,0}
+\definecolor{mypurple}{RGB}{204,121,167}
+\definecolor{mybrown}{RGB}{240,228,66}
+\definecolor{mygray}{RGB}{189,189,189}
+
+% Set colors
+\setbeamercolor{title}{fg=white,bg=myblue}
+\setbeamercolor{frametitle}{fg=white,bg=myblue}
+\setbeamercolor{section title}{fg=white,bg=myblue}
+\setbeamercolor{subsection title}{fg=white,bg=myorange}
+\setbeamercolor{item}{fg=myblue}
+\setbeamercolor{subitem}{fg=myorange}
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% Custom commands
+\newcommand{\limx}[2]{\lim_{x \to #1} #2}
+
+% Title page
+\title{Arithmetic of Derivatives}
+\subtitle{A Differentiation Toolbox}
+\author{Differential Calculus}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}{Why We Need Differentiation Rules}
+\begin{itemize}
+  \item Computing derivatives using the limit definition becomes unwieldy for complex functions
+  \item We need efficient tools to break down complicated derivatives into simple ones
+  \item Similar to how we used "arithmetic of limits" for computing limits
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Basic Derivatives We Know}
+\begin{block}{Simple Functions}
+\[
+\begin{aligned}
+  \frac{d}{dx} 1 &= 0 \\
+  \frac{d}{dx} x &= 1 \\
+  \frac{d}{dx} x^2 &= 2x \\
+  \frac{d}{dx} \sqrt{x} &= \frac{1}{2\sqrt{x}}
+\end{aligned}
+\]
+\end{block}
+\end{frame}
+
+\section{Linearity of Differentiation}
+
+\begin{frame}{Derivative of Sum and Difference}
+\begin{block}{Lemma 2.4.1}
+Let $f(x)$, $g(x)$ be differentiable functions and let $c \in \mathbb{R}$ be a constant. Then:
+\[
+\begin{aligned}
+  \frac{d}{dx}[f(x) + g(x)] &= f'(x) + g'(x) \\
+  \frac{d}{dx}[f(x) - g(x)] &= f'(x) - g'(x) \\
+  \frac{d}{dx}[c \cdot f(x)] &= c \cdot f'(x)
+\end{aligned}
+\]
+\end{block}
+\end{frame}
+
+\begin{frame}{Linearity of Differentiation}
+\begin{block}{Theorem 2.4.2}
+Let $f(x)$, $g(x)$ be differentiable functions, let $\alpha, \beta \in \mathbb{R}$ be constants and define:
+\[
+S(x) = \alpha f(x) + \beta g(x)
+\]
+Then:
+\[
+\frac{dS}{dx} = S'(x) = \alpha f'(x) + \beta g'(x)
+\]
+\end{block}
+\end{frame}
+
+\section{Product Rule}
+
+\begin{frame}{The Product Rule}
+\begin{block}{Theorem 2.4.3}
+Let $f(x)$, $g(x)$ be differentiable functions, then:
+\[
+\frac{d}{dx}[f(x) \cdot g(x)] = f'(x) \cdot g(x) + f(x) \cdot g'(x)
+\]
+\end{block}
+\begin{itemize}
+  \item The derivative of a product is NOT the product of derivatives
+  \item Remember: "First times derivative of second, plus second times derivative of first"
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Special Case: Derivative of a Square}
+\begin{block}{Corollary 2.4.4}
+Let $f(x)$ be a differentiable function, then:
+\[
+\frac{d}{dx}[f(x)]^2 = 2f(x) \cdot f'(x)
+\]
+\end{block}
+\end{frame}
+
+\section{Quotient Rule}
+
+\begin{frame}{The Quotient Rule}
+\begin{block}{Theorem 2.4.5}
+Let $f(x)$, $g(x)$ be differentiable functions, then:
+\[
+\frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{[g(x)]^2}
+\]
+\end{block}
+\begin{itemize}
+  \item This derivative exists except at points where $g(x) = 0$
+  \item Remember: "Low d-high minus high d-low, over low squared"
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Special Case: Derivative of a Reciprocal}
+\begin{block}{Corollary 2.4.6}
+Let $g(x)$ be a differentiable function, then:
+\[
+\frac{d}{dx}\left[\frac{1}{g(x)}\right] = -\frac{g'(x)}{[g(x)]^2}
+\]
+\end{block}
+\end{frame}
+
+\section{Examples}
+
+\begin{frame}{Example 1: Using Linearity}
+\textbf{Find the derivative of } $f(x) = 3x^2 + 5x - 2$
+\end{frame}
+
+\begin{frame}{Solution to Example 1}
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f(x) &= 3x^2 + 5x - 2 \\
+  f'(x) &= \frac{d}{dx}(3x^2) + \frac{d}{dx}(5x) + \frac{d}{dx}(-2) \\
+  &= 3 \cdot \frac{d}{dx}(x^2) + 5 \cdot \frac{d}{dx}(x) + 0 \\
+  &= 3 \cdot 2x + 5 \cdot 1 \\
+  &= 6x + 5
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Example 2: Using Product Rule}
+\textbf{Find the derivative of } $f(x) = x^2 \cdot \sqrt{x}$
+\end{frame}
+
+\begin{frame}{Solution to Example 2}
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f(x) &= x^2 \cdot \sqrt{x} \\
+  f'(x) &= \frac{d}{dx}(x^2) \cdot \sqrt{x} + x^2 \cdot \frac{d}{dx}(\sqrt{x}) \\
+  &= 2x \cdot \sqrt{x} + x^2 \cdot \frac{1}{2\sqrt{x}} \\
+  &= 2x\sqrt{x} + \frac{x^2}{2\sqrt{x}} \\
+  &= 2x\sqrt{x} + \frac{x\sqrt{x}}{2} \\
+  &= \frac{5x\sqrt{x}}{2}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Example 3: Using Quotient Rule}
+\textbf{Find the derivative of } $f(x) = \frac{x^2 + 1}{x - 1}$
+\end{frame}
+
+\begin{frame}{Solution to Example 3}
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f(x) &= \frac{x^2 + 1}{x - 1} \\
+  f'(x) &= \frac{\frac{d}{dx}(x^2 + 1) \cdot (x-1) - (x^2 + 1) \cdot \frac{d}{dx}(x-1)}{(x-1)^2} \\
+  &= \frac{2x \cdot (x-1) - (x^2 + 1) \cdot 1}{(x-1)^2} \\
+  &= \frac{2x^2 - 2x - x^2 - 1}{(x-1)^2} \\
+  &= \frac{x^2 - 2x - 1}{(x-1)^2}
+\end{aligned}
+\]
+\end{frame}
+
+\section{Practice Problems}
+
+\begin{frame}{Practice: 1 and 2}
+\textbf{Practice 1:}
+\[
+\text{Find the derivative of } f(x) = 4x^3 - 2x^2 + 7x - 3
+\]
+\vspace{1em}
+\textbf{Practice 2:}
+\[
+\text{Find the derivative of } f(x) = x^3 \cdot (x^2 + 1)
+\]
+\end{frame}
+
+\begin{frame}{Practice: 3 and 4}
+\textbf{Practice 3:}
+\[
+\text{Find the derivative of } f(x) = \frac{x^2 - 4}{x + 2}
+\]
+\vspace{1em}
+\textbf{Practice 4:}
+\[
+\text{Find the derivative of } f(x) = \frac{1}{x^2 + 1}
+\]
+\end{frame}
+
+\begin{frame}{Practice: 5}
+\textbf{Practice 5:}
+\[
+\text{Find the derivative of } f(x) = (x^2 + 3x)(x^3 - 2)
+\]
+\end{frame}
+
+\begin{frame}{Practice: 6 and 7}
+\textbf{Practice 6:}
+\[
+\text{Find the derivative of } f(x) = \frac{x^3 + 2x}{x^2 - 1}
+\]
+\vspace{1em}
+\textbf{Practice 7:}
+\[
+\text{Find the derivative of } f(x) = (x^2 + 1)^2
+\]
+\end{frame}
+
+\begin{frame}{Practice: 8 and 9}
+\textbf{Practice 8:}
+\[
+\text{Find the derivative of } f(x) = \frac{1}{x^3 + 3x}
+\]
+\vspace{1em}
+\textbf{Practice 9:}
+\[
+\text{Find the derivative of } f(x) = x^2 \cdot \sqrt{x^2 + 1}
+\]
+\end{frame}
+
+\begin{frame}{Practice: 10 and 11}
+\textbf{Practice 10:}
+\[
+\text{Find the derivative of } f(x) = \frac{\sqrt{x}}{x^2 + 1}
+\]
+\vspace{1em}
+\textbf{Practice 11:}
+\[
+\text{Find the derivative of } f(x) = (x^3 - 2x)(x^2 + 3)^2
+\]
+\end{frame}
+
+\begin{frame}{Practice: 12 and 13}
+\textbf{Practice 12:}
+\[
+\text{Find the derivative of } f(x) = \frac{x^2 - 4}{x^2 + 4}
+\]
+\vspace{1em}
+\textbf{Practice 13:}
+\[
+\text{Find the derivative of } f(x) = \frac{1}{(x^2 + 1)^2}
+\]
+\end{frame}
+
+\begin{frame}{Practice: 14 and 15}
+\textbf{Practice 14:}
+\[
+\text{Find the derivative of } f(x) = x \cdot \sqrt{x^2 - 1}
+\]
+\vspace{1em}
+\textbf{Practice 15:}
+\[
+\text{Find the derivative of } f(x) = \frac{x^3 + x}{x^2 - x + 1}
+\]
+\end{frame}
+
+% 新增三角函数、指数、对数、反三角函数练习题
+\begin{frame}{Practice: 16 and 17}
+\textbf{Practice 16:}
+\[
+\text{Find the derivative of } f(x) = x^2 \sin(x)
+\]
+\vspace{1em}
+\textbf{Practice 17:}
+\[
+\text{Find the derivative of } f(x) = e^x \cos(x)
+\]
+\end{frame}
+
+\begin{frame}{Practice: 18 and 19}
+\textbf{Practice 18:}
+\[
+\text{Find the derivative of } f(x) = \ln(x^2 + 1)
+\]
+\vspace{1em}
+\textbf{Practice 19:}
+\[
+\text{Find the derivative of } f(x) = \frac{\sin(x)}{x}
+\]
+\end{frame}
+
+\begin{frame}{Practice: 20 and 21}
+\textbf{Practice 20:}
+\[
+\text{Find the derivative of } f(x) = \arctan(x^2)
+\]
+\vspace{1em}
+\textbf{Practice 21:}
+\[
+\text{Find the derivative of } f(x) = x \cdot e^x
+\]
+\end{frame}
+
+\begin{frame}{Practice: 22 and 23}
+\textbf{Practice 22:}
+\[
+\text{Find the derivative of } f(x) = \frac{\ln(x)}{x}
+\]
+\vspace{1em}
+\textbf{Practice 23:}
+\[
+\text{Find the derivative of } f(x) = \arcsin(\sqrt{x})
+\]
+\end{frame}
+
+\begin{frame}{Practice: 24 and 25}
+\textbf{Practice 24:}
+\[
+\text{Find the derivative of } f(x) = \sin(x) \cos(x)
+\]
+\vspace{1em}
+\textbf{Practice 25:}
+\[
+\text{Find the derivative of } f(x) = \frac{e^x}{x^2 + 1}
+\]
+\end{frame}
+
+\section{Solutions to Practice Problems}
+
+\begin{frame}{Solution to Practice 1}
+\textbf{Practice 1:}
+
+Find the derivative of $f(x) = 4x^3 - 2x^2 + 7x - 3$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{d}{dx}(4x^3) - \frac{d}{dx}(2x^2) + \frac{d}{dx}(7x) - \frac{d}{dx}(3) \\
+  &= 4 \cdot 3x^2 - 2 \cdot 2x + 7 \cdot 1 - 0 \\
+  &= 12x^2 - 4x + 7
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 2 (Part 1)}
+\textbf{Practice 2:}
+
+Find the derivative of $f(x) = x^3 \cdot (x^2 + 1)$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{d}{dx}(x^3) \cdot (x^2 + 1) + x^3 \cdot \frac{d}{dx}(x^2 + 1) \\
+  &= 3x^2 \cdot (x^2 + 1) + x^3 \cdot 2x
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 2 (Part 2)}
+\textbf{Solution (continued):}
+\[
+\begin{aligned}
+  &= 3x^4 + 3x^2 + 2x^4 \\
+  &= 5x^4 + 3x^2
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 3 (Part 1)}
+\textbf{Practice 3:}
+
+Find the derivative of $f(x) = \frac{x^2 - 4}{x + 2}$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{\frac{d}{dx}(x^2 - 4) \cdot (x+2) - (x^2 - 4) \cdot \frac{d}{dx}(x+2)}{(x+2)^2} \\
+  &= \frac{2x \cdot (x+2) - (x^2 - 4) \cdot 1}{(x+2)^2}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 3 (Part 2)}
+\textbf{Solution (continued):}
+\[
+\begin{aligned}
+  &= \frac{2x^2 + 4x - x^2 + 4}{(x+2)^2} \\
+  &= \frac{x^2 + 4x + 4}{(x+2)^2} \\
+  &= \frac{(x+2)^2}{(x+2)^2} = 1
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 4}
+\textbf{Practice 4:}
+
+Find the derivative of $f(x) = \frac{1}{x^2 + 1}$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= -\frac{\frac{d}{dx}(x^2 + 1)}{(x^2 + 1)^2} \\
+  &= -\frac{2x}{(x^2 + 1)^2}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 5 (Part 1)}
+\textbf{Practice 5:}
+
+Find the derivative of $f(x) = (x^2 + 3x)(x^3 - 2)$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{d}{dx}(x^2 + 3x) \cdot (x^3 - 2) + (x^2 + 3x) \cdot \frac{d}{dx}(x^3 - 2) \\
+  &= (2x + 3) \cdot (x^3 - 2) + (x^2 + 3x) \cdot 3x^2
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 5 (Part 2)}
+\textbf{Solution (continued):}
+\[
+\begin{aligned}
+  &= 2x^4 - 4x + 3x^3 - 6 + 3x^4 + 9x^3 \\
+  &= 5x^4 + 12x^3 - 4x - 6
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 6 (Part 1)}
+\textbf{Practice 6:}
+
+Find the derivative of $f(x) = \frac{x^3 + 2x}{x^2 - 1}$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{\frac{d}{dx}(x^3 + 2x) \cdot (x^2 - 1) - (x^3 + 2x) \cdot \frac{d}{dx}(x^2 - 1)}{(x^2 - 1)^2} \\
+  &= \frac{(3x^2 + 2) \cdot (x^2 - 1) - (x^3 + 2x) \cdot 2x}{(x^2 - 1)^2}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 6 (Part 2)}
+\textbf{Solution (continued):}
+\[
+\begin{aligned}
+  &= \frac{3x^4 - 3x^2 + 2x^2 - 2 - 2x^4 - 4x^2}{(x^2 - 1)^2} \\
+  &= \frac{x^4 - 5x^2 - 2}{(x^2 - 1)^2}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 7}
+\textbf{Practice 7:}
+
+Find the derivative of $f(x) = (x^2 + 1)^2$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= 2(x^2 + 1) \cdot \frac{d}{dx}(x^2 + 1) \\
+  &= 2(x^2 + 1) \cdot 2x \\
+  &= 4x(x^2 + 1)
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 8}
+\textbf{Practice 8:}
+
+Find the derivative of $f(x) = \frac{1}{x^3 + 3x}$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= -\frac{\frac{d}{dx}(x^3 + 3x)}{(x^3 + 3x)^2} \\
+  &= -\frac{3x^2 + 3}{(x^3 + 3x)^2} \\
+  &= -\frac{3(x^2 + 1)}{(x^3 + 3x)^2}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 9 (Part 1)}
+\textbf{Practice 9:}
+
+Find the derivative of $f(x) = x^2 \cdot \sqrt{x^2 + 1}$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{d}{dx}(x^2) \cdot \sqrt{x^2 + 1} + x^2 \cdot \frac{d}{dx}(\sqrt{x^2 + 1}) \\
+  &= 2x \cdot \sqrt{x^2 + 1} + x^2 \cdot \frac{1}{2\sqrt{x^2 + 1}} \cdot 2x
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 9 (Part 2)}
+\textbf{Solution (continued):}
+\[
+\begin{aligned}
+  &= 2x\sqrt{x^2 + 1} + \frac{x^3}{\sqrt{x^2 + 1}} \\
+  &= \frac{2x(x^2 + 1) + x^3}{\sqrt{x^2 + 1}} \\
+  &= \frac{2x^3 + 2x + x^3}{\sqrt{x^2 + 1}} \\
+  &= \frac{3x^3 + 2x}{\sqrt{x^2 + 1}}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 10 (Part 1)}
+\textbf{Practice 10:}
+
+Find the derivative of $f(x) = \frac{\sqrt{x}}{x^2 + 1}$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{\frac{d}{dx}(\sqrt{x}) \cdot (x^2 + 1) - \sqrt{x} \cdot \frac{d}{dx}(x^2 + 1)}{(x^2 + 1)^2} \\
+  &= \frac{\frac{1}{2\sqrt{x}} \cdot (x^2 + 1) - \sqrt{x} \cdot 2x}{(x^2 + 1)^2}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 10 (Part 2)}
+\textbf{Solution (continued):}
+\[
+\begin{aligned}
+  &= \frac{\frac{x^2 + 1}{2\sqrt{x}} - 2x\sqrt{x}}{(x^2 + 1)^2} \\
+  &= \frac{x^2 + 1 - 4x^2}{2\sqrt{x}(x^2 + 1)^2} \\
+  &= \frac{1 - 3x^2}{2\sqrt{x}(x^2 + 1)^2}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 11 (Part 1)}
+\textbf{Practice 11:}
+
+Find the derivative of $f(x) = (x^3 - 2x)(x^2 + 3)^2$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{d}{dx}(x^3 - 2x) \cdot (x^2 + 3)^2 + (x^3 - 2x) \cdot \frac{d}{dx}[(x^2 + 3)^2] \\
+  &= (3x^2 - 2) \cdot (x^2 + 3)^2 + (x^3 - 2x) \cdot 2(x^2 + 3) \cdot 2x
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 11 (Part 2)}
+\textbf{Solution (continued):}
+\[
+\begin{aligned}
+  &= (3x^2 - 2)(x^4 + 6x^2 + 9) + 4x(x^5 - 2x^3 + 3x^3 - 6x) \\
+  &= 3x^6 + 18x^4 + 27x^2 - 2x^4 - 12x^2 - 18 + 4x^6 - 8x^4 + 12x^4 - 24x^2 \\
+  &= 7x^6 + 26x^4 - 9x^2 - 18
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 12}
+\textbf{Practice 12:}
+
+Find the derivative of $f(x) = \frac{x^2 - 4}{x^2 + 4}$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{\frac{d}{dx}(x^2 - 4) \cdot (x^2 + 4) - (x^2 - 4) \cdot \frac{d}{dx}(x^2 + 4)}{(x^2 + 4)^2} \\
+  &= \frac{2x \cdot (x^2 + 4) - (x^2 - 4) \cdot 2x}{(x^2 + 4)^2} \\
+  &= \frac{2x^3 + 8x - 2x^3 + 8x}{(x^2 + 4)^2} \\
+  &= \frac{16x}{(x^2 + 4)^2}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 13}
+\textbf{Practice 13:}
+
+Find the derivative of $f(x) = \frac{1}{(x^2 + 1)^2}$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= -\frac{\frac{d}{dx}[(x^2 + 1)^2]}{[(x^2 + 1)^2]^2} \\
+  &= -\frac{2(x^2 + 1) \cdot 2x}{(x^2 + 1)^4} \\
+  &= -\frac{4x(x^2 + 1)}{(x^2 + 1)^4} \\
+  &= -\frac{4x}{(x^2 + 1)^3}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 14 (Part 1)}
+\textbf{Practice 14:}
+
+Find the derivative of $f(x) = x \cdot \sqrt{x^2 - 1}$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{d}{dx}(x) \cdot \sqrt{x^2 - 1} + x \cdot \frac{d}{dx}(\sqrt{x^2 - 1}) \\
+  &= 1 \cdot \sqrt{x^2 - 1} + x \cdot \frac{1}{2\sqrt{x^2 - 1}} \cdot 2x
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 14 (Part 2)}
+\textbf{Solution (continued):}
+\[
+\begin{aligned}
+  &= \sqrt{x^2 - 1} + \frac{x^2}{\sqrt{x^2 - 1}} \\
+  &= \frac{x^2 - 1 + x^2}{\sqrt{x^2 - 1}} \\
+  &= \frac{2x^2 - 1}{\sqrt{x^2 - 1}}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 15 (Part 1)}
+\textbf{Practice 15:}
+
+Find the derivative of $f(x) = \frac{x^3 + x}{x^2 - x + 1}$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{\frac{d}{dx}(x^3 + x) \cdot (x^2 - x + 1) - (x^3 + x) \cdot \frac{d}{dx}(x^2 - x + 1)}{(x^2 - x + 1)^2} \\
+  &= \frac{(3x^2 + 1) \cdot (x^2 - x + 1) - (x^3 + x) \cdot (2x - 1)}{(x^2 - x + 1)^2}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 15 (Part 2)}
+\textbf{Solution (continued):}
+\[
+\begin{aligned}
+  &= \frac{3x^4 - 3x^3 + 3x^2 + x^2 - x + 1 - 2x^4 + x^3 - 2x^2 + x}{(x^2 - x + 1)^2} \\
+  &= \frac{x^4 - 2x^3 + 2x^2 + 1}{(x^2 - x + 1)^2}
+\end{aligned}
+\]
+\end{frame}
+
+\section{Common Derivatives}
+
+\begin{frame}{Derivatives of Common Functions}
+\begin{block}{Power Functions}
+\[
+\begin{aligned}
+  \frac{d}{dx} x^n &= nx^{n-1} \\
+  \frac{d}{dx} \sqrt{x} &= \frac{1}{2\sqrt{x}} \\
+  \frac{d}{dx} \frac{1}{x} &= -\frac{1}{x^2}
+\end{aligned}
+\]
+\end{block}
+\end{frame}
+
+\begin{frame}{Derivatives of Exponential and Logarithmic Functions}
+\begin{block}{Exponential and Log}
+\[
+\begin{aligned}
+  \frac{d}{dx} e^x &= e^x \\
+  \frac{d}{dx} a^x &= a^x \ln(a) \\
+  \frac{d}{dx} \ln(x) &= \frac{1}{x} \\
+  \frac{d}{dx} \log_a(x) &= \frac{1}{x \ln(a)}
+\end{aligned}
+\]
+\end{block}
+\end{frame}
+
+\begin{frame}{Derivatives of Trigonometric Functions}
+\begin{block}{Trigonometric Functions}
+\[
+\begin{aligned}
+  \frac{d}{dx} \sin(x) &= \cos(x) \\
+  \frac{d}{dx} \cos(x) &= -\sin(x) \\
+  \frac{d}{dx} \tan(x) &= \sec^2(x) \\
+  \frac{d}{dx} \cot(x) &= -\csc^2(x) \\
+  \frac{d}{dx} \sec(x) &= \sec(x)\tan(x) \\
+  \frac{d}{dx} \csc(x) &= -\csc(x)\cot(x)
+\end{aligned}
+\]
+\end{block}
+\end{frame}
+
+\begin{frame}{Derivatives of Inverse Trigonometric Functions}
+\begin{block}{Inverse Trigonometric Functions}
+\[
+\begin{aligned}
+  \frac{d}{dx} \arcsin(x) &= \frac{1}{\sqrt{1-x^2}} \\
+  \frac{d}{dx} \arccos(x) &= -\frac{1}{\sqrt{1-x^2}} \\
+  \frac{d}{dx} \arctan(x) &= \frac{1}{1+x^2} \\
+  \frac{d}{dx} \arccot(x) &= -\frac{1}{1+x^2} \\
+  \frac{d}{dx} \arcsec(x) &= \frac{1}{|x|\sqrt{x^2-1}} \\
+  \frac{d}{dx} \arccsc(x) &= -\frac{1}{|x|\sqrt{x^2-1}}
+\end{aligned}
+\]
+\end{block}
+\end{frame}
+
+% 新增解答16-25
+\begin{frame}{Solution to Practice 16}
+\textbf{Practice 16:}
+
+Find the derivative of $f(x) = x^2 \sin(x)$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{d}{dx}(x^2) \cdot \sin(x) + x^2 \cdot \frac{d}{dx}(\sin(x)) \\
+  &= 2x \cdot \sin(x) + x^2 \cdot \cos(x) \\
+  &= 2x\sin(x) + x^2\cos(x)
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 17}
+\textbf{Practice 17:}
+
+Find the derivative of $f(x) = e^x \cos(x)$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{d}{dx}(e^x) \cdot \cos(x) + e^x \cdot \frac{d}{dx}(\cos(x)) \\
+  &= e^x \cdot \cos(x) + e^x \cdot (-\sin(x)) \\
+  &= e^x\cos(x) - e^x\sin(x) \\
+  &= e^x(\cos(x) - \sin(x))
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 18}
+\textbf{Practice 18:}
+
+Find the derivative of $f(x) = \ln(x^2 + 1)$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{1}{x^2 + 1} \cdot \frac{d}{dx}(x^2 + 1) \\
+  &= \frac{1}{x^2 + 1} \cdot 2x \\
+  &= \frac{2x}{x^2 + 1}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 19}
+\textbf{Practice 19:}
+
+Find the derivative of $f(x) = \frac{\sin(x)}{x}$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{\frac{d}{dx}(\sin(x)) \cdot x - \sin(x) \cdot \frac{d}{dx}(x)}{x^2} \\
+  &= \frac{\cos(x) \cdot x - \sin(x) \cdot 1}{x^2} \\
+  &= \frac{x\cos(x) - \sin(x)}{x^2}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 20}
+\textbf{Practice 20:}
+
+Find the derivative of $f(x) = \arctan(x^2)$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{1}{1 + (x^2)^2} \cdot \frac{d}{dx}(x^2) \\
+  &= \frac{1}{1 + x^4} \cdot 2x \\
+  &= \frac{2x}{1 + x^4}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 21}
+\textbf{Practice 21:}
+
+Find the derivative of $f(x) = x \cdot e^x$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{d}{dx}(x) \cdot e^x + x \cdot \frac{d}{dx}(e^x) \\
+  &= 1 \cdot e^x + x \cdot e^x \\
+  &= e^x + xe^x \\
+  &= e^x(1 + x)
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 22}
+\textbf{Practice 22:}
+
+Find the derivative of $f(x) = \frac{\ln(x)}{x}$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{\frac{d}{dx}(\ln(x)) \cdot x - \ln(x) \cdot \frac{d}{dx}(x)}{x^2} \\
+  &= \frac{\frac{1}{x} \cdot x - \ln(x) \cdot 1}{x^2} \\
+  &= \frac{1 - \ln(x)}{x^2}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 23 (Part 1)}
+\textbf{Practice 23:}
+
+Find the derivative of $f(x) = \arcsin(\sqrt{x})$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{1}{\sqrt{1 - (\sqrt{x})^2}} \cdot \frac{d}{dx}(\sqrt{x}) \\
+  &= \frac{1}{\sqrt{1 - x}} \cdot \frac{1}{2\sqrt{x}}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 23 (Part 2)}
+\textbf{Solution (continued):}
+\[
+\begin{aligned}
+  &= \frac{1}{2\sqrt{x}\sqrt{1 - x}} \\
+  &= \frac{1}{2\sqrt{x(1 - x)}}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 24}
+\textbf{Practice 24:}
+
+Find the derivative of $f(x) = \sin(x) \cos(x)$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{d}{dx}(\sin(x)) \cdot \cos(x) + \sin(x) \cdot \frac{d}{dx}(\cos(x)) \\
+  &= \cos(x) \cdot \cos(x) + \sin(x) \cdot (-\sin(x)) \\
+  &= \cos^2(x) - \sin^2(x) \\
+  &= \cos(2x)
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 25}
+\textbf{Practice 25:}
+
+Find the derivative of $f(x) = \frac{e^x}{x^2 + 1}$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{\frac{d}{dx}(e^x) \cdot (x^2 + 1) - e^x \cdot \frac{d}{dx}(x^2 + 1)}{(x^2 + 1)^2} \\
+  &= \frac{e^x \cdot (x^2 + 1) - e^x \cdot 2x}{(x^2 + 1)^2} \\
+  &= \frac{e^x(x^2 + 1 - 2x)}{(x^2 + 1)^2} \\
+  &= \frac{e^x(x^2 - 2x + 1)}{(x^2 + 1)^2}
+\end{aligned}
+\]
+\end{frame}
+
+\end{document} 

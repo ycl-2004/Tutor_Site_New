@@ -1,0 +1,831 @@
+% !TEX program = pdflatex
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Madrid}
+\usecolortheme{default}
+\usepackage{tikz}
+
+% Custom colors
+\definecolor{myblue}{RGB}{0,114,178}
+\definecolor{myorange}{RGB}{230,159,0}
+\definecolor{mygreen}{RGB}{0,158,115}
+\definecolor{myred}{RGB}{213,94,0}
+\definecolor{mypurple}{RGB}{204,121,167}
+\definecolor{mybrown}{RGB}{240,228,66}
+\definecolor{mygray}{RGB}{189,189,189}
+
+% Set colors
+\setbeamercolor{title}{fg=white,bg=myblue}
+\setbeamercolor{frametitle}{fg=white,bg=myblue}
+\setbeamercolor{section title}{fg=white,bg=myblue}
+\setbeamercolor{subsection title}{fg=white,bg=myorange}
+\setbeamercolor{item}{fg=myblue}
+\setbeamercolor{subitem}{fg=myorange}
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% Custom commands
+\newcommand{\limx}[2]{\lim_{x \to #1} #2}
+
+% Title page
+\title{Implicit Differentiation}
+\subtitle{A Powerful Technique for Complex Functions}
+\author{Differential Calculus}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}{What is Implicit Differentiation?}
+\begin{itemize}
+  \item A technique to find derivatives when functions are not explicitly solved for $y$
+  \item Used when you have an equation relating $x$ and $y$ but can't solve for $y$ easily
+  \item Also useful even when you have an explicit formula but the equation is simpler
+  \item The key idea: differentiate both sides of the equation with respect to $x$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{When to Use Implicit Differentiation}
+\begin{block}{Two Main Cases}
+\begin{enumerate}
+  \item \textbf{No explicit formula:} When you can't solve for $y$ in terms of $x$
+  \item \textbf{Complicated explicit formula:} When the equation is simpler than the explicit form
+\end{enumerate}
+\end{block}
+
+\textbf{Examples:}
+\begin{itemize}
+  \item $x^2 + y^2 = 25$ (circle)
+  \item $x^3 + y^3 = 6xy$ (folium of Descartes)
+  \item $y = y^3 + xy + x^3$ (cubic equation)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The Basic Method}
+\begin{block}{Step-by-Step Process}
+\begin{enumerate}
+  \item Start with an equation relating $x$ and $y$
+  \item Differentiate both sides with respect to $x$
+  \item Remember that $y$ is a function of $x$, so use the chain rule
+  \item Solve for $\frac{dy}{dx}$ (or $y'$)
+\end{enumerate}
+\end{block}
+
+\textbf{Key Rule:} When differentiating terms with $y$, remember to multiply by $\frac{dy}{dx}$
+\end{frame}
+
+\section{Basic Examples}
+
+\begin{frame}{Example 1: Circle}
+\textbf{Find } $\frac{dy}{dx}$ \textbf{ for the circle } $x^2 + y^2 = 25$
+\end{frame}
+
+\begin{frame}{Solution to Example 1}
+\textbf{Solution:}
+\[
+\begin{aligned}
+  x^2 + y^2 &= 25 \\
+  \frac{d}{dx}(x^2 + y^2) &= \frac{d}{dx}(25) \\
+  2x + 2y \cdot \frac{dy}{dx} &= 0 \\
+  2y \cdot \frac{dy}{dx} &= -2x \\
+  \frac{dy}{dx} &= -\frac{x}{y}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Example 2: Ellipse}
+\textbf{Find } $\frac{dy}{dx}$ \textbf{ for the ellipse } $3x^2 + 5y^2 = 7$
+\end{frame}
+
+\begin{frame}{Solution to Example 2}
+\textbf{Solution:}
+\[
+\begin{aligned}
+  3x^2 + 5y^2 &= 7 \\
+  \frac{d}{dx}(3x^2 + 5y^2) &= \frac{d}{dx}(7) \\
+  6x + 10y \cdot \frac{dy}{dx} &= 0 \\
+  10y \cdot \frac{dy}{dx} &= -6x \\
+  \frac{dy}{dx} &= -\frac{3x}{5y}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Example 3: Cubic Equation}
+\textbf{Find } $\frac{dy}{dx}$ \textbf{ for } $y = y^3 + xy + x^3$
+\end{frame}
+
+\begin{frame}{Solution to Example 3}
+\textbf{Solution:}
+\[
+\begin{aligned}
+  y &= y^3 + xy + x^3 \\
+  \frac{dy}{dx} &= 3y^2 \cdot \frac{dy}{dx} + x \cdot \frac{dy}{dx} + y + 3x^2 \\
+  \frac{dy}{dx} - 3y^2 \cdot \frac{dy}{dx} - x \cdot \frac{dy}{dx} &= y + 3x^2 \\
+  \frac{dy}{dx}(1 - 3y^2 - x) &= y + 3x^2 \\
+  \frac{dy}{dx} &= \frac{y + 3x^2}{1 - 3y^2 - x}
+\end{aligned}
+\]
+\end{frame}
+
+\section{Tangent Line Applications}
+
+\begin{frame}{Finding Tangent Lines}
+\begin{block}{Method}
+\begin{enumerate}
+  \item Find the point $(x_0, y_0)$ on the curve
+  \item Use implicit differentiation to find $\frac{dy}{dx}$
+  \item Evaluate $\frac{dy}{dx}$ at $(x_0, y_0)$ to get the slope
+  \item Use point-slope form: $y = y_0 + m(x - x_0)$
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\begin{frame}{Example: Tangent to Circle}
+\textbf{Find the tangent line to } $x^2 + y^2 = 25$ \textbf{ at } $(3, 4)$
+\end{frame}
+
+\begin{frame}{Solution: Tangent to Circle}
+\textbf{Solution:}
+\[
+\begin{aligned}
+  \text{From earlier: } \frac{dy}{dx} &= -\frac{x}{y} \\
+  \text{At } (3, 4): \frac{dy}{dx} &= -\frac{3}{4} \\
+  \text{Tangent line: } y &= 4 - \frac{3}{4}(x - 3) \\
+  y &= 4 - \frac{3}{4}x + \frac{9}{4} \\
+  y &= -\frac{3}{4}x + \frac{25}{4}
+\end{aligned}
+\]
+\end{frame}
+
+\section{Advanced Examples}
+
+\begin{frame}{Example: Astroid}
+\textbf{Find } $\frac{dy}{dx}$ \textbf{ for the astroid } $x^{2/3} + y^{2/3} = 1$
+\end{frame}
+
+\begin{frame}{Solution: Astroid}
+\textbf{Solution:}
+\[
+\begin{aligned}
+  x^{2/3} + y^{2/3} &= 1 \\
+  \frac{d}{dx}(x^{2/3} + y^{2/3}) &= \frac{d}{dx}(1) \\
+  \frac{2}{3}x^{-1/3} + \frac{2}{3}y^{-1/3} \cdot \frac{dy}{dx} &= 0 \\
+  \frac{2}{3}y^{-1/3} \cdot \frac{dy}{dx} &= -\frac{2}{3}x^{-1/3} \\
+  \frac{dy}{dx} &= -\frac{x^{-1/3}}{y^{-1/3}} \\
+  \frac{dy}{dx} &= -\left(\frac{y}{x}\right)^{1/3}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Example: Folium of Descartes}
+\textbf{Find } $\frac{dy}{dx}$ \textbf{ for } $x^3 + y^3 = 6xy$
+\end{frame}
+
+\begin{frame}{Solution: Folium of Descartes}
+\textbf{Solution:}
+\[
+\begin{aligned}
+  x^3 + y^3 &= 6xy \\
+  \frac{d}{dx}(x^3 + y^3) &= \frac{d}{dx}(6xy) \\
+  3x^2 + 3y^2 \cdot \frac{dy}{dx} &= 6y + 6x \cdot \frac{dy}{dx} \\
+  3y^2 \cdot \frac{dy}{dx} - 6x \cdot \frac{dy}{dx} &= 6y - 3x^2 \\
+  \frac{dy}{dx}(3y^2 - 6x) &= 6y - 3x^2 \\
+  \frac{dy}{dx} &= \frac{6y - 3x^2}{3y^2 - 6x} \\
+  \frac{dy}{dx} &= \frac{2y - x^2}{y^2 - 2x}
+\end{aligned}
+\]
+\end{frame}
+
+\section{Basic Practice Problems}
+
+\begin{frame}{Practice: 1 and 2}
+\textbf{Practice 1:}
+\[
+\text{Find } \frac{dy}{dx} \text{ for } x^2 + y^2 = 16
+\]
+\vspace{1em}
+\textbf{Practice 2:}
+\[
+\text{Find } \frac{dy}{dx} \text{ for } 4x^2 + 9y^2 = 36
+\]
+\end{frame}
+
+\begin{frame}{Practice: 3 and 4}
+\textbf{Practice 3:}
+\[
+\text{Find } \frac{dy}{dx} \text{ for } x^2 - y^2 = 9
+\]
+\vspace{1em}
+\textbf{Practice 4:}
+\[
+\text{Find } \frac{dy}{dx} \text{ for } xy = 4
+\]
+\end{frame}
+
+\begin{frame}{Practice: 5 and 6}
+\textbf{Practice 5:}
+\[
+\text{Find } \frac{dy}{dx} \text{ for } x^2 + xy + y^2 = 3
+\]
+\vspace{1em}
+\textbf{Practice 6:}
+\[
+\text{Find } \frac{dy}{dx} \text{ for } x^3 + y^3 = 8
+\]
+\end{frame}
+
+\begin{frame}{Practice: 7 and 8}
+\textbf{Practice 7:}
+\[
+\text{Find the tangent line to } x^2 + y^2 = 25 \text{ at } (4, 3)
+\]
+\vspace{1em}
+\textbf{Practice 8:}
+\[
+\text{Find the tangent line to } x^2 - y^2 = 7 \text{ at } (4, 3)
+\]
+\end{frame}
+
+\section{Intermediate Practice Problems}
+
+\begin{frame}{Practice: 9 and 10}
+\textbf{Practice 9:}
+\[
+\text{Find } \frac{dy}{dx} \text{ for } x^2 + y^2 = 2xy
+\]
+\vspace{1em}
+\textbf{Practice 10:}
+\[
+\text{Find } \frac{dy}{dx} \text{ for } x^3 + y^3 = 3xy
+\]
+\end{frame}
+
+\begin{frame}{Practice: 11 and 12}
+\textbf{Practice 11:}
+\[
+\text{Find } \frac{dy}{dx} \text{ for } x^2 + y^2 = x^2y^2
+\]
+\vspace{1em}
+\textbf{Practice 12:}
+\[
+\text{Find } \frac{dy}{dx} \text{ for } x^4 + y^4 = 16
+\]
+\end{frame}
+
+\begin{frame}{Practice: 13 and 14}
+\textbf{Practice 13:}
+\[
+\text{Find } \frac{dy}{dx} \text{ for } x^2 + y^2 = e^{xy}
+\]
+\vspace{1em}
+\textbf{Practice 14:}
+\[
+\text{Find } \frac{dy}{dx} \text{ for } \sin(xy) = x + y
+\]
+\end{frame}
+
+\begin{frame}{Practice: 15 and 16}
+\textbf{Practice 15:}
+\[
+\text{Find } \frac{dy}{dx} \text{ for } x^2 + y^2 = \ln(xy)
+\]
+\vspace{1em}
+\textbf{Practice 16:}
+\[
+\text{Find } \frac{dy}{dx} \text{ for } x^3 + y^3 = 6xy^2
+\]
+\end{frame}
+
+\section{Advanced Practice Problems}
+
+\begin{frame}{Practice: 17 and 18}
+\textbf{Practice 17:}
+\[
+\text{Find } \frac{dy}{dx} \text{ for } x^{2/3} + y^{2/3} = 4
+\]
+\vspace{1em}
+\textbf{Practice 18:}
+\[
+\text{Find } \frac{dy}{dx} \text{ for } x^3 + y^3 = 3x^2y
+\]
+\end{frame}
+
+\begin{frame}{Practice: 19 and 20}
+\textbf{Practice 19:}
+\[
+\text{Find } \frac{dy}{dx} \text{ for } x^2 + y^2 = \sin(xy)
+\]
+\vspace{1em}
+\textbf{Practice 20:}
+\[
+\text{Find } \frac{dy}{dx} \text{ for } e^{x^2} + e^{y^2} = e^{xy}
+\]
+\end{frame}
+
+\begin{frame}{Practice: 21 and 22}
+\textbf{Practice 21:}
+\[
+\text{Find } \frac{dy}{dx} \text{ for } x^4 + y^4 = x^2y^2
+\]
+\vspace{1em}
+\textbf{Practice 22:}
+\[
+\text{Find } \frac{dy}{dx} \text{ for } \ln(x^2 + y^2) = 2xy
+\]
+\end{frame}
+
+\begin{frame}{Practice: 23 and 24}
+\textbf{Practice 23:}
+\[
+\text{Find } \frac{dy}{dx} \text{ for } x^3 + y^3 = 3xy + 1
+\]
+\vspace{1em}
+\textbf{Practice 24:}
+\[
+\text{Find } \frac{dy}{dx} \text{ for } x^2 + y^2 = \cos(xy)
+\]
+\end{frame}
+
+\begin{frame}{Practice: 25}
+\textbf{Practice 25:}
+\[
+\text{Find } \frac{dy}{dx} \text{ for } x^5 + y^5 = 5x^2y^3
+\]
+\end{frame}
+
+\section{Solutions to Basic Practice Problems}
+
+\begin{frame}{Solution to Practice 1}
+\textbf{Practice 1:}
+
+Find $\frac{dy}{dx}$ for $x^2 + y^2 = 16$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  x^2 + y^2 &= 16 \\
+  2x + 2y \cdot \frac{dy}{dx} &= 0 \\
+  2y \cdot \frac{dy}{dx} &= -2x \\
+  \frac{dy}{dx} &= -\frac{x}{y}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 2}
+\textbf{Practice 2:}
+
+Find $\frac{dy}{dx}$ for $4x^2 + 9y^2 = 36$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  4x^2 + 9y^2 &= 36 \\
+  8x + 18y \cdot \frac{dy}{dx} &= 0 \\
+  18y \cdot \frac{dy}{dx} &= -8x \\
+  \frac{dy}{dx} &= -\frac{4x}{9y}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 3}
+\textbf{Practice 3:}
+
+Find $\frac{dy}{dx}$ for $x^2 - y^2 = 9$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  x^2 - y^2 &= 9 \\
+  2x - 2y \cdot \frac{dy}{dx} &= 0 \\
+  -2y \cdot \frac{dy}{dx} &= -2x \\
+  \frac{dy}{dx} &= \frac{x}{y}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 4}
+\textbf{Practice 4:}
+
+Find $\frac{dy}{dx}$ for $xy = 4$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  xy &= 4 \\
+  x \cdot \frac{dy}{dx} + y \cdot 1 &= 0 \\
+  x \cdot \frac{dy}{dx} &= -y \\
+  \frac{dy}{dx} &= -\frac{y}{x}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 5}
+\textbf{Practice 5:}
+
+Find $\frac{dy}{dx}$ for $x^2 + xy + y^2 = 3$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  x^2 + xy + y^2 &= 3 \\
+  2x + x \cdot \frac{dy}{dx} + y + 2y \cdot \frac{dy}{dx} &= 0 \\
+  x \cdot \frac{dy}{dx} + 2y \cdot \frac{dy}{dx} &= -2x - y \\
+  \frac{dy}{dx}(x + 2y) &= -2x - y \\
+  \frac{dy}{dx} &= -\frac{2x + y}{x + 2y}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 6}
+\textbf{Practice 6:}
+
+Find $\frac{dy}{dx}$ for $x^3 + y^3 = 8$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  x^3 + y^3 &= 8 \\
+  3x^2 + 3y^2 \cdot \frac{dy}{dx} &= 0 \\
+  3y^2 \cdot \frac{dy}{dx} &= -3x^2 \\
+  \frac{dy}{dx} &= -\frac{x^2}{y^2}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 7}
+\textbf{Practice 7:}
+
+Find the tangent line to $x^2 + y^2 = 25$ at $(4, 3)$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  \frac{dy}{dx} &= -\frac{x}{y} \\
+  \text{At } (4, 3): \frac{dy}{dx} &= -\frac{4}{3} \\
+  \text{Tangent line: } y &= 3 - \frac{4}{3}(x - 4) \\
+  y &= 3 - \frac{4}{3}x + \frac{16}{3} \\
+  y &= -\frac{4}{3}x + \frac{25}{3}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 8}
+\textbf{Practice 8:}
+
+Find the tangent line to $x^2 - y^2 = 7$ at $(4, 3)$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  \frac{dy}{dx} &= \frac{x}{y} \\
+  \text{At } (4, 3): \frac{dy}{dx} &= \frac{4}{3} \\
+  \text{Tangent line: } y &= 3 + \frac{4}{3}(x - 4) \\
+  y &= 3 + \frac{4}{3}x - \frac{16}{3} \\
+  y &= \frac{4}{3}x - \frac{7}{3}
+\end{aligned}
+\]
+\end{frame}
+
+\section{Solutions to Intermediate Practice Problems}
+
+\begin{frame}{Solution to Practice 9}
+\textbf{Practice 9:}
+
+Find $\frac{dy}{dx}$ for $x^2 + y^2 = 2xy$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  x^2 + y^2 &= 2xy \\
+  2x + 2y \cdot \frac{dy}{dx} &= 2x \cdot \frac{dy}{dx} + 2y \\
+  2y \cdot \frac{dy}{dx} - 2x \cdot \frac{dy}{dx} &= 2y - 2x \\
+  \frac{dy}{dx}(2y - 2x) &= 2y - 2x \\
+  \frac{dy}{dx} &= 1
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 10}
+\textbf{Practice 10:}
+
+Find $\frac{dy}{dx}$ for $x^3 + y^3 = 3xy$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  x^3 + y^3 &= 3xy \\
+  3x^2 + 3y^2 \cdot \frac{dy}{dx} &= 3x \cdot \frac{dy}{dx} + 3y \\
+  3y^2 \cdot \frac{dy}{dx} - 3x \cdot \frac{dy}{dx} &= 3y - 3x^2 \\
+  \frac{dy}{dx}(3y^2 - 3x) &= 3y - 3x^2 \\
+  \frac{dy}{dx} &= \frac{y - x^2}{y^2 - x}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 11}
+\textbf{Practice 11:}
+
+Find $\frac{dy}{dx}$ for $x^2 + y^2 = x^2y^2$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  x^2 + y^2 &= x^2y^2 \\
+  2x + 2y \cdot \frac{dy}{dx} &= 2x \cdot y^2 + x^2 \cdot 2y \cdot \frac{dy}{dx} \\
+  2y \cdot \frac{dy}{dx} - 2x^2y \cdot \frac{dy}{dx} &= 2xy^2 - 2x \\
+  \frac{dy}{dx}(2y - 2x^2y) &= 2xy^2 - 2x \\
+  \frac{dy}{dx} &= \frac{xy^2 - x}{y - x^2y}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 12}
+\textbf{Practice 12:}
+
+Find $\frac{dy}{dx}$ for $x^4 + y^4 = 16$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  x^4 + y^4 &= 16 \\
+  4x^3 + 4y^3 \cdot \frac{dy}{dx} &= 0 \\
+  4y^3 \cdot \frac{dy}{dx} &= -4x^3 \\
+  \frac{dy}{dx} &= -\frac{x^3}{y^3}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 13}
+\textbf{Practice 13:}
+
+Find $\frac{dy}{dx}$ for $x^2 + y^2 = e^{xy}$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  x^2 + y^2 &= e^{xy} \\
+  2x + 2y \cdot \frac{dy}{dx} &= e^{xy} \cdot (x \cdot \frac{dy}{dx} + y) \\
+  2x + 2y \cdot \frac{dy}{dx} &= xe^{xy} \cdot \frac{dy}{dx} + ye^{xy} \\
+  2y \cdot \frac{dy}{dx} - xe^{xy} \cdot \frac{dy}{dx} &= ye^{xy} - 2x \\
+  \frac{dy}{dx}(2y - xe^{xy}) &= ye^{xy} - 2x \\
+  \frac{dy}{dx} &= \frac{ye^{xy} - 2x}{2y - xe^{xy}}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 14}
+\textbf{Practice 14:}
+
+Find $\frac{dy}{dx}$ for $\sin(xy) = x + y$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  \sin(xy) &= x + y \\
+  \cos(xy) \cdot (x \cdot \frac{dy}{dx} + y) &= 1 + \frac{dy}{dx} \\
+  x\cos(xy) \cdot \frac{dy}{dx} + y\cos(xy) &= 1 + \frac{dy}{dx} \\
+  x\cos(xy) \cdot \frac{dy}{dx} - \frac{dy}{dx} &= 1 - y\cos(xy) \\
+  \frac{dy}{dx}(x\cos(xy) - 1) &= 1 - y\cos(xy) \\
+  \frac{dy}{dx} &= \frac{1 - y\cos(xy)}{x\cos(xy) - 1}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 15}
+\textbf{Practice 15:}
+
+Find $\frac{dy}{dx}$ for $x^2 + y^2 = \ln(xy)$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  x^2 + y^2 &= \ln(xy) \\
+  2x + 2y \cdot \frac{dy}{dx} &= \frac{1}{xy} \cdot (x \cdot \frac{dy}{dx} + y) \\
+  2x + 2y \cdot \frac{dy}{dx} &= \frac{1}{y} \cdot \frac{dy}{dx} + \frac{1}{x} \\
+  2y \cdot \frac{dy}{dx} - \frac{1}{y} \cdot \frac{dy}{dx} &= \frac{1}{x} - 2x \\
+  \frac{dy}{dx}(2y - \frac{1}{y}) &= \frac{1}{x} - 2x \\
+  \frac{dy}{dx} &= \frac{\frac{1}{x} - 2x}{2y - \frac{1}{y}}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 16}
+\textbf{Practice 16:}
+
+Find $\frac{dy}{dx}$ for $x^3 + y^3 = 6xy^2$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  x^3 + y^3 &= 6xy^2 \\
+  3x^2 + 3y^2 \cdot \frac{dy}{dx} &= 6x \cdot 2y \cdot \frac{dy}{dx} + 6y^2 \\
+  3y^2 \cdot \frac{dy}{dx} - 12xy \cdot \frac{dy}{dx} &= 6y^2 - 3x^2 \\
+  \frac{dy}{dx}(3y^2 - 12xy) &= 6y^2 - 3x^2 \\
+  \frac{dy}{dx} &= \frac{6y^2 - 3x^2}{3y^2 - 12xy}
+\end{aligned}
+\]
+\end{frame}
+
+\section{Solutions to Advanced Practice Problems}
+
+\begin{frame}{Solution to Practice 17}
+\textbf{Practice 17:}
+
+Find $\frac{dy}{dx}$ for $x^{2/3} + y^{2/3} = 4$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  x^{2/3} + y^{2/3} &= 4 \\
+  \frac{2}{3}x^{-1/3} + \frac{2}{3}y^{-1/3} \cdot \frac{dy}{dx} &= 0 \\
+  \frac{2}{3}y^{-1/3} \cdot \frac{dy}{dx} &= -\frac{2}{3}x^{-1/3} \\
+  \frac{dy}{dx} &= -\frac{x^{-1/3}}{y^{-1/3}} \\
+  \frac{dy}{dx} &= -\left(\frac{y}{x}\right)^{1/3}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 18}
+\textbf{Practice 18:}
+
+Find $\frac{dy}{dx}$ for $x^3 + y^3 = 3x^2y$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  x^3 + y^3 &= 3x^2y \\
+  3x^2 + 3y^2 \cdot \frac{dy}{dx} &= 6xy + 3x^2 \cdot \frac{dy}{dx} \\
+  3y^2 \cdot \frac{dy}{dx} - 3x^2 \cdot \frac{dy}{dx} &= 6xy - 3x^2 \\
+  \frac{dy}{dx}(3y^2 - 3x^2) &= 6xy - 3x^2 \\
+  \frac{dy}{dx} &= \frac{6xy - 3x^2}{3y^2 - 3x^2}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 19}
+\textbf{Practice 19:}
+
+Find $\frac{dy}{dx}$ for $x^2 + y^2 = \sin(xy)$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  x^2 + y^2 &= \sin(xy) \\
+  2x + 2y \cdot \frac{dy}{dx} &= \cos(xy) \cdot (x \cdot \frac{dy}{dx} + y) \\
+  2x + 2y \cdot \frac{dy}{dx} &= x\cos(xy) \cdot \frac{dy}{dx} + y\cos(xy) \\
+  2y \cdot \frac{dy}{dx} - x\cos(xy) \cdot \frac{dy}{dx} &= y\cos(xy) - 2x \\
+  \frac{dy}{dx}(2y - x\cos(xy)) &= y\cos(xy) - 2x \\
+  \frac{dy}{dx} &= \frac{y\cos(xy) - 2x}{2y - x\cos(xy)}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 20}
+\textbf{Practice 20:}
+
+Find $\frac{dy}{dx}$ for $e^{x^2} + e^{y^2} = e^{xy}$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  e^{x^2} + e^{y^2} &= e^{xy} \\
+  e^{x^2} \cdot 2x + e^{y^2} \cdot 2y \cdot \frac{dy}{dx} &= e^{xy} \cdot (x \cdot \frac{dy}{dx} + y) \\
+  2xe^{x^2} + 2ye^{y^2} \cdot \frac{dy}{dx} &= xe^{xy} \cdot \frac{dy}{dx} + ye^{xy} \\
+  2ye^{y^2} \cdot \frac{dy}{dx} - xe^{xy} \cdot \frac{dy}{dx} &= ye^{xy} - 2xe^{x^2} \\
+  \frac{dy}{dx}(2ye^{y^2} - xe^{xy}) &= ye^{xy} - 2xe^{x^2} \\
+  \frac{dy}{dx} &= \frac{ye^{xy} - 2xe^{x^2}}{2ye^{y^2} - xe^{xy}}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 21}
+\textbf{Practice 21:}
+
+Find $\frac{dy}{dx}$ for $x^4 + y^4 = x^2y^2$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  x^4 + y^4 &= x^2y^2 \\
+  4x^3 + 4y^3 \cdot \frac{dy}{dx} &= 2x \cdot y^2 + x^2 \cdot 2y \cdot \frac{dy}{dx} \\
+  4x^3 + 4y^3 \cdot \frac{dy}{dx} &= 2xy^2 + 2x^2y \cdot \frac{dy}{dx} \\
+  4y^3 \cdot \frac{dy}{dx} - 2x^2y \cdot \frac{dy}{dx} &= 2xy^2 - 4x^3 \\
+  \frac{dy}{dx}(4y^3 - 2x^2y) &= 2xy^2 - 4x^3 \\
+  \frac{dy}{dx} &= \frac{2xy^2 - 4x^3}{4y^3 - 2x^2y}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 22}
+\textbf{Practice 22:}
+
+Find $\frac{dy}{dx}$ for $\ln(x^2 + y^2) = 2xy$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  \ln(x^2 + y^2) &= 2xy \\
+  \frac{1}{x^2 + y^2} \cdot (2x + 2y \cdot \frac{dy}{dx}) &= 2x \cdot \frac{dy}{dx} + 2y \\
+  \frac{2x}{x^2 + y^2} + \frac{2y}{x^2 + y^2} \cdot \frac{dy}{dx} &= 2x \cdot \frac{dy}{dx} + 2y \\
+  \frac{2y}{x^2 + y^2} \cdot \frac{dy}{dx} - 2x \cdot \frac{dy}{dx} &= 2y - \frac{2x}{x^2 + y^2} \\
+  \frac{dy}{dx}(\frac{2y}{x^2 + y^2} - 2x) &= 2y - \frac{2x}{x^2 + y^2} \\
+  \frac{dy}{dx} &= \frac{2y - \frac{2x}{x^2 + y^2}}{\frac{2y}{x^2 + y^2} - 2x}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 23}
+\textbf{Practice 23:}
+
+Find $\frac{dy}{dx}$ for $x^3 + y^3 = 3xy + 1$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  x^3 + y^3 &= 3xy + 1 \\
+  3x^2 + 3y^2 \cdot \frac{dy}{dx} &= 3x \cdot \frac{dy}{dx} + 3y \\
+  3y^2 \cdot \frac{dy}{dx} - 3x \cdot \frac{dy}{dx} &= 3y - 3x^2 \\
+  \frac{dy}{dx}(3y^2 - 3x) &= 3y - 3x^2 \\
+  \frac{dy}{dx} &= \frac{y - x^2}{y^2 - x}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 24}
+\textbf{Practice 24:}
+
+Find $\frac{dy}{dx}$ for $x^2 + y^2 = \cos(xy)$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  x^2 + y^2 &= \cos(xy) \\
+  2x + 2y \cdot \frac{dy}{dx} &= -\sin(xy) \cdot (x \cdot \frac{dy}{dx} + y) \\
+  2x + 2y \cdot \frac{dy}{dx} &= -x\sin(xy) \cdot \frac{dy}{dx} - y\sin(xy) \\
+  2y \cdot \frac{dy}{dx} + x\sin(xy) \cdot \frac{dy}{dx} &= -y\sin(xy) - 2x \\
+  \frac{dy}{dx}(2y + x\sin(xy)) &= -y\sin(xy) - 2x \\
+  \frac{dy}{dx} &= \frac{-y\sin(xy) - 2x}{2y + x\sin(xy)}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 25}
+\textbf{Practice 25:}
+
+Find $\frac{dy}{dx}$ for $x^5 + y^5 = 5x^2y^3$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  x^5 + y^5 &= 5x^2y^3 \\
+  5x^4 + 5y^4 \cdot \frac{dy}{dx} &= 10x \cdot y^3 + 5x^2 \cdot 3y^2 \cdot \frac{dy}{dx} \\
+  5x^4 + 5y^4 \cdot \frac{dy}{dx} &= 10xy^3 + 15x^2y^2 \cdot \frac{dy}{dx} \\
+  5y^4 \cdot \frac{dy}{dx} - 15x^2y^2 \cdot \frac{dy}{dx} &= 10xy^3 - 5x^4 \\
+  \frac{dy}{dx}(5y^4 - 15x^2y^2) &= 10xy^3 - 5x^4 \\
+  \frac{dy}{dx} &= \frac{10xy^3 - 5x^4}{5y^4 - 15x^2y^2}
+\end{aligned}
+\]
+\end{frame}
+
+\section{Summary}
+
+\begin{frame}{Key Points - Implicit Differentiation}
+\begin{itemize}
+    \item \textbf{When to use:} When functions are not explicitly solved for $y$
+    \item \textbf{Method:} Differentiate both sides with respect to $x$
+    \item \textbf{Key rule:} Remember that $y$ is a function of $x$, so use chain rule
+    \item \textbf{Goal:} Solve for $\frac{dy}{dx}$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Common Applications}
+\begin{itemize}
+    \item \textbf{Conic sections:} Circles, ellipses, hyperbolas
+    \item \textbf{Curves:} Astroids, foliums, and other complex curves
+    \item \textbf{Tangent lines:} Finding slopes and equations
+    \item \textbf{Related rates:} When variables are related by equations
+\end{itemize}
+
+\vspace{0.5cm}
+Implicit differentiation is a powerful tool for finding derivatives when explicit formulas are difficult or impossible to obtain.
+\end{frame}
+
+\begin{frame}{Thank You!}
+\centering
+\vspace{2cm}
+{\Huge \textcolor{myblue}{\textbf{Questions?}}}
+
+\vspace{1cm}
+{\Large Implicit differentiation opens up a whole new world of functions to differentiate!}
+\end{frame}
+
+\end{document} 

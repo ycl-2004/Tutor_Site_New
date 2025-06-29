@@ -1,0 +1,450 @@
+% !TEX program = pdflatex
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Madrid}
+\usecolortheme{default}
+\usepackage{tikz}
+
+% Custom colors
+\definecolor{myblue}{RGB}{0,114,178}
+\definecolor{myorange}{RGB}{230,159,0}
+\definecolor{mygreen}{RGB}{0,158,115}
+\definecolor{myred}{RGB}{213,94,0}
+\definecolor{mypurple}{RGB}{204,121,167}
+\definecolor{mybrown}{RGB}{240,228,66}
+\definecolor{mygray}{RGB}{189,189,189}
+
+% Set colors
+\setbeamercolor{title}{fg=white,bg=myblue}
+\setbeamercolor{frametitle}{fg=white,bg=myblue}
+\setbeamercolor{section title}{fg=white,bg=myblue}
+\setbeamercolor{subsection title}{fg=white,bg=myorange}
+\setbeamercolor{item}{fg=myblue}
+\setbeamercolor{subitem}{fg=myorange}
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% Custom commands
+\newcommand{\limx}[2]{\lim_{x \to #1} #2}
+
+% Title page
+\title{1.5 Limits at Infinity and Continuity}
+\subtitle{Limits as $x$ Approaches Infinity and the Concept of Continuity}
+\author{Differential Calculus}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+\section{Limits at Infinity}
+
+\begin{frame}{What is a Limit at Infinity?}
+\begin{itemize}
+  \item So far, we've studied $\limx{a}{f(x)}$ as $x$ approaches a finite value $a$.
+  \item Now, we consider what happens as $x$ becomes extremely large (positive or negative).
+  \item This is important for understanding long-term behavior of functions.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Definition: Limit at Infinity (Informal)}
+\begin{block}{Definition 1.5.1}
+We write $\limx{\infty}{f(x)} = L$ if $f(x)$ gets closer and closer to $L$ as $x$ becomes very large and positive.
+
+Similarly, $\lim_{x \to -\infty} f(x) = L$ if $f(x)$ gets closer and closer to $L$ as $x$ becomes very large and negative.
+\end{block}
+\end{frame}
+
+\begin{frame}{Example: Limits at Infinity}
+\begin{columns}
+\column{0.5\textwidth}
+\textbf{Function with a Limit at $+\infty$ and $-\infty$}
+\begin{tikzpicture}[scale=0.7]
+  \draw[->] (-4,0) -- (4,0) node[right] {$x$};
+  \draw[->] (0,-1) -- (0,3) node[above] {$y$};
+  \draw[dashed, color=myred] (-4,2) -- (4,2); % horizontal asymptote
+  \draw[color=myblue,thick,domain=-3.8:3.8,samples=100] plot (\x,{2-1/(\x*\x+1)});
+  \node at (3.2,2.3) {\small $y=2$};
+\end{tikzpicture}
+\column{0.5\textwidth}
+\textbf{Function with No Limit at $-\infty$}
+\begin{tikzpicture}[scale=0.7]
+  \draw[->] (-4,0) -- (4,0) node[right] {$x$};
+  \draw[->] (0,-1) -- (0,4) node[above] {$y$};
+  \draw[dashed, color=myred] (-4,0) -- (4,0); % horizontal asymptote
+  \draw[color=myblue,thick,domain=-3.8:3.8,samples=100] plot (\x,{ln(abs(\x)+1)});
+  \node at (3.2,0.3) {\small $y=0$};
+\end{tikzpicture}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Basic Limits at Infinity}
+\begin{block}{Theorem 1.5.3}
+Let $c \in \mathbb{R}$:
+\begin{align*}
+  \limx{\infty}{c} &= c & \lim_{x \to -\infty} c &= c \\
+  \limx{\infty}{\frac{1}{x}} &= 0 & \lim_{x \to -\infty} \frac{1}{x} &= 0
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}{Arithmetic of Limits at Infinity}
+\begin{block}{Theorem 1.5.4}
+If $\limx{\infty}{f(x)} = F$ and $\limx{\infty}{g(x)} = G$ exist, then:
+\begin{itemize}
+  \item $\limx{\infty}{f(x) \pm g(x)} = F \pm G$
+  \item $\limx{\infty}{f(x)g(x)} = FG$
+  \item $\limx{\infty}{\frac{f(x)}{g(x)}} = \frac{F}{G}$, provided $G \neq 0$
+  \item $\limx{\infty}{f(x)^p} = F^p$ (if defined for all $x$)
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Powers and Roots at Infinity}
+\begin{itemize}
+  \item For all rational $r > 0$, $\limx{\infty}{\frac{1}{x^r}} = 0$
+  \item $\lim_{x \to -\infty} \frac{1}{x^r} = 0$ only if denominator of $r$ is not even
+  \item Example: $\limx{\infty}{\frac{1}{x^{1/2}}} = 0$, but $\lim_{x \to -\infty} \frac{1}{x^{1/2}}$ does not exist
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example: Rational Function at Infinity}
+\begin{block}{Example 1.5.5}
+Compute $\limx{\infty}{\frac{x^2-3x+4}{3x^2+8x+1}}$
+\end{block}
+\begin{align*}
+\frac{x^2-3x+4}{3x^2+8x+1} &= \frac{x^2(1-3/x+4/x^2)}{x^2(3+8/x+1/x^2)} \\
+&= \frac{1-3/x+4/x^2}{3+8/x+1/x^2} \\
+\limx{\infty}{\frac{x^2-3x+4}{3x^2+8x+1}} &= \frac{1}{3}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example: Root Function at Infinity}
+\begin{block}{Example 1.5.6}
+Compute $\limx{\infty}{\frac{\sqrt{4x^2+1}}{5x-1}}$
+\end{block}
+\begin{align*}
+\sqrt{4x^2+1} &= x\sqrt{4+1/x^2} \\
+\frac{\sqrt{4x^2+1}}{5x-1} &= \frac{x\sqrt{4+1/x^2}}{x(5-1/x)} = \frac{\sqrt{4+1/x^2}}{5-1/x} \\
+\limx{\infty}{\frac{\sqrt{4x^2+1}}{5x-1}} &= \frac{2}{5}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example: Root Function at $-\infty$}
+\begin{block}{Example 1.5.7}
+Compute $\lim_{x \to -\infty} \frac{\sqrt{4x^2+1}}{5x-1}$
+\end{block}
+\begin{align*}
+\sqrt{4x^2+1} &= |x|\sqrt{4+1/x^2} = -x\sqrt{4+1/x^2} \text{ for } x < 0 \\
+\frac{\sqrt{4x^2+1}}{5x-1} &= \frac{-x\sqrt{4+1/x^2}}{x(5-1/x)} = -\frac{\sqrt{4+1/x^2}}{5-1/x} \\
+\lim_{x \to -\infty} \frac{\sqrt{4x^2+1}}{5x-1} &= -\frac{2}{5}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example: Dominant Power at Infinity}
+\begin{block}{Example 1.5.8}
+Compute $\limx{\infty}{x^{7/5} - x}$
+\end{block}
+\begin{align*}
+x^{7/5} - x &= x^{7/5}\left(1-\frac{1}{x^{2/5}}\right) \\
+\limx{\infty}{x^{7/5}} &= +\infty \\
+\limx{\infty}{1-1/x^{2/5}} &= 1 \\
+\text{So, } \limx{\infty}{x^{7/5} - x} &= +\infty
+\end{align*}
+\end{frame}
+
+\section{Arithmetic of Infinite Limits}
+
+\begin{frame}{Arithmetic of Infinite Limits (1/2)}
+\begin{block}{Theorem 1.5.9}
+Let $f(x), g(x), h(x)$ be functions with $\limx{a}{f(x)} = +\infty$, $\limx{a}{g(x)} = +\infty$, $\limx{a}{h(x)} = H$.
+\begin{itemize}
+  \item $\limx{a}{f(x)+g(x)} = +\infty$
+  \item $\limx{a}{f(x)+h(x)} = +\infty$
+  \item $\limx{a}{f(x)-g(x)}$ is undetermined
+  \item $\limx{a}{f(x)-h(x)} = +\infty$
+  \item $\limx{a}{c f(x)} = +\infty$ if $c>0$, $-\infty$ if $c<0$, $0$ if $c=0$
+  \item $\limx{a}{f(x)g(x)} = +\infty$
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Arithmetic of Infinite Limits (2/2)}
+\begin{block}{Theorem 1.5.9 (cont'd)}
+\begin{itemize}
+  \item $\limx{a}{f(x)h(x)} = +\infty$ if $H>0$, $-\infty$ if $H<0$, undetermined if $H=0$
+  \item $\limx{a}{\frac{f(x)}{g(x)}}$ is undetermined
+  \item $\limx{a}{\frac{f(x)}{h(x)}} = +\infty$ if $H>0$, $-\infty$ if $H<0$, undetermined if $H=0$
+  \item $\limx{a}{\frac{h(x)}{f(x)}} = 0$
+  \item $\limx{a}{f(x)^p} = +\infty$ if $p>0$, $0$ if $p<0$, $1$ if $p=0$
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Example: Undetermined Forms}
+\begin{block}{Example 1.5.10}
+Let $f(x) = x^{-2}$, $g(x) = 2x^{-2}$, $h(x) = x^{-2}-1$. As $x \to 0$:
+\begin{align*}
+\limx{0}{f(x)} = +\infty,\quad \limx{0}{g(x)} = +\infty,\quad \limx{0}{h(x)} = +\infty
+\end{align*}
+\begin{itemize}
+  \item $\limx{0}{f(x)-g(x)} = \limx{0}{-x^{-2}} = -\infty$
+  \item $\limx{0}{f(x)-h(x)} = \limx{0}{1} = 1$
+  \item $\limx{0}{g(x)-h(x)} = \limx{0}{x^{-2}+1} = +\infty$
+\end{itemize}
+\end{block}
+\end{frame}
+
+\section{Continuity}
+
+\begin{frame}{What is Continuity?}
+\begin{block}{Definition 1.6.1}
+A function $f(x)$ is \textbf{continuous at $a$} if $\limx{a}{f(x)} = f(a)$.
+\end{block}
+\begin{itemize}
+  \item If $f$ is not continuous at $a$, it is \textbf{discontinuous} at $a$.
+  \item $f$ is \textbf{continuous} if it is continuous at every $a \in \mathbb{R}$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Continuity on Intervals}
+\begin{block}{Definition 1.6.3}
+A function $f(x)$ is continuous on $[a, b]$ if:
+\begin{itemize}
+  \item $f(x)$ is continuous on $(a, b)$
+  \item $f(x)$ is continuous from the right at $a$
+  \item $f(x)$ is continuous from the left at $b$
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Types of Discontinuity}
+\begin{itemize}
+  \item \textbf{Jump Discontinuity}: function jumps from one value to another
+  \item \textbf{Infinite Discontinuity}: function goes to $+\infty$ or $-\infty$
+  \item \textbf{Removable Discontinuity}: function could be made continuous by redefining a single point
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Examples: Discontinuity}
+\begin{itemize}
+  \item $f(x) = \begin{cases} x & x < 1 \\ x+2 & x \geq 1 \end{cases}$ (jump at $x=1$)
+  \item $g(x) = \begin{cases} 1/x^2 & x \neq 0 \\ 0 & x = 0 \end{cases}$ (infinite at $x=0$)
+  \item $h(x) = \begin{cases} \frac{x^3-x^2}{x-1} & x \neq 1 \\ 0 & x = 1 \end{cases}$ (removable at $x=1$)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Arithmetic of Continuity}
+\begin{block}{Theorem 1.6.5}
+If $f(x)$ and $g(x)$ are continuous at $a$, then so are:
+\begin{itemize}
+  \item $f(x) + g(x)$, $f(x) - g(x)$
+  \item $c f(x)$, $f(x)g(x)$
+  \item $\frac{f(x)}{g(x)}$ (if $g(a) \neq 0$)
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Continuity of Polynomials and Rational Functions}
+\begin{block}{Theorem 1.6.7}
+Every polynomial is continuous everywhere. Every rational function is continuous except where its denominator is zero.
+\end{block}
+\end{frame}
+
+\begin{frame}{Continuity of Common Functions}
+\begin{block}{Theorem 1.6.8}
+The following are continuous everywhere in their domains:
+\begin{itemize}
+  \item Polynomials, rational functions
+  \item Roots and powers
+  \item Trig functions and their inverses
+  \item Exponential and logarithm
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Example: Where is $\sin(x)/(2+\cos(x))$ Continuous?}
+\begin{itemize}
+  \item Numerator $\sin(x)$ is continuous everywhere
+  \item Denominator $2+\cos(x)$ is continuous and never zero
+  \item So $\sin(x)/(2+\cos(x))$ is continuous everywhere
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example: Where is $\sin(x)/(x^2-5x+6)$ Continuous?}
+\begin{itemize}
+  \item Numerator and denominator are continuous
+  \item Denominator is zero at $x=2,3$
+  \item So function is continuous everywhere except $x=2,3$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Compositions and Continuity}
+\begin{block}{Theorem 1.6.10}
+If $g$ is continuous at $a$ and $f$ is continuous at $g(a)$, then $f(g(x))$ is continuous at $a$.
+\end{block}
+\end{frame}
+
+\begin{frame}{Example: Compositions}
+\begin{itemize}
+  \item $f(x) = \sin(x^2+\cos(x))$ is continuous everywhere
+  \item $g(x) = \sqrt{\sin(x)}$ is continuous where $\sin(x) \geq 0$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Intermediate Value Theorem (IVT)}
+\begin{block}{Theorem 1.6.12}
+Let $f$ be continuous on $[a,b]$. If $Y$ is between $f(a)$ and $f(b)$, then there is $c \in [a,b]$ with $f(c) = Y$.
+\end{block}
+\end{frame}
+
+\begin{frame}{IVT: What Does It Mean?}
+\begin{itemize}
+  \item If $f$ is continuous on $[a,b]$, then $f$ takes every value between $f(a)$ and $f(b)$ at least once
+  \item The IVT does not say how many such $c$ exist, just that at least one does
+  \item If $f$ is not continuous, IVT may fail
+\end{itemize}
+\end{frame}
+
+\begin{frame}{IVT: Real-World Example}
+\begin{itemize}
+  \item If you start a hike at the bottom and end at the top, you must pass every height in between
+  \item If you and a friend start at different times, you must meet somewhere in between
+\end{itemize}
+\end{frame}
+
+\begin{frame}{IVT: Locating Zeros}
+\begin{itemize}
+  \item If $f$ is continuous and $f(a)<0$, $f(b)>0$, then there is $c \in [a,b]$ with $f(c)=0$
+  \item The bisection method repeatedly halves the interval to locate the zero more precisely
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example: IVT and Bisection}
+\begin{block}{Example 1.6.14}
+Show $f(x) = x-1+\sin(\pi x/2)$ has a zero in $[0,1]$.
+\end{block}
+\begin{itemize}
+  \item $f(0) = -1 < 0$, $f(1) = 1 > 0$
+  \item $f$ is continuous (sum of continuous functions)
+  \item By IVT, there is $c \in [0,1]$ with $f(c)=0$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example: Bisection Method}
+\begin{block}{Example 1.6.15}
+Use bisection to find a zero of $f(x) = x-1+\sin(\pi x/2)$ in $[0,1]$.
+\end{block}
+\begin{itemize}
+  \item $f(0) = -1$, $f(1) = 1$
+  \item $f(0.5) = 0.207 > 0$ $\rightarrow$ new interval $[0,0.5]$
+  \item $f(0.25) = -0.367 < 0$ $\rightarrow$ new interval $[0.25,0.5]$
+  \item $f(0.375) = -0.069 < 0$ $\rightarrow$ new interval $[0.375,0.5]$
+  \item $f(0.4375) = 0.072 > 0$ $\rightarrow$ new interval $[0.375,0.4375]$
+\end{itemize}
+\end{frame}
+
+\section{Practice Problems}
+
+\begin{frame}{Practice: 1 and 2}
+\textbf{Practice 1:}
+\[
+\lim_{x \to \infty} \frac{2x^2-5}{x^2+1}
+\]
+\vspace{1em}
+\textbf{Practice 2:}
+\[
+\lim_{x \to -\infty} \frac{3x^3+4x}{2x^3-7}
+\]
+\end{frame}
+
+\begin{frame}{Practice: 3 and 4}
+\textbf{Practice 3:}
+\[
+\lim_{x \to \infty} \frac{5x-1}{\sqrt{x^2+2}}
+\]
+\vspace{1em}
+\textbf{Practice 4:}
+\[
+\lim_{x \to -\infty} \frac{\sqrt{9x^2+1}}{2x+5}
+\]
+\end{frame}
+
+\begin{frame}{Practice: 5 and 6}
+\textbf{Practice 5:}
+\[
+\lim_{x \to \infty} \frac{x^3-2x}{4x^3+1}
+\]
+\vspace{1em}
+\textbf{Practice 6:}
+\[
+\text{Where is } f(x) = \frac{x^2-4}{x^2+1} \text{ continuous?}
+\]
+\end{frame}
+
+\section{Solutions to Practice Problems}
+
+\begin{frame}{Solutions to Practice 1 and 2}
+\textbf{Practice 1:}
+\[
+\lim_{x \to \infty} \frac{2x^2-5}{x^2+1}
+\]
+\textbf{Solution:}
+Divide numerator and denominator by $x^2$:
+\[
+\frac{2-5/x^2}{1+1/x^2} \to \frac{2}{1} = 2
+\]
+\vspace{1em}
+\textbf{Practice 2:}
+\[
+\lim_{x \to -\infty} \frac{3x^3+4x}{2x^3-7}
+\]
+\textbf{Solution:}
+Divide by $x^3$:
+\[
+\frac{3+4/x^2}{2-7/x^3} \to \frac{3}{2}
+\]
+\end{frame}
+
+\begin{frame}{Solutions to Practice 3 and 4}
+\textbf{Practice 3:}
+\[
+\lim_{x \to \infty} \frac{5x-1}{\sqrt{x^2+2}}
+\]
+\textbf{Solution:}
+For large $x$, $\sqrt{x^2+2} \sim x$, so $\frac{5x-1}{x} \to 5$.
+\vspace{1em}
+\textbf{Practice 4:}
+\[
+\lim_{x \to -\infty} \frac{\sqrt{9x^2+1}}{2x+5}
+\]
+\textbf{Solution:}
+$\sqrt{9x^2+1} \sim |3x| = -3x$ for $x \to -\infty$, so $\frac{-3x}{2x} \to \frac{-3}{2}$.
+\end{frame}
+
+\begin{frame}{Solutions to Practice 5 and 6}
+\textbf{Practice 5:}
+\[
+\lim_{x \to \infty} \frac{x^3-2x}{4x^3+1}
+\]
+\textbf{Solution:}
+Divide by $x^3$:
+\[
+\frac{1-2/x^2}{4+1/x^3} \to \frac{1}{4}
+\]
+\vspace{1em}
+\textbf{Practice 6:}
+\[
+\text{Where is } f(x) = \frac{x^2-4}{x^2+1} \text{ continuous?}
+\]
+\textbf{Solution:}
+Numerator and denominator are continuous everywhere; denominator is never zero, so $f(x)$ is continuous for all $x$.
+\end{frame}
+
+\end{document} 

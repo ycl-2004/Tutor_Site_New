@@ -1,0 +1,739 @@
+% !TEX program = pdflatex
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Madrid}
+\usecolortheme{default}
+\usepackage{tikz}
+
+% Custom colors
+\definecolor{myblue}{RGB}{0,114,178}
+\definecolor{myorange}{RGB}{230,159,0}
+\definecolor{mygreen}{RGB}{0,158,115}
+\definecolor{myred}{RGB}{213,94,0}
+\definecolor{mypurple}{RGB}{204,121,167}
+\definecolor{mybrown}{RGB}{240,228,66}
+\definecolor{mygray}{RGB}{189,189,189}
+
+% Set colors
+\setbeamercolor{title}{fg=white,bg=myblue}
+\setbeamercolor{frametitle}{fg=white,bg=myblue}
+\setbeamercolor{section title}{fg=white,bg=myblue}
+\setbeamercolor{subsection title}{fg=white,bg=myorange}
+\setbeamercolor{item}{fg=myblue}
+\setbeamercolor{subitem}{fg=myorange}
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% Custom commands
+\newcommand{\limx}[2]{\lim_{x \to #1} #2}
+
+% Title page
+\title{The Chain Rule}
+\subtitle{One More Tool for Differentiation}
+\author{Differential Calculus}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}{Why We Need the Chain Rule}
+\begin{itemize}
+  \item We have learned derivatives of sums, products, and quotients
+  \item We know derivatives of basic functions (polynomials, trig, exponential, etc.)
+  \item But what about compositions like $\sin(x^2)$, $e^{3x+1}$, or $(x^2+1)^5$?
+  \item The chain rule tells us how to differentiate composite functions
+\end{itemize}
+\end{frame}
+
+\begin{frame}{What is a Composite Function?}
+\begin{block}{Definition}
+A composite function is a function formed by combining two functions:
+\[f(g(x)) = f \circ g(x)\]
+where:
+\begin{itemize}
+  \item $g(x)$ is the "inside" function
+  \item $f(x)$ is the "outside" function
+\end{itemize}
+\end{block}
+\end{frame}
+
+\section{The Chain Rule}
+
+\begin{frame}{The Chain Rule - Statement}
+\begin{block}{Theorem}
+Let $f$ and $g$ be differentiable functions, then:
+\[\frac{d}{dx}f(g(x)) = f'(g(x)) \cdot g'(x)\]
+\end{block}
+
+\textbf{In words:} Differentiate the outside function, then multiply by the derivative of the inside function.
+\end{frame}
+
+\begin{frame}{Alternative Form of Chain Rule}
+\begin{block}{Differential Notation}
+If $y = f(u)$ and $u = g(x)$, then:
+\[\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}\]
+\end{block}
+
+\textbf{Memory Aid:} It looks like the $du$ terms cancel out!
+\[\frac{dy}{dx} = \frac{dy}{\cancel{du}} \cdot \frac{\cancel{du}}{dx}\]
+\end{frame}
+
+\section{Simple Examples}
+
+\begin{frame}{Example 1: Power of a Function}
+\textbf{Find the derivative of } $f(x) = (x^2 + 3)^4$
+\end{frame}
+
+\begin{frame}{Solution to Example 1}
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f(x) &= (x^2 + 3)^4 \\
+  f'(x) &= 4(x^2 + 3)^3 \cdot \frac{d}{dx}(x^2 + 3) \\
+  &= 4(x^2 + 3)^3 \cdot 2x \\
+  &= 8x(x^2 + 3)^3
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Example 2: Trigonometric Function}
+\textbf{Find the derivative of } $f(x) = \sin(3x + 2)$
+\end{frame}
+
+\begin{frame}{Solution to Example 2}
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f(x) &= \sin(3x + 2) \\
+  f'(x) &= \cos(3x + 2) \cdot \frac{d}{dx}(3x + 2) \\
+  &= \cos(3x + 2) \cdot 3 \\
+  &= 3\cos(3x + 2)
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Example 3: Exponential Function}
+\textbf{Find the derivative of } $f(x) = e^{x^2 + 1}$
+\end{frame}
+
+\begin{frame}{Solution to Example 3}
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f(x) &= e^{x^2 + 1} \\
+  f'(x) &= e^{x^2 + 1} \cdot \frac{d}{dx}(x^2 + 1) \\
+  &= e^{x^2 + 1} \cdot 2x \\
+  &= 2xe^{x^2 + 1}
+\end{aligned}
+\]
+\end{frame}
+
+\section{Common Patterns}
+
+\begin{frame}{Power Rule with Chain Rule}
+\begin{block}{General Formula}
+For any differentiable function $g(x)$ and any power $n$:
+\[\frac{d}{dx}[g(x)]^n = n[g(x)]^{n-1} \cdot g'(x)\]
+\end{block}
+\end{frame}
+
+\begin{frame}{Linear Argument Rule}
+\begin{block}{General Formula}
+For any differentiable function $f(x)$ and constants $a, b$:
+\[\frac{d}{dx}f(ax + b) = a \cdot f'(ax + b)\]
+\end{block}
+\end{frame}
+
+\section{Basic Practice Problems}
+
+\begin{frame}{Practice: 1 and 2}
+\textbf{Practice 1:}
+\[
+\text{Find the derivative of } f(x) = (2x^2 + 3x + 1)^4
+\]
+\vspace{1em}
+\textbf{Practice 2:}
+\[
+\text{Find the derivative of } f(x) = \sin(5x - 2)
+\]
+\end{frame}
+
+\begin{frame}{Practice: 3 and 4}
+\textbf{Practice 3:}
+\[
+\text{Find the derivative of } f(x) = e^{3x^2 + 2x}
+\]
+\vspace{1em}
+\textbf{Practice 4:}
+\[
+\text{Find the derivative of } f(x) = \ln(4x^3 - 7x)
+\]
+\end{frame}
+
+\begin{frame}{Practice: 5 and 6}
+\textbf{Practice 5:}
+\[
+\text{Find the derivative of } f(x) = \cos^3(2x + 1)
+\]
+\vspace{1em}
+\textbf{Practice 6:}
+\[
+\text{Find the derivative of } f(x) = \sqrt{x^2 + 4}
+\]
+\end{frame}
+
+\begin{frame}{Practice: 7 and 8}
+\textbf{Practice 7:}
+\[
+\text{Find the derivative of } f(x) = \tan(3x^2 - 1)
+\]
+\vspace{1em}
+\textbf{Practice 8:}
+\[
+\text{Find the derivative of } f(x) = (x^3 + 2x)^5
+\]
+\end{frame}
+
+\section{Intermediate Practice Problems}
+
+\begin{frame}{Practice: 9 and 10}
+\textbf{Practice 9:}
+\[
+\text{Find the derivative of } f(x) = \sin^2(x^2 + 1)
+\]
+\vspace{1em}
+\textbf{Practice 10:}
+\[
+\text{Find the derivative of } f(x) = e^{\sin(x)}
+\]
+\end{frame}
+
+\begin{frame}{Practice: 11 and 12}
+\textbf{Practice 11:}
+\[
+\text{Find the derivative of } f(x) = \ln(\cos(x))
+\]
+\vspace{1em}
+\textbf{Practice 12:}
+\[
+\text{Find the derivative of } f(x) = \arctan(x^3 + 2x)
+\]
+\end{frame}
+
+\begin{frame}{Practice: 13 and 14}
+\textbf{Practice 13:}
+\[
+\text{Find the derivative of } f(x) = \cos(e^x + x^2)
+\]
+\vspace{1em}
+\textbf{Practice 14:}
+\[
+\text{Find the derivative of } f(x) = \sqrt{\ln(x^2 + 1)}
+\]
+\end{frame}
+
+\begin{frame}{Practice: 15 and 16}
+\textbf{Practice 15:}
+\[
+\text{Find the derivative of } f(x) = \sin(\ln(x))
+\]
+\vspace{1em}
+\textbf{Practice 16:}
+\[
+\text{Find the derivative of } f(x) = e^{\arctan(x)}
+\]
+\end{frame}
+
+\section{Advanced Practice Problems}
+
+\begin{frame}{Practice: 17 and 18}
+\textbf{Practice 17:}
+\[
+\text{Find the derivative of } f(x) = \sin^3(\cos(x^2))
+\]
+\vspace{1em}
+\textbf{Practice 18:}
+\[
+\text{Find the derivative of } f(x) = \ln(\sqrt{e^x + \sin(x)})
+\]
+\end{frame}
+
+\begin{frame}{Practice: 19 and 20}
+\textbf{Practice 19:}
+\[
+\text{Find the derivative of } f(x) = e^{\sin(\ln(x))}
+\]
+\vspace{1em}
+\textbf{Practice 20:}
+\[
+\text{Find the derivative of } f(x) = \arctan(\sqrt{x^2 + \cos(x)})
+\]
+\end{frame}
+
+\begin{frame}{Practice: 21 and 22}
+\textbf{Practice 21:}
+\[
+\text{Find the derivative of } f(x) = \cos(\ln(\sin(x)))
+\]
+\vspace{1em}
+\textbf{Practice 22:}
+\[
+\text{Find the derivative of } f(x) = \sqrt{e^{\sin(x)} + \cos(x)}
+\]
+\end{frame}
+
+\begin{frame}{Practice: 23 and 24}
+\textbf{Practice 23:}
+\[
+\text{Find the derivative of } f(x) = \ln(\arctan(e^x))
+\]
+\vspace{1em}
+\textbf{Practice 24:}
+\[
+\text{Find the derivative of } f(x) = \sin(\cos(\tan(x)))
+\]
+\end{frame}
+
+\begin{frame}{Practice: 25}
+\textbf{Practice 25:}
+\[
+\text{Find the derivative of } f(x) = e^{\sin(\cos(\ln(x)))}
+\]
+\end{frame}
+
+\section{Solutions to Basic Practice Problems}
+
+\begin{frame}{Solution to Practice 1}
+\textbf{Practice 1:}
+
+Find the derivative of $f(x) = (2x^2 + 3x + 1)^4$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= 4(2x^2 + 3x + 1)^3 \cdot \frac{d}{dx}(2x^2 + 3x + 1) \\
+  &= 4(2x^2 + 3x + 1)^3 \cdot (4x + 3) \\
+  &= 4(2x^2 + 3x + 1)^3(4x + 3)
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 2}
+\textbf{Practice 2:}
+
+Find the derivative of $f(x) = \sin(5x - 2)$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \cos(5x - 2) \cdot \frac{d}{dx}(5x - 2) \\
+  &= \cos(5x - 2) \cdot 5 \\
+  &= 5\cos(5x - 2)
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 3}
+\textbf{Practice 3:}
+
+Find the derivative of $f(x) = e^{3x^2 + 2x}$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= e^{3x^2 + 2x} \cdot \frac{d}{dx}(3x^2 + 2x) \\
+  &= e^{3x^2 + 2x} \cdot (6x + 2) \\
+  &= e^{3x^2 + 2x}(6x + 2)
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 4}
+\textbf{Practice 4:}
+
+Find the derivative of $f(x) = \ln(4x^3 - 7x)$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{1}{4x^3 - 7x} \cdot \frac{d}{dx}(4x^3 - 7x) \\
+  &= \frac{1}{4x^3 - 7x} \cdot (12x^2 - 7) \\
+  &= \frac{12x^2 - 7}{4x^3 - 7x}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 5}
+\textbf{Practice 5:}
+
+Find the derivative of $f(x) = \cos^3(2x + 1)$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= 3\cos^2(2x + 1) \cdot \frac{d}{dx}(\cos(2x + 1)) \\
+  &= 3\cos^2(2x + 1) \cdot (-\sin(2x + 1)) \cdot \frac{d}{dx}(2x + 1) \\
+  &= 3\cos^2(2x + 1) \cdot (-\sin(2x + 1)) \cdot 2 \\
+  &= -6\cos^2(2x + 1)\sin(2x + 1)
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 6}
+\textbf{Practice 6:}
+
+Find the derivative of $f(x) = \sqrt{x^2 + 4}$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{1}{2\sqrt{x^2 + 4}} \cdot \frac{d}{dx}(x^2 + 4) \\
+  &= \frac{1}{2\sqrt{x^2 + 4}} \cdot 2x \\
+  &= \frac{x}{\sqrt{x^2 + 4}}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 7}
+\textbf{Practice 7:}
+
+Find the derivative of $f(x) = \tan(3x^2 - 1)$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \sec^2(3x^2 - 1) \cdot \frac{d}{dx}(3x^2 - 1) \\
+  &= \sec^2(3x^2 - 1) \cdot 6x \\
+  &= 6x\sec^2(3x^2 - 1)
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 8}
+\textbf{Practice 8:}
+
+Find the derivative of $f(x) = (x^3 + 2x)^5$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= 5(x^3 + 2x)^4 \cdot \frac{d}{dx}(x^3 + 2x) \\
+  &= 5(x^3 + 2x)^4 \cdot (3x^2 + 2) \\
+  &= 5(x^3 + 2x)^4(3x^2 + 2)
+\end{aligned}
+\]
+\end{frame}
+
+\section{Solutions to Intermediate Practice Problems}
+
+\begin{frame}{Solution to Practice 9}
+\textbf{Practice 9:}
+
+Find the derivative of $f(x) = \sin^2(x^2 + 1)$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= 2\sin(x^2 + 1) \cdot \frac{d}{dx}(\sin(x^2 + 1)) \\
+  &= 2\sin(x^2 + 1) \cdot \cos(x^2 + 1) \cdot \frac{d}{dx}(x^2 + 1) \\
+  &= 2\sin(x^2 + 1) \cdot \cos(x^2 + 1) \cdot 2x \\
+  &= 4x\sin(x^2 + 1)\cos(x^2 + 1)
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 10}
+\textbf{Practice 10:}
+
+Find the derivative of $f(x) = e^{\sin(x)}$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= e^{\sin(x)} \cdot \frac{d}{dx}(\sin(x)) \\
+  &= e^{\sin(x)} \cdot \cos(x) \\
+  &= e^{\sin(x)}\cos(x)
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 11}
+\textbf{Practice 11:}
+
+Find the derivative of $f(x) = \ln(\cos(x))$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{1}{\cos(x)} \cdot \frac{d}{dx}(\cos(x)) \\
+  &= \frac{1}{\cos(x)} \cdot (-\sin(x)) \\
+  &= -\frac{\sin(x)}{\cos(x)} \\
+  &= -\tan(x)
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 12}
+\textbf{Practice 12:}
+
+Find the derivative of $f(x) = \arctan(x^3 + 2x)$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{1}{1 + (x^3 + 2x)^2} \cdot \frac{d}{dx}(x^3 + 2x) \\
+  &= \frac{1}{1 + (x^3 + 2x)^2} \cdot (3x^2 + 2) \\
+  &= \frac{3x^2 + 2}{1 + (x^3 + 2x)^2}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 13}
+\textbf{Practice 13:}
+
+Find the derivative of $f(x) = \cos(e^x + x^2)$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= -\sin(e^x + x^2) \cdot \frac{d}{dx}(e^x + x^2) \\
+  &= -\sin(e^x + x^2) \cdot (e^x + 2x) \\
+  &= -(e^x + 2x)\sin(e^x + x^2)
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 14}
+\textbf{Practice 14:}
+
+Find the derivative of $f(x) = \sqrt{\ln(x^2 + 1)}$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{1}{2\sqrt{\ln(x^2 + 1)}} \cdot \frac{d}{dx}(\ln(x^2 + 1)) \\
+  &= \frac{1}{2\sqrt{\ln(x^2 + 1)}} \cdot \frac{1}{x^2 + 1} \cdot \frac{d}{dx}(x^2 + 1) \\
+  &= \frac{1}{2\sqrt{\ln(x^2 + 1)}} \cdot \frac{1}{x^2 + 1} \cdot 2x \\
+  &= \frac{x}{(x^2 + 1)\sqrt{\ln(x^2 + 1)}}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 15}
+\textbf{Practice 15:}
+
+Find the derivative of $f(x) = \sin(\ln(x))$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \cos(\ln(x)) \cdot \frac{d}{dx}(\ln(x)) \\
+  &= \cos(\ln(x)) \cdot \frac{1}{x} \\
+  &= \frac{\cos(\ln(x))}{x}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 16}
+\textbf{Practice 16:}
+
+Find the derivative of $f(x) = e^{\arctan(x)}$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= e^{\arctan(x)} \cdot \frac{d}{dx}(\arctan(x)) \\
+  &= e^{\arctan(x)} \cdot \frac{1}{1 + x^2} \\
+  &= \frac{e^{\arctan(x)}}{1 + x^2}
+\end{aligned}
+\]
+\end{frame}
+
+\section{Solutions to Advanced Practice Problems}
+
+\begin{frame}{Solution to Practice 17}
+\textbf{Practice 17:}
+
+Find the derivative of $f(x) = \sin^3(\cos(x^2))$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= 3\sin^2(\cos(x^2)) \cdot \frac{d}{dx}(\sin(\cos(x^2))) \\
+  &= 3\sin^2(\cos(x^2)) \cdot \cos(\cos(x^2)) \cdot \frac{d}{dx}(\cos(x^2)) \\
+  &= 3\sin^2(\cos(x^2)) \cdot \cos(\cos(x^2)) \cdot (-\sin(x^2)) \cdot \frac{d}{dx}(x^2) \\
+  &= 3\sin^2(\cos(x^2)) \cdot \cos(\cos(x^2)) \cdot (-\sin(x^2)) \cdot 2x \\
+  &= -6x\sin^2(\cos(x^2))\cos(\cos(x^2))\sin(x^2)
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 18}
+\textbf{Practice 18:}
+
+Find the derivative of $f(x) = \ln(\sqrt{e^x + \sin(x)})$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{1}{\sqrt{e^x + \sin(x)}} \cdot \frac{d}{dx}(\sqrt{e^x + \sin(x)}) \\
+  &= \frac{1}{\sqrt{e^x + \sin(x)}} \cdot \frac{1}{2\sqrt{e^x + \sin(x)}} \cdot \frac{d}{dx}(e^x + \sin(x)) \\
+  &= \frac{1}{2(e^x + \sin(x))} \cdot (e^x + \cos(x)) \\
+  &= \frac{e^x + \cos(x)}{2(e^x + \sin(x))}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 19}
+\textbf{Practice 19:}
+
+Find the derivative of $f(x) = e^{\sin(\ln(x))}$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= e^{\sin(\ln(x))} \cdot \frac{d}{dx}(\sin(\ln(x))) \\
+  &= e^{\sin(\ln(x))} \cdot \cos(\ln(x)) \cdot \frac{d}{dx}(\ln(x)) \\
+  &= e^{\sin(\ln(x))} \cdot \cos(\ln(x)) \cdot \frac{1}{x} \\
+  &= \frac{e^{\sin(\ln(x))}\cos(\ln(x))}{x}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 20}
+\textbf{Practice 20:}
+
+Find the derivative of $f(x) = \arctan(\sqrt{x^2 + \cos(x)})$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{1}{1 + (\sqrt{x^2 + \cos(x)})^2} \cdot \frac{d}{dx}(\sqrt{x^2 + \cos(x)}) \\
+  &= \frac{1}{1 + x^2 + \cos(x)} \cdot \frac{1}{2\sqrt{x^2 + \cos(x)}} \cdot \frac{d}{dx}(x^2 + \cos(x)) \\
+  &= \frac{1}{1 + x^2 + \cos(x)} \cdot \frac{1}{2\sqrt{x^2 + \cos(x)}} \cdot (2x - \sin(x)) \\
+  &= \frac{2x - \sin(x)}{2(1 + x^2 + \cos(x))\sqrt{x^2 + \cos(x)}}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 21}
+\textbf{Practice 21:}
+
+Find the derivative of $f(x) = \cos(\ln(\sin(x)))$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= -\sin(\ln(\sin(x))) \cdot \frac{d}{dx}(\ln(\sin(x))) \\
+  &= -\sin(\ln(\sin(x))) \cdot \frac{1}{\sin(x)} \cdot \frac{d}{dx}(\sin(x)) \\
+  &= -\sin(\ln(\sin(x))) \cdot \frac{1}{\sin(x)} \cdot \cos(x) \\
+  &= -\frac{\cos(x)\sin(\ln(\sin(x)))}{\sin(x)}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 22}
+\textbf{Practice 22:}
+
+Find the derivative of $f(x) = \sqrt{e^{\sin(x)} + \cos(x)}$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{1}{2\sqrt{e^{\sin(x)} + \cos(x)}} \cdot \frac{d}{dx}(e^{\sin(x)} + \cos(x)) \\
+  &= \frac{1}{2\sqrt{e^{\sin(x)} + \cos(x)}} \cdot (e^{\sin(x)}\cos(x) - \sin(x)) \\
+  &= \frac{e^{\sin(x)}\cos(x) - \sin(x)}{2\sqrt{e^{\sin(x)} + \cos(x)}}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 23}
+\textbf{Practice 23:}
+
+Find the derivative of $f(x) = \ln(\arctan(e^x))$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \frac{1}{\arctan(e^x)} \cdot \frac{d}{dx}(\arctan(e^x)) \\
+  &= \frac{1}{\arctan(e^x)} \cdot \frac{1}{1 + (e^x)^2} \cdot \frac{d}{dx}(e^x) \\
+  &= \frac{1}{\arctan(e^x)} \cdot \frac{1}{1 + e^{2x}} \cdot e^x \\
+  &= \frac{e^x}{\arctan(e^x)(1 + e^{2x})}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 24}
+\textbf{Practice 24:}
+
+Find the derivative of $f(x) = \sin(\cos(\tan(x)))$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= \cos(\cos(\tan(x))) \cdot \frac{d}{dx}(\cos(\tan(x))) \\
+  &= \cos(\cos(\tan(x))) \cdot (-\sin(\tan(x))) \cdot \frac{d}{dx}(\tan(x)) \\
+  &= \cos(\cos(\tan(x))) \cdot (-\sin(\tan(x))) \cdot \sec^2(x) \\
+  &= -\sec^2(x)\cos(\cos(\tan(x)))\sin(\tan(x))
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 25}
+\textbf{Practice 25:}
+
+Find the derivative of $f(x) = e^{\sin(\cos(\ln(x)))}$
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  f'(x) &= e^{\sin(\cos(\ln(x)))} \cdot \frac{d}{dx}(\sin(\cos(\ln(x)))) \\
+  &= e^{\sin(\cos(\ln(x)))} \cdot \cos(\cos(\ln(x))) \cdot \frac{d}{dx}(\cos(\ln(x))) \\
+  &= e^{\sin(\cos(\ln(x)))} \cdot \cos(\cos(\ln(x))) \cdot (-\sin(\ln(x))) \cdot \frac{d}{dx}(\ln(x)) \\
+  &= e^{\sin(\cos(\ln(x)))} \cdot \cos(\cos(\ln(x))) \cdot (-\sin(\ln(x))) \cdot \frac{1}{x} \\
+  &= -\frac{e^{\sin(\cos(\ln(x)))}\cos(\cos(\ln(x)))\sin(\ln(x))}{x}
+\end{aligned}
+\]
+\end{frame}
+
+\section{Summary}
+
+\begin{frame}{Key Points - Chain Rule}
+\begin{itemize}
+    \item \textbf{Basic Form:} $\frac{d}{dx}f(g(x)) = f'(g(x)) \cdot g'(x)$
+    \item \textbf{Alternative Form:} $\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}$
+    \item \textbf{Key Idea:} Differentiate outside, multiply by derivative of inside
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Common Applications}
+\begin{itemize}
+    \item \textbf{Powers:} $\frac{d}{dx}(g(x))^n = n(g(x))^{n-1} \cdot g'(x)$
+    \item \textbf{Linear arguments:} $\frac{d}{dx}f(ax + b) = a f'(ax + b)$
+    \item \textbf{Trig functions:} $\frac{d}{dx}\sin(g(x)) = \cos(g(x)) \cdot g'(x)$
+    \item \textbf{Exponential:} $\frac{d}{dx}e^{g(x)} = e^{g(x)} \cdot g'(x)$
+\end{itemize}
+
+\vspace{0.5cm}
+The chain rule is essential for finding derivatives of complex functions and appears frequently in applications across mathematics, physics, and engineering.
+\end{frame}
+
+\begin{frame}{Thank You!}
+\centering
+\vspace{2cm}
+{\Huge \textcolor{myblue}{\textbf{Questions?}}}
+
+\vspace{1cm}
+{\Large The Chain Rule is your final tool for differentiation!}
+\end{frame}
+
+\end{document} 

@@ -1,0 +1,380 @@
+% !TEX program = pdflatex
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Madrid}
+\usecolortheme{default}
+\usepackage{tikz}
+
+% Custom colors
+\definecolor{myblue}{RGB}{0,114,178}
+\definecolor{myorange}{RGB}{230,159,0}
+\definecolor{mygreen}{RGB}{0,158,115}
+\definecolor{myred}{RGB}{213,94,0}
+\definecolor{mypurple}{RGB}{204,121,167}
+\definecolor{mybrown}{RGB}{240,228,66}
+\definecolor{mygray}{RGB}{189,189,189}
+
+% Set colors
+\setbeamercolor{title}{fg=white,bg=myblue}
+\setbeamercolor{frametitle}{fg=white,bg=myblue}
+\setbeamercolor{section title}{fg=white,bg=myblue}
+\setbeamercolor{subsection title}{fg=white,bg=myorange}
+\setbeamercolor{item}{fg=myblue}
+\setbeamercolor{subitem}{fg=myorange}
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% Title page
+\title{Curve Sketching}
+\subtitle{Applications of Derivatives: Sketching Graphs}
+\author{Differential Calculus}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}{Why Curve Sketching?}
+\begin{itemize}
+    \item Derivatives help us understand the shape of a function's graph.
+    \item We use $f(x)$, $f'(x)$, and $f''(x)$ to identify key features:
+    \begin{itemize}
+        \item Domain, intercepts, asymptotes
+        \item Increasing/decreasing, maxima/minima
+        \item Concavity, inflection points
+    \end{itemize}
+    \item Goal: Efficiently sketch accurate graphs using calculus tools.
+\end{itemize}
+\end{frame}
+
+\section{Domain, Intercepts, and Asymptotes}
+
+\begin{frame}{Domain, Intercepts, and Asymptotes}
+\begin{itemize}
+    \item \textbf{Domain:} Where is $f(x)$ defined? (Watch for denominators, roots, discontinuities)
+    \item \textbf{Intercepts:} $x$-intercepts: solve $f(x)=0$; $y$-intercept: $f(0)$
+    \item \textbf{Vertical Asymptotes:} Where $f(x)\to\pm\infty$ (often zeros of denominator)
+    \item \textbf{Horizontal Asymptotes:} $\lim_{x\to\pm\infty} f(x)$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example: Domain and Asymptotes}
+\textbf{Example:} $f(x) = \frac{x+1}{(x+3)(x-2)}$
+\begin{itemize}
+    \item Domain: $x\neq -3, 2$
+    \item $y$-intercept: $f(0) = -\frac{1}{6}$
+    \item $x$-intercept: $x=-1$
+    \item Vertical asymptotes: $x=-3, 2$
+    \item Horizontal asymptote: $y=0$
+\end{itemize}
+\end{frame}
+
+\section{First Derivative: Increasing/Decreasing}
+
+\begin{frame}{How to Find the First Derivative}
+\textbf{Step-by-Step:}
+\begin{enumerate}
+    \item \textbf{Start with the function:} $f(x)$
+    \item \textbf{Apply differentiation rules:}
+    \begin{itemize}
+        \item Power rule: $\frac{d}{dx}x^n = nx^{n-1}$
+        \item Sum/difference rule: $\frac{d}{dx}[f(x) \pm g(x)] = f'(x) \pm g'(x)$
+        \item Product/quotient/chain rules as needed
+    \end{itemize}
+    \item \textbf{Simplify the result:} Write $f'(x)$ in simplest form
+\end{enumerate}
+\textbf{Example:}
+\[
+\begin{aligned}
+    f(x) &= x^4 - 6x^3 \\
+    f'(x) &= 4x^3 - 18x^2
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{How to Test for Increasing/Decreasing}
+\textbf{Step-by-Step:}
+\begin{enumerate}
+    \item \textbf{Find $f'(x)$}
+    \item \textbf{Solve $f'(x) = 0$} to find critical points
+    \item \textbf{Identify intervals} between/around critical points
+    \item \textbf{Test the sign of $f'(x)$} in each interval:
+    \begin{itemize}
+        \item If $f'(x) > 0$ on an interval, $f(x)$ is increasing there
+        \item If $f'(x) < 0$ on an interval, $f(x)$ is decreasing there
+    \end{itemize}
+\end{enumerate}
+\textbf{Example:}
+\[
+\begin{aligned}
+    f'(x) &= 4x^3 - 18x^2 \\
+    4x^3 - 18x^2 = 0 \implies x^2(4x - 18) = 0 \implies x = 0, \frac{9}{2}
+\end{aligned}
+\]
+Test $f'(x)$ in intervals $(-\infty, 0)$, $(0, \frac{9}{2})$, $(\frac{9}{2}, \infty)$.
+\end{frame}
+
+\section{Second Derivative: Concavity}
+
+\begin{frame}{How to Find the Second Derivative}
+\textbf{Step-by-Step:}
+\begin{enumerate}
+    \item \textbf{Start with the first derivative:} $f'(x)$
+    \item \textbf{Differentiate again:} $f''(x) = \frac{d}{dx}f'(x)$
+    \item \textbf{Simplify the result:} Write $f''(x)$ in simplest form
+\end{enumerate}
+\textbf{Example:}
+\[
+\begin{aligned}
+    f'(x) &= 4x^3 - 18x^2 \\
+    f''(x) &= 12x^2 - 36x
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{How to Test for Concavity}
+\textbf{Step-by-Step:}
+\begin{enumerate}
+    \item \textbf{Find $f''(x)$}
+    \item \textbf{Solve $f''(x) = 0$} to find possible inflection points
+    \item \textbf{Identify intervals} between/around these points
+    \item \textbf{Test the sign of $f''(x)$} in each interval:
+    \begin{itemize}
+        \item If $f''(x) > 0$ on an interval, $f(x)$ is concave up there
+        \item If $f''(x) < 0$ on an interval, $f(x)$ is concave down there
+    \end{itemize}
+\end{enumerate}
+\textbf{Example:}
+\[
+\begin{aligned}
+    f''(x) &= 12x^2 - 36x = 12x(x-3) \\
+    12x(x-3) = 0 \implies x = 0, 3
+\end{aligned}
+\]
+Test $f''(x)$ in intervals $(-\infty, 0)$, $(0, 3)$, $(3, \infty)$.
+\end{frame}
+
+\section{Symmetries}
+
+\begin{frame}{Symmetries}
+\begin{itemize}
+    \item \textbf{Even:} $f(-x) = f(x)$ (symmetric about $y$-axis)
+    \item \textbf{Odd:} $f(-x) = -f(x)$ (symmetric about origin)
+    \item \textbf{Periodic:} $f(x+P) = f(x)$ (repeats every $P$)
+\end{itemize}
+\end{frame}
+
+\section{Checklist}
+
+\begin{frame}{Curve Sketching Checklist}
+\begin{enumerate}
+    \item Domain, intercepts, asymptotes
+    \item Symmetry (even, odd, periodic)
+    \item Critical points, singular points
+    \item Increasing/decreasing intervals
+    \item Concavity, inflection points
+\end{enumerate}
+\end{frame}
+
+\section{Worked Example}
+
+\begin{frame}{Worked Example}
+\textbf{Sketch:} $f(x) = x^3 - 3x + 1$
+\begin{itemize}
+    \item Domain: all real $x$
+    \item $y$-intercept: $f(0)=1$
+    \item $f'(x) = 3x^2 - 3 = 3(x^2-1)$
+    \item Critical points: $x=\pm1$
+    \item $f''(x) = 6x$, inflection at $x=0$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Worked Example: Analysis}
+\begin{itemize}
+    \item $x<-1$: $f'(x)>0$ (increasing)
+    \item $-1<x<1$: $f'(x)<0$ (decreasing)
+    \item $x>1$: $f'(x)>0$ (increasing)
+    \item $x<0$: $f''(x)<0$ (concave down)
+    \item $x>0$: $f''(x)>0$ (concave up)
+    \item Inflection at $(0,1)$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}
+    \item Use $f(x)$, $f'(x)$, $f''(x)$ to find all key features
+    \item Sketch using intercepts, asymptotes, critical points, inflection points
+    \item Check symmetry and periodicity
+    \item Draw smooth curves between features
+\end{itemize}
+\end{frame}
+
+\section{More Worked Examples}
+
+\begin{frame}{Example: $f(x) = x^4 - 4x^3$ (Domain and Intercepts)}
+\textbf{Step 1: Domain}
+\begin{itemize}
+    \item Domain: all real $x$
+\end{itemize}
+\textbf{Step 2: Intercepts}
+\begin{itemize}
+    \item $y$-intercept: $f(0) = 0$
+    \item $x$-intercepts: $f(x) = 0 \implies x^4 - 4x^3 = 0 \implies x^3(x-4) = 0 \implies x=0,4$
+    \item No vertical/horizontal asymptotes (polynomial)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example: $f(x) = x^4 - 4x^3$ (First Derivative)}
+\textbf{Step 3: First Derivative}
+\[
+    f'(x) = 4x^3 - 12x^2 = 4x^2(x-3)
+\]
+Critical points: $x=0,3$
+\begin{itemize}
+    \item $x<0$: $f'(x)<0$ (decreasing)
+    \item $0<x<3$: $f'(x)<0$ (decreasing)
+    \item $x>3$: $f'(x)>0$ (increasing)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example: $f(x) = x^4 - 4x^3$ (Second Derivative)}
+\textbf{Step 4: Second Derivative}
+\[
+    f''(x) = 12x^2 - 24x = 12x(x-2)
+\]
+Inflection points: $x=0,2$
+\begin{itemize}
+    \item $x<0$: $f''(x)>0$ (concave up)
+    \item $0<x<2$: $f''(x)<0$ (concave down)
+    \item $x>2$: $f''(x)>0$ (concave up)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example: $f(x) = x^4 - 4x^3$ (Summary)}
+\textbf{Step 5: Summary}
+\begin{itemize}
+    \item Decreasing for $x<3$, increasing for $x>3$
+    \item Inflection points at $x=0,2$
+    \item Local minimum at $x=3$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example: $f(x) = \dfrac{x}{x^2-4}$ (Domain and Asymptotes)}
+\textbf{Step 1: Domain}
+\begin{itemize}
+    \item Domain: $x\neq 2, -2$
+\end{itemize}
+\textbf{Step 2: Intercepts and Asymptotes}
+\begin{itemize}
+    \item $y$-intercept: $f(0)=0$
+    \item $x$-intercept: $x=0$
+    \item Vertical asymptotes: $x=2, -2$
+    \item Horizontal asymptote: $y=0$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example: $f(x) = \dfrac{x}{x^2-4}$ (First Derivative)}
+\textbf{Step 3: First Derivative}
+\[
+    f'(x) = \frac{(x^2-4)\cdot 1 - x\cdot 2x}{(x^2-4)^2} = \frac{x^2-4-2x^2}{(x^2-4)^2} = \frac{-x^2-4}{(x^2-4)^2}
+\]
+\begin{itemize}
+    \item Numerator always negative, denominator always positive (except at asymptotes)
+    \item $f'(x)<0$ for all $x\neq 2, -2$ (function always decreasing)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example: $f(x) = \dfrac{x}{x^2-4}$ (Second Derivative)}
+\textbf{Step 4: Second Derivative}
+Let $u = -x^2-4$, $v = (x^2-4)^2$:
+\[
+    f''(x) = \frac{u'v - uv'}{v^2}
+\]
+\[
+    u' = -2x, \quad v' = 2(x^2-4)\cdot 2x = 4x(x^2-4)
+\]
+\[
+    f''(x) = \frac{(-2x)(x^2-4)^2 - (-x^2-4)\cdot 4x(x^2-4)}{(x^2-4)^4}
+\]
+\[
+    = \frac{-2x(x^2-4)^2 + 4x(x^2+4)(x^2-4)}{(x^2-4)^4}
+\]
+\[
+    = \frac{-2x(x^2-4) + 4x(x^2+4)}{(x^2-4)^3}
+\]
+\end{frame}
+
+\begin{frame}{Example: $f(x) = \dfrac{x}{x^2-4}$ (Concavity and Summary)}
+\textbf{Step 5: Concavity}
+\begin{itemize}
+    \item Test sign of $f''(x)$ in intervals between asymptotes.
+\end{itemize}
+\textbf{Step 6: Summary}
+\begin{itemize}
+    \item Always decreasing
+    \item Vertical asymptotes at $x=2, -2$
+    \item Horizontal asymptote at $y=0$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example: $f(x) = \sin x$ (Domain and Intercepts)}
+\textbf{Step 1: Domain}
+\begin{itemize}
+    \item Domain: all real $x$
+\end{itemize}
+\textbf{Step 2: Intercepts and Periodicity}
+\begin{itemize}
+    \item $y$-intercept: $f(0)=0$
+    \item $x$-intercepts: $x = n\pi$, $n\in\mathbb{Z}$
+    \item No vertical/horizontal asymptotes
+    \item Periodic: period $2\pi$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example: $f(x) = \sin x$ (First Derivative and Increasing/Decreasing)}
+\textbf{Step 3: First Derivative}
+\[
+    f'(x) = \cos x
+\]
+\textbf{Step 4: Increasing/Decreasing}
+\begin{itemize}
+    \item $f'(x)=0$ at $x=\frac{\pi}{2} + n\pi$
+    \item $f'(x)>0$ on $(-\frac{\pi}{2}, \frac{\pi}{2})$ (increasing)
+    \item $f'(x)<0$ on $(\frac{\pi}{2}, \frac{3\pi}{2})$ (decreasing)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example: $f(x) = \sin x$ (Second Derivative and Concavity)}
+\textbf{Step 5: Second Derivative}
+\[
+    f''(x) = -\sin x
+\]
+\textbf{Step 6: Concavity and Summary}
+\begin{itemize}
+    \item $f''(x)=0$ at $x=n\pi$
+    \item $f''(x)>0$ on $(0,\pi)$ (concave up)
+    \item $f''(x)<0$ on $(-\pi,0)$ (concave down)
+    \item Inflection points at $x=n\pi$
+    \item Maxima at $x=\frac{\pi}{2}+2n\pi$, minima at $x=\frac{3\pi}{2}+2n\pi$
+    \item Periodic, smooth wave
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Thank You!}
+\centering
+\vspace{2cm}
+{\Huge \textcolor{myblue}{\textbf{Questions?}}}
+
+\vspace{1cm}
+{\Large Curve sketching is a powerful application of calculus!}
+\end{frame}
+
+\end{document} 

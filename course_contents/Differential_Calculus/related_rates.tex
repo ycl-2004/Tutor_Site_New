@@ -1,0 +1,852 @@
+% !TEX program = pdflatex
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Madrid}
+\usecolortheme{default}
+\usepackage{tikz}
+
+% Custom colors
+\definecolor{myblue}{RGB}{0,114,178}
+\definecolor{myorange}{RGB}{230,159,0}
+\definecolor{mygreen}{RGB}{0,158,115}
+\definecolor{myred}{RGB}{213,94,0}
+\definecolor{mypurple}{RGB}{204,121,167}
+\definecolor{mybrown}{RGB}{240,228,66}
+\definecolor{mygray}{RGB}{189,189,189}
+
+% Set colors
+\setbeamercolor{title}{fg=white,bg=myblue}
+\setbeamercolor{frametitle}{fg=white,bg=myblue}
+\setbeamercolor{section title}{fg=white,bg=myblue}
+\setbeamercolor{subsection title}{fg=white,bg=myorange}
+\setbeamercolor{item}{fg=myblue}
+\setbeamercolor{subitem}{fg=myorange}
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% Custom commands
+\newcommand{\limx}[2]{\lim_{x \to #1} #2}
+
+% Title page
+\title{Related Rates}
+\subtitle{Applications of Derivatives in Real-World Problems}
+\author{Differential Calculus}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}{What are Related Rates?}
+\begin{itemize}
+  \item Problems where you are given the rate of change of one quantity
+  \item You need to determine the rate of change of another related quantity
+  \item All quantities are functions of time
+  \item Use implicit differentiation to relate the rates
+\end{itemize}
+\end{frame}
+
+\begin{frame}{General Strategy}
+\begin{block}{Step-by-Step Method}
+\begin{enumerate}
+  \item \textbf{Draw a picture} and identify all relevant variables
+  \item \textbf{Write an equation} relating the quantities
+  \item \textbf{Differentiate both sides} with respect to time
+  \item \textbf{Substitute known values} and solve for the unknown rate
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\begin{frame}{Key Concepts}
+\begin{block}{Important Points}
+\begin{itemize}
+  \item All variables are functions of time: $x(t)$, $y(t)$, $V(t)$, etc.
+  \item Use implicit differentiation: $\frac{d}{dt}[f(x,y)] = \frac{\partial f}{\partial x}\frac{dx}{dt} + \frac{\partial f}{\partial y}\frac{dy}{dt}$
+  \item Pay attention to units and signs
+  \item Draw diagrams to visualize the problem
+\end{itemize}
+\end{block}
+\end{frame}
+
+\section{Basic Examples}
+
+\begin{frame}{Example 1: Spherical Balloon}
+\textbf{Problem:} A spherical balloon is being inflated at a rate of $13$ cm$^3$/sec. How fast is the radius changing when the balloon has radius $15$ cm?
+\end{frame}
+
+\begin{frame}{Solution: Spherical Balloon}
+\textbf{Solution:}
+\[
+\begin{aligned}
+  V &= \frac{4}{3}\pi r^3 \\
+  \frac{dV}{dt} &= 4\pi r^2 \cdot \frac{dr}{dt} \\
+  \frac{dr}{dt} &= \frac{1}{4\pi r^2} \cdot \frac{dV}{dt} \\
+  \frac{dr}{dt} &= \frac{13}{4\pi (15)^2} \\
+  \frac{dr}{dt} &= \frac{13}{900\pi} \text{ cm/sec}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Example 2: Ladder Problem}
+\textbf{Problem:} A 5m ladder is leaning against a wall. The base slides out at 1m/s. How fast is the top sliding down when the base is 3m from the wall?
+\end{frame}
+
+\begin{frame}{Solution: Ladder Problem}
+\textbf{Solution:}
+\[
+\begin{aligned}
+  x^2 + y^2 &= 25 \\
+  2x\frac{dx}{dt} + 2y\frac{dy}{dt} &= 0 \\
+  x\frac{dx}{dt} + y\frac{dy}{dt} &= 0 \\
+  \frac{dy}{dt} &= -\frac{x}{y}\frac{dx}{dt}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution: Ladder Problem (continued)}
+\textbf{Solution (continued):}
+\[
+\begin{aligned}
+  \text{When } x &= 3, y = \sqrt{25 - 9} = 4 \\
+  \frac{dy}{dt} &= -\frac{3}{4} \cdot 1 \\
+  \frac{dy}{dt} &= -\frac{3}{4} \text{ m/s}
+\end{aligned}
+\]
+\end{frame}
+
+\section{Intermediate Examples}
+
+\begin{frame}{Example 3: Balloon Angle}
+\textbf{Problem:} A balloon rises vertically from a point 200m away. When the angle is $\pi/4$, it's changing at 0.05 rad/sec. How fast is the balloon rising?
+\end{frame}
+
+\begin{frame}{Solution: Balloon Angle}
+\textbf{Solution:}
+\[
+\begin{aligned}
+  h &= 200 \tan \theta \\
+  \frac{dh}{dt} &= 200 \sec^2 \theta \cdot \frac{d\theta}{dt} \\
+  \frac{dh}{dt} &= 200 \cdot (\sqrt{2})^2 \cdot 0.05 \\
+  \frac{dh}{dt} &= 200 \cdot 2 \cdot 0.05 \\
+  \frac{dh}{dt} &= 20 \text{ m/s}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Example 4: Percentage Rates}
+\textbf{Problem:} $R = PQ$. $P$ increases at 8\%/year, $Q$ decreases at 2\%/year. What's the percentage rate of change for $R$?
+\end{frame}
+
+\begin{frame}{Solution: Percentage Rates}
+\textbf{Solution:}
+\[
+\begin{aligned}
+  R &= PQ \\
+  \frac{dR}{dt} &= P\frac{dQ}{dt} + Q\frac{dP}{dt} \\
+  \frac{100}{R}\frac{dR}{dt} &= \frac{100P}{R}\frac{dQ}{dt} + \frac{100Q}{R}\frac{dP}{dt} \\
+  &= \frac{100}{Q}\frac{dQ}{dt} + \frac{100}{P}\frac{dP}{dt} \\
+  &= -2 + 8 = 6\%
+\end{aligned}
+\]
+\end{frame}
+
+\section{Advanced Examples}
+
+\begin{frame}{Example 5: Shadow Problem}
+\textbf{Problem:} A ball drops from 49m height. A light 49m high is 10m to the left. How fast is the shadow moving 1 second after drop?
+\end{frame}
+
+\begin{frame}{Solution: Shadow Problem}
+\textbf{Solution:}
+\[
+\begin{aligned}
+  h(t) &= 49 - 4.9t^2 \\
+  \text{By similar triangles: } \frac{4.9t^2}{10} &= \frac{49 - 4.9t^2}{s(t)} \\
+  s(t) &= \frac{10(49 - 4.9t^2)}{4.9t^2} = \frac{100}{t^2} - 10 \\
+  \frac{ds}{dt} &= -\frac{200}{t^3} \\
+  \frac{ds}{dt}(1) &= -200 \text{ m/s}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Example 6: Boats Problem}
+\textbf{Problem:} Boat A is 15km west of boat B. A travels east at 3km/h, B travels north at 4km/h. How fast is distance changing at 3pm?
+\end{frame}
+
+\begin{frame}{Solution: Boats Problem}
+\textbf{Solution:}
+\[
+\begin{aligned}
+  z^2 &= x^2 + y^2 \\
+  2z\frac{dz}{dt} &= 2x\frac{dx}{dt} + 2y\frac{dy}{dt} \\
+  \frac{dz}{dt} &= \frac{x\frac{dx}{dt} + y\frac{dy}{dt}}{z}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution: Boats Problem (continued)}
+\textbf{Solution (continued):}
+\[
+\begin{aligned}
+  \text{At 3pm: } x &= 6, y = 12, z = \sqrt{180} = 6\sqrt{5} \\
+  \frac{dx}{dt} &= -3, \frac{dy}{dt} = 4 \\
+  \frac{dz}{dt} &= \frac{6(-3) + 12(4)}{6\sqrt{5}} \\
+  \frac{dz}{dt} &= \frac{30}{6\sqrt{5}} = \sqrt{5} \text{ km/h}
+\end{aligned}
+\]
+\end{frame}
+
+\section{Basic Practice Problems}
+
+\begin{frame}{Practice: 1 and 2}
+\textbf{Practice 1:} \\
+A spherical balloon is inflated at 8 cm$^3$/sec. \\
+How fast is radius changing when radius is 10 cm? \\
+\vspace{1em}
+\textbf{Practice 2:} \\
+A 13m ladder slides down a wall. Base moves at 2m/s. \\
+How fast is top sliding when base is 5m from wall?
+\end{frame}
+
+\begin{frame}{Practice: 3 and 4}
+\textbf{Practice 3:} \\
+A cone's height increases at 3cm/s. \\
+How fast is volume changing when height is 10cm and radius is 5cm? \\
+\vspace{1em}
+\textbf{Practice 4:} \\
+A rectangle's length increases at 2cm/s, width decreases at 1cm/s. \\
+How fast is area changing when length is 8cm and width is 6cm?
+\end{frame}
+
+\begin{frame}{Practice: 5 and 6}
+\textbf{Practice 5:} \\
+A cube's edge length increases at 4cm/s. \\
+How fast is volume changing when edge length is 12cm? \\
+\vspace{1em}
+\textbf{Practice 6:} \\
+A circle's radius increases at 2cm/s. \\
+How fast is area changing when radius is 7cm?
+\end{frame}
+
+\begin{frame}{Practice: 7 and 8}
+\textbf{Practice 7:} \\
+A cylinder's radius increases at 1cm/s, height decreases at 2cm/s. \\
+How fast is volume changing when radius is 6cm and height is 10cm? \\
+\vspace{1em}
+\textbf{Practice 8:} \\
+A square's side length increases at 3cm/s. \\
+How fast is diagonal changing when side length is 9cm?
+\end{frame}
+
+\section{Intermediate Practice Problems}
+
+\begin{frame}{Practice: 9 and 10}
+\textbf{Practice 9:} \\
+A person walks away from a 20m light pole at 2m/s. \\
+How fast is shadow length changing when person is 15m from pole? \\
+\vspace{1em}
+\textbf{Practice 10:} \\
+A plane flies at 500km/h at altitude 10km. \\
+How fast is distance from observer changing when plane is 15km away horizontally?
+\end{frame}
+
+\begin{frame}{Practice: 11 and 12}
+\textbf{Practice 11:} \\
+A conical tank has radius 5m, height 10m. \\
+Water flows in at 3m$^3$/min. \\
+How fast is water level rising when depth is 4m? \\
+\vspace{1em}
+\textbf{Practice 12:} \\
+A street light is 8m high. A person 1.8m tall walks away at 1.5m/s. \\
+How fast is shadow length changing when person is 6m from light?
+\end{frame}
+
+\begin{frame}{Practice: 13 and 14}
+\textbf{Practice 13:} \\
+A kite flies at height 100m. String is let out at 2m/s. \\
+How fast is kite moving horizontally when 200m of string is out? \\
+\vspace{1em}
+\textbf{Practice 14:} \\
+A balloon rises at 3m/s. Observer 50m away. \\
+How fast is angle of elevation changing when balloon is 30m high?
+\end{frame}
+
+\begin{frame}{Practice: 15 and 16}
+\textbf{Practice 15:} \\
+A rectangular pool is 20m long, 10m wide. \\
+Water flows in at 5m$^3$/min. \\
+How fast is water level rising when depth is 2m? \\
+\vspace{1em}
+\textbf{Practice 16:} \\
+A particle moves along curve $y = x^2$ at 2 units/sec. \\
+How fast is distance from origin changing when $x = 3$?
+\end{frame}
+
+\section{Advanced Practice Problems}
+
+\begin{frame}{Practice: 17 and 18}
+\textbf{Practice 17:} \\
+A cylindrical tank radius 4m, height 8m, lying on side. \\
+Fuel flows in at 2m$^3$/min. \\
+How fast is fuel level rising when depth is 3m? \\
+\vspace{1em}
+\textbf{Practice 18:} \\
+Two cars approach intersection. Car A at 60km/h, Car B at 80km/h. \\
+How fast is distance changing when A is 3km away, B is 4km away?
+\end{frame}
+
+\begin{frame}{Practice: 19 and 20}
+\textbf{Practice 19:} \\
+A conical pile of sand has height equal to radius. \\
+Sand falls at 10m$^3$/min. \\
+How fast is radius changing when height is 5m? \\
+\vspace{1em}
+\textbf{Practice 20:} \\
+A ladder 10m long slides down wall. Base moves at 1.5m/s. \\
+How fast is angle between ladder and ground changing when base is 6m from wall?
+\end{frame}
+
+\begin{frame}{Practice: 21 and 22}
+\textbf{Practice 21:} \\
+A spherical snowball melts at rate proportional to surface area. \\
+How fast is radius changing when radius is 8cm? \\
+\vspace{1em}
+\textbf{Practice 22:} \\
+A particle moves along $y = \sin x$ at 3 units/sec. \\
+How fast is distance from $(0,0)$ changing when $x = \pi/4$?
+\end{frame}
+
+\begin{frame}{Practice: 23 and 24}
+\textbf{Practice 23:} \\
+A rectangular box has length, width, height increasing at 2cm/s, 1cm/s, 3cm/s. \\
+How fast is volume changing when dimensions are 8cm, 6cm, 4cm? \\
+\vspace{1em}
+\textbf{Practice 24:} \\
+A circular oil slick expands at 2m$^2$/min. \\
+How fast is radius changing when area is $100\pi$ m$^2$?
+\end{frame}
+
+\begin{frame}{Practice: 25}
+\textbf{Practice 25:} \\
+A conical cup has radius 5cm, height 12cm. \\
+Water flows out at 3cm$^3$/s. \\
+How fast is water level falling when depth is 6cm?
+\end{frame}
+
+\section{Solutions to Basic Practice Problems}
+
+\begin{frame}{Solution to Practice 1}
+\textbf{Practice 1:}
+
+A spherical balloon is inflated at 8 cm$^3$/sec. How fast is radius changing when radius is 10 cm?
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  V &= \frac{4}{3}\pi r^3 \\
+  \frac{dV}{dt} &= 4\pi r^2 \cdot \frac{dr}{dt} \\
+  \frac{dr}{dt} &= \frac{1}{4\pi r^2} \cdot \frac{dV}{dt} \\
+  \frac{dr}{dt} &= \frac{8}{4\pi (10)^2} \\
+  \frac{dr}{dt} &= \frac{8}{400\pi} = \frac{1}{50\pi} \text{ cm/sec}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 2}
+\textbf{Practice 2:}
+
+A 13m ladder slides down a wall. Base moves at 2m/s. How fast is top sliding when base is 5m from wall?
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  x^2 + y^2 &= 169 \\
+  2x\frac{dx}{dt} + 2y\frac{dy}{dt} &= 0 \\
+  x\frac{dx}{dt} + y\frac{dy}{dt} &= 0 \\
+  \frac{dy}{dt} &= -\frac{x}{y}\frac{dx}{dt}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 2 (continued)}
+\textbf{Solution (continued):}
+\[
+\begin{aligned}
+  \text{When } x &= 5, y = \sqrt{169 - 25} = 12 \\
+  \frac{dy}{dt} &= -\frac{5}{12} \cdot 2 \\
+  \frac{dy}{dt} &= -\frac{10}{12} = -\frac{5}{6} \text{ m/s}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 3}
+\textbf{Practice 3:}
+
+A cone's height increases at 3cm/s. How fast is volume changing when height is 10cm and radius is 5cm?
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  V &= \frac{1}{3}\pi r^2 h \\
+  \frac{dV}{dt} &= \frac{1}{3}\pi(2r\frac{dr}{dt} \cdot h + r^2\frac{dh}{dt}) \\
+  \text{Since } \frac{dr}{dt} &= 0 \text{ (radius constant)} \\
+  \frac{dV}{dt} &= \frac{1}{3}\pi r^2 \frac{dh}{dt} \\
+  \frac{dV}{dt} &= \frac{1}{3}\pi(5)^2 \cdot 3 \\
+  \frac{dV}{dt} &= 25\pi \text{ cm}^3\text{/s}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 4}
+\textbf{Practice 4:}
+
+A rectangle's length increases at 2cm/s, width decreases at 1cm/s. How fast is area changing when length is 8cm and width is 6cm?
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  A &= lw \\
+  \frac{dA}{dt} &= l\frac{dw}{dt} + w\frac{dl}{dt} \\
+  \frac{dA}{dt} &= 8(-1) + 6(2) \\
+  \frac{dA}{dt} &= -8 + 12 = 4 \text{ cm}^2\text{/s}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 5}
+\textbf{Practice 5:}
+
+A cube's edge length increases at 4cm/s. How fast is volume changing when edge length is 12cm?
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  V &= s^3 \\
+  \frac{dV}{dt} &= 3s^2 \cdot \frac{ds}{dt} \\
+  \frac{dV}{dt} &= 3(12)^2 \cdot 4 \\
+  \frac{dV}{dt} &= 3 \cdot 144 \cdot 4 = 1728 \text{ cm}^3\text{/s}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 6}
+\textbf{Practice 6:}
+
+A circle's radius increases at 2cm/s. How fast is area changing when radius is 7cm?
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  A &= \pi r^2 \\
+  \frac{dA}{dt} &= 2\pi r \cdot \frac{dr}{dt} \\
+  \frac{dA}{dt} &= 2\pi(7) \cdot 2 \\
+  \frac{dA}{dt} &= 28\pi \text{ cm}^2\text{/s}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 7}
+\textbf{Practice 7:}
+
+A cylinder's radius increases at 1cm/s, height decreases at 2cm/s. How fast is volume changing when radius is 6cm and height is 10cm?
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  V &= \pi r^2 h \\
+  \frac{dV}{dt} &= \pi(2r\frac{dr}{dt} \cdot h + r^2\frac{dh}{dt}) \\
+  \frac{dV}{dt} &= \pi(2 \cdot 6 \cdot 1 \cdot 10 + 6^2 \cdot (-2)) \\
+  \frac{dV}{dt} &= \pi(120 - 72) = 48\pi \text{ cm}^3\text{/s}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 8}
+\textbf{Practice 8:}
+
+A square's side length increases at 3cm/s. How fast is diagonal changing when side length is 9cm?
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  d &= s\sqrt{2} \\
+  \frac{dd}{dt} &= \sqrt{2} \cdot \frac{ds}{dt} \\
+  \frac{dd}{dt} &= \sqrt{2} \cdot 3 = 3\sqrt{2} \text{ cm/s}
+\end{aligned}
+\]
+\end{frame}
+
+\section{Solutions to Intermediate Practice Problems}
+
+\begin{frame}{Solution to Practice 9}
+\textbf{Practice 9:}
+
+A person walks away from a 20m light pole at 2m/s. How fast is shadow length changing when person is 15m from pole?
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  \text{By similar triangles: } \frac{h}{x} &= \frac{20}{x + s} \\
+  h(x + s) &= 20x \\
+  hs &= 20x - hx \\
+  s &= \frac{20x - hx}{h} = \frac{(20 - h)x}{h}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 9 (continued)}
+\textbf{Solution (continued):}
+\[
+\begin{aligned}
+  \frac{ds}{dt} &= \frac{(20 - h)}{h} \cdot \frac{dx}{dt} \\
+  \text{Assuming person height } h &= 1.8m \\
+  \frac{ds}{dt} &= \frac{18.2}{1.8} \cdot 2 \\
+  \frac{ds}{dt} &= \frac{36.4}{1.8} \approx 20.2 \text{ m/s}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 10}
+\textbf{Practice 10:}
+
+A plane flies at 500km/h at altitude 10km. How fast is distance from observer changing when plane is 15km away horizontally?
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  d^2 &= x^2 + h^2 \\
+  2d\frac{dd}{dt} &= 2x\frac{dx}{dt} \\
+  \frac{dd}{dt} &= \frac{x}{d}\frac{dx}{dt} \\
+  d &= \sqrt{15^2 + 10^2} = \sqrt{325} \\
+  \frac{dd}{dt} &= \frac{15}{\sqrt{325}} \cdot 500 \\
+  \frac{dd}{dt} &= \frac{7500}{\sqrt{325}} \text{ km/h}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 11}
+\textbf{Practice 11:}
+
+A conical tank has radius 5m, height 10m. Water flows in at 3m$^3$/min. How fast is water level rising when depth is 4m?
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  \frac{r}{h} &= \frac{5}{10} = \frac{1}{2} \\
+  r &= \frac{h}{2} \\
+  V &= \frac{1}{3}\pi r^2 h = \frac{1}{3}\pi(\frac{h}{2})^2 h = \frac{\pi h^3}{12} \\
+  \frac{dV}{dt} &= \frac{\pi h^2}{4} \cdot \frac{dh}{dt} \\
+  \frac{dh}{dt} &= \frac{4}{\pi h^2} \cdot \frac{dV}{dt} \\
+  \frac{dh}{dt} &= \frac{4}{\pi(4)^2} \cdot 3 = \frac{12}{16\pi} = \frac{3}{4\pi} \text{ m/min}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 12}
+\textbf{Practice 12:}
+
+A street light is 8m high. A person 1.8m tall walks away at 1.5m/s. How fast is shadow length changing when person is 6m from light?
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  \text{By similar triangles: } \frac{1.8}{s} &= \frac{8}{x + s} \\
+  1.8(x + s) &= 8s \\
+  1.8x + 1.8s &= 8s \\
+  1.8x &= 6.2s \\
+  s &= \frac{1.8x}{6.2} = \frac{9x}{31}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 12 (continued)}
+\textbf{Solution (continued):}
+\[
+\begin{aligned}
+  \frac{ds}{dt} &= \frac{9}{31} \cdot \frac{dx}{dt} \\
+  \frac{ds}{dt} &= \frac{9}{31} \cdot 1.5 \\
+  \frac{ds}{dt} &= \frac{13.5}{31} \approx 0.44 \text{ m/s}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 13}
+\textbf{Practice 13:}
+
+A kite flies at height 100m. String is let out at 2m/s. How fast is kite moving horizontally when 200m of string is out?
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  x^2 + 100^2 &= 200^2 \\
+  x^2 &= 40000 - 10000 = 30000 \\
+  x &= \sqrt{30000} = 100\sqrt{3} \\
+  2x\frac{dx}{dt} &= 2s\frac{ds}{dt} \\
+  \frac{dx}{dt} &= \frac{s}{x}\frac{ds}{dt} \\
+  \frac{dx}{dt} &= \frac{200}{100\sqrt{3}} \cdot 2 = \frac{400}{100\sqrt{3}} = \frac{4}{\sqrt{3}} \text{ m/s}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 14}
+\textbf{Practice 14:}
+
+A balloon rises at 3m/s. Observer 50m away. How fast is angle of elevation changing when balloon is 30m high?
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  \tan \theta &= \frac{h}{50} \\
+  \sec^2 \theta \cdot \frac{d\theta}{dt} &= \frac{1}{50} \cdot \frac{dh}{dt} \\
+  \frac{d\theta}{dt} &= \frac{1}{50 \sec^2 \theta} \cdot 3 \\
+  \sec \theta &= \frac{\sqrt{50^2 + 30^2}}{50} = \frac{\sqrt{3400}}{50} = \frac{\sqrt{34}}{5} \\
+  \frac{d\theta}{dt} &= \frac{3}{50 \cdot \frac{34}{25}} = \frac{75}{1700} = \frac{3}{68} \text{ rad/s}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 15}
+\textbf{Practice 15:}
+
+A rectangular pool is 20m long, 10m wide. Water flows in at 5m$^3$/min. How fast is water level rising when depth is 2m?
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  V &= lwh \\
+  \frac{dV}{dt} &= lw\frac{dh}{dt} \\
+  \frac{dh}{dt} &= \frac{1}{lw} \cdot \frac{dV}{dt} \\
+  \frac{dh}{dt} &= \frac{1}{20 \cdot 10} \cdot 5 \\
+  \frac{dh}{dt} &= \frac{5}{200} = \frac{1}{40} \text{ m/min}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 16}
+\textbf{Practice 16:}
+
+A particle moves along curve $y = x^2$ at 2 units/sec. How fast is distance from origin changing when $x = 3$?
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  d^2 &= x^2 + y^2 = x^2 + x^4 \\
+  2d\frac{dd}{dt} &= 2x\frac{dx}{dt} + 4x^3\frac{dx}{dt} \\
+  \frac{dd}{dt} &= \frac{x + 2x^3}{d}\frac{dx}{dt} \\
+  \text{When } x &= 3, y = 9, d = \sqrt{9 + 81} = \sqrt{90} = 3\sqrt{10} \\
+  \frac{dd}{dt} &= \frac{3 + 2(27)}{3\sqrt{10}} \cdot 2 = \frac{57}{3\sqrt{10}} \cdot 2 = \frac{38}{\sqrt{10}} \text{ units/sec}
+\end{aligned}
+\]
+\end{frame}
+
+\section{Solutions to Advanced Practice Problems}
+
+\begin{frame}{Solution to Practice 17}
+\textbf{Practice 17:}
+
+A cylindrical tank radius 4m, height 8m, lying on side. Fuel flows in at 2m$^3$/min. How fast is fuel level rising when depth is 3m?
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  V &= L \cdot \text{Area of segment} \\
+  \text{Area} &= r^2\theta - \frac{r^2}{2}\sin(2\theta) \\
+  h &= r - r\cos\theta \\
+  \cos\theta &= 1 - \frac{h}{r} = 1 - \frac{3}{4} = \frac{1}{4} \\
+  \theta &= \arccos(\frac{1}{4})
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 17 (continued)}
+\textbf{Solution (continued):}
+\[
+\begin{aligned}
+  \frac{dV}{dt} &= Lr^2(1 - \cos(2\theta))\frac{d\theta}{dt} \\
+  \frac{dh}{dt} &= r\sin\theta \cdot \frac{d\theta}{dt} \\
+  \frac{dh}{dt} &= r\sin\theta \cdot \frac{2}{Lr^2(1 - \cos(2\theta))} \\
+  \frac{dh}{dt} &= \frac{2\sin\theta}{Lr(1 - \cos(2\theta))} \\
+  \frac{dh}{dt} &= \frac{2 \cdot \frac{\sqrt{15}}{4}}{8 \cdot 4 \cdot 2 \cdot (\frac{\sqrt{15}}{4})^2} = \frac{1}{16\sqrt{15}} \text{ m/min}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 18}
+\textbf{Practice 18:}
+
+Two cars approach intersection. Car A at 60km/h, Car B at 80km/h. How fast is distance changing when A is 3km away, B is 4km away?
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  d^2 &= x^2 + y^2 \\
+  2d\frac{dd}{dt} &= 2x\frac{dx}{dt} + 2y\frac{dy}{dt} \\
+  \frac{dd}{dt} &= \frac{x\frac{dx}{dt} + y\frac{dy}{dt}}{d} \\
+  d &= \sqrt{3^2 + 4^2} = 5 \\
+  \frac{dd}{dt} &= \frac{3(-60) + 4(-80)}{5} \\
+  \frac{dd}{dt} &= \frac{-180 - 320}{5} = -100 \text{ km/h}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 19}
+\textbf{Practice 19:}
+
+A conical pile of sand has height equal to radius. Sand falls at 10m$^3$/min. How fast is radius changing when height is 5m?
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  h &= r \\
+  V &= \frac{1}{3}\pi r^2 h = \frac{1}{3}\pi r^3 \\
+  \frac{dV}{dt} &= \pi r^2 \cdot \frac{dr}{dt} \\
+  \frac{dr}{dt} &= \frac{1}{\pi r^2} \cdot \frac{dV}{dt} \\
+  \frac{dr}{dt} &= \frac{10}{\pi(5)^2} = \frac{10}{25\pi} = \frac{2}{5\pi} \text{ m/min}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 20}
+\textbf{Practice 20:}
+
+A ladder 10m long slides down wall. Base moves at 1.5m/s. How fast is angle between ladder and ground changing when base is 6m from wall?
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  \cos\theta &= \frac{x}{10} \\
+  -\sin\theta \cdot \frac{d\theta}{dt} &= \frac{1}{10} \cdot \frac{dx}{dt} \\
+  \frac{d\theta}{dt} &= -\frac{1}{10\sin\theta} \cdot \frac{dx}{dt} \\
+  \text{When } x &= 6, \sin\theta = \frac{8}{10} = \frac{4}{5} \\
+  \frac{d\theta}{dt} &= -\frac{1}{10 \cdot \frac{4}{5}} \cdot 1.5 = -\frac{5}{40} \cdot 1.5 = -\frac{3}{16} \text{ rad/s}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 21}
+\textbf{Practice 21:}
+
+A spherical snowball melts at rate proportional to surface area. How fast is radius changing when radius is 8cm?
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  \frac{dV}{dt} &= -k \cdot 4\pi r^2 \\
+  V &= \frac{4}{3}\pi r^3 \\
+  \frac{dV}{dt} &= 4\pi r^2 \cdot \frac{dr}{dt} \\
+  4\pi r^2 \cdot \frac{dr}{dt} &= -k \cdot 4\pi r^2 \\
+  \frac{dr}{dt} &= -k \text{ (constant rate)}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 22}
+\textbf{Practice 22:}
+
+A particle moves along $y = \sin x$ at 3 units/sec. How fast is distance from $(0,0)$ changing when $x = \pi/4$?
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  d^2 &= x^2 + y^2 = x^2 + \sin^2 x \\
+  2d\frac{dd}{dt} &= 2x\frac{dx}{dt} + 2\sin x \cos x \cdot \frac{dx}{dt} \\
+  \frac{dd}{dt} &= \frac{x + \sin x \cos x}{d} \cdot \frac{dx}{dt} \\
+  \text{When } x &= \pi/4, y = \sin(\pi/4) = \frac{\sqrt{2}}{2} \\
+  d &= \sqrt{(\pi/4)^2 + (\sqrt{2}/2)^2} = \sqrt{\pi^2/16 + 1/2} \\
+  \frac{dd}{dt} &= \frac{\pi/4 + \frac{\sqrt{2}}{2} \cdot \frac{\sqrt{2}}{2}}{d} \cdot 3 = \frac{\pi/4 + 1/2}{d} \cdot 3
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 23}
+\textbf{Practice 23:}
+
+A rectangular box has length, width, height increasing at 2cm/s, 1cm/s, 3cm/s. How fast is volume changing when dimensions are 8cm, 6cm, 4cm?
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  V &= lwh \\
+  \frac{dV}{dt} &= lw\frac{dh}{dt} + lh\frac{dw}{dt} + wh\frac{dl}{dt} \\
+  \frac{dV}{dt} &= 8 \cdot 6 \cdot 3 + 8 \cdot 4 \cdot 1 + 6 \cdot 4 \cdot 2 \\
+  \frac{dV}{dt} &= 144 + 32 + 48 = 224 \text{ cm}^3\text{/s}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 24}
+\textbf{Practice 24:}
+
+A circular oil slick expands at 2m$^2$/min. How fast is radius changing when area is $100\pi$ m$^2$?
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  A &= \pi r^2 \\
+  \frac{dA}{dt} &= 2\pi r \cdot \frac{dr}{dt} \\
+  \frac{dr}{dt} &= \frac{1}{2\pi r} \cdot \frac{dA}{dt} \\
+  \text{When } A &= 100\pi, r = 10 \\
+  \frac{dr}{dt} &= \frac{2}{2\pi \cdot 10} = \frac{1}{10\pi} \text{ m/min}
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Solution to Practice 25}
+\textbf{Practice 25:}
+
+A conical cup has radius 5cm, height 12cm. Water flows out at 3cm$^3$/s. How fast is water level falling when depth is 6cm?
+
+\textbf{Solution:}
+\[
+\begin{aligned}
+  \frac{r}{h} &= \frac{5}{12} \\
+  r &= \frac{5h}{12} \\
+  V &= \frac{1}{3}\pi r^2 h = \frac{1}{3}\pi(\frac{5h}{12})^2 h = \frac{25\pi h^3}{432} \\
+  \frac{dV}{dt} &= \frac{25\pi h^2}{144} \cdot \frac{dh}{dt} \\
+  \frac{dh}{dt} &= \frac{144}{25\pi h^2} \cdot \frac{dV}{dt} \\
+  \frac{dh}{dt} &= \frac{144}{25\pi(6)^2} \cdot (-3) = -\frac{432}{900\pi} = -\frac{12}{25\pi} \text{ cm/s}
+\end{aligned}
+\]
+\end{frame}
+
+\section{Summary}
+
+\begin{frame}{Key Points - Related Rates}
+\begin{itemize}
+    \item \textbf{Strategy:} Draw picture, write equation, differentiate, substitute
+    \item \textbf{Key concept:} All variables are functions of time
+    \item \textbf{Method:} Use implicit differentiation with respect to time
+    \item \textbf{Units:} Pay attention to units and signs
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Common Applications}
+\begin{itemize}
+    \item \textbf{Geometry:} Ladders, shadows, expanding shapes
+    \item \textbf{Physics:} Moving objects, angles, distances
+    \item \textbf{Engineering:} Tanks, pipes, mechanical systems
+    \item \textbf{Real-world:} Traffic, weather, economics
+\end{itemize}
+
+\vspace{0.5cm}
+Related rates problems connect calculus to real-world applications and help develop problem-solving skills.
+\end{frame}
+
+\begin{frame}{Thank You!}
+\centering
+\vspace{2cm}
+{\Huge \textcolor{myblue}{\textbf{Questions?}}}
+
+\vspace{1cm}
+{\Large Related rates show how calculus applies to the real world!}
+\end{frame}
+
+\end{document} 
